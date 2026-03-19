@@ -2,73 +2,80 @@
 
 public class RangedWeapon : MonoBehaviour
 {
-    [Header("Setup")]
+    [SerializeField] private WeaponData data;
     [SerializeField] private Transform diemBan;
-    [SerializeField] private SpriteRenderer spriteVuKhi;
+    [SerializeField] private SpriteRenderer hinhAnh;
 
     private AutoAim mayQuet;
     private PlayerMovement player;
-    private float lanBanTiepTheo;
 
-    public float soLuongDanBanRaTrenS = 0.5f;
-    public float tocDoDiChuyenCuaDan = 12f;
+    private float donDanhTiepTheo;
 
     void Awake()
     {
         mayQuet = GetComponentInParent<AutoAim>();
         player = GetComponentInParent<PlayerMovement>();
+
+        hinhAnh.sprite = data.hinhAnhVuKhi;
     }
 
     void Update()
     {
-        HandleRotation();
+        RotateWeapon();
 
-        if (mayQuet.mucTieuHienTai != null && Time.time >= lanBanTiepTheo)
+        if (mayQuet.mucTieuHienTai != null &&
+            Time.time >= donDanhTiepTheo)
         {
             Shoot();
-            lanBanTiepTheo = Time.time + soLuongDanBanRaTrenS;
+            donDanhTiepTheo = Time.time + data.soDonDanhTrenMoiS;
         }
     }
 
-    private void HandleRotation()
+    void RotateWeapon()
     {
-        Vector2 huongMucTieu;
+        Vector2 huong;
 
         if (mayQuet.mucTieuHienTai != null)
-        {
-            huongMucTieu = (mayQuet.mucTieuHienTai.position - transform.position).normalized;
-        }
+            huong = (mayQuet.mucTieuHienTai.position - transform.position).normalized;
         else
-        {
-            huongMucTieu = player.HuongDiChuyenCuoi;
-        }
+            huong = player.HuongDiChuyenCuoi;
 
-        float angle = Mathf.Atan2(huongMucTieu.y, huongMucTieu.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0, 0, angle);
+        if (huong == Vector2.zero) return;
 
-        if (spriteVuKhi != null)
-        {
-            spriteVuKhi.flipY = Mathf.Abs(angle) > 90;
-        }
+        float goc = Mathf.Atan2(huong.y, huong.x) * Mathf.Rad2Deg;
+
+        transform.rotation = Quaternion.Euler(0,0,goc);
+
+        hinhAnh.flipY = Mathf.Abs(goc) > 90;
     }
 
-    private void Shoot()
+    void Shoot()
     {
-        GameObject bulletObj = BulletPool.Instance.GetBullet();
-        bulletObj.transform.position = diemBan.position;
+        GameObject bullet = BulletPool.Instance.GetBullet();
 
-        Vector2 huongBan;
+        bullet.transform.position = diemBan.position;
+
+        Vector2 huong;
+
         if (mayQuet.mucTieuHienTai != null)
-        {
-            huongBan = (mayQuet.mucTieuHienTai.position - diemBan.position).normalized;
-        }
+            huong = (mayQuet.mucTieuHienTai.position - diemBan.position).normalized;
         else
-        {
-            huongBan = player.HuongDiChuyenCuoi;
-        }
+            huong = player.HuongDiChuyenCuoi;
 
-        float goc = Mathf.Atan2(huongBan.y, huongBan.x) * Mathf.Rad2Deg;
-        bulletObj.transform.rotation = Quaternion.Euler(0, 0, goc);
-        bulletObj.GetComponent<Bullet>().Setup(huongBan, tocDoDiChuyenCuaDan, 1, 2f);
+        float goc = Mathf.Atan2(huong.y, huong.x) * Mathf.Rad2Deg;
+
+        bullet.transform.rotation =
+            Quaternion.Euler(0, 0, goc);
+
+        bullet.GetComponent<Bullet>().Setup(
+            huong,
+            data.tocDoBayCuaDan,
+            data.damage,
+            data.xuyenThau,
+            data.dayLui,
+            data.tiLeChiMang,
+            data.satThuongChiMang,
+            data.hutMau
+        );
     }
 }

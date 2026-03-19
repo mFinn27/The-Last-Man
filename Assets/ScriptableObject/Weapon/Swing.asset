@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb76e2faae5aec94e967869600ff27df, type: 3}
+  m_Name: Swing
+  m_EditorClassIdentifier: 
+  tenVuKhi: Axe
+  hinhAnhVuKhi: {fileID: 4059512458712482826, guid: 548ee95871222ac40bb72bb11ed92ca9, type: 3}
+  tiLeChiMang: 0.1
+  satThuongChiMang: 0.15
+  hutMau: 0
+  tamDanh: 3
+  soDonDanhTrenMoiS: 1
+  damage: 7
+  gocChem: 160
+  tocDoXoay: 8
+  overshoot: 0.25
+  doDaiVuKhi: 1.3
+  tocDoBayCuaDan: 0
+  xuyenThau: 0
+  dayLui: 0
+  bulletPrefab: {fileID: 0}
+  tocDoDam: 0

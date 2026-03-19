@@ -39,17 +39,17 @@ public class PlayerMovement : MonoBehaviour
         if (animator == null) return;
 
         bool dangDiChuyen = moveInput.sqrMagnitude > 0.01f;
-        animator.SetBool("IsMoving", dangDiChuyen);
+        animator.SetBool(isMovingPara, dangDiChuyen);
 
         if (dangDiChuyen)
         {
-            animator.SetFloat("MoveX", moveInput.x);
-            animator.SetFloat("MoveY", moveInput.y);
+            animator.SetFloat(moveXPara, moveInput.x);
+            animator.SetFloat(moveYPara, moveInput.y);
 
             if (moveInput.x != 0)
             {
-                float huongDiChuyen = Mathf.Sign(moveInput.x);
-                viTriSpriteChar.localScale = new Vector3(huongDiChuyen, 1, 1);
+                float huong = Mathf.Sign(moveInput.x);
+                viTriSpriteChar.localScale = new Vector3(huong, 1, 1);
             }
         }
     }
