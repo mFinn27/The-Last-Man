@@ -13,19 +13,20 @@ MonoBehaviour:
   m_Name: Ranged
   m_EditorClassIdentifier: 
   tenVuKhi: Bow
+  loaiVuKhi: 2
   hinhAnhVuKhi: {fileID: 5342339644809915694, guid: 227d5a5626b69db4b9fbc59e7821387c, type: 3}
-  tiLeChiMang: 0.1
-  satThuongChiMang: 0.1
-  hutMau: 0
+  dame: 10
+  tocDoDanh: 0.65
   tamDanh: 8
-  soDonDanhTrenMoiS: 0.5
-  damage: 4
+  dayLui: 0.5
+  tiLeChiMang: 0.05
+  satThuongChiMang: 1.5
+  hutMau: 0
+  bulletPrefab: {fileID: 1167516201137810146, guid: d729ce8ed61b11a439bac20410e7a0b2, type: 3}
+  tocDoBayCuaDan: 12
+  xuyenThau: 1
+  doDaiVuKhi: 0.5
+  overshoot: 0
   gocChem: 0
   tocDoXoay: 0
-  overshoot: 0
-  doDaiVuKhi: 0.5
-  tocDoBayCuaDan: 12
-  xuyenThau: 0
-  dayLui: 0
-  bulletPrefab: {fileID: 1167516201137810146, guid: d729ce8ed61b11a439bac20410e7a0b2, type: 3}
   tocDoDam: 0

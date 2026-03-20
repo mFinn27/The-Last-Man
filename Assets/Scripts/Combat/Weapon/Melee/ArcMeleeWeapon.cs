@@ -17,20 +17,22 @@ public class ArcMeleeWeapon : MonoBehaviour
 
     private bool dangTanCong;
     private float donDanhTiepTheo;
-
-    private Vector3 viTriGoc; // vị trí gốc
+    private Vector3 viTriGoc;
 
     void Awake()
     {
         mayQuet = GetComponentInParent<AutoAim>();
         player = GetComponentInParent<PlayerMovement>();
-
         viTriGoc = visualContainer.localPosition;
 
         if (hinhAnhVuKhi != null && data.hinhAnhVuKhi != null)
             hinhAnhVuKhi.sprite = data.hinhAnhVuKhi;
 
-        if (hitBox) hitBox.SetActive(false);
+        if (hitBox != null)
+        {
+            hitBox.GetComponent<MeleeHitBox>().Setup(data);
+            hitBox.SetActive(false);
+        }
     }
 
     void Update()
@@ -44,7 +46,9 @@ public class ArcMeleeWeapon : MonoBehaviour
             if (khoangCach <= data.tamDanh * data.tamDanh && Time.time >= donDanhTiepTheo)
             {
                 StartCoroutine(SwingAttack());
-                donDanhTiepTheo = Time.time + data.soDonDanhTrenMoiS;
+
+                float tocDoDanhHienTai = DamageCalculator.CalculateAttackSpeed(data.tocDoDanh);
+                donDanhTiepTheo = Time.time + (1f / tocDoDanhHienTai);
             }
         }
     }
@@ -54,7 +58,6 @@ public class ArcMeleeWeapon : MonoBehaviour
         if (dangTanCong) return;
 
         Vector2 huong;
-
         if (mayQuet.mucTieuHienTai != null)
             huong = (mayQuet.mucTieuHienTai.position - transform.position).normalized;
         else
@@ -64,7 +67,6 @@ public class ArcMeleeWeapon : MonoBehaviour
 
         float goc = Mathf.Atan2(huong.y, huong.x) * Mathf.Rad2Deg;
         goc -= 90f;
-
         transform.rotation = Quaternion.Euler(0, 0, goc);
     }
 
@@ -77,49 +79,44 @@ public class ArcMeleeWeapon : MonoBehaviour
 
         float batDau = -data.gocChem * 0.5f;
         float ketThuc = data.gocChem * 0.5f + data.overshoot;
+        float khoangCach = data.tamDanh;
 
-        float reach = Mathf.Max(data.doDaiVuKhi, data.tamDanh);
+        if (mayQuet.mucTieuHienTai != null)
+            khoangCach = Vector2.Distance(transform.position, mayQuet.mucTieuHienTai.position);
 
-        Vector3 mucTieu =
-            viTriGoc + Vector3.up * reach;
+        float khoangCachToiDich = Mathf.Min(khoangCach, data.tamDanh);
+        Vector3 mucTieu = viTriGoc + Vector3.up * (khoangCachToiDich + data.overshoot);
+
+        float tocDoDanhHienTai = DamageCalculator.CalculateAttackSpeed(data.tocDoDanh);
+        float tocDoXoayThucTe = data.tocDoXoay * tocDoDanhHienTai;
 
         float t = 0;
-
         while (t < 1)
         {
-            t += Time.deltaTime * data.tocDoXoay;
-
-            float eased = 1 - Mathf.Pow(1 - t, 3); // tốc độ anim làm mượt hơn
-
-            float rot = Mathf.Lerp(batDau, ketThuc, eased);
-
-            visualContainer.localRotation =
-                Quaternion.Euler(0, 0, rot);
-
-            visualContainer.localPosition =
-                Vector3.Lerp(viTriGoc, mucTieu, eased);
-
+            t += Time.deltaTime * tocDoXoayThucTe;
+            float eased = 1 - Mathf.Pow(1 - t, 3);
+            float gocXoay = Mathf.Lerp(batDau, ketThuc, eased);
+            visualContainer.localRotation = Quaternion.Euler(0, 0, gocXoay);
+            visualContainer.localPosition = Vector3.Lerp(viTriGoc, mucTieu, eased);
             yield return null;
         }
 
+        if (hitBox) hitBox.SetActive(false);
         t = 0;
 
         while (t < 1)
         {
-            t += Time.deltaTime * data.tocDoXoay * 0.5f;
-
-            visualContainer.localPosition =
-                Vector3.Lerp(mucTieu, viTriGoc, t);
-
+            t += Time.deltaTime * tocDoXoayThucTe * 0.5f;
+            float rot = Mathf.Lerp(ketThuc, 0, t);
+            visualContainer.localRotation = Quaternion.Euler(0, 0, rot);
+            visualContainer.localPosition = Vector3.Lerp(mucTieu, viTriGoc, t);
             yield return null;
         }
 
         visualContainer.localRotation = Quaternion.identity;
         visualContainer.localPosition = viTriGoc;
 
-        if (hitBox) hitBox.SetActive(false);
         if (trail) trail.emitting = false;
-
         dangTanCong = false;
     }
 }

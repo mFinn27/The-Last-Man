@@ -13,19 +13,20 @@ MonoBehaviour:
   m_Name: Thrust
   m_EditorClassIdentifier: 
   tenVuKhi: Sword
+  loaiVuKhi: 0
   hinhAnhVuKhi: {fileID: -2582888597079945630, guid: fb2369a4bf18ebd4a8a9a0680cfb3078, type: 3}
-  tiLeChiMang: 0.1
-  satThuongChiMang: 0.15
-  hutMau: 0
+  dame: 10
+  tocDoDanh: 0.65
   tamDanh: 3
-  soDonDanhTrenMoiS: 1
-  damage: 6
-  gocChem: 0
-  tocDoXoay: 0
-  overshoot: 0.25
-  doDaiVuKhi: 1.5
+  dayLui: 0.5
+  tiLeChiMang: 0.1
+  satThuongChiMang: 1.5
+  hutMau: 0
+  bulletPrefab: {fileID: 0}
   tocDoBayCuaDan: 0
   xuyenThau: 0
-  dayLui: 0
-  bulletPrefab: {fileID: 0}
-  tocDoDam: 10
+  doDaiVuKhi: 1.5
+  overshoot: 0.25
+  gocChem: 0
+  tocDoXoay: 0
+  tocDoDam: 7

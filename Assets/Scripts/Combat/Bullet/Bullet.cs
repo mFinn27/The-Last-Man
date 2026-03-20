@@ -4,45 +4,30 @@ public class Bullet : MonoBehaviour
 {
     private Vector2 huongDiChuyen;
     private float tocDoDiChuyen;
-
-    private int damage;
+    private float damage;
     private int xuyenThauHienTai;
     private float lucDayLui;
-
     private float tiLeChiMang;
     private float satThuongChiMang;
     private float hutMau;
-
     private float thoiGianDanTonTai;
 
-    public void Setup(
-        Vector2 huong,
-        float tocDo,
-        int dmg,
-        int xuyenThau,
-        float dayLui,
-        float tlChiMang,
-        float stChiMang,
-        float GThutMau)
+    public void Setup(Vector2 huong, float tocDo, float dame, int xuyenThau, float dayLui, float tlChiMang, float stChiMang, float hutMau)
     {
         huongDiChuyen = huong;
         tocDoDiChuyen = tocDo;
-
-        damage = dmg;
+        damage = dame;
         xuyenThauHienTai = xuyenThau;
         lucDayLui = dayLui;
-
         tiLeChiMang = tlChiMang;
         satThuongChiMang = stChiMang;
-        hutMau = GThutMau;
-
+        this.hutMau = hutMau;
         thoiGianDanTonTai = 3f;
     }
 
     void Update()
     {
         transform.Translate(Vector3.right * tocDoDiChuyen * Time.deltaTime);
-
         thoiGianDanTonTai -= Time.deltaTime;
 
         if (thoiGianDanTonTai <= 0)
@@ -53,31 +38,25 @@ public class Bullet : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
-            int dameCuoiCung = damage;
+            Enemy enemy = collision.GetComponent<Enemy>();
+            if (enemy == null) return;
 
-            bool chiMang = Random.value <= tiLeChiMang;
+            bool chiMang;
+            float dameCuoiCung = DamageCalculator.CalculateDamage(damage, tiLeChiMang, satThuongChiMang, out chiMang);
 
-            if (chiMang)
-                dameCuoiCung = Mathf.RoundToInt(damage * satThuongChiMang);
+            Vector2 huongDayLui = (collision.transform.position - transform.position).normalized;
+            enemy.TakeDamage(dameCuoiCung, huongDayLui, lucDayLui);
 
-            Debug.Log("Damage: " + dameCuoiCung + (chiMang ? " CRIT!" : ""));
+            FloatingTextManager.Instance.SpawnText(collision.transform.position, dameCuoiCung, chiMang);
 
-            // TODO: Enemy.TakeDamage(finalDamage);
-
-            // Life steal
-            if (hutMau > 0)
+            float hutMauThucTe = DamageCalculator.CalculateLifeSteal(hutMau);
+            if (hutMauThucTe > 0)
             {
-                int hoiMau = Mathf.RoundToInt(dameCuoiCung * hutMau);
-
-                if (hoiMau > 0)
-                {
-                    Debug.Log("Heal player: " + hoiMau);
-                    // PlayerHealth.Instance.Heal(heal);
-                }
+                int hoiMau = Mathf.RoundToInt(dameCuoiCung * hutMauThucTe);
+                if (hoiMau > 0) PlayerHealth.Instance.Heal(hoiMau);
             }
 
             xuyenThauHienTai--;
-
             if (xuyenThauHienTai <= 0)
                 VoHieuHoa();
         }

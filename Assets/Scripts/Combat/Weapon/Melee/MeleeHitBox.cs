@@ -2,21 +2,33 @@
 
 public class MeleeHitBox : MonoBehaviour
 {
-    [SerializeField] private float lucDay = 5f;
+    private WeaponData data;
+
+    public void Setup(WeaponData dataVuKhi)
+    {
+        data = dataVuKhi;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Enemy"))
         {
-            Vector2 khoangCachDay = (collision.transform.position - transform.root.position).normalized;
+            Enemy enemy = collision.GetComponent<Enemy>();
+            if (enemy == null || data == null) return;
 
-            Debug.Log($"Chém trúng {collision.name}, đẩy lùi {lucDay}");
+            bool chiMang;
+            float dameCuoiCung = DamageCalculator.CalculateDamage(data.dame, data.tiLeChiMang, data.satThuongChiMang, out chiMang);
 
-            Rigidbody2D enemyRb = collision.GetComponent<Rigidbody2D>();
+            Vector2 huongDayLui = (collision.transform.position - transform.root.position).normalized;
+            enemy.TakeDamage(dameCuoiCung, huongDayLui, data.dayLui);
 
-            if (enemyRb != null)
+            FloatingTextManager.Instance.SpawnText(collision.transform.position, dameCuoiCung, chiMang);
+
+            float hutMauThucTe = DamageCalculator.CalculateLifeSteal(data.hutMau);
+            if (hutMauThucTe > 0)
             {
-                enemyRb.AddForce(khoangCachDay * lucDay, ForceMode2D.Impulse);
+                int hoiMau = Mathf.RoundToInt(dameCuoiCung * hutMauThucTe);
+                if (hoiMau > 0) PlayerHealth.Instance.Heal(hoiMau);
             }
         }
     }

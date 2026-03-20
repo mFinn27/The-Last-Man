@@ -4,7 +4,6 @@
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Stats Set Up")]
-    [SerializeField] private float tocDoDiChuyen = 5f;
     [SerializeField] private Transform viTriSpriteChar;
     [SerializeField] private Animator animator;
 
@@ -54,5 +53,9 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void FixedUpdate() => rb.linearVelocity = moveInput.normalized * tocDoDiChuyen;
+    void FixedUpdate()
+    {
+        float tocDoHienTai = PlayerStats.Instance != null ? PlayerStats.Instance.GetMoveSpeed() : 5f;
+        rb.linearVelocity = moveInput.normalized * tocDoHienTai;
+    }
 }

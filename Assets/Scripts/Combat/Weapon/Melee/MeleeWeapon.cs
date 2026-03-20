@@ -13,20 +13,20 @@ public class ThrustWeapon : MonoBehaviour
 
     private float donDanhTiepTheo;
     private bool dangTanCong;
-
-    private Vector3 viTriGoc; // vị trí gốc
+    private Vector3 viTriGoc;
 
     void Awake()
     {
         mayQuet = GetComponentInParent<AutoAim>();
         player = GetComponentInParent<PlayerMovement>();
-
         viTriGoc = visualContainer.localPosition;
-
         hinhAnh.sprite = data.hinhAnhVuKhi;
 
-        if (hitBox)
+        if (hitBox != null)
+        {
+            hitBox.GetComponent<MeleeHitBox>().Setup(data);
             hitBox.SetActive(false);
+        }
     }
 
     void Update()
@@ -37,11 +37,12 @@ public class ThrustWeapon : MonoBehaviour
         {
             float huong = (mayQuet.mucTieuHienTai.position - transform.position).sqrMagnitude;
 
-            if (huong <= data.tamDanh * data.tamDanh &&
-                Time.time >= donDanhTiepTheo)
+            if (huong <= data.tamDanh * data.tamDanh && Time.time >= donDanhTiepTheo)
             {
                 StartCoroutine(ThrustAttack());
-                donDanhTiepTheo = Time.time + data.soDonDanhTrenMoiS;
+
+                float tocDoDanhHienTai = DamageCalculator.CalculateAttackSpeed(data.tocDoDanh);
+                donDanhTiepTheo = Time.time + (1f / tocDoDanhHienTai);
             }
         }
     }
@@ -51,7 +52,6 @@ public class ThrustWeapon : MonoBehaviour
         if (dangTanCong) return;
 
         Vector2 huong;
-
         if (mayQuet.mucTieuHienTai != null)
             huong = (mayQuet.mucTieuHienTai.position - transform.position).normalized;
         else
@@ -66,51 +66,38 @@ public class ThrustWeapon : MonoBehaviour
     IEnumerator ThrustAttack()
     {
         dangTanCong = true;
-
         float khoangCach = data.tamDanh;
 
         if (mayQuet.mucTieuHienTai != null)
-        {
-            khoangCach = Vector2.Distance(
-                transform.position,
-                mayQuet.mucTieuHienTai.position
-            );
-        }
+            khoangCach = Vector2.Distance(transform.position, mayQuet.mucTieuHienTai.position);
 
         float khoangCachDam = Mathf.Min(khoangCach, data.tamDanh);
-
         Vector3 mucTieu = viTriGoc + Vector3.up * (khoangCachDam + data.overshoot);
 
-        if (hitBox)
-            hitBox.SetActive(true);
+        if (hitBox) hitBox.SetActive(true);
+
+        float tocDoDanhHienTai = DamageCalculator.CalculateAttackSpeed(data.tocDoDanh);
+        float tocDoDamThucTe = data.tocDoDam * tocDoDanhHienTai;
 
         float t = 0;
-
         while (t < 1)
         {
-            t += Time.deltaTime * data.tocDoDam;
-            visualContainer.localPosition =
-                Vector3.Lerp(viTriGoc, mucTieu, t);
-
+            t += Time.deltaTime * tocDoDamThucTe;
+            visualContainer.localPosition = Vector3.Lerp(viTriGoc, mucTieu, t);
             yield return null;
         }
 
+        if (hitBox) hitBox.SetActive(false);
         t = 0;
 
         while (t < 1)
         {
-            t += Time.deltaTime * data.tocDoDam * 0.5f;
-            visualContainer.localPosition =
-                Vector3.Lerp(mucTieu, viTriGoc, t);
-
+            t += Time.deltaTime * tocDoDamThucTe * 0.5f;
+            visualContainer.localPosition = Vector3.Lerp(mucTieu, viTriGoc, t);
             yield return null;
         }
 
         visualContainer.localPosition = viTriGoc;
-
-        if (hitBox)
-            hitBox.SetActive(false);
-
         dangTanCong = false;
     }
 }
