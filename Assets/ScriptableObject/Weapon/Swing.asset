@@ -28,5 +28,5 @@ MonoBehaviour:
   doDaiVuKhi: 1.3
   overshoot: 0.25
   gocChem: 360
-  tocDoXoay: 6
+  tocDoXoay: 8
   tocDoDam: 0

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[RequireComponent(typeof(WeaponRotation))]
 public class ThrustWeapon : MonoBehaviour
 {
     [SerializeField] private WeaponData data;
@@ -9,7 +10,7 @@ public class ThrustWeapon : MonoBehaviour
     [SerializeField] private SpriteRenderer hinhAnh;
 
     private AutoAim mayQuet;
-    private PlayerMovement player;
+    private WeaponRotation boXoay;
 
     private float donDanhTiepTheo;
     private bool dangTanCong;
@@ -18,7 +19,8 @@ public class ThrustWeapon : MonoBehaviour
     void Awake()
     {
         mayQuet = GetComponentInParent<AutoAim>();
-        player = GetComponentInParent<PlayerMovement>();
+        boXoay = GetComponent<WeaponRotation>();
+
         viTriGoc = visualContainer.localPosition;
         hinhAnh.sprite = data.hinhAnhVuKhi;
 
@@ -31,45 +33,27 @@ public class ThrustWeapon : MonoBehaviour
 
     void Update()
     {
-        RotateWeapon();
+        boXoay.XuLyXoay(data.tamDanh);
 
         if (mayQuet.mucTieuHienTai != null && !dangTanCong)
         {
-            float huong = (mayQuet.mucTieuHienTai.position - transform.position).sqrMagnitude;
-
-            if (huong <= data.tamDanh * data.tamDanh && Time.time >= donDanhTiepTheo)
+            float khoangCachSqr = (mayQuet.mucTieuHienTai.position - transform.position).sqrMagnitude;
+            if (khoangCachSqr <= data.tamDanh * data.tamDanh && Time.time >= donDanhTiepTheo)
             {
                 StartCoroutine(ThrustAttack());
-
                 float tocDoDanhHienTai = DamageCalculator.CalculateAttackSpeed(data.tocDoDanh);
                 donDanhTiepTheo = Time.time + (1f / tocDoDanhHienTai);
             }
         }
     }
 
-    void RotateWeapon()
-    {
-        if (dangTanCong) return;
-
-        Vector2 huong;
-        if (mayQuet.mucTieuHienTai != null)
-            huong = (mayQuet.mucTieuHienTai.position - transform.position).normalized;
-        else
-            huong = player.HuongDiChuyenCuoi;
-
-        if (huong == Vector2.zero) return;
-
-        float goc = Mathf.Atan2(huong.y, huong.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0, 0, goc - 90);
-    }
-
     IEnumerator ThrustAttack()
     {
         dangTanCong = true;
-        float khoangCach = data.tamDanh;
+        boXoay.khoaXoay = true;
 
-        if (mayQuet.mucTieuHienTai != null)
-            khoangCach = Vector2.Distance(transform.position, mayQuet.mucTieuHienTai.position);
+        float khoangCach = data.tamDanh;
+        if (mayQuet.mucTieuHienTai != null) khoangCach = Vector2.Distance(transform.position, mayQuet.mucTieuHienTai.position);
 
         float khoangCachDam = Mathf.Min(khoangCach, data.tamDanh);
         Vector3 mucTieu = viTriGoc + Vector3.up * (khoangCachDam + data.overshoot);
@@ -98,6 +82,8 @@ public class ThrustWeapon : MonoBehaviour
         }
 
         visualContainer.localPosition = viTriGoc;
+
+        boXoay.khoaXoay = false;
         dangTanCong = false;
     }
 }

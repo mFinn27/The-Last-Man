@@ -7,6 +7,7 @@ public class PlayerHealth : MonoBehaviour
 
     private int mauHientai;
     private int mauToiDa;
+    private PlayerVisuals hinhAnh;
 
     public event Action<int, int> OnHealthChanged;
 
@@ -20,6 +21,7 @@ public class PlayerHealth : MonoBehaviour
     {
         mauToiDa = PlayerStats.Instance != null ? PlayerStats.Instance.GetMaxHP() : 100;
         mauHientai = mauToiDa;
+        hinhAnh = GetComponent<PlayerVisuals>();
         OnHealthChanged?.Invoke(mauHientai, mauToiDa);
     }
 
@@ -40,6 +42,8 @@ public class PlayerHealth : MonoBehaviour
 
         mauHientai -= dameCuoiCung;
         OnHealthChanged?.Invoke(mauHientai, mauToiDa);
+
+        if (hinhAnh != null) hinhAnh.PlayFlashWhite();
 
         if (mauHientai <= 0) Die();
     }

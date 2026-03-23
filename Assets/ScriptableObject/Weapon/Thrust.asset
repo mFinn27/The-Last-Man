@@ -15,7 +15,7 @@ MonoBehaviour:
   tenVuKhi: Sword
   loaiVuKhi: 0
   hinhAnhVuKhi: {fileID: -2582888597079945630, guid: fb2369a4bf18ebd4a8a9a0680cfb3078, type: 3}
-  dame: 10
+  dame: 12
   tocDoDanh: 0.65
   tamDanh: 3
   dayLui: 0.5
@@ -29,4 +29,4 @@ MonoBehaviour:
   overshoot: 0.25
   gocChem: 0
   tocDoXoay: 0
-  tocDoDam: 7
+  tocDoDam: 8

@@ -7,6 +7,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform viTriSpriteChar;
     [SerializeField] private Animator animator;
 
+    [Header("--- HIỆU ỨNG (VFX) ---")]
+    [SerializeField] private ParticleSystem hieuUngKhoiBui;
+    [SerializeField] private float lucVayBuiNguoc = 2f;
+
     private Rigidbody2D rb;
     private Vector2 moveInput;
     public Vector2 HuongDiChuyenCuoi { get; private set; } = Vector2.right;
@@ -35,20 +39,40 @@ public class PlayerMovement : MonoBehaviour
 
     private void HandleAnimations()
     {
-        if (animator == null) return;
-
         bool dangDiChuyen = moveInput.sqrMagnitude > 0.01f;
-        animator.SetBool(isMovingPara, dangDiChuyen);
 
-        if (dangDiChuyen)
+        if (animator != null)
         {
-            animator.SetFloat(moveXPara, moveInput.x);
-            animator.SetFloat(moveYPara, moveInput.y);
+            animator.SetBool(isMovingPara, dangDiChuyen);
 
-            if (moveInput.x != 0)
+            if (dangDiChuyen)
             {
-                float huong = Mathf.Sign(moveInput.x);
-                viTriSpriteChar.localScale = new Vector3(huong, 1, 1);
+                animator.SetFloat(moveXPara, moveInput.x);
+                animator.SetFloat(moveYPara, moveInput.y);
+
+                if (moveInput.x != 0)
+                {
+                    float huong = Mathf.Sign(moveInput.x);
+                    viTriSpriteChar.localScale = new Vector3(huong, 1, 1);
+                }
+            }
+        }
+
+        if (hieuUngKhoiBui != null)
+        {
+            if (dangDiChuyen)
+            {
+                if (!hieuUngKhoiBui.isPlaying) hieuUngKhoiBui.Play();
+
+                var velocityModule = hieuUngKhoiBui.velocityOverLifetime;
+
+                Vector2 huongBuiVang = -moveInput.normalized;
+                velocityModule.x = new ParticleSystem.MinMaxCurve(huongBuiVang.x * lucVayBuiNguoc);
+                velocityModule.y = new ParticleSystem.MinMaxCurve(huongBuiVang.y * lucVayBuiNguoc);
+            }
+            else
+            {
+                if (hieuUngKhoiBui.isPlaying) hieuUngKhoiBui.Stop();
             }
         }
     }

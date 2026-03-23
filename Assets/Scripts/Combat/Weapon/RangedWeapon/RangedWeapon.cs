@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+[RequireComponent(typeof(WeaponRotation))]
 public class RangedWeapon : MonoBehaviour
 {
     [SerializeField] private WeaponData data;
@@ -8,41 +9,31 @@ public class RangedWeapon : MonoBehaviour
 
     private AutoAim mayQuet;
     private PlayerMovement player;
+    private WeaponRotation boXoay;
     private float donDanhTiepTheo;
 
     void Awake()
     {
         mayQuet = GetComponentInParent<AutoAim>();
         player = GetComponentInParent<PlayerMovement>();
+        boXoay = GetComponent<WeaponRotation>();
         hinhAnh.sprite = data.hinhAnhVuKhi;
     }
 
     void Update()
     {
-        RotateWeapon();
+        boXoay.XuLyXoay(data.tamDanh);
 
         if (mayQuet.mucTieuHienTai != null && Time.time >= donDanhTiepTheo)
         {
-            Shoot();
-
-            float tocDoDanhHienTai = DamageCalculator.CalculateAttackSpeed(data.tocDoDanh);
-            donDanhTiepTheo = Time.time + (1f / tocDoDanhHienTai);
+            float khoangCach = (mayQuet.mucTieuHienTai.position - transform.position).sqrMagnitude;
+            if (khoangCach <= data.tamDanh * data.tamDanh)
+            {
+                Shoot();
+                float tocDoDanhHienTai = DamageCalculator.CalculateAttackSpeed(data.tocDoDanh);
+                donDanhTiepTheo = Time.time + (1f / tocDoDanhHienTai);
+            }
         }
-    }
-
-    void RotateWeapon()
-    {
-        Vector2 huong;
-        if (mayQuet.mucTieuHienTai != null)
-            huong = (mayQuet.mucTieuHienTai.position - transform.position).normalized;
-        else
-            huong = player.HuongDiChuyenCuoi;
-
-        if (huong == Vector2.zero) return;
-
-        float goc = Mathf.Atan2(huong.y, huong.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0, 0, goc);
-        hinhAnh.flipY = Mathf.Abs(goc) > 90;
     }
 
     void Shoot()
@@ -60,14 +51,8 @@ public class RangedWeapon : MonoBehaviour
         bullet.transform.rotation = Quaternion.Euler(0, 0, goc);
 
         bullet.GetComponent<Bullet>().Setup(
-            huong,
-            data.tocDoBayCuaDan, 
-            data.dame, 
-            data.xuyenThau,
-            data.dayLui, 
-            data.tiLeChiMang, 
-            data.satThuongChiMang, 
-            data.hutMau
+            huong, data.tocDoBayCuaDan, data.dame, data.xuyenThau,
+            data.dayLui, data.tiLeChiMang, data.satThuongChiMang, data.hutMau
         );
     }
 }

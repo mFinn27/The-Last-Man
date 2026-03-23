@@ -1,19 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[RequireComponent(typeof(WeaponRotation))]
 public class ArcMeleeWeapon : MonoBehaviour
 {
-    [Header("Data")]
     [SerializeField] private WeaponData data;
-
-    [Header("Setup")]
     [SerializeField] private Transform visualContainer;
     [SerializeField] private GameObject hitBox;
     [SerializeField] private TrailRenderer trail;
     [SerializeField] private SpriteRenderer hinhAnhVuKhi;
 
     private AutoAim mayQuet;
-    private PlayerMovement player;
+    private WeaponRotation boXoay;
 
     private bool dangTanCong;
     private float donDanhTiepTheo;
@@ -22,12 +20,10 @@ public class ArcMeleeWeapon : MonoBehaviour
     void Awake()
     {
         mayQuet = GetComponentInParent<AutoAim>();
-        player = GetComponentInParent<PlayerMovement>();
+        boXoay = GetComponent<WeaponRotation>();
         viTriGoc = visualContainer.localPosition;
 
-        if (hinhAnhVuKhi != null && data.hinhAnhVuKhi != null)
-            hinhAnhVuKhi.sprite = data.hinhAnhVuKhi;
-
+        if (hinhAnhVuKhi != null && data.hinhAnhVuKhi != null) hinhAnhVuKhi.sprite = data.hinhAnhVuKhi;
         if (hitBox != null)
         {
             hitBox.GetComponent<MeleeHitBox>().Setup(data);
@@ -37,42 +33,24 @@ public class ArcMeleeWeapon : MonoBehaviour
 
     void Update()
     {
-        HandleRotation();
+        boXoay.XuLyXoay(data.tamDanh);
 
         if (mayQuet.mucTieuHienTai != null && !dangTanCong)
         {
             float khoangCach = (mayQuet.mucTieuHienTai.position - transform.position).sqrMagnitude;
-
             if (khoangCach <= data.tamDanh * data.tamDanh && Time.time >= donDanhTiepTheo)
             {
                 StartCoroutine(SwingAttack());
-
                 float tocDoDanhHienTai = DamageCalculator.CalculateAttackSpeed(data.tocDoDanh);
                 donDanhTiepTheo = Time.time + (1f / tocDoDanhHienTai);
             }
         }
     }
 
-    void HandleRotation()
-    {
-        if (dangTanCong) return;
-
-        Vector2 huong;
-        if (mayQuet.mucTieuHienTai != null)
-            huong = (mayQuet.mucTieuHienTai.position - transform.position).normalized;
-        else
-            huong = player.HuongDiChuyenCuoi;
-
-        if (huong == Vector2.zero) return;
-
-        float goc = Mathf.Atan2(huong.y, huong.x) * Mathf.Rad2Deg;
-        goc -= 90f;
-        transform.rotation = Quaternion.Euler(0, 0, goc);
-    }
-
     IEnumerator SwingAttack()
     {
         dangTanCong = true;
+        boXoay.khoaXoay = true;
 
         if (trail) trail.emitting = true;
         if (hitBox) hitBox.SetActive(true);
@@ -81,8 +59,7 @@ public class ArcMeleeWeapon : MonoBehaviour
         float ketThuc = data.gocChem * 0.5f + data.overshoot;
         float khoangCach = data.tamDanh;
 
-        if (mayQuet.mucTieuHienTai != null)
-            khoangCach = Vector2.Distance(transform.position, mayQuet.mucTieuHienTai.position);
+        if (mayQuet.mucTieuHienTai != null) khoangCach = Vector2.Distance(transform.position, mayQuet.mucTieuHienTai.position);
 
         float khoangCachToiDich = Mathf.Min(khoangCach, data.tamDanh);
         Vector3 mucTieu = viTriGoc + Vector3.up * (khoangCachToiDich + data.overshoot);
@@ -95,8 +72,7 @@ public class ArcMeleeWeapon : MonoBehaviour
         {
             t += Time.deltaTime * tocDoXoayThucTe;
             float eased = 1 - Mathf.Pow(1 - t, 3);
-            float gocXoay = Mathf.Lerp(batDau, ketThuc, eased);
-            visualContainer.localRotation = Quaternion.Euler(0, 0, gocXoay);
+            visualContainer.localRotation = Quaternion.Euler(0, 0, Mathf.Lerp(batDau, ketThuc, eased));
             visualContainer.localPosition = Vector3.Lerp(viTriGoc, mucTieu, eased);
             yield return null;
         }
@@ -107,16 +83,16 @@ public class ArcMeleeWeapon : MonoBehaviour
         while (t < 1)
         {
             t += Time.deltaTime * tocDoXoayThucTe * 0.5f;
-            float rot = Mathf.Lerp(ketThuc, 0, t);
-            visualContainer.localRotation = Quaternion.Euler(0, 0, rot);
+            visualContainer.localRotation = Quaternion.Euler(0, 0, Mathf.Lerp(ketThuc, 0, t));
             visualContainer.localPosition = Vector3.Lerp(mucTieu, viTriGoc, t);
             yield return null;
         }
 
         visualContainer.localRotation = Quaternion.identity;
         visualContainer.localPosition = viTriGoc;
-
         if (trail) trail.emitting = false;
+
+        boXoay.khoaXoay = false;
         dangTanCong = false;
     }
 }

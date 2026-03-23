@@ -38,14 +38,15 @@ public class Bullet : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
-            Enemy enemy = collision.GetComponent<Enemy>();
-            if (enemy == null) return;
+            EnemyHealth enemyHealth = collision.GetComponent<EnemyHealth>();
+
+            if (enemyHealth == null) return;
 
             bool chiMang;
             float dameCuoiCung = DamageCalculator.CalculateDamage(damage, tiLeChiMang, satThuongChiMang, out chiMang);
 
             Vector2 huongDayLui = (collision.transform.position - transform.position).normalized;
-            enemy.TakeDamage(dameCuoiCung, huongDayLui, lucDayLui);
+            enemyHealth.TakeDamage(dameCuoiCung, huongDayLui, lucDayLui);
 
             FloatingTextManager.Instance.SpawnText(collision.transform.position, dameCuoiCung, chiMang);
 
@@ -55,8 +56,8 @@ public class Bullet : MonoBehaviour
                 int hoiMau = Mathf.RoundToInt(dameCuoiCung * hutMauThucTe);
                 if (hoiMau > 0) PlayerHealth.Instance.Heal(hoiMau);
             }
-
             xuyenThauHienTai--;
+
             if (xuyenThauHienTai <= 0)
                 VoHieuHoa();
         }

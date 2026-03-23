@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4895e1b0ea00b74fbbef37a5cab0b0a, type: 3}
+  m_Name: EnemyExplosion
+  m_EditorClassIdentifier: 
+  tenQuaiVat: Quai No
+  loaiQuai: 0
+  mauToiDa: 10
+  tocDoDiChuyen: 2
+  dame: 10
+  tgThucHienDonDanhTiepTheo: 1
+  khoangCachCanChien: 0.4
+  tamDanhXa: 0
+  danPrefab: {fileID: 0}
+  tocDoDan: 0
+  soLuongDan: 0
+  gocToaDan: 0
+  thoiGianGongDon: 0
+  laQuaiPhatNo: 1
+  damePhatNo: 50
+  banKinhNo: 2.3
+  thoiGianChoNo: 1.5
+  tiLeRotThuong: 1
+  phanThuongRotRa: 1
+  minSoLuongVang: 1
+  maxSoLuongVang: 3
+  minGiaTriMoiVien: 1
+  maxGiaTriMoiVien: 2
+  vatPhamDacBietPrefab: {fileID: 6925648805723630006, guid: 2f7083dc8a605b9489671b578c89b6c2, type: 3}

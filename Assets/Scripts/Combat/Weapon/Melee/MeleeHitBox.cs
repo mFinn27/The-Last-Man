@@ -13,14 +13,14 @@ public class MeleeHitBox : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
-            Enemy enemy = collision.GetComponent<Enemy>();
-            if (enemy == null || data == null) return;
+            EnemyHealth mauEnemy = collision.GetComponent<EnemyHealth>();
+
+            if (mauEnemy == null || data == null) return;
 
             bool chiMang;
             float dameCuoiCung = DamageCalculator.CalculateDamage(data.dame, data.tiLeChiMang, data.satThuongChiMang, out chiMang);
-
             Vector2 huongDayLui = (collision.transform.position - transform.root.position).normalized;
-            enemy.TakeDamage(dameCuoiCung, huongDayLui, data.dayLui);
+            mauEnemy.TakeDamage(dameCuoiCung, huongDayLui, data.dayLui);
 
             FloatingTextManager.Instance.SpawnText(collision.transform.position, dameCuoiCung, chiMang);
 
