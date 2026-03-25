@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1c26cdb229c1ee42b2426a3c163db8b, type: 3}
+  m_Name: Wave 2
+  m_EditorClassIdentifier: 
+  tenWave: Wave 2
+  thoiGianWave: 26
+  danhSachSuKien:
+  - tenKichBan: Wave 2
+    giayBatDau: 0
+    giayKetThuc: 25
+    quaiPrefab: {fileID: 5189326022444628608, guid: 3425c84ebe7eb7a48bbc77c0551119b4, type: 3}
+    thoiGianGiuaCacLan: 1.5
+    soLuongMoiLan: 3
+    deTheoCum: 1

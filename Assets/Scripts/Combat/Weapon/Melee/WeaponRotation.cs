@@ -25,8 +25,7 @@ public class WeaponRotation : MonoBehaviour
 
         Vector2 huong;
 
-        if (mayQuet != null && mayQuet.mucTieuHienTai != null &&
-            (mayQuet.mucTieuHienTai.position - transform.position).sqrMagnitude <= tamDanh * tamDanh)
+        if (mayQuet != null && mayQuet.mucTieuHienTai != null && (mayQuet.mucTieuHienTai.position - transform.position).sqrMagnitude <= tamDanh * tamDanh)
         {
             huong = (mayQuet.mucTieuHienTai.position - transform.position).normalized;
         }

@@ -7,6 +7,7 @@ public class PlayerHealth : MonoBehaviour
 
     private int mauHientai;
     private int mauToiDa;
+
     private PlayerVisuals hinhAnh;
 
     public event Action<int, int> OnHealthChanged;
@@ -21,14 +22,32 @@ public class PlayerHealth : MonoBehaviour
     {
         mauToiDa = PlayerStats.Instance != null ? PlayerStats.Instance.GetMaxHP() : 100;
         mauHientai = mauToiDa;
+
         hinhAnh = GetComponent<PlayerVisuals>();
+
+        OnHealthChanged?.Invoke(mauHientai, mauToiDa);
+    }
+
+    public void UpdateMaxHealth()
+    {
+        if (PlayerStats.Instance == null) return;
+
+        int mauToiDaMoi = PlayerStats.Instance.GetMaxHP();
+        int luongMauChenhLech = mauToiDaMoi - mauToiDa;
+
+        if (luongMauChenhLech > 0)
+        {
+            mauHientai += luongMauChenhLech;
+        }
+        mauToiDa = mauToiDaMoi;
+
+        if (mauHientai > mauToiDa) mauHientai = mauToiDa;
+
         OnHealthChanged?.Invoke(mauHientai, mauToiDa);
     }
 
     public void Heal(int soLuong)
     {
-        if (PlayerStats.Instance != null) mauToiDa = PlayerStats.Instance.GetMaxHP();
-
         mauHientai += soLuong;
         if (mauHientai > mauToiDa) mauHientai = mauToiDa;
 

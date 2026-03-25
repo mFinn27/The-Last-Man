@@ -9,8 +9,15 @@ public class EnemyHealth : MonoBehaviour
     private Rigidbody2D rb;
     private EnemyMovement diChuyen;
     private EnemyVisuals hinhAnh;
-
     private bool daChet = false;
+    private void OnEnable()
+    {
+        WaveManager.OnWaveEnded += TuSatKhiHetWave;
+    }
+    private void OnDisable()
+    {
+        WaveManager.OnWaveEnded -= TuSatKhiHetWave;
+    }
 
     void Start()
     {
@@ -36,16 +43,9 @@ public class EnemyHealth : MonoBehaviour
         if (mauHienTai <= 0)
         {
             daChet = true;
-
             ExplosionAttack bom = GetComponent<ExplosionAttack>();
-            if (bom != null)
-            {
-                bom.KichHoatNo();
-            }
-            else
-            {
-                StartCoroutine(DieRoutine());
-            }
+            if (bom != null) bom.KichHoatNo();
+            else StartCoroutine(DieRoutine());
         }
     }
 
@@ -95,6 +95,7 @@ public class EnemyHealth : MonoBehaviour
 
         Destroy(gameObject);
     }
+
     public void HoanThanhChet(bool xoaNgayLapTuc = true)
     {
         RotDo();
@@ -116,10 +117,12 @@ public class EnemyHealth : MonoBehaviour
                     if (scriptCoin != null) scriptCoin.Setup(Random.Range(data.minGiaTriMoiVien, data.maxGiaTriMoiVien + 1));
                 }
             }
-            else if (data.phanThuongRotRa == LoaiPhanThuong.VatPhamDacBiet && data.vatPhamDacBietPrefab != null)
-            {
-                Instantiate(data.vatPhamDacBietPrefab, transform.position, Quaternion.identity);
-            }
         }
+    }
+    private void TuSatKhiHetWave()
+    {
+        if (daChet) return;
+        daChet = true;
+        Destroy(gameObject);
     }
 }

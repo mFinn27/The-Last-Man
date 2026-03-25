@@ -18,7 +18,7 @@ MonoBehaviour:
   dame: 8
   tocDoDanh: 0.65
   tamDanh: 8
-  dayLui: 0.5
+  dayLui: 5
   tiLeChiMang: 0.05
   satThuongChiMang: 1.5
   hutMau: 0

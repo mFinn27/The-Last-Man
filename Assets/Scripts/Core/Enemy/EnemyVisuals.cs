@@ -11,10 +11,8 @@ public class EnemyVisuals : MonoBehaviour
     private Vector3 kichThuocGoc;
     private Coroutine flashCoroutine;
 
-    // --- NEW: Thêm 2 biến quản lý Material ---
     private Material materialGoc;
     public Material flashMaterial;
-    // ----------------------------------------
 
     void Awake()
     {
@@ -24,8 +22,6 @@ public class EnemyVisuals : MonoBehaviour
 
         mauSacGoc = sr.color;
         kichThuocGoc = sr.transform.localScale;
-
-        // --- NEW: Lưu lại Material gốc lúc mới sinh ra ---
         materialGoc = sr.material;
     }
 
@@ -37,8 +33,8 @@ public class EnemyVisuals : MonoBehaviour
 
         if (rb.linearVelocity.magnitude > 0.1f && !dangGong)
         {
-            float nhipNho = Mathf.Sin(Time.time * 15f) * 0.08f;
-            sr.transform.localScale = new Vector3(kichThuocGoc.x - (nhipNho / 2f), kichThuocGoc.y + nhipNho, kichThuocGoc.z);
+            float nhapNho = Mathf.Sin(Time.time * 15f) * 0.08f;
+            sr.transform.localScale = new Vector3(kichThuocGoc.x - (nhapNho / 2f), kichThuocGoc.y + nhapNho, kichThuocGoc.z);
         }
         else if (!dangGong)
         {
@@ -54,12 +50,9 @@ public class EnemyVisuals : MonoBehaviour
 
     private IEnumerator FlashWhiteRoutine()
     {
-        // --- NEW: Tráo sang Material trắng lóa ---
         sr.material = flashMaterial;
-
         yield return new WaitForSeconds(0.05f);
 
-        // --- NEW: Trả về Material gốc ---
         if (sr != null) sr.material = materialGoc;
     }
 
@@ -73,8 +66,6 @@ public class EnemyVisuals : MonoBehaviour
         {
             thoiGianDaQua += Time.deltaTime;
             float phanTram = thoiGianDaQua / thoiGianGong;
-
-            // Ép màu đỏ (Cái này dùng sr.color vẫn hoạt động bình thường vì ta đang phủ tint Đỏ lên hình màu)
             sr.color = Color.Lerp(mauSacGoc, Color.red, phanTram);
             sr.transform.localScale = Vector3.Lerp(scaleBanDau, scaleEpXuong, phanTram);
             yield return null;

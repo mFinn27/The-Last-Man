@@ -51,8 +51,14 @@ public class RangedWeapon : MonoBehaviour
         bullet.transform.rotation = Quaternion.Euler(0, 0, goc);
 
         bullet.GetComponent<Bullet>().Setup(
-            huong, data.tocDoBayCuaDan, data.dame, data.xuyenThau,
-            data.dayLui, data.tiLeChiMang, data.satThuongChiMang, data.hutMau
+            huong,
+            data.tocDoBayCuaDan,
+            data.dame,
+            data.xuyenThau,
+            data.dayLui,
+            data.tiLeChiMang,
+            data.satThuongChiMang,
+            data.hutMau
         );
     }
 }

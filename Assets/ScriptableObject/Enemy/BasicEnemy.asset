@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tenQuaiVat: Quai Co Ban
   loaiQuai: 0
-  mauToiDa: 20
+  mauToiDa: 15
   tocDoDiChuyen: 2.5
   dame: 10
   tgThucHienDonDanhTiepTheo: 1

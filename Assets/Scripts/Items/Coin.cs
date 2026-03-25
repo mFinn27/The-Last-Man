@@ -1,59 +1,65 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 public class Coin : MonoBehaviour
 {
     private int giaTri;
-    private Transform player;
-    private bool dangBiHut = false;
-
-    [Header("Setup")]
-    public float tocDoHutBanDau = 5f;
-    private float tocDoHutHienTai;
-
-    void Start()
+    private void OnEnable()
     {
-        if (PlayerHealth.Instance != null)
+        WaveManager.OnWaveEnded += KichHoatHutVaoNguoi;
+    }
+
+    private void OnDisable()
+    {
+        WaveManager.OnWaveEnded -= KichHoatHutVaoNguoi;
+    }
+
+    public void Setup(int giaTriNapVao)
+    {
+        giaTri = giaTriNapVao;
+        Collider2D col = GetComponent<Collider2D>();
+        if (col != null) col.enabled = true;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
         {
-            player = PlayerHealth.Instance.transform;
+            NhatCoin();
         }
     }
 
-    public void Setup(int value)
+    private void NhatCoin()
     {
-        giaTri = value;
-        dangBiHut = false;
-        tocDoHutHienTai = tocDoHutBanDau;
+        if (PlayerStats.Instance != null) PlayerStats.Instance.AddCoin(giaTri);
+        gameObject.SetActive(false);
     }
 
-    void Update()
+    private void KichHoatHutVaoNguoi()
     {
-        if (player == null) return;
-
-        if (!dangBiHut)
+        if (gameObject.activeInHierarchy)
         {
-            float khoangCachSqr = (player.position - transform.position).sqrMagnitude;
-            float tamHut = PlayerStats.Instance != null ? PlayerStats.Instance.GetMagnetRange() : 3f;
-
-            if (khoangCachSqr <= tamHut * tamHut)
-            {
-                dangBiHut = true;
-            }
+            StartCoroutine(HutRoutine());
         }
-        else
+    }
+
+    private IEnumerator HutRoutine()
+    {
+        Collider2D col = GetComponent<Collider2D>();
+        if (col != null) col.enabled = false;
+
+        if (PlayerHealth.Instance == null) yield break;
+
+        Transform player = PlayerHealth.Instance.transform;
+        float tocDoHut = 5f;
+
+        while (Vector2.Distance(transform.position, player.position) > 0.5f)
         {
-            tocDoHutHienTai += Time.deltaTime * 15f;
-            transform.position = Vector3.MoveTowards(transform.position, player.position, tocDoHutHienTai * Time.deltaTime);
-
-            float khoangCachSqr = (player.position - transform.position).sqrMagnitude;
-            if (khoangCachSqr < 0.05f)
-            {
-                if (PlayerStats.Instance != null)
-                {
-                    PlayerStats.Instance.AddCoin(giaTri);
-                }
-
-                CoinPool.Instance.ReturnCoin(gameObject);
-            }
+            tocDoHut += Time.deltaTime * 30f;
+            transform.position = Vector3.MoveTowards(transform.position, player.position, tocDoHut * Time.deltaTime);
+            yield return null;
         }
+
+        NhatCoin();
     }
 }
