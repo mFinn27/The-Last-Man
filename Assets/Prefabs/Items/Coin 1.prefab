@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54867cc17451533469c5e2bc30ba6dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tocDoHutBanDau: 2
+  tocDoHut: 5
 --- !u!58 &1305156141795062699
 CircleCollider2D:
   m_ObjectHideFlags: 0

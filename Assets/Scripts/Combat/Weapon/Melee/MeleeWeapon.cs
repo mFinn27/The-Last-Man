@@ -33,6 +33,7 @@ public class ThrustWeapon : MonoBehaviour
 
     void Update()
     {
+        if (Time.timeScale == 0f) return;
         boXoay.XuLyXoay(data.tamDanh);
 
         if (mayQuet.mucTieuHienTai != null && !dangTanCong)

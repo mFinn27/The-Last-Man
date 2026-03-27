@@ -25,10 +25,35 @@ public class PlayerStats : MonoBehaviour
     [Header("--- THÔNG TIN TRẬN ĐẤU ---")]
     public int vangHienTai = 0;
 
+    [Header("--- XEM CHỈ SỐ TỔNG HIỆN TẠI (DEBUG) ---")]
+    [Tooltip("Chỉ để quan sát kết quả, đừng sửa bằng tay ô này nhé")]
+    public int tongMauToiDa;
+    public int tongGiap;
+    public float tongTocDoDiChuyen;
+    public float tongSatThuong;
+    public float tongTocDoDanh;
+    public float tongTiLeChiMang;
+    public float tongSatThuongChiMang;
+    public float tongHutMau;
+    public float tongPhamViHut;
+
     void Awake()
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
+    }
+
+    void Update()
+    {
+        tongMauToiDa = GetMaxHP();
+        tongGiap = GetArmor();
+        tongTocDoDiChuyen = GetMoveSpeed();
+        tongSatThuong = GetDamage();
+        tongTocDoDanh = GetAttackSpeed();
+        tongTiLeChiMang = GetCritChance();
+        tongSatThuongChiMang = GetCritDamage();
+        tongHutMau = GetLifeSteal();
+        tongPhamViHut = GetMagnetRange();
     }
 
     public int GetMaxHP() => dataNhanVat != null ? dataNhanVat.mauToiDaGoc + bonusMauToiDa : 100;

@@ -21,7 +21,7 @@ public class WeaponRotation : MonoBehaviour
 
     public void XuLyXoay(float tamDanh)
     {
-        if (khoaXoay) return;
+        if (khoaXoay || Time.timeScale == 0f) return;
 
         Vector2 huong;
 

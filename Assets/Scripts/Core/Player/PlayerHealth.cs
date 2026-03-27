@@ -57,7 +57,9 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(int dame)
     {
         int giap = PlayerStats.Instance != null ? PlayerStats.Instance.GetArmor() : 0;
-        int dameCuoiCung = Mathf.Max(1, dame - giap);
+        float phanTramSatThuongPhaiChiu = (float)mauToiDa / (mauToiDa + giap);
+        int dameCuoiCung = Mathf.RoundToInt(dame * phanTramSatThuongPhaiChiu);
+        dameCuoiCung = Mathf.Max(1, dameCuoiCung);
 
         mauHientai -= dameCuoiCung;
         OnHealthChanged?.Invoke(mauHientai, mauToiDa);

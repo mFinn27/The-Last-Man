@@ -22,6 +22,8 @@ public class RangedWeapon : MonoBehaviour
 
     void Update()
     {
+        if (Time.timeScale == 0f) return;
+
         boXoay.XuLyXoay(data.tamDanh);
 
         if (mayQuet.mucTieuHienTai != null && Time.time >= donDanhTiepTheo)

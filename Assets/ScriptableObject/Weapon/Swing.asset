@@ -15,7 +15,7 @@ MonoBehaviour:
   tenVuKhi: Axe
   loaiVuKhi: 1
   hinhAnhVuKhi: {fileID: 4059512458712482826, guid: 548ee95871222ac40bb72bb11ed92ca9, type: 3}
-  dame: 10
+  dame: 12
   tocDoDanh: 0.65
   tamDanh: 3
   dayLui: 5

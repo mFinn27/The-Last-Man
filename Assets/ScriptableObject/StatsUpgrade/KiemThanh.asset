@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8979bb38ae08b6d4fa19cec52aef8c7e, type: 3}
+  m_Name: KiemThanh
+  m_EditorClassIdentifier: 
+  tenNangCap: "Ki\u1EBFm th\xE1nh"
+  moTa: "+5 Dame c\u01A1 b\u1EA3n\n+3 HP t\u1ED1i \u0111a"
+  icon: {fileID: -7634800435284293121, guid: d56bb7d1e7033a945a1993a367768243, type: 3}
+  danhSachChiSo:
+  - loaiChiSo: 0
+    giaTriCongThem: 3
+  - loaiChiSo: 3
+    giaTriCongThem: 5

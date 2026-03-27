@@ -2,7 +2,7 @@
 - Project name: Brotato_Remake
 - Unity version: Unity 6000.0.70f1
 - Active game object:
-  - Name: Canvas
+  - Name: ArcMeleeWeapon_Pivot
   - Tag: Untagged
-  - Layer: UI
+  - Layer: Default
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->
