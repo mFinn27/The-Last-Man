@@ -162,8 +162,6 @@ public class WaveManager : MonoBehaviour
     {
         dangTrongWave = false;
         OnWaveEnded?.Invoke();
-
-        Invoke(nameof(ChuyenSangWaveTiepTheo), 3f);
     }
 
     public void ChuyenSangWaveTiepTheo()

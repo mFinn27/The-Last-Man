@@ -2,7 +2,7 @@
 - Project name: Brotato_Remake
 - Unity version: Unity 6000.0.70f1
 - Active game object:
-  - Name: ArcMeleeWeapon_Pivot
+  - Name: PopUpManager
   - Tag: Untagged
   - Layer: Default
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->

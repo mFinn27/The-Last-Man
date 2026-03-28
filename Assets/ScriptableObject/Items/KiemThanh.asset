@@ -9,14 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8979bb38ae08b6d4fa19cec52aef8c7e, type: 3}
+  m_Script: {fileID: 11500000, guid: fd21fd51347bdbe49bfbbe4410392a4d, type: 3}
   m_Name: KiemThanh
   m_EditorClassIdentifier: 
-  tenNangCap: "Ki\u1EBFm th\xE1nh"
+  loaiMatHang: 1
+  tenMatHang: "Ki\u1EBFm Th\xE1nh"
   moTa: "+5 Dame c\u01A1 b\u1EA3n\n+10% T\u1EC9 l\u1EC7 ch\xED m\u1EA1ng"
   icon: {fileID: -7634800435284293121, guid: d56bb7d1e7033a945a1993a367768243, type: 3}
-  danhSachChiSo:
-  - loaiChiSo: 5
-    giaTriCongThem: 0.1
-  - loaiChiSo: 3
-    giaTriCongThem: 5
+  giaGoc: 35
+  duLieuVuKhi: {fileID: 0}
+  duLieuChiSo: {fileID: 11400000, guid: 8faaab7a07ea3da47871c9592db5b8e4, type: 2}

@@ -49,8 +49,10 @@ public class RewardPopupUI : MonoBehaviour
         panelPhanThuong.SetActive(false);
 
         Debug.Log("Đã nhận phần thưởng! Đang mở Cửa Hàng (Shop)...");
-        // Gọi hàm mở Shop ở đây
-        // ShopUI.Instance.MoCuaHang();
+        if (ShopUI.Instance != null)
+        {
+            ShopUI.Instance.MoCuaHang();
+        }
     }
 
     private void ApDungChiSo(UpgradeData data)

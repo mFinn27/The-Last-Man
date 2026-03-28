@@ -76,4 +76,42 @@ public class PlayerStats : MonoBehaviour
         vangHienTai += amount;
         Debug.Log($"Nhặt được {amount} vàng. Tổng vàng: {vangHienTai}");
     }
+
+    public void ThemChiSoTuThe(UpgradeData data)
+    {
+        foreach (var chiSo in data.danhSachChiSo)
+        {
+            switch (chiSo.loaiChiSo)
+            {
+                case LoaiChiSo.MauToiDa: 
+                    bonusMauToiDa += (int)chiSo.giaTriCongThem; 
+                    break;
+                case LoaiChiSo.Giap: 
+                    bonusGiap += (int)chiSo.giaTriCongThem; 
+                    break;
+                case LoaiChiSo.TocDoDiChuyen: 
+                    bonusTocDoDiChuyen += chiSo.giaTriCongThem; 
+                    break;
+                case LoaiChiSo.SatThuong: 
+                    bonusSatThuong += chiSo.giaTriCongThem; 
+                    break;
+                case LoaiChiSo.TocDoDanh: 
+                    bonusTocDoDanh += chiSo.giaTriCongThem; 
+                    break;
+                case LoaiChiSo.TiLeChiMang: 
+                    bonusTiLeChiMang += chiSo.giaTriCongThem; 
+                    break;
+                case LoaiChiSo.SatThuongChiMang: 
+                    bonusSatThuongChiMang += chiSo.giaTriCongThem; 
+                    break;
+                case LoaiChiSo.HutMau: 
+                    bonusHutMau += chiSo.giaTriCongThem; 
+                    break;
+                case LoaiChiSo.PhamViHut: 
+                    bonusPhamViHut += chiSo.giaTriCongThem; 
+                    break;
+            }
+        }
+        if (PlayerHealth.Instance != null) PlayerHealth.Instance.UpdateMaxHealth();
+    }
 }
