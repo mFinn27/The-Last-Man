@@ -11,15 +11,17 @@ public class RewardCardUI : MonoBehaviour
 
     private UpgradeData dataHienTai;
     private RewardPopupUI manager;
+
     public void Setup(UpgradeData data, RewardPopupUI uiManager)
     {
         dataHienTai = data;
         manager = uiManager;
 
-        if (txtTen != null) txtTen.text = data.tenNangCap;
+        if (txtTen != null) txtTen.text = data.tenMatHang;
         if (txtMoTa != null) txtMoTa.text = data.moTa;
-        if (imgIcon != null && data.icon != null) imgIcon.sprite = data.icon;
+        if (imgIcon != null && data.iconMatHang != null) imgIcon.sprite = data.iconMatHang;
     }
+
     public void ChonTheNay()
     {
         if (manager != null && dataHienTai != null)

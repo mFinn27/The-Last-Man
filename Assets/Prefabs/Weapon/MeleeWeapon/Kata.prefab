@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5164209519235329334}
   - component: {fileID: 2607445280705456584}
+  - component: {fileID: 8108672403908787473}
   m_Layer: 0
   m_Name: MeleeWeapon_Pivot
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 1994417758854135576}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.14000002, y: 0.060000002, z: 0}
+  m_LocalPosition: {x: -0.016, y: 0.029, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -45,10 +46,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaa07782defa87b4fbcac1b654f37a97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 0f90592fa76a1b845aa1998986f4f84b, type: 2}
   visualContainer: {fileID: 6296381917685757747}
   hitBox: {fileID: 3743959916576015706}
-  sprite: {fileID: 8029123559315668211}
+  hinhAnh: {fileID: 8029123559315668211}
+--- !u!114 &8108672403908787473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1994417758854135576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4301e34e6dbda004daadc082964a569a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offsetGoc: -90
+  latAnhKhiQuayTrai: 0
+  hinhAnh: {fileID: 8029123559315668211}
+  khoaXoay: 0
 --- !u!1 &3743959916576015706
 GameObject:
   m_ObjectHideFlags: 0
@@ -140,7 +156,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99f2e4f7dd3e4b948aa1063564d8f6ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockbackForce: 0
 --- !u!1 &3990831216473220104
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,7 +234,7 @@ TrailRenderer:
   m_SortingLayer: 5
   m_SortingOrder: 10
   m_Time: 0.08
-  m_PreviewTimeScale: 0
+  m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1

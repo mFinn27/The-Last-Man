@@ -16,7 +16,7 @@ MonoBehaviour:
   loaiQuai: 0
   mauToiDa: 15
   tocDoDiChuyen: 2.5
-  dame: 10
+  dame: 12
   tgThucHienDonDanhTiepTheo: 1
   khoangCachCanChien: 0.5
   tamDanhXa: 0

@@ -14,9 +14,13 @@ public class WeaponRotation : MonoBehaviour
 
     void Awake()
     {
-        mayQuet = GetComponentInParent<AutoAim>();
-        player = GetComponentInParent<PlayerMovement>();
         if (hinhAnh == null) hinhAnh = GetComponentInChildren<SpriteRenderer>();
+    }
+
+    public void Setup(AutoAim aim, PlayerMovement movement)
+    {
+        mayQuet = aim;
+        player = movement;
     }
 
     public void XuLyXoay(float tamDanh)
@@ -42,7 +46,23 @@ public class WeaponRotation : MonoBehaviour
 
         if (latAnhKhiQuayTrai && hinhAnh != null)
         {
-            hinhAnh.flipY = Mathf.Abs(goc) > 90f;
+            bool quayTrai = Mathf.Abs(goc) > 90f;
+
+            if (Mathf.Abs(offsetGoc) == 90f)
+            {
+                hinhAnh.flipX = quayTrai;
+                hinhAnh.flipY = false;
+            }
+            else
+            {
+                hinhAnh.flipY = quayTrai;
+                hinhAnh.flipX = false;
+            }
         }
+    }
+
+    public Vector3 GetHuongTanCongLocal()
+    {
+        return Quaternion.Euler(0, 0, -offsetGoc) * Vector3.right;
     }
 }

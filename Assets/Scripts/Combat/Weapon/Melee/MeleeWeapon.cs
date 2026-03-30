@@ -4,11 +4,11 @@ using System.Collections;
 [RequireComponent(typeof(WeaponRotation))]
 public class ThrustWeapon : MonoBehaviour
 {
-    [SerializeField] private WeaponData data;
     [SerializeField] private Transform visualContainer;
     [SerializeField] private GameObject hitBox;
     [SerializeField] private SpriteRenderer hinhAnh;
 
+    private WeaponData data;
     private AutoAim mayQuet;
     private WeaponRotation boXoay;
 
@@ -18,11 +18,17 @@ public class ThrustWeapon : MonoBehaviour
 
     void Awake()
     {
-        mayQuet = GetComponentInParent<AutoAim>();
         boXoay = GetComponent<WeaponRotation>();
+        if (visualContainer != null) viTriGoc = visualContainer.localPosition;
+    }
 
-        viTriGoc = visualContainer.localPosition;
-        hinhAnh.sprite = data.hinhAnhVuKhi;
+    public void Setup(WeaponData newData, AutoAim aim, PlayerMovement movement)
+    {
+        data = newData;
+        mayQuet = aim;
+        if (boXoay != null) boXoay.Setup(aim, movement);
+
+        if (hinhAnh != null && data.iconMatHang != null) hinhAnh.sprite = data.iconMatHang;
 
         if (hitBox != null)
         {
@@ -33,10 +39,10 @@ public class ThrustWeapon : MonoBehaviour
 
     void Update()
     {
-        if (Time.timeScale == 0f) return;
+        if (data == null || Time.timeScale == 0f) return;
         boXoay.XuLyXoay(data.tamDanh);
 
-        if (mayQuet.mucTieuHienTai != null && !dangTanCong)
+        if (mayQuet != null && mayQuet.mucTieuHienTai != null && !dangTanCong)
         {
             float khoangCachSqr = (mayQuet.mucTieuHienTai.position - transform.position).sqrMagnitude;
             if (khoangCachSqr <= data.tamDanh * data.tamDanh && Time.time >= donDanhTiepTheo)
@@ -54,10 +60,12 @@ public class ThrustWeapon : MonoBehaviour
         boXoay.khoaXoay = true;
 
         float khoangCach = data.tamDanh;
-        if (mayQuet.mucTieuHienTai != null) khoangCach = Vector2.Distance(transform.position, mayQuet.mucTieuHienTai.position);
+        if (mayQuet != null && mayQuet.mucTieuHienTai != null)
+            khoangCach = Vector2.Distance(transform.position, mayQuet.mucTieuHienTai.position);
 
         float khoangCachDam = Mathf.Min(khoangCach, data.tamDanh);
-        Vector3 mucTieu = viTriGoc + Vector3.up * (khoangCachDam + data.overshoot);
+        Vector3 huongTanCong = boXoay != null ? boXoay.GetHuongTanCongLocal() : Vector3.right;
+        Vector3 mucTieu = viTriGoc + huongTanCong * (khoangCachDam + data.overshoot);
 
         if (hitBox) hitBox.SetActive(true);
 
@@ -83,7 +91,6 @@ public class ThrustWeapon : MonoBehaviour
         }
 
         visualContainer.localPosition = viTriGoc;
-
         boXoay.khoaXoay = false;
         dangTanCong = false;
     }

@@ -14,74 +14,69 @@ public class ShopCardUI : MonoBehaviour
     public Image imgNenNutKhoa;
     public Color mauBinhThuong = Color.white;
     public Color mauDaKhoa = Color.gray;
-
     public bool dangBiKhoa { get; private set; } = false;
 
-    private ShopItemData dataHienTai;
+    private ItemData dataHienTai;
     private ShopUI shopManager;
     private int giaRerollHienTai;
+    private bool daBiMua = false;
 
-    public void Setup(ShopItemData data, ShopUI manager, int giaRerollBanDau)
+    public void Setup(ItemData data, ShopUI manager, int giaRerollBanDau)
     {
         dataHienTai = data;
         shopManager = manager;
         giaRerollHienTai = giaRerollBanDau;
-
+        daBiMua = false;
         dangBiKhoa = false;
         CapNhatGiaoDienKhoa();
 
-        if (data == null)
-        {
-            gameObject.SetActive(false);
-            return;
-        }
-
+        if (data == null) { gameObject.SetActive(false); return; }
         gameObject.SetActive(true);
+
         if (txtTen != null) txtTen.text = data.tenMatHang;
-
-        if (txtMoTaGomGiaTien != null)
-        {
-            txtMoTaGomGiaTien.text = $"{data.moTa}\n\n<color=yellow>Giá: {data.giaGoc} Vàng</color>";
-        }
-
-        if (imgIcon != null && data.icon != null) imgIcon.sprite = data.icon;
-
+        if (txtMoTaGomGiaTien != null) txtMoTaGomGiaTien.text = $"{data.moTa}\n\n<color=yellow>Giá: {data.giaMua} Vàng</color>";
+        if (imgIcon != null && data.iconMatHang != null) imgIcon.sprite = data.iconMatHang;
         CapNhatGiaRerollUI();
     }
 
     public void BamKhoaThe()
     {
         if (dataHienTai == null) return;
-
         dangBiKhoa = !dangBiKhoa;
         CapNhatGiaoDienKhoa();
     }
 
     private void CapNhatGiaoDienKhoa()
     {
-        if (imgNenNutKhoa != null)
-        {
-            imgNenNutKhoa.color = dangBiKhoa ? mauDaKhoa : mauBinhThuong;
-        }
+        if (imgNenNutKhoa != null) imgNenNutKhoa.color = dangBiKhoa ? mauDaKhoa : mauBinhThuong;
     }
 
     public void BamMuaMonNay()
     {
-        if (dataHienTai == null) return;
+        if (daBiMua || dataHienTai == null) return;
 
-        if (PlayerStats.Instance.vangHienTai >= dataHienTai.giaGoc)
+        if (PlayerStats.Instance.vangHienTai >= dataHienTai.giaMua)
         {
-            PlayerStats.Instance.vangHienTai -= dataHienTai.giaGoc;
+            if (dataHienTai is UpgradeData dataChiSo)
+            {
+                PlayerStats.Instance.vangHienTai -= dataHienTai.giaMua;
+                PlayerStats.Instance.ThemChiSoTuThe(dataChiSo);
+                shopManager.RerollJustThisCard(this, giaRerollHienTai);
+            }
+            else if (dataHienTai is WeaponData dataVuKhi)
+            {
+                if (WeaponManager.Instance.ThuMuaVuKhi(dataVuKhi))
+                {
+                    PlayerStats.Instance.vangHienTai -= dataHienTai.giaMua;
+                    shopManager.RerollJustThisCard(this, giaRerollHienTai);
+                }
+                else
+                {
+                    Debug.Log("Túi đồ đã đầy 5 slot! Vui lòng bán bớt hoặc ghép vũ khí.");
+                    return;
+                }
+            }
 
-            if (dataHienTai.loaiMatHang == ShopItemType.ChiSo && dataHienTai.duLieuChiSo != null)
-            {
-                PlayerStats.Instance.ThemChiSoTuThe(dataHienTai.duLieuChiSo);
-            }
-            else if (dataHienTai.loaiMatHang == ShopItemType.VuKhi && dataHienTai.duLieuVuKhi != null)
-            {
-                Debug.Log($"ĐÃ MUA VŨ KHÍ: {dataHienTai.duLieuVuKhi.tenVuKhi} - Chờ code Add Súng!");
-            }
-            shopManager.RerollJustThisCard(this, giaRerollHienTai);
             shopManager.CapNhatVangUITong();
         }
         else
@@ -92,28 +87,19 @@ public class ShopCardUI : MonoBehaviour
 
     public void BamDoiLaiTheNay()
     {
-        if (shopManager == null || dataHienTai == null) return;
-
+        if (daBiMua || shopManager == null || dataHienTai == null) return;
         if (PlayerStats.Instance.vangHienTai >= giaRerollHienTai)
         {
             PlayerStats.Instance.vangHienTai -= giaRerollHienTai;
             giaRerollHienTai += shopManager.buocNhayGiaReroll;
-
             shopManager.RerollJustThisCard(this, giaRerollHienTai);
             shopManager.CapNhatVangUITong();
-        }
-        else
-        {
-            Debug.Log("Không đủ vàng để đổi lại!");
         }
     }
 
     private void CapNhatGiaRerollUI()
     {
-        if (txtGiaReroll != null)
-        {
-            txtGiaReroll.text = (giaRerollHienTai == 0) ? "Đổi lại (Miễn phí)" : $"Đổi lại\n({giaRerollHienTai} Vàng)";
-        }
+        if (txtGiaReroll != null) txtGiaReroll.text = (giaRerollHienTai == 0) ? "Đổi lại (Miễn phí)" : $"Đổi lại\n({giaRerollHienTai} Vàng)";
     }
 
     public void ResetChoWaveMoi(int giaMoi)

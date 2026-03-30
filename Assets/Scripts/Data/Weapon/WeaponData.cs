@@ -1,16 +1,22 @@
 ﻿using UnityEngine;
 
 [CreateAssetMenu(fileName = "WeaponData", menuName = "Weapons/Weapon Data")]
-public class WeaponData : ScriptableObject
+public class WeaponData : ItemData
 {
-    [Header("--- THÔNG TIN CƠ BẢN ---")]
-    public string tenVuKhi;
+    [Header("--- THÔNG TIN VŨ KHÍ ---")]
     public WeaponType loaiVuKhi;
-    public Sprite hinhAnhVuKhi;
+    public GameObject weaponPrefab;
+
+    [Header("--- HỆ THỐNG GHÉP ĐỒ & MUA BÁN ---")]
+    [Tooltip("1: Thường (Trắng), 2: Hiếm (Xanh), 3: Sử Thi (Tím), 4: Huyền Thoại (Đỏ)")]
+    public int capDo = 1;
+    public Color mauCapDo = Color.white;
+    public WeaponData vuKhiCapTiepTheo;
+    public int giaBan = 10;
 
     [Header("--- CHỈ SỐ CHIẾN ĐẤU CỐT LÕI ---")]
     public float dame = 10f;
-    public float tocDoDanh = 1f;      // Số đòn/giây
+    public float tocDoDanh = 1f;
     public float tamDanh = 5f;
     public float dayLui = 2f;
 
@@ -27,11 +33,7 @@ public class WeaponData : ScriptableObject
     [Header("--- CƠ CHẾ VŨ KHÍ CẬN CHIẾN ---")]
     public float doDaiVuKhi = 1.5f;
     public float overshoot = 0.25f;
-
-    [Header("- Chém (Arc Swing) -")]
     public float gocChem = 120f;
     public float tocDoXoay = 10f;
-
-    [Header("- Đâm (Thrust) -")]
     public float tocDoDam = 15f;
 }

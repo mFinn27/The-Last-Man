@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8979bb38ae08b6d4fa19cec52aef8c7e, type: 3}
   m_Name: Speed
   m_EditorClassIdentifier: 
-  tenNangCap: Speed
-  moTa: "+2 T\u1ED1c \u0111\u1ED9 di chuy\u1EC3n\n+15% T\u1ED1c \u0111\u1ED9 \u0111\xE1nh"
-  icon: {fileID: 3958262417687261516, guid: ea7baeb8617c2344ab4916325e12b79b, type: 3}
+  tenMatHang: "Linh Ho\u1EA1t"
+  moTa: "+0.2 T\u1ED1c \u0111\u1ED9 di chuy\u1EC3n\n+15% T\u1ED1c \u0111\u1ED9 \u0111\xE1nh"
+  iconMatHang: {fileID: -1812431404, guid: fb4f6f07f0540a64a8a81ceb356a229d, type: 3}
+  giaMua: 27
   danhSachChiSo:
   - loaiChiSo: 2
-    giaTriCongThem: 2
+    giaTriCongThem: 0.2
   - loaiChiSo: 4
     giaTriCongThem: 0.15

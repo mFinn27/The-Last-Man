@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8979bb38ae08b6d4fa19cec52aef8c7e, type: 3}
-  m_Name: KiemThanh
+  m_Name: Vampire
   m_EditorClassIdentifier: 
-  tenMatHang: "Ki\u1EBFm Th\xE1nh"
-  moTa: "+2 Dame c\u01A1 b\u1EA3n\n+5% T\u1EC9 l\u1EC7 ch\xED m\u1EA1ng"
-  iconMatHang: {fileID: -7634800435284293121, guid: d56bb7d1e7033a945a1993a367768243, type: 3}
-  giaMua: 33
+  tenMatHang: Vampire
+  moTa: "+4% H\xFAt m\xE1u\n-1 dame c\u01A1 b\u1EA3n"
+  iconMatHang: {fileID: -1835081009, guid: fb4f6f07f0540a64a8a81ceb356a229d, type: 3}
+  giaMua: 26
   danhSachChiSo:
-  - loaiChiSo: 5
-    giaTriCongThem: 0.05
+  - loaiChiSo: 7
+    giaTriCongThem: 0.04
   - loaiChiSo: 3
-    giaTriCongThem: 2
+    giaTriCongThem: -1

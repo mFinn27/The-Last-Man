@@ -91,6 +91,6 @@ public class RewardPopupUI : MonoBehaviour
             }
         }
 
-        Debug.Log($"Đã áp dụng toàn bộ chỉ số của thẻ: {data.tenNangCap}!");
+        Debug.Log($"Đã áp dụng toàn bộ chỉ số của thẻ!");
     }
 }

@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8979bb38ae08b6d4fa19cec52aef8c7e, type: 3}
   m_Name: KhienThanh
   m_EditorClassIdentifier: 
-  tenNangCap: "\u0110\xE1 t\u1EA3ng"
-  moTa: "+10 Hp t\u1ED1i \u0111a\n+3 gi\xE1p\n-1 T\u1ED1c \u0111\u1ED9 di chuy\u1EC3n"
-  icon: {fileID: 2087931828202778420, guid: b39f52545cbceed4783c680456e10361, type: 3}
+  tenMatHang: "Khi\xEAn Th\xE1nh"
+  moTa: "+7 Hp t\u1ED1i \u0111a\n+2 gi\xE1p\n-0.15 T\u1ED1c \u0111\u1ED9 di chuy\u1EC3n"
+  iconMatHang: {fileID: 2087931828202778420, guid: b39f52545cbceed4783c680456e10361, type: 3}
+  giaMua: 31
   danhSachChiSo:
   - loaiChiSo: 0
-    giaTriCongThem: 10
+    giaTriCongThem: 7
   - loaiChiSo: 1
-    giaTriCongThem: 3
+    giaTriCongThem: 2
   - loaiChiSo: 2
-    giaTriCongThem: -1
+    giaTriCongThem: -0.15

@@ -158,6 +158,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2455916497287946812}
   - component: {fileID: 7453600784611608094}
+  - component: {fileID: 3418684550141175479}
   m_Layer: 0
   m_Name: ArcMeleeWeapon_Pivot
   m_TagString: Untagged
@@ -174,7 +175,7 @@ Transform:
   m_GameObject: {fileID: 2779408347123019362}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.63, y: -0.060000002, z: 0}
+  m_LocalPosition: {x: -0.004, y: 0.028, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -193,11 +194,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23a6ebaf443cf594ab99cfb122b5d419, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 9c46da1b3e6218c43a26aaf8f1ee3ffa, type: 2}
   visualContainer: {fileID: 8644447732237250175}
   hitBox: {fileID: 5518577028455389557}
   trail: {fileID: 2795482115520357275}
-  weaponSprite: {fileID: 1276414549458854331}
+  hinhAnhVuKhi: {fileID: 1276414549458854331}
+--- !u!114 &3418684550141175479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2779408347123019362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4301e34e6dbda004daadc082964a569a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offsetGoc: -90
+  latAnhKhiQuayTrai: 0
+  hinhAnh: {fileID: 1276414549458854331}
+  khoaXoay: 0
 --- !u!1 &3719752722358447209
 GameObject:
   m_ObjectHideFlags: 0
@@ -355,7 +371,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99f2e4f7dd3e4b948aa1063564d8f6ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockbackForce: 0
 --- !u!1 &5548590742256837836
 GameObject:
   m_ObjectHideFlags: 0

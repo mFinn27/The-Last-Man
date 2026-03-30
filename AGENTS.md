@@ -2,7 +2,7 @@
 - Project name: Brotato_Remake
 - Unity version: Unity 6000.0.70f1
 - Active game object:
-  - Name: PopUpManager
+  - Name: WaveManager
   - Tag: Untagged
   - Layer: Default
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->

@@ -4,12 +4,12 @@ using System.Collections;
 [RequireComponent(typeof(WeaponRotation))]
 public class ArcMeleeWeapon : MonoBehaviour
 {
-    [SerializeField] private WeaponData data;
     [SerializeField] private Transform visualContainer;
     [SerializeField] private GameObject hitBox;
     [SerializeField] private TrailRenderer trail;
     [SerializeField] private SpriteRenderer hinhAnhVuKhi;
 
+    private WeaponData data;
     private AutoAim mayQuet;
     private WeaponRotation boXoay;
 
@@ -19,11 +19,18 @@ public class ArcMeleeWeapon : MonoBehaviour
 
     void Awake()
     {
-        mayQuet = GetComponentInParent<AutoAim>();
         boXoay = GetComponent<WeaponRotation>();
-        viTriGoc = visualContainer.localPosition;
+        if (visualContainer != null) viTriGoc = visualContainer.localPosition;
+    }
 
-        if (hinhAnhVuKhi != null && data.hinhAnhVuKhi != null) hinhAnhVuKhi.sprite = data.hinhAnhVuKhi;
+    public void Setup(WeaponData newData, AutoAim aim, PlayerMovement movement)
+    {
+        data = newData;
+        mayQuet = aim;
+        if (boXoay != null) boXoay.Setup(aim, movement);
+
+        if (hinhAnhVuKhi != null && data.iconMatHang != null) hinhAnhVuKhi.sprite = data.iconMatHang;
+
         if (hitBox != null)
         {
             hitBox.GetComponent<MeleeHitBox>().Setup(data);
@@ -33,11 +40,10 @@ public class ArcMeleeWeapon : MonoBehaviour
 
     void Update()
     {
-        if (Time.timeScale == 0f) return;
-
+        if (data == null || Time.timeScale == 0f) return;
         boXoay.XuLyXoay(data.tamDanh);
 
-        if (mayQuet.mucTieuHienTai != null && !dangTanCong)
+        if (mayQuet != null && mayQuet.mucTieuHienTai != null && !dangTanCong)
         {
             float khoangCach = (mayQuet.mucTieuHienTai.position - transform.position).sqrMagnitude;
             if (khoangCach <= data.tamDanh * data.tamDanh && Time.time >= donDanhTiepTheo)
@@ -59,12 +65,14 @@ public class ArcMeleeWeapon : MonoBehaviour
 
         float batDau = -data.gocChem * 0.5f;
         float ketThuc = data.gocChem * 0.5f + data.overshoot;
-        float khoangCach = data.tamDanh;
 
-        if (mayQuet.mucTieuHienTai != null) khoangCach = Vector2.Distance(transform.position, mayQuet.mucTieuHienTai.position);
+        float khoangCach = data.tamDanh;
+        if (mayQuet != null && mayQuet.mucTieuHienTai != null)
+            khoangCach = Vector2.Distance(transform.position, mayQuet.mucTieuHienTai.position);
 
         float khoangCachToiDich = Mathf.Min(khoangCach, data.tamDanh);
-        Vector3 mucTieu = viTriGoc + Vector3.up * (khoangCachToiDich + data.overshoot);
+        Vector3 huongTanCong = boXoay != null ? boXoay.GetHuongTanCongLocal() : Vector3.right;
+        Vector3 mucTieu = viTriGoc + huongTanCong * (khoangCachToiDich + data.overshoot);
 
         float tocDoDanhHienTai = DamageCalculator.CalculateAttackSpeed(data.tocDoDanh);
         float tocDoXoayThucTe = data.tocDoXoay * tocDoDanhHienTai;

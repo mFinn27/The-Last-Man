@@ -41,6 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6505021185594474716}
   - component: {fileID: 4001522738271556779}
+  - component: {fileID: 272507871807577514}
   m_Layer: 0
   m_Name: RangedWeapon_Pivot
   m_TagString: Untagged
@@ -57,7 +58,7 @@ Transform:
   m_GameObject: {fileID: 3991314751681729250}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.41, y: -0.060000002, z: 0}
+  m_LocalPosition: {x: -0.004, y: 0.006, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -76,9 +77,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1fec1cc4ca21484faa165e05a0a859d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: ff38ef4b2c8845a449ad00bdaeb0ffde, type: 2}
-  firePoint: {fileID: 4012605781844587286}
-  sprite: {fileID: 5144055831547063011}
+  diemBan: {fileID: 4012605781844587286}
+  hinhAnh: {fileID: 5144055831547063011}
+--- !u!114 &272507871807577514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3991314751681729250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4301e34e6dbda004daadc082964a569a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offsetGoc: 0
+  latAnhKhiQuayTrai: 1
+  hinhAnh: {fileID: 5144055831547063011}
+  khoaXoay: 0
 --- !u!1 &6246076100182935095
 GameObject:
   m_ObjectHideFlags: 0
