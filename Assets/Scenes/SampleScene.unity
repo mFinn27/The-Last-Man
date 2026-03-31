@@ -3651,9 +3651,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 772468674}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: WaveManager, Assembly-CSharp
-        m_MethodName: ChuyenSangWaveTiepTheo
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9580,9 +9580,9 @@ MonoBehaviour:
   weaponPivot: {fileID: 1559109409}
   khoangCachXepSung: 0.5
   vuKhiKhoiDaU:
+  - {fileID: 11400000, guid: 9c46da1b3e6218c43a26aaf8f1ee3ffa, type: 2}
   - {fileID: 11400000, guid: ff38ef4b2c8845a449ad00bdaeb0ffde, type: 2}
   - {fileID: 11400000, guid: 0f90592fa76a1b845aa1998986f4f84b, type: 2}
-  - {fileID: 11400000, guid: 9c46da1b3e6218c43a26aaf8f1ee3ffa, type: 2}
 --- !u!1 &663417476
 GameObject:
   m_ObjectHideFlags: 0
@@ -10416,6 +10416,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ae35102f5c59876478ffd6d682774638, type: 2}
   - {fileID: 11400000, guid: 5bb1d23b5b776ad409c2cfa70421f0d4, type: 2}
   - {fileID: 11400000, guid: aff60251ca95fd84c94b2325c8a928ce, type: 2}
+  - {fileID: 11400000, guid: f49cf1ff10e304b499dc3112f76eeeb1, type: 2}
   warningPrefab: {fileID: 5372874883146920962, guid: d7d3b6ae6446cb74fbebd7671ed77a95, type: 3}
   thoiGianCanhBao: 1
   mapMin: {x: -14.9, y: -8.4}

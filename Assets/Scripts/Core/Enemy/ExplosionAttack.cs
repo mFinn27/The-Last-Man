@@ -12,14 +12,14 @@ public class ExplosionAttack : MonoBehaviour
     private EnemyMovement diChuyen;
     private EnemyVisuals hinhAnh;
     private Rigidbody2D rb;
-    private EnemyHealth sucKhoe;
+    private EnemyHealth mau;
 
     void Awake()
     {
         diChuyen = GetComponent<EnemyMovement>();
         hinhAnh = GetComponent<EnemyVisuals>();
         rb = GetComponent<Rigidbody2D>();
-        sucKhoe = GetComponent<EnemyHealth>();
+        mau = GetComponent<EnemyHealth>();
     }
 
     public void KichHoatNo()
@@ -66,9 +66,9 @@ public class ExplosionAttack : MonoBehaviour
             }
         }
 
-        if (sucKhoe != null)
+        if (mau != null)
         {
-            sucKhoe.HoanThanhChet(true);
+            mau.HoanThanhChet(true);
         }
         else
         {

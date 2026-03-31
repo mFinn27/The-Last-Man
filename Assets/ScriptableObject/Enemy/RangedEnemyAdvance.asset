@@ -22,7 +22,7 @@ MonoBehaviour:
   tamDanhXa: 12
   danPrefab: {fileID: 5167635117232818042, guid: 42713581f3570814f9bc6ff5e7db2958, type: 3}
   tocDoDan: 3
-  soLuongDan: 3
+  soLuongDan: 2
   gocToaDan: 30
   thoiGianGongDon: 0.6
   laQuaiPhatNo: 0

@@ -2,7 +2,6 @@
 
 public class WaveCleanup : MonoBehaviour
 {
-    [Tooltip("Tick nếu vật thể này dùng Object Pool. Bỏ tick nếu dùng Instantiate/Destroy bình thường")]
     public bool isPooledObject = false;
 
     private void OnEnable()
