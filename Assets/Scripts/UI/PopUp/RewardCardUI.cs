@@ -8,6 +8,7 @@ public class RewardCardUI : MonoBehaviour
     public TextMeshProUGUI txtTen;
     public TextMeshProUGUI txtMoTa;
     public Image imgIcon;
+    public Image imgVienCapDo;
 
     private UpgradeData dataHienTai;
     private RewardPopupUI manager;
@@ -17,7 +18,17 @@ public class RewardCardUI : MonoBehaviour
         dataHienTai = data;
         manager = uiManager;
 
-        if (txtTen != null) txtTen.text = data.tenMatHang;
+        if (txtTen != null)
+        {
+            txtTen.text = data.tenMatHang;
+            txtTen.color = data.mauCapDo;
+        }
+
+        if (imgVienCapDo != null)
+        {
+            imgVienCapDo.color = data.mauCapDo;
+        }
+
         if (txtMoTa != null) txtMoTa.text = data.moTa;
         if (imgIcon != null && data.iconMatHang != null) imgIcon.sprite = data.iconMatHang;
     }

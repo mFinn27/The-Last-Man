@@ -8,9 +8,6 @@ public class WeaponData : ItemData
     public GameObject weaponPrefab;
 
     [Header("--- HỆ THỐNG GHÉP ĐỒ & MUA BÁN ---")]
-    [Tooltip("1: Thường (Trắng), 2: Hiếm (Xanh), 3: Sử Thi (Tím), 4: Huyền Thoại (Đỏ)")]
-    public int capDo = 1;
-    public Color mauCapDo = Color.white;
     public WeaponData vuKhiCapTiepTheo;
     public int giaBan = 10;
 

@@ -10,6 +10,9 @@ public class ShopCardUI : MonoBehaviour
     public Image imgIcon;
     public TextMeshProUGUI txtGiaReroll;
 
+    [Tooltip("Kéo ảnh viền của thẻ vào đây để đổi màu theo độ hiếm")]
+    public Image imgVienCapDo;
+
     [Header("--- TÍNH NĂNG KHÓA ---")]
     public Image imgNenNutKhoa;
     public Color mauBinhThuong = Color.white;
@@ -33,7 +36,17 @@ public class ShopCardUI : MonoBehaviour
         if (data == null) { gameObject.SetActive(false); return; }
         gameObject.SetActive(true);
 
-        if (txtTen != null) txtTen.text = data.tenMatHang;
+        if (txtTen != null)
+        {
+            txtTen.text = data.tenMatHang;
+            txtTen.color = data.mauCapDo;
+        }
+
+        if (imgVienCapDo != null)
+        {
+            imgVienCapDo.color = data.mauCapDo;
+        }
+
         if (txtMoTaGomGiaTien != null) txtMoTaGomGiaTien.text = $"{data.moTa}\n\n<color=yellow>Giá: {data.giaMua} Vàng</color>";
         if (imgIcon != null && data.iconMatHang != null) imgIcon.sprite = data.iconMatHang;
         CapNhatGiaRerollUI();

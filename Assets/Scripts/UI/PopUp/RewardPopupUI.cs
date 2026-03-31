@@ -8,7 +8,7 @@ public class RewardPopupUI : MonoBehaviour
     public GameObject panelPhanThuong;
     public RewardCardUI[] cacTheUI;
 
-    [Header("--- KHO DỮ LIỆU ---")]
+    [Header("--- KHO DỮ LIỆU CHỈ SỐ ---")]
     public List<UpgradeData> khoDuLieu;
 
     private void OnEnable()
@@ -31,40 +31,88 @@ public class RewardPopupUI : MonoBehaviour
         yield return new WaitForSeconds(delay);
         Time.timeScale = 0f;
         panelPhanThuong.SetActive(true);
+
         List<UpgradeData> theTamThoi = new List<UpgradeData>(khoDuLieu);
 
         for (int i = 0; i < cacTheUI.Length; i++)
         {
             if (theTamThoi.Count > 0)
             {
-                int rand = Random.Range(0, theTamThoi.Count);
-                cacTheUI[i].Setup(theTamThoi[rand], this);
-                theTamThoi.RemoveAt(rand);
+                UpgradeData dataDuocChon = LayItemNgauNhienTheoWave(theTamThoi);
+                cacTheUI[i].Setup(dataDuocChon, this);
+                theTamThoi.Remove(dataDuocChon);
             }
         }
     }
+
+    private UpgradeData LayItemNgauNhienTheoWave(List<UpgradeData> danhSachNguon)
+    {
+        int waveHienTai = WaveManager.Instance != null ? WaveManager.Instance.waveHienTaiIndex + 1 : 1;
+        int tierMucTieu = TinhToanTier(waveHienTai);
+
+        List<UpgradeData> dsPhuHop = new List<UpgradeData>();
+        foreach (var item in danhSachNguon)
+        {
+            if (item.capDo == tierMucTieu) dsPhuHop.Add(item);
+        }
+
+        if (dsPhuHop.Count > 0)
+        {
+            return dsPhuHop[Random.Range(0, dsPhuHop.Count)];
+        }
+        else
+        {
+            return danhSachNguon[Random.Range(0, danhSachNguon.Count)];
+        }
+    }
+
+    private int TinhToanTier(int wave)
+    {
+        int xucXac = Random.Range(1, 101);
+        int tierKetQua = 1;
+
+        if (wave <= 2) tierKetQua = 1;
+        else if (wave <= 5)
+        {
+            if (xucXac <= 80) tierKetQua = 1;
+            else tierKetQua = 2;
+        }
+        else if (wave <= 10)
+        {
+            if (xucXac <= 60) tierKetQua = 1;
+            else if (xucXac <= 90) tierKetQua = 2;
+            else tierKetQua = 3;
+        }
+        else if (wave <= 14)
+        {
+            if (xucXac <= 45) tierKetQua = 1;
+            else if (xucXac <= 80) tierKetQua = 2;
+            else if (xucXac <= 95) tierKetQua = 3;
+            else tierKetQua = 4;
+        }
+        else
+        {
+            if (xucXac <= 30) tierKetQua = 1;
+            else if (xucXac <= 70) tierKetQua = 2;
+            else if (xucXac <= 92) tierKetQua = 3;
+            else tierKetQua = 4;
+        }
+
+        string mauLog = tierKetQua == 4 ? "red" : (tierKetQua == 3 ? "purple" : (tierKetQua == 2 ? "cyan" : "white"));
+        Debug.Log($"<color=green>[REWARD LOG]</color> Wave {wave} | Xúc xắc: {xucXac} | Kết quả: <color={mauLog}>Tier {tierKetQua}</color>");
+
+        return tierKetQua;
+    }
+
     public void XuLyChonPhanThuong(UpgradeData data)
     {
         ApDungChiSo(data);
         panelPhanThuong.SetActive(false);
-
-        Debug.Log("Đã nhận phần thưởng! Đang mở Cửa Hàng (Shop)...");
-        if (ShopUI.Instance != null)
-        {
-            ShopUI.Instance.MoCuaHang();
-        }
+        if (ShopUI.Instance != null) ShopUI.Instance.MoCuaHang();
     }
 
     private void ApDungChiSo(UpgradeData data)
     {
-        if (PlayerStats.Instance != null)
-        {
-            PlayerStats.Instance.ThemChiSoTuThe(data);
-            Debug.Log($"Đã áp dụng toàn bộ chỉ số của thẻ: {data.tenMatHang}!");
-        }
-        else
-        {
-            Debug.LogWarning("Lỗi: Không tìm thấy PlayerStats.Instance để cộng chỉ số!");
-        }
+        if (PlayerStats.Instance != null) PlayerStats.Instance.ThemChiSoTuThe(data);
     }
 }

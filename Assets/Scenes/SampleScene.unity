@@ -1315,6 +1315,7 @@ MonoBehaviour:
   txtMoTaGomGiaTien: {fileID: 1570114079}
   imgIcon: {fileID: 790680485}
   txtGiaReroll: {fileID: 1857659004}
+  imgVienCapDo: {fileID: 0}
   imgNenNutKhoa: {fileID: 235018544}
   mauBinhThuong: {r: 1, g: 1, b: 1, a: 1}
   mauDaKhoa: {r: 0.5, g: 0.5, b: 0.5, a: 1}
@@ -2714,6 +2715,7 @@ MonoBehaviour:
   txtMoTaGomGiaTien: {fileID: 2002594800}
   imgIcon: {fileID: 899661895}
   txtGiaReroll: {fileID: 420828007}
+  imgVienCapDo: {fileID: 0}
   imgNenNutKhoa: {fileID: 1602604767}
   mauBinhThuong: {r: 1, g: 1, b: 1, a: 1}
   mauDaKhoa: {r: 0.5, g: 0.5, b: 0.5, a: 1}
@@ -4175,6 +4177,7 @@ MonoBehaviour:
   txtMoTaGomGiaTien: {fileID: 279165627}
   imgIcon: {fileID: 1432262942}
   txtGiaReroll: {fileID: 480169646}
+  imgVienCapDo: {fileID: 0}
   imgNenNutKhoa: {fileID: 220772785}
   mauBinhThuong: {r: 1, g: 1, b: 1, a: 1}
   mauDaKhoa: {r: 0.5, g: 0.5, b: 0.5, a: 1}
@@ -10286,6 +10289,7 @@ MonoBehaviour:
   txtMoTaGomGiaTien: {fileID: 323199548}
   imgIcon: {fileID: 1359723420}
   txtGiaReroll: {fileID: 1858358655}
+  imgVienCapDo: {fileID: 0}
   imgNenNutKhoa: {fileID: 1175460395}
   mauBinhThuong: {r: 1, g: 1, b: 1, a: 1}
   mauDaKhoa: {r: 0.5, g: 0.5, b: 0.5, a: 1}
@@ -10417,6 +10421,21 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5bb1d23b5b776ad409c2cfa70421f0d4, type: 2}
   - {fileID: 11400000, guid: aff60251ca95fd84c94b2325c8a928ce, type: 2}
   - {fileID: 11400000, guid: f49cf1ff10e304b499dc3112f76eeeb1, type: 2}
+  - {fileID: 11400000, guid: b412a9b731f5b104c80029619ed8586a, type: 2}
+  - {fileID: 11400000, guid: 2d3df0bf56c86cc41ac89705763d3641, type: 2}
+  - {fileID: 11400000, guid: 8c6fc1cc4b91db04d9efbaa97cb8b22e, type: 2}
+  - {fileID: 11400000, guid: a05ca2455b1fc364b8f0f3bac21d8a90, type: 2}
+  - {fileID: 11400000, guid: dae8045cdba9e2d41b8ba1468371f4f8, type: 2}
+  - {fileID: 11400000, guid: f97215d93b6a9b942a2ccb3be55c41b7, type: 2}
+  - {fileID: 11400000, guid: 225c7bd0ae782a34ea998345d2cdc978, type: 2}
+  - {fileID: 11400000, guid: ef7f4def42120bc47ad34fc0dc23401e, type: 2}
+  - {fileID: 11400000, guid: 953a6d477dd7e84438f77d1b1d917c62, type: 2}
+  - {fileID: 11400000, guid: f247f85d82382884e8b16953ef13ab30, type: 2}
+  - {fileID: 11400000, guid: 8b506d18654b5ef4db77d39ac74614f0, type: 2}
+  - {fileID: 11400000, guid: 48e7362f34eb1df4c91d0feed5174f3d, type: 2}
+  - {fileID: 11400000, guid: c8231e8ac9e5e7147bb2ac5eae68706e, type: 2}
+  - {fileID: 11400000, guid: 0366e9b744a965042a9da5c4f998f12c, type: 2}
+  - {fileID: 11400000, guid: 4f4b738fb98750546b599d77d90eb2a3, type: 2}
   warningPrefab: {fileID: 5372874883146920962, guid: d7d3b6ae6446cb74fbebd7671ed77a95, type: 3}
   thoiGianCanhBao: 1
   mapMin: {x: -14.9, y: -8.4}
@@ -11589,8 +11608,17 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1ebe86c5b60a3414b8df4c1708026795, type: 2}
   - {fileID: 11400000, guid: 45eb9fad3bb8cc54982bd447ab993699, type: 2}
   - {fileID: 11400000, guid: 9c46da1b3e6218c43a26aaf8f1ee3ffa, type: 2}
-  - {fileID: 11400000, guid: ff38ef4b2c8845a449ad00bdaeb0ffde, type: 2}
+  - {fileID: 11400000, guid: 91a7bfe3994982d41a81343699741f6c, type: 2}
+  - {fileID: 11400000, guid: 253b7380f956de541826ce4545156c82, type: 2}
+  - {fileID: 11400000, guid: c8ebdf902e671894c92c1fd5fcb5db28, type: 2}
   - {fileID: 11400000, guid: 0f90592fa76a1b845aa1998986f4f84b, type: 2}
+  - {fileID: 11400000, guid: 9c5690530ca51e44585ef3d59f2b6f36, type: 2}
+  - {fileID: 11400000, guid: d00c962b0adcc454fb8d5159e6bbda89, type: 2}
+  - {fileID: 11400000, guid: a6c933d0bd8afe64f99d5503530f1f81, type: 2}
+  - {fileID: 11400000, guid: ff38ef4b2c8845a449ad00bdaeb0ffde, type: 2}
+  - {fileID: 11400000, guid: 8cc87d6766a617c44acfa0a98ba89dbe, type: 2}
+  - {fileID: 11400000, guid: 3edda0b84b52eb24e92d3e09782eeec5, type: 2}
+  - {fileID: 11400000, guid: 94c55d2dc6685ed42b5bff6291d83ffa, type: 2}
 --- !u!1 &944320298
 GameObject:
   m_ObjectHideFlags: 0
@@ -18189,6 +18217,7 @@ MonoBehaviour:
   txtTen: {fileID: 321360930}
   txtMoTa: {fileID: 1583417366}
   imgIcon: {fileID: 617812888}
+  imgVienCapDo: {fileID: 0}
 --- !u!1 &1303040912
 GameObject:
   m_ObjectHideFlags: 0
@@ -28859,6 +28888,7 @@ MonoBehaviour:
   txtTen: {fileID: 266582842}
   txtMoTa: {fileID: 1357400759}
   imgIcon: {fileID: 1966665453}
+  imgVienCapDo: {fileID: 0}
 --- !u!1 &1529467890
 GameObject:
   m_ObjectHideFlags: 0
@@ -31911,6 +31941,7 @@ MonoBehaviour:
   txtTen: {fileID: 1400478978}
   txtMoTa: {fileID: 664165174}
   imgIcon: {fileID: 167575995}
+  imgVienCapDo: {fileID: 0}
 --- !u!114 &1897507389
 MonoBehaviour:
   m_ObjectHideFlags: 0

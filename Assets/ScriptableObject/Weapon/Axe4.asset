@@ -10,26 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eb76e2faae5aec94e967869600ff27df, type: 3}
-  m_Name: Axe3
+  m_Name: Axe4
   m_EditorClassIdentifier: 
   tenMatHang: "R\xECu C\u1EA5p 3"
-  moTa: "Dame c\u01A1 b\u1EA3n: 20\t\nT\u1ED1c \u0111\u1ED9 \u0111\xE1nh: 0.75\nT\u1EA7m
-    \u0111\xE1nh: 3\n\u0110\u1EA9y l\xF9i: 3\nH\xFAt M\xE1u: 2%"
+  moTa: "Dame c\u01A1 b\u1EA3n: 30\nT\u1ED1c \u0111\u1ED9 \u0111\xE1nh: 0.8\nT\u1EA7m
+    \u0111\xE1nh: 3\n\u0110\u1EA9y l\xF9i: 4\nH\xFAt M\xE1u: 3%"
   iconMatHang: {fileID: 4059512458712482826, guid: 548ee95871222ac40bb72bb11ed92ca9, type: 3}
-  giaMua: 70
-  capDo: 3
-  mauCapDo: {r: 0.49411765, g: 0.18431373, b: 0.47843137, a: 1}
+  giaMua: 128
+  capDo: 4
+  mauCapDo: {r: 0.6150943, g: 0.13346377, b: 0.18629828, a: 1}
   loaiVuKhi: 1
   weaponPrefab: {fileID: 3918598598552935104, guid: 12e3a34a77e72cf4b89f3608753ff9fa, type: 3}
-  vuKhiCapTiepTheo: {fileID: 11400000, guid: c8ebdf902e671894c92c1fd5fcb5db28, type: 2}
-  giaBan: 47
-  dame: 20
-  tocDoDanh: 0.75
+  vuKhiCapTiepTheo: {fileID: 0}
+  giaBan: 77
+  dame: 30
+  tocDoDanh: 0.8
   tamDanh: 3
-  dayLui: 3
+  dayLui: 4
   tiLeChiMang: 0
   satThuongChiMang: 1
-  hutMau: 0.02
+  hutMau: 0.03
   bulletPrefab: {fileID: 0}
   tocDoBayCuaDan: 0
   xuyenThau: 0
