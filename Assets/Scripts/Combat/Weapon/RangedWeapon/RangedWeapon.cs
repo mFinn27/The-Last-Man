@@ -24,7 +24,6 @@ public class RangedWeapon : MonoBehaviour
         player = movement;
 
         if (boXoay != null) boXoay.Setup(aim, movement);
-
         if (hinhAnh != null && data.iconMatHang != null) hinhAnh.sprite = data.iconMatHang;
     }
 
@@ -40,7 +39,7 @@ public class RangedWeapon : MonoBehaviour
             if (khoangCach <= data.tamDanh * data.tamDanh)
             {
                 Shoot();
-                float tocDoDanhHienTai = DamageCalculator.CalculateAttackSpeed(data.tocDoDanh);
+                float tocDoDanhHienTai = DamageCalculator.CalculateAttackSpeed(data.tocDoDanh, data);
                 donDanhTiepTheo = Time.time + (1f / tocDoDanhHienTai);
             }
         }
@@ -48,23 +47,44 @@ public class RangedWeapon : MonoBehaviour
 
     void Shoot()
     {
-        GameObject bullet = BulletPool.Instance.GetBullet();
-        bullet.transform.position = diemBan.position;
+        if (data.bulletPrefab == null || BulletPool.Instance == null) return;
 
-        Vector2 huong;
+        Vector2 huongGoc;
         if (mayQuet != null && mayQuet.mucTieuHienTai != null)
-            huong = (mayQuet.mucTieuHienTai.position - diemBan.position).normalized;
+            huongGoc = (mayQuet.mucTieuHienTai.position - diemBan.position).normalized;
         else if (player != null)
-            huong = player.HuongDiChuyenCuoi;
+            huongGoc = player.HuongDiChuyenCuoi;
         else
-            huong = Vector2.right;
+            huongGoc = Vector2.right;
 
-        float goc = Mathf.Atan2(huong.y, huong.x) * Mathf.Rad2Deg;
-        bullet.transform.rotation = Quaternion.Euler(0, 0, goc);
+        float gocTrungTam = Mathf.Atan2(huongGoc.y, huongGoc.x) * Mathf.Rad2Deg;
+        float gocBatDau = gocTrungTam - (data.soLuongDan - 1) * data.gocToaDan / 2f;
 
-        bullet.GetComponent<Bullet>().Setup(
-            huong, data.tocDoBayCuaDan, data.dame, data.xuyenThau,
-            data.dayLui, data.tiLeChiMang, data.satThuongChiMang, data.hutMau
-        );
+        for (int i = 0; i < data.soLuongDan; i++)
+        {
+            float gocHienTai = gocBatDau + (i * data.gocToaDan);
+            GameObject bulletObj = BulletPool.Instance.GetBullet(data.bulletPrefab);
+            bulletObj.transform.position = diemBan.position;
+
+            Vector2 huongTiaDan = new Vector2(
+                Mathf.Cos(gocHienTai * Mathf.Deg2Rad),
+                Mathf.Sin(gocHienTai * Mathf.Deg2Rad)
+            );
+
+            Bullet bulletScript = bulletObj.GetComponent<Bullet>();
+            if (bulletScript != null)
+            {
+                bulletScript.Setup(
+                    huongTiaDan,
+                    data.tocDoBayCuaDan,
+                    data.dame,
+                    data.xuyenThau,
+                    data.dayLui,
+                    data.tiLeChiMang,
+                    data.satThuongChiMang,
+                    data.hutMau
+                );
+            }
+        }
     }
 }

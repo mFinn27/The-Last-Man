@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb76e2faae5aec94e967869600ff27df, type: 3}
+  m_Name: SMG1
+  m_EditorClassIdentifier: 
+  tenMatHang: "S\xFAng Ti\u1EC3u Li\xEAn C\u1EA5p 1"
+  moTa: "Dame c\u01A1 b\u1EA3n: 6\nT\u1ED1c \u0111\u1ED9 \u0111\xE1nh: 2\nT\u1EA7m
+    \u0111\xE1nh: 7\n\u0110\u1EA9y l\xF9i: 2"
+  iconMatHang: {fileID: 3643455457785946567, guid: b5c2a97d1d66aba459af3899e9544096, type: 3}
+  giaMua: 26
+  capDo: 1
+  mauCapDo: {r: 1, g: 1, b: 1, a: 1}
+  loaiVuKhi: 2
+  weaponPrefab: {fileID: 7504538950462528467, guid: febced762916f4043bd79e50fa1bf436, type: 3}
+  vuKhiCapTiepTheo: {fileID: 11400000, guid: 30087a194a4f61a49b20f21576716ea6, type: 2}
+  giaBan: 17
+  dame: 6
+  tocDoDanh: 2
+  tamDanh: 7
+  dayLui: 2
+  tiLeChiMang: 0
+  satThuongChiMang: 1.5
+  hutMau: 0
+  coGioiHanTocDoDanh: 0
+  tocDoDanhToiDa: 0.65
+  bulletPrefab: {fileID: 8670776950760449683, guid: 6b9b4553032c1ba42b8b322e5d7d08dd, type: 3}
+  tocDoBayCuaDan: 17
+  xuyenThau: 1
+  soLuongDan: 1
+  gocToaDan: 0
+  doDaiVuKhi: 0
+  overshoot: 0
+  gocChem: 0
+  tocDoXoay: 0
+  tocDoDam: 0

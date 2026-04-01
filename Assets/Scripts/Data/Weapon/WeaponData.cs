@@ -22,12 +22,18 @@ public class WeaponData : ItemData
     public float satThuongChiMang = 2f;
     [Range(0, 0.4f)] public float hutMau = 0f;
 
-    [Header("--- CƠ CHẾ VŨ KHÍ TẦM XA ---")]
+    [Header("--- GIỚI HẠN CHỈ SỐ ---")]
+    public bool coGioiHanTocDoDanh = false;
+    public float tocDoDanhToiDa = 0.65f;
+
+    [Header("--- CƠ CHẾ VŨ KHÍ TẦM XA (RANGED) ---")]
     public GameObject bulletPrefab;
     public float tocDoBayCuaDan = 15f;
     public int xuyenThau = 1;
+    public int soLuongDan = 1;
+    public float gocToaDan = 0f;
 
-    [Header("--- CƠ CHẾ VŨ KHÍ CẬN CHIẾN ---")]
+    [Header("--- CƠ CHẾ VŨ KHÍ CẬN CHIẾN (MELEE) ---")]
     public float doDaiVuKhi = 1.5f;
     public float overshoot = 0.25f;
     public float gocChem = 120f;

@@ -22,10 +22,16 @@ public static class DamageCalculator
         return dameCuoiCung;
     }
 
-    public static float CalculateAttackSpeed(float tocDoDanhVuKhi)
+    public static float CalculateAttackSpeed(float tocDoDanhVuKhi, WeaponData data = null)
     {
         float bonusTocDoDanh = PlayerStats.Instance != null ? PlayerStats.Instance.GetAttackSpeed() : 0f;
         float tocDoDanhCuoi = tocDoDanhVuKhi * (1f + bonusTocDoDanh);
+
+        if (data != null && data.coGioiHanTocDoDanh)
+        {
+            return Mathf.Min(tocDoDanhCuoi, data.tocDoDanhToiDa);
+        }
+
         return Mathf.Min(tocDoDanhCuoi, 3.5f);
     }
 

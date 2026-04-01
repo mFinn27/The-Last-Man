@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb76e2faae5aec94e967869600ff27df, type: 3}
+  m_Name: PirateSword4
+  m_EditorClassIdentifier: 
+  tenMatHang: "Ki\u1EBFm H\u1EA3i T\u1EB7c C\u1EA5p 4"
+  moTa: "Dame c\u01A1 b\u1EA3n: 51\nT\u1ED1c \u0111\u1ED9 \u0111\xE1nh: 1\nT\u1EA7m
+    \u0111\xE1nh: 3\n\u0110\u1EA9y l\xF9i: 3\nT\u1EC9 l\u1EC7 ch\xED m\u1EA1ng: 10%"
+  iconMatHang: {fileID: 5977994976036742936, guid: 86dfe46c1e807454c9bd77a80e783105, type: 3}
+  giaMua: 110
+  capDo: 4
+  mauCapDo: {r: 0.6156863, g: 0.13333334, b: 0.1882353, a: 1}
+  loaiVuKhi: 0
+  weaponPrefab: {fileID: 6287261391817972532, guid: 62fddc72daddb6e49871f98408468739, type: 3}
+  vuKhiCapTiepTheo: {fileID: 0}
+  giaBan: 73
+  dame: 51
+  tocDoDanh: 1
+  tamDanh: 3
+  dayLui: 3
+  tiLeChiMang: 0.1
+  satThuongChiMang: 1.5
+  hutMau: 0
+  coGioiHanTocDoDanh: 0
+  tocDoDanhToiDa: 0.65
+  bulletPrefab: {fileID: 0}
+  tocDoBayCuaDan: 0
+  xuyenThau: 0
+  soLuongDan: 1
+  gocToaDan: 0
+  doDaiVuKhi: 1.5
+  overshoot: 0.25
+  gocChem: 0
+  tocDoXoay: 0
+  tocDoDam: 12
