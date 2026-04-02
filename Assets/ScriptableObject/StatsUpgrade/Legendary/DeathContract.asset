@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8979bb38ae08b6d4fa19cec52aef8c7e, type: 3}
+  m_Name: DeathContract
+  m_EditorClassIdentifier: 
+  tenMatHang: "Kh\u1EBF \u01AF\u1EDBc Qu\u1EF7 D\u1EEF"
+  moTa: "+15 Dame c\u01A1 b\u1EA3n\n+15% T\u1EC9 l\u1EC7 ch\xED m\u1EA1ng\n+30% S\xE1t
+    th\u01B0\u01A1ng ch\xED m\u1EA1ng\n-25 HP\n-5 Gi\xE1p"
+  iconMatHang: {fileID: -1319861868, guid: fb4f6f07f0540a64a8a81ceb356a229d, type: 3}
+  giaMua: 136
+  capDo: 4
+  mauCapDo: {r: 0.6156863, g: 0.13333334, b: 0.1882353, a: 1}
+  danhSachChiSo:
+  - loaiChiSo: 3
+    giaTriCongThem: 15
+  - loaiChiSo: 5
+    giaTriCongThem: 0.15
+  - loaiChiSo: 6
+    giaTriCongThem: 0.3
+  - loaiChiSo: 0
+    giaTriCongThem: -25
+  - loaiChiSo: 1
+    giaTriCongThem: -5

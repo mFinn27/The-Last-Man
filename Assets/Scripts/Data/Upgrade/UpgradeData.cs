@@ -11,6 +11,9 @@ public enum LoaiChiSo
     TiLeChiMang,
     SatThuongChiMang,
     HutMau,
+    DayLui,
+    TamDanh,
+    XuyenThau,
     PhamViHut
 }
 

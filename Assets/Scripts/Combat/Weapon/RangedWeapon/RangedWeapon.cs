@@ -24,6 +24,7 @@ public class RangedWeapon : MonoBehaviour
         player = movement;
 
         if (boXoay != null) boXoay.Setup(aim, movement);
+
         if (hinhAnh != null && data.iconMatHang != null) hinhAnh.sprite = data.iconMatHang;
     }
 
@@ -31,15 +32,22 @@ public class RangedWeapon : MonoBehaviour
     {
         if (data == null || Time.timeScale == 0f) return;
 
-        boXoay.XuLyXoay(data.tamDanh);
+        float tamDanhThuc = data.tamDanh + (PlayerStats.Instance != null ? PlayerStats.Instance.GetBonusTamDanh() : 0f);
+
+        boXoay.XuLyXoay(tamDanhThuc);
 
         if (mayQuet != null && mayQuet.mucTieuHienTai != null && Time.time >= donDanhTiepTheo)
         {
             float khoangCach = (mayQuet.mucTieuHienTai.position - transform.position).sqrMagnitude;
-            if (khoangCach <= data.tamDanh * data.tamDanh)
+            if (khoangCach <= tamDanhThuc * tamDanhThuc)
             {
                 Shoot();
-                float tocDoDanhHienTai = DamageCalculator.CalculateAttackSpeed(data.tocDoDanh, data);
+                float tocDoDanhHienTai = DamageCalculator.CalculateAttackSpeed(data.tocDoDanh);
+                if (data.coGioiHanTocDoDanh && tocDoDanhHienTai > data.tocDoDanhToiDa)
+                {
+                    tocDoDanhHienTai = data.tocDoDanhToiDa;
+                }
+
                 donDanhTiepTheo = Time.time + (1f / tocDoDanhHienTai);
             }
         }
@@ -47,39 +55,45 @@ public class RangedWeapon : MonoBehaviour
 
     void Shoot()
     {
-        if (data.bulletPrefab == null || BulletPool.Instance == null) return;
+        if (data.bulletPrefab == null)
+        {
+            Debug.LogWarning($"[RangedWeapon] Vũ khí {data.tenMatHang} chưa được gắn Bullet Prefab trong WeaponData!");
+            return;
+        }
 
-        Vector2 huongGoc;
+        Vector2 huong;
         if (mayQuet != null && mayQuet.mucTieuHienTai != null)
-            huongGoc = (mayQuet.mucTieuHienTai.position - diemBan.position).normalized;
+            huong = (mayQuet.mucTieuHienTai.position - diemBan.position).normalized;
         else if (player != null)
-            huongGoc = player.HuongDiChuyenCuoi;
+            huong = player.HuongDiChuyenCuoi;
         else
-            huongGoc = Vector2.right;
+            huong = Vector2.right;
 
-        float gocTrungTam = Mathf.Atan2(huongGoc.y, huongGoc.x) * Mathf.Rad2Deg;
-        float gocBatDau = gocTrungTam - (data.soLuongDan - 1) * data.gocToaDan / 2f;
+        int xuyenThauThuc = data.xuyenThau + (PlayerStats.Instance != null ? PlayerStats.Instance.GetBonusXuyenThau() : 0);
+        float dayLuiThuc = data.dayLui + (PlayerStats.Instance != null ? PlayerStats.Instance.GetBonusDayLui() : 0f);
+        int soDanThucTe = Mathf.Max(1, data.soLuongDan);
+        float gocGoc = Mathf.Atan2(huong.y, huong.x) * Mathf.Rad2Deg;
+        float gocBatDau = gocGoc - (soDanThucTe - 1) * data.gocToaDan / 2f;
 
-        for (int i = 0; i < data.soLuongDan; i++)
+        for (int i = 0; i < soDanThucTe; i++)
         {
             float gocHienTai = gocBatDau + (i * data.gocToaDan);
-            GameObject bulletObj = BulletPool.Instance.GetBullet(data.bulletPrefab);
-            bulletObj.transform.position = diemBan.position;
 
-            Vector2 huongTiaDan = new Vector2(
-                Mathf.Cos(gocHienTai * Mathf.Deg2Rad),
-                Mathf.Sin(gocHienTai * Mathf.Deg2Rad)
-            );
+            GameObject bulletObj = BulletPool.Instance.GetBullet(data.bulletPrefab);
+            if (bulletObj == null) continue;
+
+            bulletObj.transform.position = diemBan.position;
+            Vector2 huongVienDan = new Vector2(Mathf.Cos(gocHienTai * Mathf.Deg2Rad), Mathf.Sin(gocHienTai * Mathf.Deg2Rad));
 
             Bullet bulletScript = bulletObj.GetComponent<Bullet>();
             if (bulletScript != null)
             {
                 bulletScript.Setup(
-                    huongTiaDan,
+                    huongVienDan,
                     data.tocDoBayCuaDan,
                     data.dame,
-                    data.xuyenThau,
-                    data.dayLui,
+                    xuyenThauThuc,
+                    dayLuiThuc,
                     data.tiLeChiMang,
                     data.satThuongChiMang,
                     data.hutMau

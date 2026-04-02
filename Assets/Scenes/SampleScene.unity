@@ -11599,13 +11599,34 @@ MonoBehaviour:
   giaRerollBanDau: 2
   buocNhayGiaReroll: 2
   khoHangHoa:
-  - {fileID: 11400000, guid: 9b8dc3db786eff949be8df34cfda62aa, type: 2}
-  - {fileID: 11400000, guid: 8faaab7a07ea3da47871c9592db5b8e4, type: 2}
+  - {fileID: 11400000, guid: e8b25086be182ae48b48fa519e0c6031, type: 2}
+  - {fileID: 11400000, guid: aee22fb7e8b38c04c8e6f439342a67ba, type: 2}
+  - {fileID: 11400000, guid: 35522ac23737fb04aaee6d85e9119098, type: 2}
+  - {fileID: 11400000, guid: b668d580bd639a64a8675e756f688d92, type: 2}
+  - {fileID: 11400000, guid: 7c44961a8b5136142ace38e8fa3fe5fa, type: 2}
   - {fileID: 11400000, guid: e5f53066e668cab41af5685d815a654e, type: 2}
-  - {fileID: 11400000, guid: 75005ed3e54ee8c4fbb9bef02e0080e9, type: 2}
-  - {fileID: 11400000, guid: f3135bf0555d4cf4f91d08399e9c04d7, type: 2}
-  - {fileID: 11400000, guid: 1ebe86c5b60a3414b8df4c1708026795, type: 2}
-  - {fileID: 11400000, guid: 45eb9fad3bb8cc54982bd447ab993699, type: 2}
+  - {fileID: 11400000, guid: bb5b8a6f64285804a9242f3189482499, type: 2}
+  - {fileID: 11400000, guid: ffac08081fc64bf488382232e1697dcd, type: 2}
+  - {fileID: 11400000, guid: bb1e10c8f638ad74b8e6643c06a44d76, type: 2}
+  - {fileID: 11400000, guid: 4d09249e155c57e4d8ecde64c926862f, type: 2}
+  - {fileID: 11400000, guid: f73c463efd8b5724a9d02bf1e2db566f, type: 2}
+  - {fileID: 11400000, guid: 4c057064a905888418de64e0b001bbff, type: 2}
+  - {fileID: 11400000, guid: 5db51ec36b5ad6e448c5ac9015982da3, type: 2}
+  - {fileID: 11400000, guid: 40c91882d1e68e04cac1af4edf9fee7c, type: 2}
+  - {fileID: 11400000, guid: 2099933acabedf445a015b4fc18437d4, type: 2}
+  - {fileID: 11400000, guid: 3a69b013a4750d740b9ce5ba0ad7b36c, type: 2}
+  - {fileID: 11400000, guid: 135bf089c41469b4c95a1d89a15e9c64, type: 2}
+  - {fileID: 11400000, guid: 742c9d40e2a4dc5468bfecb78c8acd46, type: 2}
+  - {fileID: 11400000, guid: df4aa79be7707e54ab4fa4cfc63be255, type: 2}
+  - {fileID: 11400000, guid: a982d52b348c95d4e81d1fa6c3a0ba6d, type: 2}
+  - {fileID: 11400000, guid: 57fc0e043e58d4e41b65f3182bce0568, type: 2}
+  - {fileID: 11400000, guid: ca860cfbf6f59bd468309b6cb23dca13, type: 2}
+  - {fileID: 11400000, guid: 049621e6637f8484ba97d2431c4a4c27, type: 2}
+  - {fileID: 11400000, guid: b59cfe43718d8824f90a42affae2a6c1, type: 2}
+  - {fileID: 11400000, guid: 39ca4feff3384d540bcfa967b0872d25, type: 2}
+  - {fileID: 11400000, guid: 178f944f733f79d488e2f9c3139abcd7, type: 2}
+  - {fileID: 11400000, guid: 10d134c045e68ca4d975eb4c2e67fb21, type: 2}
+  - {fileID: 11400000, guid: dd3d75dc3f0167846a7a91288e797b13, type: 2}
   - {fileID: 11400000, guid: 9c46da1b3e6218c43a26aaf8f1ee3ffa, type: 2}
   - {fileID: 11400000, guid: 91a7bfe3994982d41a81343699741f6c, type: 2}
   - {fileID: 11400000, guid: 253b7380f956de541826ce4545156c82, type: 2}
@@ -28272,7 +28293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 298561f8174026b409fbe9d3bae60b01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dataNhanVat: {fileID: 11400000, guid: afffcc3199ae99f48b06a235ed5d9b37, type: 2}
+  dataNhanVat: {fileID: 11400000, guid: 094ff73c500d3d04ebc11e47347ccca4, type: 2}
   bonusMauToiDa: 0
   bonusGiap: 0
   bonusTocDoDiChuyen: 0
@@ -28281,6 +28302,9 @@ MonoBehaviour:
   bonusTiLeChiMang: 0
   bonusSatThuongChiMang: 0
   bonusHutMau: 0
+  bonusDayLui: 0
+  bonusTamDanh: 0
+  bonusXuyenThau: 0
   phamViHutNamChamGoc: 1.3
   bonusPhamViHut: 0
   vangHienTai: 0
@@ -28293,6 +28317,9 @@ MonoBehaviour:
   tongSatThuongChiMang: 0
   tongHutMau: 0
   tongPhamViHut: 0
+  tongLucDayLui: 0
+  tongTamDanh: 0
+  tongXuyenThau: 0
 --- !u!114 &1412564139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31031,13 +31058,30 @@ MonoBehaviour:
   - {fileID: 1527842629}
   - {fileID: 1897507388}
   khoDuLieu:
-  - {fileID: 11400000, guid: 8faaab7a07ea3da47871c9592db5b8e4, type: 2}
-  - {fileID: 11400000, guid: 9b8dc3db786eff949be8df34cfda62aa, type: 2}
-  - {fileID: 11400000, guid: f3135bf0555d4cf4f91d08399e9c04d7, type: 2}
-  - {fileID: 11400000, guid: 1ebe86c5b60a3414b8df4c1708026795, type: 2}
-  - {fileID: 11400000, guid: 45eb9fad3bb8cc54982bd447ab993699, type: 2}
-  - {fileID: 11400000, guid: 75005ed3e54ee8c4fbb9bef02e0080e9, type: 2}
+  - {fileID: 11400000, guid: b668d580bd639a64a8675e756f688d92, type: 2}
+  - {fileID: 11400000, guid: 7c44961a8b5136142ace38e8fa3fe5fa, type: 2}
+  - {fileID: 11400000, guid: bb5b8a6f64285804a9242f3189482499, type: 2}
+  - {fileID: 11400000, guid: ffac08081fc64bf488382232e1697dcd, type: 2}
+  - {fileID: 11400000, guid: bb1e10c8f638ad74b8e6643c06a44d76, type: 2}
+  - {fileID: 11400000, guid: 4d09249e155c57e4d8ecde64c926862f, type: 2}
   - {fileID: 11400000, guid: e5f53066e668cab41af5685d815a654e, type: 2}
+  - {fileID: 11400000, guid: aee22fb7e8b38c04c8e6f439342a67ba, type: 2}
+  - {fileID: 11400000, guid: 35522ac23737fb04aaee6d85e9119098, type: 2}
+  - {fileID: 11400000, guid: e8b25086be182ae48b48fa519e0c6031, type: 2}
+  - {fileID: 11400000, guid: f73c463efd8b5724a9d02bf1e2db566f, type: 2}
+  - {fileID: 11400000, guid: 4c057064a905888418de64e0b001bbff, type: 2}
+  - {fileID: 11400000, guid: 5db51ec36b5ad6e448c5ac9015982da3, type: 2}
+  - {fileID: 11400000, guid: 40c91882d1e68e04cac1af4edf9fee7c, type: 2}
+  - {fileID: 11400000, guid: 2099933acabedf445a015b4fc18437d4, type: 2}
+  - {fileID: 11400000, guid: 3a69b013a4750d740b9ce5ba0ad7b36c, type: 2}
+  - {fileID: 11400000, guid: 135bf089c41469b4c95a1d89a15e9c64, type: 2}
+  - {fileID: 11400000, guid: 742c9d40e2a4dc5468bfecb78c8acd46, type: 2}
+  - {fileID: 11400000, guid: df4aa79be7707e54ab4fa4cfc63be255, type: 2}
+  - {fileID: 11400000, guid: a982d52b348c95d4e81d1fa6c3a0ba6d, type: 2}
+  - {fileID: 11400000, guid: 57fc0e043e58d4e41b65f3182bce0568, type: 2}
+  - {fileID: 11400000, guid: ca860cfbf6f59bd468309b6cb23dca13, type: 2}
+  - {fileID: 11400000, guid: 049621e6637f8484ba97d2431c4a4c27, type: 2}
+  - {fileID: 11400000, guid: b59cfe43718d8824f90a42affae2a6c1, type: 2}
 --- !u!1 &1802936683
 GameObject:
   m_ObjectHideFlags: 0

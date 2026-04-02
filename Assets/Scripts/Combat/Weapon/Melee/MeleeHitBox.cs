@@ -20,7 +20,9 @@ public class MeleeHitBox : MonoBehaviour
             bool chiMang;
             float dameCuoiCung = DamageCalculator.CalculateDamage(data.dame, data.tiLeChiMang, data.satThuongChiMang, out chiMang);
             Vector2 huongDayLui = (collision.transform.position - transform.root.position).normalized;
-            mauEnemy.TakeDamage(dameCuoiCung, huongDayLui, data.dayLui);
+
+            float dayLuiThuc = data.dayLui + (PlayerStats.Instance != null ? PlayerStats.Instance.GetBonusDayLui() : 0f);
+            mauEnemy.TakeDamage(dameCuoiCung, huongDayLui, dayLuiThuc);
 
             FloatingTextManager.Instance.SpawnText(collision.transform.position, dameCuoiCung, chiMang);
 

@@ -28,7 +28,7 @@ MonoBehaviour:
   tamDanh: 3
   dayLui: 3
   tiLeChiMang: 0.05
-  satThuongChiMang: 1.5
+  satThuongChiMang: 0
   hutMau: 0
   coGioiHanTocDoDanh: 0
   tocDoDanhToiDa: 0.65

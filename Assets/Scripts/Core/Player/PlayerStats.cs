@@ -18,6 +18,10 @@ public class PlayerStats : MonoBehaviour
     public float bonusSatThuongChiMang = 0f;
     public float bonusHutMau = 0f;
 
+    public float bonusDayLui = 0f;
+    public float bonusTamDanh = 0f;
+    public int bonusXuyenThau = 0;
+
     [Header("--- CHỈ SỐ THU THẬP ---")]
     public float phamViHutNamChamGoc = 3f;
     public float bonusPhamViHut = 0f;
@@ -36,6 +40,9 @@ public class PlayerStats : MonoBehaviour
     public float tongSatThuongChiMang;
     public float tongHutMau;
     public float tongPhamViHut;
+    public float tongLucDayLui;
+    public float tongTamDanh;
+    public float tongXuyenThau;
 
     void Awake()
     {
@@ -54,6 +61,9 @@ public class PlayerStats : MonoBehaviour
         tongSatThuongChiMang = GetCritDamage();
         tongHutMau = GetLifeSteal();
         tongPhamViHut = GetMagnetRange();
+        tongLucDayLui = GetBonusDayLui();
+        tongTamDanh = GetBonusTamDanh();
+        tongXuyenThau = GetBonusXuyenThau();
     }
 
     public int GetMaxHP() => dataNhanVat != null ? dataNhanVat.mauToiDaGoc + bonusMauToiDa : 100;
@@ -66,10 +76,11 @@ public class PlayerStats : MonoBehaviour
     public float GetCritDamage() => dataNhanVat != null ? dataNhanVat.satThuongChiMangGoc + bonusSatThuongChiMang : 0f;
     public float GetLifeSteal() => dataNhanVat != null ? dataNhanVat.hutMauGoc + bonusHutMau : 0f;
 
-    public float GetMagnetRange()
-    {
-        return phamViHutNamChamGoc + bonusPhamViHut;
-    }
+    public float GetMagnetRange() => phamViHutNamChamGoc + bonusPhamViHut;
+
+    public float GetBonusDayLui() => bonusDayLui;
+    public float GetBonusTamDanh() => bonusTamDanh;
+    public int GetBonusXuyenThau() => bonusXuyenThau;
 
     public void AddCoin(int amount)
     {
@@ -83,32 +94,41 @@ public class PlayerStats : MonoBehaviour
         {
             switch (chiSo.loaiChiSo)
             {
-                case LoaiChiSo.MauToiDa: 
-                    bonusMauToiDa += (int)chiSo.giaTriCongThem; 
+                case LoaiChiSo.MauToiDa:
+                    bonusMauToiDa += (int)chiSo.giaTriCongThem;
                     break;
-                case LoaiChiSo.Giap: 
-                    bonusGiap += (int)chiSo.giaTriCongThem; 
+                case LoaiChiSo.Giap:
+                    bonusGiap += (int)chiSo.giaTriCongThem;
                     break;
-                case LoaiChiSo.TocDoDiChuyen: 
-                    bonusTocDoDiChuyen += chiSo.giaTriCongThem; 
+                case LoaiChiSo.TocDoDiChuyen:
+                    bonusTocDoDiChuyen += chiSo.giaTriCongThem;
                     break;
-                case LoaiChiSo.SatThuong: 
-                    bonusSatThuong += chiSo.giaTriCongThem; 
+                case LoaiChiSo.SatThuong:
+                    bonusSatThuong += chiSo.giaTriCongThem;
                     break;
-                case LoaiChiSo.TocDoDanh: 
-                    bonusTocDoDanh += chiSo.giaTriCongThem; 
+                case LoaiChiSo.TocDoDanh:
+                    bonusTocDoDanh += chiSo.giaTriCongThem;
                     break;
-                case LoaiChiSo.TiLeChiMang: 
-                    bonusTiLeChiMang += chiSo.giaTriCongThem; 
+                case LoaiChiSo.TiLeChiMang:
+                    bonusTiLeChiMang += chiSo.giaTriCongThem;
                     break;
-                case LoaiChiSo.SatThuongChiMang: 
-                    bonusSatThuongChiMang += chiSo.giaTriCongThem; 
+                case LoaiChiSo.SatThuongChiMang:
+                    bonusSatThuongChiMang += chiSo.giaTriCongThem;
                     break;
-                case LoaiChiSo.HutMau: 
-                    bonusHutMau += chiSo.giaTriCongThem; 
+                case LoaiChiSo.HutMau:
+                    bonusHutMau += chiSo.giaTriCongThem;
                     break;
-                case LoaiChiSo.PhamViHut: 
-                    bonusPhamViHut += chiSo.giaTriCongThem; 
+                case LoaiChiSo.PhamViHut:
+                    bonusPhamViHut += chiSo.giaTriCongThem;
+                    break;
+                case LoaiChiSo.DayLui:
+                    bonusDayLui += chiSo.giaTriCongThem;
+                    break;
+                case LoaiChiSo.TamDanh:
+                    bonusTamDanh += chiSo.giaTriCongThem;
+                    break;
+                case LoaiChiSo.XuyenThau:
+                    bonusXuyenThau += (int)chiSo.giaTriCongThem;
                     break;
             }
         }

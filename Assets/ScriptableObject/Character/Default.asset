@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86f931e606980764d90f33199a6086ce, type: 3}
+  m_Name: Default
+  m_EditorClassIdentifier: 
+  tenNhanVat: "L\u1EEF H\xE0nh"
+  hinhAnhNhanVat: {fileID: 4334783836991956000, guid: fe20b27fb0f3f2a4e9cef133cbef4ad3, type: 3}
+  mauToiDaGoc: 100
+  giapGoc: 0
+  tocDoDiChuyenGoc: 6
+  satThuongGoc: 1
+  tocDoDanhGoc: 0.1
+  tiLeChiMangGoc: 0
+  satThuongChiMangGoc: 1.5
+  hutMauGoc: 0

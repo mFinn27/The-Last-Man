@@ -41,21 +41,23 @@ public class ArcMeleeWeapon : MonoBehaviour
     void Update()
     {
         if (data == null || Time.timeScale == 0f) return;
-        boXoay.XuLyXoay(data.tamDanh);
+
+        float tamDanhThuc = data.tamDanh + (PlayerStats.Instance != null ? PlayerStats.Instance.GetBonusTamDanh() : 0f);
+        boXoay.XuLyXoay(tamDanhThuc);
 
         if (mayQuet != null && mayQuet.mucTieuHienTai != null && !dangTanCong)
         {
             float khoangCach = (mayQuet.mucTieuHienTai.position - transform.position).sqrMagnitude;
-            if (khoangCach <= data.tamDanh * data.tamDanh && Time.time >= donDanhTiepTheo)
+            if (khoangCach <= tamDanhThuc * tamDanhThuc && Time.time >= donDanhTiepTheo)
             {
-                StartCoroutine(SwingAttack());
+                StartCoroutine(SwingAttack(tamDanhThuc));
                 float tocDoDanhHienTai = DamageCalculator.CalculateAttackSpeed(data.tocDoDanh);
                 donDanhTiepTheo = Time.time + (1f / tocDoDanhHienTai);
             }
         }
     }
 
-    IEnumerator SwingAttack()
+    IEnumerator SwingAttack(float tamDanhThuc)
     {
         dangTanCong = true;
         boXoay.khoaXoay = true;
@@ -66,11 +68,11 @@ public class ArcMeleeWeapon : MonoBehaviour
         float batDau = -data.gocChem * 0.5f;
         float ketThuc = data.gocChem * 0.5f + data.overshoot;
 
-        float khoangCach = data.tamDanh;
+        float khoangCach = tamDanhThuc;
         if (mayQuet != null && mayQuet.mucTieuHienTai != null)
             khoangCach = Vector2.Distance(transform.position, mayQuet.mucTieuHienTai.position);
 
-        float khoangCachToiDich = Mathf.Min(khoangCach, data.tamDanh);
+        float khoangCachToiDich = Mathf.Min(khoangCach, tamDanhThuc);
         Vector3 huongTanCong = boXoay != null ? boXoay.GetHuongTanCongLocal() : Vector3.right;
         Vector3 mucTieu = viTriGoc + huongTanCong * (khoangCachToiDich + data.overshoot);
 
