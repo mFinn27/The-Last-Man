@@ -1,11 +1,23 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 [CreateAssetMenu(fileName = "CharacterData", menuName = "Characters/Character Data")]
 public class CharacterData : ScriptableObject
 {
-    [Header("--- THÔNG TIN ---")]
+    [Header("--- THÔNG TIN CƠ BẢN ---")]
     public string tenNhanVat;
     public Sprite hinhAnhNhanVat;
+    [TextArea] public string moTaNhanVat;
+    public RuntimeAnimatorController animatorNhanVat;
+
+    [Header("--- ĐIỀU KIỆN MỞ KHÓA (Cho UI Chọn Tướng) ---")]
+    public string idNhanVat;
+    public bool moKhoaSan = true;
+    public int dieuKienWave = 0;
+    public string textDieuKienMoKhoa = "Vượt qua Wave 5 để mở khóa";
+
+    [Header("--- TRANG BỊ KHỞI ĐẦU ---")]
+    public List<WeaponData> danhSachVuKhiChoPhepChon = new List<WeaponData>();
 
     [Header("--- CHỈ SỐ SINH TỒN GỐC ---")]
     public int mauToiDaGoc = 100;

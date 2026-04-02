@@ -13,7 +13,20 @@ MonoBehaviour:
   m_Name: Mutant
   m_EditorClassIdentifier: 
   tenNhanVat: "K\u1EBB \u0110\u1ED9t Bi\u1EBFn"
-  hinhAnhNhanVat: {fileID: 0}
+  hinhAnhNhanVat: {fileID: -1903240744945611512, guid: bbee91f8d8f489048b3a4de4b07c7485, type: 3}
+  moTaNhanVat: "M\xE1u t\u1ED1i \u0111a: 120 (\u0110\u01B0\u1EE3c +20 HP v\xE0o HP
+    g\u1ED1c)\nGi\xE1p: 0 (+2)\nT\u1ED1c \u0111\u1ED9 di chuy\u1EC3n: 5 (-1)\nS\xE1t
+    th\u01B0\u01A1ng: 0 (+10)\nT\u1ED1c \u0111\u1ED9 \u0111\xE1nh: 0 (-20%)\n- K\u1EBB
+    \u0111\u1ED9t bi\u1EBFn kh\xF4ng th\u1EC3 g\xE2y ra \u0111\xF2n ch\xED m\u1EA1ng\nB\u1EA1n
+    kh\u1EDFi \u0111\u1EA7u v\u1EDBi R\xECu c\u1EA5p 1 v\xE0 Ki\u1EBFm c\u1EA5p 1"
+  animatorNhanVat: {fileID: 22100000, guid: bc4d1a505fc4ebe438526220b136aaa0, type: 2}
+  idNhanVat: Mutant
+  moKhoaSan: 1
+  dieuKienWave: 0
+  textDieuKienMoKhoa: "V\u01B0\u1EE3t qua Wave 5 \u0111\u1EC3 m\u1EDF kh\xF3a"
+  danhSachVuKhiChoPhepChon:
+  - {fileID: 11400000, guid: 0f90592fa76a1b845aa1998986f4f84b, type: 2}
+  - {fileID: 11400000, guid: 9c46da1b3e6218c43a26aaf8f1ee3ffa, type: 2}
   mauToiDaGoc: 120
   giapGoc: 2
   tocDoDiChuyenGoc: 4

@@ -162,6 +162,11 @@ public class WaveManager : MonoBehaviour
     {
         dangTrongWave = false;
         OnWaveEnded?.Invoke();
+
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.LuuTienDoWave(waveHienTaiIndex + 1);
+        }
     }
 
     public void ChuyenSangWaveTiepTheo()

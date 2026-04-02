@@ -13,9 +13,6 @@ public class WeaponManager : MonoBehaviour
     public Transform weaponPivot;
     public float khoangCachXepSung = 0.8f;
 
-    [Header("--- VŨ KHÍ KHỞI ĐẦU ---")]
-    public List<WeaponData> vuKhiKhoiDaU;
-
     void Awake()
     {
         if (Instance == null) Instance = this;
@@ -23,7 +20,23 @@ public class WeaponManager : MonoBehaviour
 
     void Start()
     {
-        foreach (var vk in vuKhiKhoiDaU) { ThuMuaVuKhi(vk); }
+        if (GameManager.Instance != null && GameManager.Instance.vuKhiKhoiDauDangChon != null)
+        {
+            ThuMuaVuKhi(GameManager.Instance.vuKhiKhoiDauDangChon);
+        }
+
+        if (PlayerStats.Instance != null && PlayerStats.Instance.dataNhanVat != null)
+        {
+            var dsMacDinh = PlayerStats.Instance.dataNhanVat.danhSachVuKhiChoPhepChon;
+            if (dsMacDinh != null && dsMacDinh.Count > 0)
+            {
+                foreach (var vk in dsMacDinh)
+                {
+                    ThuMuaVuKhi(vk);
+                }
+            }
+        }
+        CapNhatVuKhiTrenNguoi();
     }
 
     public bool ThuMuaVuKhi(WeaponData vuKhiMoi)

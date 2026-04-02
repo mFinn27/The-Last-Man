@@ -22,7 +22,7 @@ MonoBehaviour:
   loaiVuKhi: 1
   weaponPrefab: {fileID: 3918598598552935104, guid: 92839b38fbec8f54bbb9c4103988d153, type: 3}
   vuKhiCapTiepTheo: {fileID: 11400000, guid: 35b4f674b76e4c2498164961857ff0a6, type: 2}
-  giaBan: 31
+  giaBan: 29
   dame: 21
   tocDoDanh: 0.7
   tamDanh: 3

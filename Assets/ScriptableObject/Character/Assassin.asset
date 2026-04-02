@@ -12,8 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86f931e606980764d90f33199a6086ce, type: 3}
   m_Name: Assassin
   m_EditorClassIdentifier: 
-  tenNhanVat: "K\u1EBB T\xE0n B\u1EA1o"
-  hinhAnhNhanVat: {fileID: 0}
+  tenNhanVat: "S\xE1t Th\u1EE7"
+  hinhAnhNhanVat: {fileID: 6698568452693482262, guid: 2e67644a3dedad24fbc1e71b77c7aa3e, type: 3}
+  moTaNhanVat: "M\xE1u t\u1ED1i \u0111a: 70 (B\u1ECB -30 HP v\xE0o HP g\u1ED1c)\nT\u1ED1c
+    \u0111\u1ED9 di chuy\u1EC3n: +6\nT\u1EC9 l\u1EC7 ch\xED m\u1EA1ng: +5%\nS\xE1t
+    th\u01B0\u01A1ng ch\xED m\u1EA1ng: +50%\nB\u1EA1n kh\u1EDFi \u0111\u1EA7u v\u1EDBi
+    Dao G\u0103m c\u1EA5p 2"
+  animatorNhanVat: {fileID: 22100000, guid: 4aa0f17db0660a44ca1d12c27840ec44, type: 2}
+  idNhanVat: Assassin
+  moKhoaSan: 1
+  dieuKienWave: 0
+  textDieuKienMoKhoa: "V\u01B0\u1EE3t qua Wave 5 \u0111\u1EC3 m\u1EDF kh\xF3a"
+  danhSachVuKhiChoPhepChon:
+  - {fileID: 11400000, guid: 6a882ffbd34a8f744bc5bcd5c9ab52ac, type: 2}
   mauToiDaGoc: 70
   giapGoc: 0
   tocDoDiChuyenGoc: 6
@@ -21,4 +32,4 @@ MonoBehaviour:
   tocDoDanhGoc: 0
   tiLeChiMangGoc: 0.05
   satThuongChiMangGoc: 2
-  hutMauGoc: 0.01
+  hutMauGoc: 0

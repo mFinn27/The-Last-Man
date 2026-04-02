@@ -47,7 +47,17 @@ public class PlayerStats : MonoBehaviour
     void Awake()
     {
         if (Instance == null) Instance = this;
-        else Destroy(gameObject);
+        else { Destroy(gameObject); return; }
+
+        if (GameManager.Instance != null && GameManager.Instance.characterDangChon != null)
+        {
+            dataNhanVat = GameManager.Instance.characterDangChon;
+            PlayerVisuals visuals = GetComponent<PlayerVisuals>();
+            if (visuals != null)
+            {
+                visuals.CapNhatHinhAnhVaAnimation();
+            }
+        }
     }
 
     void Update()

@@ -12,13 +12,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86f931e606980764d90f33199a6086ce, type: 3}
   m_Name: Vampire
   m_EditorClassIdentifier: 
-  tenNhanVat: "K\u1EBB Kh\xE1t M\xE1u"
-  hinhAnhNhanVat: {fileID: 0}
+  tenNhanVat: "Ma C\xE0 R\u1ED3ng"
+  hinhAnhNhanVat: {fileID: 907596226379672215, guid: 7b20283cfdcb5264eaae923aa564ed5e, type: 3}
+  moTaNhanVat: "M\xE1u t\u1ED1i \u0111a: 65 (B\u1ECB -35 HP v\xE0o HP g\u1ED1c)\nT\u1ED1c
+    \u0111\u1ED9 di chuy\u1EC3n: 5\nS\xE1t th\u01B0\u01A1ng: 0 (+1)\nH\xFAt m\xE1u:
+    0 (+5%)\nB\u1EA1n kh\u1EDFi \u0111\u1EA7u v\u1EDBi Dao G\u0103m c\u1EA5p 1 v\xE0
+    Ki\u1EBFm c\u1EA5p 1"
+  animatorNhanVat: {fileID: 22100000, guid: dc8ddde85ec0cac428b0d714b0712303, type: 2}
+  idNhanVat: Vampire
+  moKhoaSan: 1
+  dieuKienWave: 0
+  textDieuKienMoKhoa: "V\u01B0\u1EE3t qua Wave 5 \u0111\u1EC3 m\u1EDF kh\xF3a"
+  danhSachVuKhiChoPhepChon:
+  - {fileID: 11400000, guid: 808fb640c6a578347aa8774aa88f6258, type: 2}
+  - {fileID: 11400000, guid: 0f90592fa76a1b845aa1998986f4f84b, type: 2}
   mauToiDaGoc: 65
   giapGoc: 0
   tocDoDiChuyenGoc: 5
   satThuongGoc: 1
   tocDoDanhGoc: 0
   tiLeChiMangGoc: 0
-  satThuongChiMangGoc: 0
+  satThuongChiMangGoc: 1.5
   hutMauGoc: 0.05

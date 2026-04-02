@@ -3835,7 +3835,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.62262815, y: -0.64605093, z: -10.13538}
+  m_LocalPosition: {x: -1.4700001, y: -0.64605093, z: -10.13538}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9579,12 +9579,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSlot: 5
-  danhSachVuKhi: []
+  danhSachVuKhi:
+  - {fileID: 11400000, guid: 9c46da1b3e6218c43a26aaf8f1ee3ffa, type: 2}
   weaponPivot: {fileID: 1559109409}
   khoangCachXepSung: 0.5
-  vuKhiKhoiDaU:
-  - {fileID: 11400000, guid: 9354195e1794bce4381ef72d50f507e1, type: 2}
-  - {fileID: 11400000, guid: b938c108b1e9e9c409278cb947b5def4, type: 2}
 --- !u!1 &663417476
 GameObject:
   m_ObjectHideFlags: 0
@@ -11672,6 +11670,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 947f4e959ce923441adb9f46ca595d5d, type: 2}
   - {fileID: 11400000, guid: 3340f4e954ec7b646b16f6c07439ef1c, type: 2}
   - {fileID: 11400000, guid: df92ae5eca34d014390a81dc7e975bd7, type: 2}
+  - {fileID: 11400000, guid: 168a76bc1fabe0e4186220b9d64314ed, type: 2}
 --- !u!1 &944320298
 GameObject:
   m_ObjectHideFlags: 0
@@ -17831,10 +17830,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -28153,7 +28152,7 @@ Transform:
   m_GameObject: {fileID: 1412564131}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.62262815, y: -0.64605093, z: -0.13537988}
+  m_LocalPosition: {x: -1.47, y: -0.64605093, z: -0.13537988}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -28293,7 +28292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 298561f8174026b409fbe9d3bae60b01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dataNhanVat: {fileID: 11400000, guid: 094ff73c500d3d04ebc11e47347ccca4, type: 2}
+  dataNhanVat: {fileID: 0}
   bonusMauToiDa: 0
   bonusGiap: 0
   bonusTocDoDiChuyen: 0
@@ -29961,10 +29960,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -30111,7 +30110,7 @@ Transform:
   m_GameObject: {fileID: 1683994150}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.62262815, y: -0.64605093, z: -10.13538}
+  m_LocalPosition: {x: -1.4700001, y: -0.64605093, z: -10.13538}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -31787,10 +31786,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3

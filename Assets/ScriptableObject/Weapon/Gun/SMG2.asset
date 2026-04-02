@@ -21,8 +21,8 @@ MonoBehaviour:
   mauCapDo: {r: 0.2901961, g: 0.5803922, b: 0.9019608, a: 1}
   loaiVuKhi: 2
   weaponPrefab: {fileID: 7504538950462528467, guid: febced762916f4043bd79e50fa1bf436, type: 3}
-  vuKhiCapTiepTheo: {fileID: 0}
-  giaBan: 17
+  vuKhiCapTiepTheo: {fileID: 11400000, guid: b4463dd1070ca65479ec9892d7ce9812, type: 2}
+  giaBan: 26
   dame: 13
   tocDoDanh: 2.4
   tamDanh: 7
