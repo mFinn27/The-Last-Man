@@ -105,9 +105,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d08e255f1bc68543bfd47aaa11c04de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: fca85dbb78436e343ae3b5913537aa14, type: 2}
+  data: {fileID: 11400000, guid: 672f664b851ca0e40af16914803e33c4, type: 2}
   mauHienTai: 0
-  tocDoXoay: 500
 --- !u!114 &8916601239314235842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,7 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccaff444a5055684dba9c13ac17af4ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: fca85dbb78436e343ae3b5913537aa14, type: 2}
+  data: {fileID: 11400000, guid: 672f664b851ca0e40af16914803e33c4, type: 2}
   dangBiDayLui: 0
   isCharging: 0
 --- !u!114 &2391184157878266190
@@ -148,7 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b459aca202500a4f9800cc817150149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: fca85dbb78436e343ae3b5913537aa14, type: 2}
+  data: {fileID: 11400000, guid: 672f664b851ca0e40af16914803e33c4, type: 2}
 --- !u!58 &1285816249584042557
 CircleCollider2D:
   m_ObjectHideFlags: 0

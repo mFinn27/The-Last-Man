@@ -3,21 +3,16 @@ using System.Collections;
 
 public class RangedAttack : MonoBehaviour
 {
-    public EnemyData data;
+    public RangedEnemyData data;
     private Transform player;
     private float thoiGianBanTiepTheo;
-
     private EnemyMovement diChuyen;
     private EnemyVisuals hinhAnh;
     private Rigidbody2D rb;
 
     void Start()
     {
-        if (PlayerHealth.Instance != null)
-        {
-            player = PlayerHealth.Instance.transform;
-        }
-
+        if (PlayerHealth.Instance != null) player = PlayerHealth.Instance.transform;
         diChuyen = GetComponent<EnemyMovement>();
         hinhAnh = GetComponent<EnemyVisuals>();
         rb = GetComponent<Rigidbody2D>();
@@ -26,16 +21,12 @@ public class RangedAttack : MonoBehaviour
     void Update()
     {
         if (player == null || data == null) return;
-
         if (diChuyen != null && (diChuyen.dangBiDayLui || diChuyen.isCharging)) return;
 
         float khoangCachSqr = (player.position - transform.position).sqrMagnitude;
         if (khoangCachSqr <= data.tamDanhXa * data.tamDanhXa)
         {
-            if (Time.time >= thoiGianBanTiepTheo)
-            {
-                StartCoroutine(ShootRoutine());
-            }
+            if (Time.time >= thoiGianBanTiepTheo) StartCoroutine(ShootRoutine());
         }
     }
 
@@ -50,7 +41,6 @@ public class RangedAttack : MonoBehaviour
         Shoot();
 
         if (hinhAnh != null) yield return StartCoroutine(hinhAnh.NayLenSauKhiBanRoutine());
-
         if (diChuyen != null) diChuyen.isCharging = false;
         thoiGianBanTiepTheo = Time.time + data.tgThucHienDonDanhTiepTheo;
     }
@@ -58,7 +48,6 @@ public class RangedAttack : MonoBehaviour
     private void Shoot()
     {
         if (data.danPrefab == null || EnemyBulletPool.Instance == null) return;
-
         Vector2 huongDenPlayer = (player.position - transform.position).normalized;
         float gocGoc = Mathf.Atan2(huongDenPlayer.y, huongDenPlayer.x) * Mathf.Rad2Deg;
         float gocBatDau = gocGoc - (data.soLuongDan - 1) * data.gocToaDan / 2f;
@@ -67,7 +56,6 @@ public class RangedAttack : MonoBehaviour
         {
             float gocHienTai = gocBatDau + (i * data.gocToaDan);
             GameObject danObj = EnemyBulletPool.Instance.GetBullet(data.danPrefab);
-
             danObj.transform.position = transform.position;
             danObj.transform.rotation = Quaternion.Euler(0, 0, gocHienTai);
 

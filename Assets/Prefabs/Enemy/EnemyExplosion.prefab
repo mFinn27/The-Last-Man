@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d08e255f1bc68543bfd47aaa11c04de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: c8a6ecd448258c74488784e0107c512a, type: 2}
+  data: {fileID: 11400000, guid: a59904bba178299468b10d342ca8a423, type: 2}
   mauHienTai: 0
 --- !u!114 &2651803519048050453
 MonoBehaviour:
@@ -182,7 +182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccaff444a5055684dba9c13ac17af4ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: c8a6ecd448258c74488784e0107c512a, type: 2}
+  data: {fileID: 11400000, guid: a59904bba178299468b10d342ca8a423, type: 2}
   dangBiDayLui: 0
   isCharging: 0
 --- !u!114 &570538091804244642
@@ -210,6 +210,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86aca6abf3d8c5a4db6b4dfae0c3a6ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: c8a6ecd448258c74488784e0107c512a, type: 2}
+  data: {fileID: 11400000, guid: a59904bba178299468b10d342ca8a423, type: 2}
   explosionEffectPrefab: {fileID: 834063763913489490, guid: 11b118a3bbe64cf4c8e1670c5f95f12a, type: 3}
   heSoDieuChinh: 1.6

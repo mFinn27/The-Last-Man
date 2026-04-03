@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f27b3ec7103729841bc7c6c48fbd1790, type: 3}
+  m_Name: DemonBossData
+  m_EditorClassIdentifier: 
+  tenQuaiVat: Demon
+  loaiQuai: 4
+  mauToiDa: 600
+  tocDoDiChuyen: 2.5
+  dame: 20
+  tgThucHienDonDanhTiepTheo: 1
+  thoiGianGongDon: 0.5
+  tiLeRotThuong: 1
+  phanThuongRotRa: 0
+  minSoLuongVang: 1
+  maxSoLuongVang: 4
+  minGiaTriMoiVien: 2
+  maxGiaTriMoiVien: 5
+  vatPhamDacBietPrefab: {fileID: 0}
+  thoiGianDuoiBat: 3
+  danPrefab: {fileID: 5167635117232818042, guid: 425cee362bc970d4f88588ac7d22e285, type: 3}
+  tocDoDan: 8
+  soLuongDanToaTron: 16
+  soLanLuot: 3

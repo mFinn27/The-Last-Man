@@ -9,30 +9,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4895e1b0ea00b74fbbef37a5cab0b0a, type: 3}
-  m_Name: BasicEnemy
+  m_Script: {fileID: 11500000, guid: d8db84b0e7866934bb22eb8f98129401, type: 3}
+  m_Name: ExplosionData
   m_EditorClassIdentifier: 
-  tenQuaiVat: Quai Co Ban
-  loaiQuai: 0
-  mauToiDa: 15
+  tenQuaiVat: Destroyer
+  loaiQuai: 2
+  mauToiDa: 10
   tocDoDiChuyen: 2.5
-  dame: 12
+  dame: 10
   tgThucHienDonDanhTiepTheo: 1
-  khoangCachCanChien: 0.5
-  tamDanhXa: 0
-  danPrefab: {fileID: 0}
-  tocDoDan: 0
-  soLuongDan: 0
-  gocToaDan: 0
-  thoiGianGongDon: 0.5
-  laQuaiPhatNo: 0
-  damePhatNo: 50
-  banKinhNo: 3
-  thoiGianChoNo: 2
+  thoiGianGongDon: 0
   tiLeRotThuong: 1
   phanThuongRotRa: 0
   minSoLuongVang: 1
-  maxSoLuongVang: 3
+  maxSoLuongVang: 2
   minGiaTriMoiVien: 1
   maxGiaTriMoiVien: 2
   vatPhamDacBietPrefab: {fileID: 0}
+  damePhatNo: 50
+  banKinhNo: 3
+  thoiGianChoNo: 1

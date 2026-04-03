@@ -2,16 +2,13 @@
 
 public class MeleeAttack : MonoBehaviour
 {
-    public EnemyData data;
+    public MeleeEnemyData data;
     private Transform player;
     private float thoiGianCanTiepTheo;
 
     void Start()
     {
-        if (PlayerHealth.Instance != null)
-        {
-            player = PlayerHealth.Instance.transform;
-        }
+        if (PlayerHealth.Instance != null) player = PlayerHealth.Instance.transform;
     }
 
     void Update()

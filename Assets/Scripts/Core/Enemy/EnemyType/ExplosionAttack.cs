@@ -3,7 +3,7 @@ using System.Collections;
 
 public class ExplosionAttack : MonoBehaviour
 {
-    public EnemyData data;
+    public ExplosionEnemyData data;
 
     [Header("--- HIỆU ỨNG (VFX) ---")]
     [SerializeField] private GameObject explosionEffectPrefab;
@@ -36,19 +36,10 @@ public class ExplosionAttack : MonoBehaviour
         MeleeAttack melee = GetComponent<MeleeAttack>();
         if (melee != null) melee.enabled = false;
 
-        if (rb != null)
-        {
-            rb.linearVelocity = Vector2.zero;
-            rb.angularVelocity = 0f;
-        }
-        if (hinhAnh != null)
-        {
-            yield return StartCoroutine(hinhAnh.GongDonRoutine(data.thoiGianChoNo));
-        }
-        else
-        {
-            yield return new WaitForSeconds(data.thoiGianChoNo);
-        }
+        if (rb != null) { rb.linearVelocity = Vector2.zero; rb.angularVelocity = 0f; }
+
+        if (hinhAnh != null) yield return StartCoroutine(hinhAnh.GongDonRoutine(data.thoiGianChoNo));
+        else yield return new WaitForSeconds(data.thoiGianChoNo);
 
         if (explosionEffectPrefab != null)
         {
@@ -60,28 +51,10 @@ public class ExplosionAttack : MonoBehaviour
         if (PlayerHealth.Instance != null)
         {
             float khoangCach = Vector2.Distance(transform.position, PlayerHealth.Instance.transform.position);
-            if (khoangCach <= data.banKinhNo)
-            {
-                PlayerHealth.Instance.TakeDamage(data.damePhatNo);
-            }
+            if (khoangCach <= data.banKinhNo) PlayerHealth.Instance.TakeDamage(data.damePhatNo);
         }
 
-        if (mau != null)
-        {
-            mau.HoanThanhChet(true);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
-
-    private void OnDrawGizmosSelected()
-    {
-        if (data != null)
-        {
-            Gizmos.color = new Color(1f, 0f, 0f, 0.3f);
-            Gizmos.DrawSphere(transform.position, data.banKinhNo);
-        }
+        if (mau != null) mau.HoanThanhChet(true);
+        else Destroy(gameObject);
     }
 }

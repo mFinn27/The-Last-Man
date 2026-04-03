@@ -24,6 +24,8 @@ public class WaveManager : MonoBehaviour
     public Vector2 mapMax = new Vector2(15f, 10f);
     public float khoangCachAnToanVoiPlayer = 3f;
 
+    [HideInInspector] public int soLuongBossTrenMap = 0;
+
     private WaveData waveDataHienTai;
     private Dictionary<WaveEvent, float> soTayThoiGian = new Dictionary<WaveEvent, float>();
 
@@ -42,12 +44,27 @@ public class WaveManager : MonoBehaviour
     {
         if (!dangTrongWave) return;
 
-        thoiGianDaQua += Time.deltaTime;
-        KiemTraVaChayKichBan();
+        if (thoiGianDaQua < thoiGianWaveHienTai)
+        {
+            thoiGianDaQua += Time.deltaTime;
+            KiemTraVaChayKichBan();
+        }
 
         if (thoiGianDaQua >= thoiGianWaveHienTai)
         {
-            KetThucWave();
+            thoiGianDaQua = thoiGianWaveHienTai;
+
+            if (waveDataHienTai != null && waveDataHienTai.batBuocGietBoss)
+            {
+                if (soLuongBossTrenMap <= 0)
+                {
+                    KetThucWave();
+                }
+            }
+            else
+            {
+                KetThucWave();
+            }
         }
     }
 
@@ -63,7 +80,9 @@ public class WaveManager : MonoBehaviour
         thoiGianWaveHienTai = waveDataHienTai.thoiGianWave;
         thoiGianDaQua = 0f;
         dangTrongWave = true;
+        soLuongBossTrenMap = 0;
         soTayThoiGian.Clear();
+
         foreach (var suKien in waveDataHienTai.danhSachSuKien)
         {
             soTayThoiGian.Add(suKien, suKien.giayBatDau);
@@ -71,6 +90,24 @@ public class WaveManager : MonoBehaviour
 
         OnWaveStarted?.Invoke(waveHienTaiIndex + 1);
         Debug.Log($"BẮT ĐẦU {waveDataHienTai.tenWave}!");
+    }
+
+    public void DangKyBoss()
+    {
+        soLuongBossTrenMap++;
+    }
+
+    public void BossDaChet()
+    {
+        soLuongBossTrenMap--;
+
+        if (thoiGianDaQua >= thoiGianWaveHienTai && waveDataHienTai != null && waveDataHienTai.batBuocGietBoss)
+        {
+            if (soLuongBossTrenMap <= 0)
+            {
+                KetThucWave();
+            }
+        }
     }
 
     private void KiemTraVaChayKichBan()
@@ -177,7 +214,6 @@ public class WaveManager : MonoBehaviour
             BatDauWave();
         }
     }
-
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;

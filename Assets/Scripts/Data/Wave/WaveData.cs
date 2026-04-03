@@ -26,6 +26,9 @@ public class WaveData : ScriptableObject
     public string tenWave = "Wave 1";
     public float thoiGianWave = 60f;
 
+    [Header("--- SỰ KIỆN BOSS ---")]
+    public bool batBuocGietBoss = false;
+
     [Header("--- KỊCH BẢN ĐẠO DIỄN ---")]
     public List<WaveEvent> danhSachSuKien;
 }

@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: accd7dd3fd2fafb4891d26db4e39e519, type: 3}
+  m_Name: RangedDataBasic
+  m_EditorClassIdentifier: 
+  tenQuaiVat: Worm
+  loaiQuai: 1
+  mauToiDa: 10
+  tocDoDiChuyen: 2
+  dame: 8
+  tgThucHienDonDanhTiepTheo: 2
+  thoiGianGongDon: 0.5
+  tiLeRotThuong: 1
+  phanThuongRotRa: 0
+  minSoLuongVang: 1
+  maxSoLuongVang: 1
+  minGiaTriMoiVien: 1
+  maxGiaTriMoiVien: 2
+  vatPhamDacBietPrefab: {fileID: 0}
+  tamDanhXa: 7
+  danPrefab: {fileID: 5167635117232818042, guid: 42713581f3570814f9bc6ff5e7db2958, type: 3}
+  tocDoDan: 8
+  soLuongDan: 1
+  gocToaDan: 0

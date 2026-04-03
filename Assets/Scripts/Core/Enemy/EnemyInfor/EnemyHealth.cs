@@ -10,6 +10,7 @@ public class EnemyHealth : MonoBehaviour
     private EnemyMovement diChuyen;
     private EnemyVisuals hinhAnh;
     private bool daChet = false;
+
     private void OnEnable()
     {
         WaveManager.OnWaveEnded += TuSatKhiHetWave;
@@ -25,6 +26,11 @@ public class EnemyHealth : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         diChuyen = GetComponent<EnemyMovement>();
         hinhAnh = GetComponent<EnemyVisuals>();
+
+        if (data != null && data.loaiQuai == EnemyType.Boss && WaveManager.Instance != null)
+        {
+            WaveManager.Instance.DangKyBoss();
+        }
     }
 
     public void TakeDamage(float dame, Vector2 huongDayLui, float lucDayLui)
@@ -35,7 +41,7 @@ public class EnemyHealth : MonoBehaviour
 
         if (hinhAnh != null) hinhAnh.PlayFlashWhite();
 
-        if (rb != null && lucDayLui > 0)
+        if (rb != null && lucDayLui > 0 && (data == null || data.loaiQuai != EnemyType.Boss))
         {
             StartCoroutine(KnockbackRoutine(huongDayLui, lucDayLui));
         }
@@ -119,10 +125,22 @@ public class EnemyHealth : MonoBehaviour
             }
         }
     }
+
     private void TuSatKhiHetWave()
     {
         if (daChet) return;
         daChet = true;
         Destroy(gameObject);
+    }
+
+    void OnDestroy()
+    {
+        if (data != null && data.loaiQuai == EnemyType.Boss && mauHienTai <= 0)
+        {
+            if (WaveManager.Instance != null)
+            {
+                WaveManager.Instance.BossDaChet();
+            }
+        }
     }
 }
