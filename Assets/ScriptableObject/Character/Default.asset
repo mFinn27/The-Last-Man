@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86f931e606980764d90f33199a6086ce, type: 3}
   m_Name: Default
   m_EditorClassIdentifier: 
-  tenNhanVat: "L\u1EEF H\xE0nh"
-  hinhAnhNhanVat: {fileID: 4334783836991956000, guid: fe20b27fb0f3f2a4e9cef133cbef4ad3, type: 3}
+  tenNhanVat: "Nh\xF3c Con"
+  hinhAnhNhanVat: {fileID: 59197388459127302, guid: 9a60066896ef6c8419b34e6a4ea7b7a8, type: 3}
   moTaNhanVat: "M\xE1u t\u1ED1i \u0111a: 100\nT\u1ED1c \u0111\u1ED9 di chuy\u1EC3n:
     5 (+1)\nS\xE1t th\u01B0\u01A1ng: 0 (+1)\nT\u1ED1c \u0111\u1ED9 \u0111\xE1nh:
     0 (+10%)\nB\u1EA1n kh\u1EDFi \u0111\u1EA7u v\u1EDBi R\xECu c\u1EA5p 1 v\xE0 Ki\u1EBFm
     c\u1EA5p 1"
-  animatorNhanVat: {fileID: 9100000, guid: 0f7b7c78ccf32ea40b914ded227c037e, type: 2}
-  idNhanVat: LuHanh
+  animatorNhanVat: {fileID: 22100000, guid: c58cb84aac260b34cb5b1804f81788d8, type: 2}
+  idNhanVat: Kid
   moKhoaSan: 1
   dieuKienWave: 0
   textDieuKienMoKhoa: "V\u01B0\u1EE3t qua Wave 5 \u0111\u1EC3 m\u1EDF kh\xF3a"

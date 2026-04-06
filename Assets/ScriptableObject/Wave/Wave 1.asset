@@ -15,32 +15,4 @@ MonoBehaviour:
   tenWave: Wave 1
   thoiGianWave: 20
   batBuocGietBoss: 0
-  danhSachSuKien:
-  - tenKichBan: Quai can chien
-    giayBatDau: 0
-    giayKetThuc: 20
-    quaiPrefab: {fileID: 5189326022444628608, guid: 3425c84ebe7eb7a48bbc77c0551119b4, type: 3}
-    thoiGianGiuaCacLan: 10
-    soLuongMoiLan: 3
-    deTheoCum: 1
-  - tenKichBan: Quai tam xa
-    giayBatDau: 0
-    giayKetThuc: 20
-    quaiPrefab: {fileID: 912454679618174041, guid: 61e8b02011ce3b84e9eab65fb1a0bbf7, type: 3}
-    thoiGianGiuaCacLan: 10
-    soLuongMoiLan: 3
-    deTheoCum: 1
-  - tenKichBan: Quai tam xa cap 2
-    giayBatDau: 0
-    giayKetThuc: 20
-    quaiPrefab: {fileID: 4025717162429082858, guid: 9ccaae6adfda9e443badd576a50b9f04, type: 3}
-    thoiGianGiuaCacLan: 10
-    soLuongMoiLan: 3
-    deTheoCum: 1
-  - tenKichBan: Quai no
-    giayBatDau: 0
-    giayKetThuc: 20
-    quaiPrefab: {fileID: 5020803387245476450, guid: f01e880f33d9e0443addc043a8751d67, type: 3}
-    thoiGianGiuaCacLan: 10
-    soLuongMoiLan: 3
-    deTheoCum: 1
+  danhSachSuKien: []

@@ -104,6 +104,7 @@ public class EnemyHealth : MonoBehaviour
 
     public void HoanThanhChet(bool xoaNgayLapTuc = true)
     {
+        if (GameManager.Instance != null) GameManager.Instance.CongKill();
         RotDo();
         if (xoaNgayLapTuc) Destroy(gameObject);
     }

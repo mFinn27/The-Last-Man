@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1c26cdb229c1ee42b2426a3c163db8b, type: 3}
   m_Name: Wave 10
   m_EditorClassIdentifier: 
-  tenWave: Wave 1
-  thoiGianWave: 20
+  tenWave: "Wave Xu\u1EA5t hi\u1EC7n boss"
+  thoiGianWave: 30
+  batBuocGietBoss: 1
   danhSachSuKien:
   - tenKichBan: Wave 1
     giayBatDau: 0
     giayKetThuc: 20
-    quaiPrefab: {fileID: 5189326022444628608, guid: 3425c84ebe7eb7a48bbc77c0551119b4, type: 3}
+    quaiPrefab: {fileID: 6494928833850633497, guid: 0a5eeeaa1e579904b8b8e15f33ba0406, type: 3}
     thoiGianGiuaCacLan: 2
     soLuongMoiLan: 3
     deTheoCum: 1

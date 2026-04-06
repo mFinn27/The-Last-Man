@@ -12,10 +12,10 @@ public class CharacterCardUI : MonoBehaviour
     public Color mauChuaMoKhoa = new Color(0.3f, 0.3f, 0.3f, 1f);
     public Color mauDaMoKhoa = Color.white;
 
-    private MainMenuManager menuManager;
+    private CharacterSelector menuManager;
     private bool daMoKhoa = false;
 
-    public void Setup(CharacterData data, MainMenuManager manager)
+    public void Setup(CharacterData data, CharacterSelector manager)
     {
         dataNhanVat = data;
         menuManager = manager;

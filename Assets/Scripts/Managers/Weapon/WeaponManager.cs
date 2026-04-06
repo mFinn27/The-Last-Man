@@ -6,12 +6,13 @@ public class WeaponManager : MonoBehaviour
     public static WeaponManager Instance;
 
     [Header("--- TÚI ĐỒ VŨ KHÍ ---")]
-    public int maxSlot = 5;
+    public int maxSlot = 6;
     public List<WeaponData> danhSachVuKhi = new List<WeaponData>();
 
-    [Header("--- RENDER VẬT LÝ ---")]
+    [Header("--- RENDER VẬT LÝ (CHUẨN BROTATO) ---")]
     public Transform weaponPivot;
-    public float khoangCachXepSung = 0.8f;
+    public float khoangCachTrucX = 1.3f;
+    public float khoangCachTrucY = 0.8f;
 
     void Awake()
     {
@@ -108,7 +109,12 @@ public class WeaponManager : MonoBehaviour
         foreach (Transform child in weaponPivot) { Destroy(child.gameObject); }
 
         int tongSoVuKhi = danhSachVuKhi.Count;
-        float gocChia = 360f / (tongSoVuKhi > 0 ? tongSoVuKhi : 1);
+        if (tongSoVuKhi == 0) return;
+
+        float gocChia = 360f / tongSoVuKhi;
+        float gocBatDau = 90f;
+        if (tongSoVuKhi == 2 || tongSoVuKhi == 6) gocBatDau = 0f;
+        else if (tongSoVuKhi == 4) gocBatDau = 45f;
 
         AutoAim aim = GetComponentInParent<AutoAim>();
         PlayerMovement move = GetComponentInParent<PlayerMovement>();
@@ -129,10 +135,13 @@ public class WeaponManager : MonoBehaviour
                 ArcMeleeWeapon a = sungMoi.GetComponentInChildren<ArcMeleeWeapon>();
                 if (a != null) a.Setup(data, aim, move);
 
-                float goc = i * gocChia;
+                float goc = (i * gocChia) + gocBatDau;
                 float radian = goc * Mathf.Deg2Rad;
-                Vector3 viTriTuongDoi = new Vector3(Mathf.Cos(radian), Mathf.Sin(radian), 0) * khoangCachXepSung;
-                sungMoi.transform.localPosition = viTriTuongDoi;
+
+                float toaDoX = Mathf.Cos(radian) * khoangCachTrucX;
+                float toaDoY = Mathf.Sin(radian) * khoangCachTrucY;
+
+                sungMoi.transform.localPosition = new Vector3(toaDoX, toaDoY, 0);
             }
         }
 

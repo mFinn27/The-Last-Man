@@ -28,6 +28,6 @@ MonoBehaviour:
   vatPhamDacBietPrefab: {fileID: 0}
   tamDanhXa: 7
   danPrefab: {fileID: 5167635117232818042, guid: 42713581f3570814f9bc6ff5e7db2958, type: 3}
-  tocDoDan: 8
+  tocDoDan: 4
   soLuongDan: 1
   gocToaDan: 0

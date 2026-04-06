@@ -31,5 +31,5 @@ MonoBehaviour:
   soLuongQuaiSpawn: 4
   danPrefab: {fileID: 5167635117232818042, guid: 7fac778d57f06e14493bb08551522d91, type: 3}
   tocDoDan: 8
-  soLuongDanBurst: 3
+  soLuongDanBurst: 4
   thoiGianGiuaCacVien: 0.2

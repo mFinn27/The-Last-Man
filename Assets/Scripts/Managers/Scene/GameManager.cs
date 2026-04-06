@@ -9,8 +9,10 @@ public class GameManager : MonoBehaviour
     public CharacterData characterDangChon;
     public WeaponData vuKhiKhoiDauDangChon;
 
-    [Header("--- Tiến Độ ---")]
+    [Header("--- Tiến Độ & Thống Kê ---")]
     public int waveCaoNhatDaDatDuoc = 0;
+
+    [HideInInspector] public int soQuaiDaGiet = 0;
 
     void Awake()
     {
@@ -20,16 +22,10 @@ public class GameManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
             LoadTienDo();
         }
-        else
-        {
-            Destroy(gameObject);
-        }
+        else Destroy(gameObject);
     }
 
-    public void LoadTienDo()
-    {
-        waveCaoNhatDaDatDuoc = PlayerPrefs.GetInt("WaveCaoNhat", 0);
-    }
+    public void LoadTienDo() => waveCaoNhatDaDatDuoc = PlayerPrefs.GetInt("WaveCaoNhat", 0);
 
     public void LuuTienDoWave(int waveHienTai)
     {
@@ -43,6 +39,15 @@ public class GameManager : MonoBehaviour
 
     public void BatDauGame()
     {
+        soQuaiDaGiet = 0;
+        Time.timeScale = 1f;
         SceneManager.LoadScene("Gameplay");
     }
+
+    public void KetThucGame(bool chienThang)
+    {
+        // win lose
+    }
+
+    public void CongKill() => soQuaiDaGiet++;
 }
