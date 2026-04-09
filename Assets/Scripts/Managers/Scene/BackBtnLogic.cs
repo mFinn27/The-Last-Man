@@ -7,6 +7,7 @@ public class BackBtnLogic : MonoBehaviour
 
     public void BamBack()
     {
+        if (AudioManager.Instance != null) AudioManager.Instance.PlayClickSFX();
         if (panelChiTietVuKhi.activeSelf)
         {
             navigator.MoManHinhChonTuong();

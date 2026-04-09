@@ -10,6 +10,7 @@ public class GameplayUIManager : MonoBehaviour
 
     [Header("--- TẠM DỪNG (PAUSE) ---")]
     [SerializeField] private GameObject panelPause;
+    public GameObject panelSettings;
 
     private bool isPaused = false;
 
@@ -51,5 +52,11 @@ public class GameplayUIManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
+    }
+
+    public void BamMoSettings()
+    {
+        if (AudioManager.Instance != null) AudioManager.Instance.PlayClickSFX();
+        panelSettings.SetActive(true);
     }
 }

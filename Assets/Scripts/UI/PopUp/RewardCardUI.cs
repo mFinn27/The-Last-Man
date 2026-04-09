@@ -35,6 +35,7 @@ public class RewardCardUI : MonoBehaviour
 
     public void ChonTheNay()
     {
+        if (AudioManager.Instance != null) AudioManager.Instance.PlayEquipSFX();
         if (manager != null && dataHienTai != null)
         {
             manager.XuLyChonPhanThuong(dataHienTai);

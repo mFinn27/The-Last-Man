@@ -16,6 +16,7 @@ public class WeaponSelector : MonoBehaviour
     public TextMeshProUGUI txtTen;
     public TextMeshProUGUI txtChiSo;
 
+
     public void KhoiTaoKhoVuKhi()
     {
         if (imgIcon != null) imgIcon.color = new Color(0, 0, 0, 0);
@@ -36,6 +37,13 @@ public class WeaponSelector : MonoBehaviour
             Button btn = the.GetComponent<Button>();
             if (btn != null) btn.onClick.AddListener(() => ChonVuKhi(vk));
         }
+    }
+
+    public void BamGoiBatDauGame()
+    {
+        if (AudioManager.Instance != null) AudioManager.Instance.PlayClickSFX();
+
+        if (GameManager.Instance != null) GameManager.Instance.BatDauGame();
     }
 
     private void ChonVuKhi(WeaponData vk)
@@ -62,10 +70,5 @@ public class WeaponSelector : MonoBehaviour
             else res += $"{trim}\n";
         }
         return res;
-    }
-
-    public void BamGoiBatDauGame()
-    {
-        if (GameManager.Instance != null) GameManager.Instance.BatDauGame();
     }
 }

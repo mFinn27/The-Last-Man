@@ -41,6 +41,7 @@ public class GameManager : MonoBehaviour
     {
         soQuaiDaGiet = 0;
         Time.timeScale = 1f;
+        if (AudioManager.Instance != null) AudioManager.Instance.PlayGameplayBGM();
         SceneManager.LoadScene("Gameplay");
     }
 

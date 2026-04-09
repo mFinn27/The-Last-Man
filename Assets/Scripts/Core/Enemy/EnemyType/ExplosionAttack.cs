@@ -41,6 +41,8 @@ public class ExplosionAttack : MonoBehaviour
         if (hinhAnh != null) yield return StartCoroutine(hinhAnh.GongDonRoutine(data.thoiGianChoNo));
         else yield return new WaitForSeconds(data.thoiGianChoNo);
 
+        if (AudioManager.Instance != null) AudioManager.Instance.PlayExplosionSFX();
+
         if (explosionEffectPrefab != null)
         {
             GameObject hieuUng = Instantiate(explosionEffectPrefab, transform.position, Quaternion.identity);

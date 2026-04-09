@@ -70,5 +70,8 @@ TagManager:
   - name: Decor
     uniqueID: 289553143
     locked: 0
+  - name: Dialog
+    uniqueID: 2770568055
+    locked: 0
   m_RenderingLayers:
   - Default

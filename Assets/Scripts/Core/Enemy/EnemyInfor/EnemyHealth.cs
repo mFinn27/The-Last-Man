@@ -39,6 +39,8 @@ public class EnemyHealth : MonoBehaviour
 
         mauHienTai -= dame;
 
+        if (AudioManager.Instance != null) AudioManager.Instance.PlayEnemyHitSFX();
+
         if (hinhAnh != null) hinhAnh.PlayFlashWhite();
 
         if (rb != null && lucDayLui > 0 && (data == null || data.loaiQuai != EnemyType.Boss))

@@ -64,7 +64,14 @@ public class PlayerHealth : MonoBehaviour
         mauHientai -= dameCuoiCung;
         OnHealthChanged?.Invoke(mauHientai, mauToiDa);
 
+        if (AudioManager.Instance != null) AudioManager.Instance.PlayPlayerHitSFX();
+
         if (hinhAnh != null) hinhAnh.PlayFlashWhite();
+
+        if (CameraShake.Instance != null)
+        {
+            CameraShake.Instance.AddTrauma(0.6f);
+        }
 
         if (mauHientai <= 0) Die();
     }

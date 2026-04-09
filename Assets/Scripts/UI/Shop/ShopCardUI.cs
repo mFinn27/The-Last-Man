@@ -55,6 +55,7 @@ public class ShopCardUI : MonoBehaviour
     public void BamKhoaThe()
     {
         if (dataHienTai == null) return;
+        if (AudioManager.Instance != null) AudioManager.Instance.PlayClickSFX();
         dangBiKhoa = !dangBiKhoa;
         CapNhatGiaoDienKhoa();
     }
@@ -70,6 +71,7 @@ public class ShopCardUI : MonoBehaviour
 
         if (PlayerStats.Instance.vangHienTai >= dataHienTai.giaMua)
         {
+            if (AudioManager.Instance != null) AudioManager.Instance.PlayEquipSFX();
             if (dataHienTai is UpgradeData dataChiSo)
             {
                 PlayerStats.Instance.vangHienTai -= dataHienTai.giaMua;
@@ -101,6 +103,7 @@ public class ShopCardUI : MonoBehaviour
     public void BamDoiLaiTheNay()
     {
         if (daBiMua || shopManager == null || dataHienTai == null) return;
+        if (AudioManager.Instance != null) AudioManager.Instance.PlayClickSFX();
         if (PlayerStats.Instance.vangHienTai >= giaRerollHienTai)
         {
             PlayerStats.Instance.vangHienTai -= giaRerollHienTai;

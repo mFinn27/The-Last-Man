@@ -9,7 +9,7 @@ public class WaveManager : MonoBehaviour
     public static event Action OnWaveEnded;
     public static event Action<int> OnWaveStarted;
 
-    [Header("--- CHIẾN DỊCH (TỔNG HỢP CÁC WAVE) ---")]
+    [Header("--- CHIẾN DỊCH ---")]
     public List<WaveData> danhSachWave;
     public int waveHienTaiIndex { get; private set; } = 0;
 
@@ -29,15 +29,12 @@ public class WaveManager : MonoBehaviour
     private WaveData waveDataHienTai;
     private Dictionary<WaveEvent, float> soTayThoiGian = new Dictionary<WaveEvent, float>();
 
+    private bool daPhatCanhBaoBoss = false;
+
     void Awake()
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
-    }
-
-    void Start()
-    {
-        BatDauWave();
     }
 
     void Update()
@@ -81,12 +78,15 @@ public class WaveManager : MonoBehaviour
         thoiGianDaQua = 0f;
         dangTrongWave = true;
         soLuongBossTrenMap = 0;
+        daPhatCanhBaoBoss = false;
         soTayThoiGian.Clear();
 
         foreach (var suKien in waveDataHienTai.danhSachSuKien)
         {
             soTayThoiGian.Add(suKien, suKien.giayBatDau);
         }
+
+        if (AudioManager.Instance != null) AudioManager.Instance.PlayGameplayBGM();
 
         OnWaveStarted?.Invoke(waveHienTaiIndex + 1);
         Debug.Log($"BẮT ĐẦU {waveDataHienTai.tenWave}!");
@@ -120,10 +120,46 @@ public class WaveManager : MonoBehaviour
 
                 if (thoiGianDaQua >= thoiGianToiHan)
                 {
-                    ThucHienSpawn(suKien);
+                    bool laBoss = false;
+                    if (suKien.quaiPrefab != null)
+                    {
+                        EnemyHealth mauQuai = suKien.quaiPrefab.GetComponent<EnemyHealth>();
+                        if (mauQuai != null && mauQuai.data != null && mauQuai.data.loaiQuai == EnemyType.Boss)
+                        {
+                            laBoss = true;
+                        }
+                    }
+
+                    if (laBoss && !daPhatCanhBaoBoss)
+                    {
+                        daPhatCanhBaoBoss = true;
+                        float thoiGianDelay = 2f;
+
+                        if (AudioManager.Instance != null)
+                        {
+                            AudioManager.Instance.TriggerBossWave();
+                            thoiGianDelay = AudioManager.Instance.GetBossWarningLength();
+                        }
+                        StartCoroutine(ThucHienSpawnCoDelay(suKien, thoiGianDelay));
+                    }
+                    else if (!laBoss)
+                    {
+                        ThucHienSpawn(suKien);
+                    }
+
                     soTayThoiGian[suKien] = thoiGianDaQua + suKien.thoiGianGiuaCacLan;
                 }
             }
+        }
+    }
+
+    private IEnumerator ThucHienSpawnCoDelay(WaveEvent suKien, float delayTime)
+    {
+        yield return new WaitForSeconds(delayTime);
+
+        if (dangTrongWave)
+        {
+            ThucHienSpawn(suKien);
         }
     }
 
@@ -198,6 +234,11 @@ public class WaveManager : MonoBehaviour
     private void KetThucWave()
     {
         dangTrongWave = false;
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlayGameplayBGM();
+        }
+
         OnWaveEnded?.Invoke();
 
         if (GameManager.Instance != null)
@@ -214,6 +255,7 @@ public class WaveManager : MonoBehaviour
             BatDauWave();
         }
     }
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;

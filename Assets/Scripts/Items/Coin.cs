@@ -49,6 +49,7 @@ public class Coin : MonoBehaviour
     private void NhatCoin()
     {
         if (PlayerStats.Instance != null) PlayerStats.Instance.AddCoin(giaTri);
+        if (AudioManager.Instance != null) AudioManager.Instance.PlayCoinSFX();
         gameObject.SetActive(false);
     }
 

@@ -152,6 +152,7 @@ public class ShopUI : MonoBehaviour
 
     public void BamNutBanTrangBip()
     {
+        if (AudioManager.Instance != null) AudioManager.Instance.PlayClickSFX();
         WeaponManager.Instance.BanVuKhi(slotDangDuocChon);
         panelHanhDong.SetActive(false);
         CapNhatVangUITong();
@@ -159,6 +160,7 @@ public class ShopUI : MonoBehaviour
 
     public void BamNutGhepTrangBip()
     {
+        if (AudioManager.Instance != null) AudioManager.Instance.PlayClickSFX();
         WeaponManager.Instance.ThuGhepThuCong(slotDangDuocChon);
         panelHanhDong.SetActive(false);
     }
@@ -176,6 +178,7 @@ public class ShopUI : MonoBehaviour
 
     public void BamChuyenWaveMoi()
     {
+        if (AudioManager.Instance != null) AudioManager.Instance.PlayClickSFX();
         panelShop.SetActive(false);
         Time.timeScale = 1f;
         if (WaveManager.Instance != null) WaveManager.Instance.ChuyenSangWaveTiepTheo();
