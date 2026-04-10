@@ -2,7 +2,7 @@
 - Project name: Brotato_Remake
 - Unity version: Unity 6000.0.70f1
 - Active game object:
-  - Name: MENU MANAGER
+  - Name: DialogPanel
   - Tag: Untagged
-  - Layer: Default
+  - Layer: UI
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->

@@ -135,4 +135,10 @@ public class AudioManager : MonoBehaviour
     {
         return (hieuUngCanhBaoBoss != null && hieuUngCanhBaoBoss.clip != null) ? hieuUngCanhBaoBoss.clip.length : 2f;
     }
+
+    public void StopAllGameplaySounds()
+    {
+        StopAllCoroutines();
+        if (sourceNhacNenBoss != null) sourceNhacNenBoss.Stop();
+    }
 }

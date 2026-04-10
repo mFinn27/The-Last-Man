@@ -252,7 +252,10 @@ public class WaveManager : MonoBehaviour
         if (!dangTrongWave)
         {
             waveHienTaiIndex++;
-            BatDauWave();
+            if (StoryDirector.Instance == null || !StoryDirector.Instance.KiemTraVaChayCutscene(waveHienTaiIndex + 1))
+            {
+                BatDauWave();
+            }
         }
     }
 

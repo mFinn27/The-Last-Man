@@ -26,8 +26,17 @@ public class MenuNavigator : MonoBehaviour
 
     void Start()
     {
-        MoManHinhTitle();
         if (AudioManager.Instance != null) AudioManager.Instance.PlayMenuBGM();
+
+        if (GameManager.Instance != null && GameManager.Instance.quayLaiChonTuong)
+        {
+            GameManager.Instance.quayLaiChonTuong = false;
+            MoManHinhChonTuong();
+        }
+        else
+        {
+            MoManHinhTitle();
+        }
     }
 
     public void MoManHinhTitle()

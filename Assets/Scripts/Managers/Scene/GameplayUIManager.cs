@@ -12,11 +12,16 @@ public class GameplayUIManager : MonoBehaviour
     [SerializeField] private GameObject panelPause;
     public GameObject panelSettings;
 
+    [Header("--- GAME OVER ---")]
+    [SerializeField] private GameObject panelGameOver;
+    [SerializeField] private TextMeshProUGUI txtGameOverMessage;
+
     private bool isPaused = false;
 
     void Start()
     {
         if (panelPause != null) panelPause.SetActive(false);
+        if (panelGameOver != null) panelGameOver.SetActive(false);
     }
 
     void Update()
@@ -48,15 +53,45 @@ public class GameplayUIManager : MonoBehaviour
         Time.timeScale = isPaused ? 0f : 1f;
     }
 
-    public void BamNutVeMenu()
-    {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene("MainMenu");
-    }
-
     public void BamMoSettings()
     {
         if (AudioManager.Instance != null) AudioManager.Instance.PlayClickSFX();
         panelSettings.SetActive(true);
+    }
+
+    public void HienThiGameOver(bool chienThang)
+    {
+        if (panelGameOver != null)
+        {
+            panelGameOver.SetActive(true);
+
+            if (txtGameOverMessage != null)
+            {
+                txtGameOverMessage.text = chienThang ? "CHIẾN THẮNG!" : "BẠN ĐÃ CHẾT!";
+                txtGameOverMessage.color = chienThang ? Color.yellow : Color.red;
+            }
+        }
+    }
+
+    public void BamNutThuLai()
+    {
+        if (AudioManager.Instance != null) AudioManager.Instance.PlayClickSFX();
+        Time.timeScale = 1f;
+        if (GameManager.Instance != null) GameManager.Instance.BatDauGame();
+    }
+
+    public void BamNutChoiLai()
+    {
+        if (AudioManager.Instance != null) AudioManager.Instance.PlayClickSFX();
+        Time.timeScale = 1f;
+        if (GameManager.Instance != null) GameManager.Instance.quayLaiChonTuong = true;
+        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
+    }
+    public void BamNutVeMenu()
+    {
+        if (AudioManager.Instance != null) AudioManager.Instance.PlayClickSFX();
+        Time.timeScale = 1f;
+        if (GameManager.Instance != null) GameManager.Instance.quayLaiChonTuong = false;
+        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
     }
 }

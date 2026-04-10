@@ -3382,9 +3382,9 @@ MonoBehaviour:
   sourceNhacNenBoss: {fileID: 1575110419}
   globalBgmVolume: 1
   globalSfxVolume: 1
-  menuVolume: 0.3
-  gameplayVolume: 0.1
-  bossVolume: 0.1
+  menuVolume: 0.6
+  gameplayVolume: 0.3
+  bossVolume: 0.3
   nhacNenMenu: {fileID: 8300000, guid: 893c123c3f96af74086e2e55b782a371, type: 3}
   nhacNenGameplay: {fileID: 8300000, guid: 893c123c3f96af74086e2e55b782a371, type: 3}
   nhacNenBoss: {fileID: 8300000, guid: a074fb7d7054a524eb0db0235c1322ad, type: 3}
@@ -3456,6 +3456,7 @@ MonoBehaviour:
   characterDangChon: {fileID: 0}
   vuKhiKhoiDauDangChon: {fileID: 0}
   waveCaoNhatDaDatDuoc: 0
+  quayLaiChonTuong: 0
   soQuaiDaGiet: 0
 --- !u!1 &1575110417
 GameObject:

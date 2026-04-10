@@ -9,8 +9,9 @@ public class GameManager : MonoBehaviour
     public CharacterData characterDangChon;
     public WeaponData vuKhiKhoiDauDangChon;
 
-    [Header("--- Tiến Độ & Thống Kê ---")]
+    [Header("--- Tiến Độ & Điều Hướng ---")]
     public int waveCaoNhatDaDatDuoc = 0;
+    public bool quayLaiChonTuong = false;
 
     [HideInInspector] public int soQuaiDaGiet = 0;
 
@@ -47,7 +48,16 @@ public class GameManager : MonoBehaviour
 
     public void KetThucGame(bool chienThang)
     {
-        // win lose
+        Time.timeScale = 0f;
+
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.StopAllGameplaySounds();
+        }
+        if (WaveManager.Instance != null) LuuTienDoWave(WaveManager.Instance.waveHienTaiIndex);
+
+        GameplayUIManager uiManager = FindFirstObjectByType<GameplayUIManager>();
+        if (uiManager != null) uiManager.HienThiGameOver(chienThang);
     }
 
     public void CongKill() => soQuaiDaGiet++;

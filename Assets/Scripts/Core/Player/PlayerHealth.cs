@@ -78,7 +78,17 @@ public class PlayerHealth : MonoBehaviour
 
     void Die()
     {
-        Debug.Log("Player Dead");
+        Debug.Log("<color=yellow>1. PlayerHealth: gọi hàm Die()</color>");
+
+        if (GameManager.Instance != null)
+        {
+            Debug.Log("<color=yellow>2. PlayerHealth: thấy GameManager, gọi KetThucGame!</color>");
+            GameManager.Instance.KetThucGame(false);
+        }
+        else
+        {
+            Debug.LogError("<color=red>LỖI: Không tìm thấy GameManager!");
+        }
     }
 
     public int GetCurrentHP() => mauHientai;
