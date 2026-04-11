@@ -12,13 +12,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1c26cdb229c1ee42b2426a3c163db8b, type: 3}
   m_Name: Wave 6
   m_EditorClassIdentifier: 
-  tenWave: Wave 1
-  thoiGianWave: 20
+  tenWave: Wave 6
+  thoiGianWave: 46
+  batBuocGietBoss: 0
   danhSachSuKien:
-  - tenKichBan: Wave 1
+  - tenKichBan: Quai Co Ban
     giayBatDau: 0
-    giayKetThuc: 20
+    giayKetThuc: 45
     quaiPrefab: {fileID: 5189326022444628608, guid: 3425c84ebe7eb7a48bbc77c0551119b4, type: 3}
     thoiGianGiuaCacLan: 2
+    soLuongMoiLan: 4
+    deTheoCum: 1
+  - tenKichBan: Quai Tam Xa Cap 1
+    giayBatDau: 0
+    giayKetThuc: 45
+    quaiPrefab: {fileID: 912454679618174041, guid: 61e8b02011ce3b84e9eab65fb1a0bbf7, type: 3}
+    thoiGianGiuaCacLan: 3
     soLuongMoiLan: 3
+    deTheoCum: 1
+  - tenKichBan: Quai Tam Xa Cap 2
+    giayBatDau: 10
+    giayKetThuc: 45
+    quaiPrefab: {fileID: 4025717162429082858, guid: 9ccaae6adfda9e443badd576a50b9f04, type: 3}
+    thoiGianGiuaCacLan: 5
+    soLuongMoiLan: 2
     deTheoCum: 1

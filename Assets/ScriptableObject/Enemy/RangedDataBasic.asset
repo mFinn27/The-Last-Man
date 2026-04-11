@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tenQuaiVat: Worm
   loaiQuai: 1
-  mauToiDa: 10
-  tocDoDiChuyen: 2
+  mauToiDa: 25
+  tocDoDiChuyen: 1.5
   dame: 8
-  tgThucHienDonDanhTiepTheo: 2
+  tgThucHienDonDanhTiepTheo: 2.5
   thoiGianGongDon: 0.5
   tiLeRotThuong: 1
   phanThuongRotRa: 0

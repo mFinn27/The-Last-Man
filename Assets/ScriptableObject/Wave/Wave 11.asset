@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1c26cdb229c1ee42b2426a3c163db8b, type: 3}
   m_Name: Wave 11
   m_EditorClassIdentifier: 
-  tenWave: Wave 1
-  thoiGianWave: 20
+  tenWave: Wave 11
+  thoiGianWave: 66
+  batBuocGietBoss: 0
   danhSachSuKien:
   - tenKichBan: Wave 1
     giayBatDau: 0

@@ -18,7 +18,7 @@ public class WaveUI : MonoBehaviour
 
     private void CapNhatTenWave(int soThuTuWave)
     {
-        if (textTenWave != null) textTenWave.text = "WAVE " + soThuTuWave;
+        if (textTenWave != null) textTenWave.text = "TẦNG " + soThuTuWave;
     }
 
     void Update()

@@ -17,7 +17,7 @@ public class UIAnimationProxy : MonoBehaviour
 
     void LateUpdate()
     {
-        if (sr_chimMoi.sprite != null)
+        if (sr_chimMoi != null && sr_chimMoi.sprite != null && img != null)
         {
             img.sprite = sr_chimMoi.sprite;
         }

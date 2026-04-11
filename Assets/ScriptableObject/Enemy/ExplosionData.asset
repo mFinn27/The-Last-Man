@@ -14,17 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tenQuaiVat: Destroyer
   loaiQuai: 2
-  mauToiDa: 10
+  mauToiDa: 60
   tocDoDiChuyen: 2.5
-  dame: 10
+  dame: 15
   tgThucHienDonDanhTiepTheo: 1
   thoiGianGongDon: 0
   tiLeRotThuong: 1
   phanThuongRotRa: 0
   minSoLuongVang: 1
   maxSoLuongVang: 2
-  minGiaTriMoiVien: 1
-  maxGiaTriMoiVien: 2
+  minGiaTriMoiVien: 3
+  maxGiaTriMoiVien: 5
   vatPhamDacBietPrefab: {fileID: 0}
   damePhatNo: 50
   banKinhNo: 3

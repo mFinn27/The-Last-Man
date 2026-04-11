@@ -9,6 +9,7 @@ using TMPro;
 public class DialogLine
 {
     public string tenNhanVat;
+    public Sprite hinhAnhDaiDien;
     [TextArea(3, 5)]
     public string noiDung;
 }
@@ -19,6 +20,7 @@ public class DialogManager : MonoBehaviour
 
     [Header("--- KẾT NỐI UI ---")]
     public GameObject panelDialog;
+    public Image imgAvatar;
     public TextMeshProUGUI txtTenNhanVat;
     public TextMeshProUGUI txtNoiDung;
 
@@ -51,6 +53,8 @@ public class DialogManager : MonoBehaviour
 
     public void BamKhungDialog()
     {
+        if (Time.timeScale == 0f) return;
+
         if (AudioManager.Instance != null) AudioManager.Instance.PlayClickSFX();
 
         if (dangChayChu)
@@ -76,6 +80,19 @@ public class DialogManager : MonoBehaviour
         DialogLine line = hangDoiDialog.Dequeue();
         txtTenNhanVat.text = line.tenNhanVat;
         cauThoaiHienTai = line.noiDung;
+
+        if (imgAvatar != null)
+        {
+            if (line.hinhAnhDaiDien != null)
+            {
+                imgAvatar.sprite = line.hinhAnhDaiDien;
+                imgAvatar.gameObject.SetActive(true);
+            }
+            else
+            {
+                imgAvatar.gameObject.SetActive(false);
+            }
+        }
 
         StopAllCoroutines();
         StartCoroutine(ChayChuTypewriter(line.noiDung));

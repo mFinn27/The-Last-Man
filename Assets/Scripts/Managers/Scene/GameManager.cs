@@ -61,4 +61,12 @@ public class GameManager : MonoBehaviour
     }
 
     public void CongKill() => soQuaiDaGiet++;
+
+    [ContextMenu("Xoa Het Tien Do")]
+    public void DeleteAllProgress()
+    {
+        PlayerPrefs.DeleteKey("WaveCaoNhat");
+        PlayerPrefs.Save();
+        Debug.Log("Da xoa het tien do Wave!");
+    }
 }

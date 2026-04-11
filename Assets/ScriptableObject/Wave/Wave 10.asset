@@ -13,13 +13,34 @@ MonoBehaviour:
   m_Name: Wave 10
   m_EditorClassIdentifier: 
   tenWave: "Wave Xu\u1EA5t hi\u1EC7n boss"
-  thoiGianWave: 30
+  thoiGianWave: 61
   batBuocGietBoss: 1
   danhSachSuKien:
-  - tenKichBan: Wave 1
+  - tenKichBan: Quai Co Ban
     giayBatDau: 0
-    giayKetThuc: 20
-    quaiPrefab: {fileID: 6494928833850633497, guid: 0a5eeeaa1e579904b8b8e15f33ba0406, type: 3}
-    thoiGianGiuaCacLan: 2
+    giayKetThuc: 60
+    quaiPrefab: {fileID: 5189326022444628608, guid: 3425c84ebe7eb7a48bbc77c0551119b4, type: 3}
+    thoiGianGiuaCacLan: 3
     soLuongMoiLan: 3
     deTheoCum: 1
+  - tenKichBan: Quai Tam Xa Cap 1
+    giayBatDau: 0
+    giayKetThuc: 60
+    quaiPrefab: {fileID: 912454679618174041, guid: 61e8b02011ce3b84e9eab65fb1a0bbf7, type: 3}
+    thoiGianGiuaCacLan: 3
+    soLuongMoiLan: 3
+    deTheoCum: 1
+  - tenKichBan: Quai Tam Xa Cap 2
+    giayBatDau: 0
+    giayKetThuc: 60
+    quaiPrefab: {fileID: 4025717162429082858, guid: 9ccaae6adfda9e443badd576a50b9f04, type: 3}
+    thoiGianGiuaCacLan: 5
+    soLuongMoiLan: 3
+    deTheoCum: 1
+  - tenKichBan: Boss
+    giayBatDau: 30
+    giayKetThuc: 35
+    quaiPrefab: {fileID: 6494928833850633497, guid: 6c90f9ed4cc50d04e9256d9aa505a6dc, type: 3}
+    thoiGianGiuaCacLan: 10
+    soLuongMoiLan: 1
+    deTheoCum: 0

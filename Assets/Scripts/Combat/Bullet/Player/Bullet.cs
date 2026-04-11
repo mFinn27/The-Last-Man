@@ -59,8 +59,11 @@ public class Bullet : MonoBehaviour
             float hutMauThucTe = DamageCalculator.CalculateLifeSteal(hutMau);
             if (hutMauThucTe > 0)
             {
-                int hoiMau = Mathf.RoundToInt(dameCuoiCung * hutMauThucTe);
-                if (hoiMau > 0) PlayerHealth.Instance.Heal(hoiMau);
+                float luongHoiTiemNang = dameCuoiCung * hutMauThucTe;
+                if (luongHoiTiemNang > 0 && PlayerHealth.Instance != null)
+                {
+                    PlayerHealth.Instance.GhiNhanHutMau(luongHoiTiemNang);
+                }
             }
 
             xuyenThauHienTai--;

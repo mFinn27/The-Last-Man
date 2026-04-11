@@ -14,15 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tenNhanVat: "Thi\u1EC7n X\u1EA1"
   hinhAnhNhanVat: {fileID: -1616387034180736328, guid: ade0af3c7f586824e9a41a1b0489f938, type: 3}
-  moTaNhanVat: "M\xE1u t\u1ED1i \u0111a: 60 (B\u1ECB -40 HP v\xE0o HP g\u1ED1c)\nT\u1ED1c
-    \u0111\u1ED9 di chuy\u1EC3n: 5\nS\xE1t th\u01B0\u01A1ng: 0 (+1)\nT\u1ED1c \u0111\u1ED9
-    \u0111\xE1nh: 0 (+20%)\nT\u1EC9 l\u1EC7 ch\xED m\u1EA1ng: 0 (+5%)\nB\u1EA1n kh\u1EDFi
-    \u0111\u1EA7u v\u1EDBi Cung c\u1EA5p 1 v\xE0 S\xFAng ng\u1EAFn c\u1EA5p 1"
+  moTaNhanVat: "M\xE1u t\u1ED1i \u0111a: 60\nT\u1ED1c \u0111\u1ED9 di chuy\u1EC3n:
+    +0.5\nS\xE1t th\u01B0\u01A1ng: +1\nT\u1ED1c \u0111\u1ED9 \u0111\xE1nh: +20%\nT\u1EC9
+    l\u1EC7 ch\xED m\u1EA1ng: +5%\nB\u1EA1n kh\u1EDFi \u0111\u1EA7u v\u1EDBi Cung
+    c\u1EA5p 1 v\xE0 S\xFAng ng\u1EAFn c\u1EA5p 1"
   animatorNhanVat: {fileID: 22100000, guid: c14be43d86ca38d48a3166bb9cca7f46, type: 2}
   idNhanVat: ThienXa
   moKhoaSan: 0
-  dieuKienWave: 5
-  textDieuKienMoKhoa: "V\u01B0\u1EE3t qua Wave 5 \u0111\u1EC3 m\u1EDF kh\xF3a"
+  dieuKienWave: 8
+  textDieuKienMoKhoa: "Ti\u1EBFp t\u1EE5c c\u1ED1t truy\u1EC7n \u0111\u1EC3 m\u1EDF
+    kh\xF3a"
   danhSachVuKhiChoPhepChon:
   - {fileID: 11400000, guid: ff38ef4b2c8845a449ad00bdaeb0ffde, type: 2}
   - {fileID: 11400000, guid: 20e3b6a7f0b4c7248a0166263e1910c1, type: 2}

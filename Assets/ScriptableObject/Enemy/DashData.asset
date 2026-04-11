@@ -14,19 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tenQuaiVat: "S\xF3i c\xF4 \u0111\u01A1n"
   loaiQuai: 3
-  mauToiDa: 20
+  mauToiDa: 50
   tocDoDiChuyen: 2.5
-  dame: 10
+  dame: 15
   tgThucHienDonDanhTiepTheo: 1
   thoiGianGongDon: 0.5
   tiLeRotThuong: 1
   phanThuongRotRa: 0
   minSoLuongVang: 1
   maxSoLuongVang: 2
-  minGiaTriMoiVien: 1
-  maxGiaTriMoiVien: 2
+  minGiaTriMoiVien: 2
+  maxGiaTriMoiVien: 3
   vatPhamDacBietPrefab: {fileID: 0}
-  tamKichHoatLuot: 7
+  tamKichHoatLuot: 6
   tocDoLuot: 15
   thoiGianLuot: 0.45
   thoiGianHoiChieuLuot: 3

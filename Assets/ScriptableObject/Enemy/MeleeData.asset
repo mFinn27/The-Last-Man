@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tenQuaiVat: Slime
   loaiQuai: 0
-  mauToiDa: 10
-  tocDoDiChuyen: 2.5
-  dame: 10
+  mauToiDa: 30
+  tocDoDiChuyen: 2
+  dame: 5
   tgThucHienDonDanhTiepTheo: 1
   thoiGianGongDon: 0
   tiLeRotThuong: 1
@@ -26,4 +26,4 @@ MonoBehaviour:
   minGiaTriMoiVien: 1
   maxGiaTriMoiVien: 2
   vatPhamDacBietPrefab: {fileID: 0}
-  khoangCachCanChien: 1.2
+  khoangCachCanChien: 0.8

@@ -14,7 +14,6 @@ public class MeleeHitBox : MonoBehaviour
         if (collision.CompareTag("Enemy"))
         {
             EnemyHealth mauEnemy = collision.GetComponent<EnemyHealth>();
-
             if (mauEnemy == null || data == null) return;
 
             bool chiMang;
@@ -25,12 +24,14 @@ public class MeleeHitBox : MonoBehaviour
             mauEnemy.TakeDamage(dameCuoiCung, huongDayLui, dayLuiThuc);
 
             FloatingTextManager.Instance.SpawnText(collision.transform.position, dameCuoiCung, chiMang);
-
             float hutMauThucTe = DamageCalculator.CalculateLifeSteal(data.hutMau);
             if (hutMauThucTe > 0)
             {
-                int hoiMau = Mathf.RoundToInt(dameCuoiCung * hutMauThucTe);
-                if (hoiMau > 0) PlayerHealth.Instance.Heal(hoiMau);
+                float luongHoiTiemNang = dameCuoiCung * hutMauThucTe;
+                if (luongHoiTiemNang > 0 && PlayerHealth.Instance != null)
+                {
+                    PlayerHealth.Instance.GhiNhanHutMau(luongHoiTiemNang);
+                }
             }
         }
     }

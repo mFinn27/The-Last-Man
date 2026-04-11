@@ -14,22 +14,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tenNhanVat: "\u0110\u1EA5u S\u0129"
   hinhAnhNhanVat: {fileID: -4584331887463120605, guid: cd4adeaa5a481054dad8c5f12f94154a, type: 3}
-  moTaNhanVat: "M\xE1u t\u1ED1i \u0111a: 150 (\u0110\u01B0\u1EE3c +50 HP v\xE0o HP
-    g\u1ED1c)\nGi\xE1p: +2\nT\u1ED1c \u0111\u1ED9 di chuy\u1EC3n: -1\nS\xE1t th\u01B0\u01A1ng:
-    -2\nT\u1ED1c \u0111\u1ED9 \u0111\xE1nh: -20%\nB\u1EA1n kh\u1EDFi \u0111\u1EA7u
-    v\u1EDBi Ch\xF9y c\u1EA5p 2"
+  moTaNhanVat: "M\xE1u t\u1ED1i \u0111a: 150\nGi\xE1p: +2\nT\u1ED1c \u0111\u1ED9
+    di chuy\u1EC3n: -1\nT\u1ED1c \u0111\u1ED9 \u0111\xE1nh: -10%\nB\u1EA1n kh\u1EDFi
+    \u0111\u1EA7u v\u1EDBi Ch\xF9y c\u1EA5p 2"
   animatorNhanVat: {fileID: 22100000, guid: 76781e4c84abc1046a975bad295f3ee2, type: 2}
   idNhanVat: Brawler
   moKhoaSan: 0
-  dieuKienWave: 10
-  textDieuKienMoKhoa: "V\u01B0\u1EE3t qua Wave 10 \u0111\u1EC3 m\u1EDF kh\xF3a"
+  dieuKienWave: 15
+  textDieuKienMoKhoa: "Ti\u1EBFp t\u1EE5c c\u1ED1t truy\u1EC7n \u0111\u1EC3 m\u1EDF
+    kh\xF3a"
   danhSachVuKhiChoPhepChon:
   - {fileID: 11400000, guid: 44227a9c7e7d1d84c8d924cd086ef24c, type: 2}
   mauToiDaGoc: 150
   giapGoc: 2
   tocDoDiChuyenGoc: 4
-  satThuongGoc: -2
-  tocDoDanhGoc: -0.2
+  satThuongGoc: 0
+  tocDoDanhGoc: -0.1
   tiLeChiMangGoc: 0
   satThuongChiMangGoc: 1.5
   hutMauGoc: 0
