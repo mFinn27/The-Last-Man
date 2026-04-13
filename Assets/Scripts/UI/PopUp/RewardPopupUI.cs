@@ -34,6 +34,11 @@ public class RewardPopupUI : MonoBehaviour
 
     private void KichHoatHienThi()
     {
+        if (WaveManager.Instance != null &&
+            WaveManager.Instance.waveHienTaiIndex >= WaveManager.Instance.danhSachWave.Count - 1)
+        {
+            return;
+        }
         StartCoroutine(HienThiSauDelay(2.5f));
     }
 

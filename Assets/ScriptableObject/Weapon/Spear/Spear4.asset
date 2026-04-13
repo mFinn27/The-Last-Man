@@ -13,18 +13,18 @@ MonoBehaviour:
   m_Name: Spear4
   m_EditorClassIdentifier: 
   tenMatHang: "Gi\xE1o"
-  moTa: "Dame c\u01A1 b\u1EA3n: 80\nT\u1ED1c \u0111\u1ED9 \u0111\xE1nh: 0.85\nT\u1EA7m
+  moTa: "Dame c\u01A1 b\u1EA3n: 82\nT\u1ED1c \u0111\u1ED9 \u0111\xE1nh: 0.85\nT\u1EA7m
     \u0111\xE1nh: 4\n\u0110\u1EA9y l\xF9i: 3\nS\xE1t th\u01B0\u01A1ng ch\xED m\u1EA1ng:
     10%"
   iconMatHang: {fileID: -7323941808403785378, guid: 86dfe46c1e807454c9bd77a80e783105, type: 3}
-  giaMua: 159
+  giaMua: 162
   capDo: 4
   mauCapDo: {r: 0.6156863, g: 0.13333334, b: 0.1882353, a: 1}
   loaiVuKhi: 0
   weaponPrefab: {fileID: 6287261391817972532, guid: 67c231a4e550e714088468c44dc9d3be, type: 3}
   vuKhiCapTiepTheo: {fileID: 0}
-  giaBan: 75
-  dame: 80
+  giaBan: 89
+  dame: 82
   tocDoDanh: 0.85
   tamDanh: 5
   dayLui: 3

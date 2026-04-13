@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PirateSword3
   m_EditorClassIdentifier: 
   tenMatHang: "Ki\u1EBFm H\u1EA3i T\u1EB7c C\u1EA5p 3"
-  moTa: "Dame c\u01A1 b\u1EA3n: 44\nT\u1ED1c \u0111\u1ED9 \u0111\xE1nh: 1\nT\u1EA7m
+  moTa: "Dame c\u01A1 b\u1EA3n: 48\nT\u1ED1c \u0111\u1ED9 \u0111\xE1nh: 1\nT\u1EA7m
     \u0111\xE1nh: 3\n\u0110\u1EA9y l\xF9i: 3\nT\u1EC9 l\u1EC7 ch\xED m\u1EA1ng: 5%"
   iconMatHang: {fileID: 5977994976036742936, guid: 86dfe46c1e807454c9bd77a80e783105, type: 3}
   giaMua: 69
@@ -23,7 +23,7 @@ MonoBehaviour:
   weaponPrefab: {fileID: 6287261391817972532, guid: 62fddc72daddb6e49871f98408468739, type: 3}
   vuKhiCapTiepTheo: {fileID: 11400000, guid: fee85f0561a587544a5ac312f90266a9, type: 2}
   giaBan: 43
-  dame: 44
+  dame: 48
   tocDoDanh: 1
   tamDanh: 3
   dayLui: 3

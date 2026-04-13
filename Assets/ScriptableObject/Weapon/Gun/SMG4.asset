@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SMG4
   m_EditorClassIdentifier: 
   tenMatHang: "S\xFAng Ti\u1EC3u Li\xEAn C\u1EA5p 4"
-  moTa: "Dame c\u01A1 b\u1EA3n: 35\nT\u1ED1c \u0111\u1ED9 \u0111\xE1nh: 3.2\nT\u1EA7m
+  moTa: "Dame c\u01A1 b\u1EA3n: 42\nT\u1ED1c \u0111\u1ED9 \u0111\xE1nh: 3.2\nT\u1EA7m
     \u0111\xE1nh: 8\n\u0110\u1EA9y l\xF9i: 2\nT\u1EC9 l\u1EC7 ch\xED m\u1EA1ng: 5%\nS\xE1t
     th\u01B0\u01A1ng ch\xED m\u1EA1ng: 10%"
   iconMatHang: {fileID: 3643455457785946567, guid: b5c2a97d1d66aba459af3899e9544096, type: 3}
@@ -24,7 +24,7 @@ MonoBehaviour:
   weaponPrefab: {fileID: 7504538950462528467, guid: febced762916f4043bd79e50fa1bf436, type: 3}
   vuKhiCapTiepTheo: {fileID: 0}
   giaBan: 95
-  dame: 35
+  dame: 42
   tocDoDanh: 3.2
   tamDanh: 8
   dayLui: 2

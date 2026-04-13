@@ -15,7 +15,7 @@ MonoBehaviour:
   tenMatHang: "Nh\xECn Th\u1EA5u"
   moTa: "+5% T\u1EC9 l\u1EC7 ch\xED m\u1EA1ng"
   iconMatHang: {fileID: -672390103, guid: fb4f6f07f0540a64a8a81ceb356a229d, type: 3}
-  giaMua: 16
+  giaMua: 14
   capDo: 1
   mauCapDo: {r: 1, g: 1, b: 1, a: 1}
   danhSachChiSo:

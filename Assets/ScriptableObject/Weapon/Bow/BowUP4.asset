@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BowUP4
   m_EditorClassIdentifier: 
   tenMatHang: "Cung Th\u1EA7n C\u1EA5p 4"
-  moTa: "Dame c\u01A1 b\u1EA3n: 52\nT\u1ED1c \u0111\u1ED9 \u0111\xE1nh: 1.4\nT\u1EA7m
+  moTa: "Dame c\u01A1 b\u1EA3n: 57\nT\u1ED1c \u0111\u1ED9 \u0111\xE1nh: 1.4\nT\u1EA7m
     \u0111\xE1nh: 10\n\u0110\u1EA9y l\xF9i: 4\nXuy\xEAn th\u1EA5u: 3"
   iconMatHang: {fileID: 366914711885447486, guid: 86dfe46c1e807454c9bd77a80e783105, type: 3}
   giaMua: 226
@@ -23,7 +23,7 @@ MonoBehaviour:
   weaponPrefab: {fileID: 7504538950462528467, guid: fd21b1d06d712114280294e72b64c2e7, type: 3}
   vuKhiCapTiepTheo: {fileID: 0}
   giaBan: 135
-  dame: 52
+  dame: 57
   tocDoDanh: 1.4
   tamDanh: 10
   dayLui: 4

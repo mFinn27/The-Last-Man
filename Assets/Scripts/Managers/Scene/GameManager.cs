@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public int soQuaiDaGietKhiBatDauWave = 0;
     [HideInInspector] public bool isLoadingSave = false;
     [HideInInspector] public RunSaveData currentSave;
+    [HideInInspector] public bool isGameOver = false;
 
     void Awake()
     {
@@ -60,7 +61,10 @@ public class GameManager : MonoBehaviour
 
     public void BatDauGame()
     {
+        isGameOver = false;
         PlayerPrefs.DeleteKey("RunSave");
+        PlayerPrefs.Save();
+
         isLoadingSave = false;
         soQuaiDaGiet = 0;
         Time.timeScale = 1f;
@@ -70,9 +74,13 @@ public class GameManager : MonoBehaviour
 
     public void TiepTucGame()
     {
+        isGameOver = false;
         isLoadingSave = true;
         string json = PlayerPrefs.GetString("RunSave");
         Debug.Log("<color=yellow>DỮ LIỆU ĐỌC ĐƯỢC TỪ FILE SAVE:</color> " + json);
+
+        PlayerPrefs.DeleteKey("RunSave");
+        PlayerPrefs.Save();
 
         currentSave = JsonUtility.FromJson<RunSaveData>(json);
         characterDangChon = tatCaNhanVat.Find(x => x.tenNhanVat == currentSave.tenNhanVat);
@@ -96,7 +104,7 @@ public class GameManager : MonoBehaviour
 
     private void OnApplicationQuit()
     {
-        if (PlayerHealth.Instance != null && PlayerHealth.Instance.GetCurrentHP() > 0)
+        if (!isGameOver && PlayerHealth.Instance != null && PlayerHealth.Instance.GetCurrentHP() > 0)
         {
             LuuTienDoRun();
         }
@@ -155,8 +163,10 @@ public class GameManager : MonoBehaviour
 
     public void KetThucGame(bool chienThang)
     {
+        isGameOver = true;
         Time.timeScale = 0f;
         PlayerPrefs.DeleteKey("RunSave");
+        PlayerPrefs.Save();
 
         if (AudioManager.Instance != null) AudioManager.Instance.StopAllGameplaySounds();
         if (WaveManager.Instance != null) LuuTienDoWave(WaveManager.Instance.waveHienTaiIndex);

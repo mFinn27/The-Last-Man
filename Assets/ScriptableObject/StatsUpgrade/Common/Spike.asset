@@ -16,7 +16,7 @@ MonoBehaviour:
   moTa: "+1 Xuy\xEAn th\u1EA5u (V\u0169 kh\xED T\u1EA7m xa)\n+5% T\u1ED1c \u0111\u1ED9
     \u0111\xE1nh"
   iconMatHang: {fileID: 8453235877785612248, guid: b28c11611d90bc640bd37a843643f37c, type: 3}
-  giaMua: 19
+  giaMua: 17
   capDo: 1
   mauCapDo: {r: 1, g: 1, b: 1, a: 1}
   danhSachChiSo:

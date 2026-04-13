@@ -15,7 +15,7 @@ MonoBehaviour:
   tenMatHang: "Dinh D\u01B0\u1EE1ng"
   moTa: +5 HP
   iconMatHang: {fileID: -2094145050, guid: 00ec56c26bb99604ea6180aae69492bf, type: 3}
-  giaMua: 15
+  giaMua: 13
   capDo: 1
   mauCapDo: {r: 1, g: 1, b: 1, a: 1}
   danhSachChiSo:

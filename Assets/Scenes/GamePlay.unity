@@ -21714,6 +21714,7 @@ MonoBehaviour:
   testMode: 0
   danhSachCotTruyen:
   - idSuKien: Wave1_GapLuHanh
+    idNhanVatBoQua: 
     truocWaveSo: 1
     npcPrefab: {fileID: 9020193919793380619, guid: 5856f8c72ae817e4f9d29e343441ddf8, type: 3}
     kichBan:
@@ -21789,6 +21790,7 @@ MonoBehaviour:
     giaDinhPrefab: {fileID: 0}
     kichBanGiaDinh: []
   - idSuKien: Wave5_GapSatThu
+    idNhanVatBoQua: Assassin
     truocWaveSo: 6
     npcPrefab: {fileID: 2068652951387516405, guid: 7a27fbfac2c0f82499f3d5dee9ea9551, type: 3}
     kichBan:
@@ -21828,6 +21830,7 @@ MonoBehaviour:
     giaDinhPrefab: {fileID: 0}
     kichBanGiaDinh: []
   - idSuKien: Wave8_GapThienXa
+    idNhanVatBoQua: ThienXa
     truocWaveSo: 9
     npcPrefab: {fileID: 8165953949253883702, guid: cbf85667798384e46986bbfd7ee9b015, type: 3}
     kichBan:
@@ -21860,6 +21863,7 @@ MonoBehaviour:
     giaDinhPrefab: {fileID: 0}
     kichBanGiaDinh: []
   - idSuKien: Wave10_GapKeDotBien
+    idNhanVatBoQua: Mutant
     truocWaveSo: 11
     npcPrefab: {fileID: 2428609674699300593, guid: 5a1a25dd52e016e43be4075d0f35fd8e, type: 3}
     kichBan:
@@ -21911,6 +21915,7 @@ MonoBehaviour:
     giaDinhPrefab: {fileID: 0}
     kichBanGiaDinh: []
   - idSuKien: Wave15_GapDauSi
+    idNhanVatBoQua: Brawler
     truocWaveSo: 16
     npcPrefab: {fileID: 5065146846393481615, guid: a77b1dd777f1dce4890a9db1cbd03064, type: 3}
     kichBan:
@@ -21949,6 +21954,7 @@ MonoBehaviour:
     giaDinhPrefab: {fileID: 0}
     kichBanGiaDinh: []
   - idSuKien: Wave20_GapMaCaRong
+    idNhanVatBoQua: Vampire
     truocWaveSo: 21
     npcPrefab: {fileID: 914165015973903655, guid: a4e9a9539c3ee754a9fcbfb445f2a729, type: 3}
     kichBan:
@@ -22113,7 +22119,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 289553143
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_TargetDisplay: 0
 --- !u!1 &998438100
 GameObject:
@@ -22733,7 +22739,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 289553143
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_TargetDisplay: 0
 --- !u!1 &1108209907
 GameObject:
@@ -24138,6 +24144,7 @@ Transform:
   - {fileID: 772468673}
   - {fileID: 1786959775}
   - {fileID: 961704358}
+  - {fileID: 1341120269}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1330651516
@@ -24296,6 +24303,50 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 19.759378, y: 1.274832}
   m_EdgeRadius: 0
+--- !u!1 &1341120268
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1341120269}
+  - component: {fileID: 1341120270}
+  m_Layer: 0
+  m_Name: ExplosionPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1341120269
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1341120268}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1319328554}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1341120270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1341120268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 007d9b3a9fc1d0e45b6f89ea1e689ecd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1342627840
 GameObject:
   m_ObjectHideFlags: 0
@@ -37299,6 +37350,7 @@ MonoBehaviour:
   animator: {fileID: 590089547}
   hieuUngKhoiBui: {fileID: 636440230}
   lucVayBuiNguoc: 2
+  isCutsceneControlled: 0
 --- !u!50 &1412564135
 Rigidbody2D:
   serializedVersion: 5
@@ -37342,7 +37394,7 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 8
-  thoiGianMoiLanQuet: 0.1
+  thoiGianMoiLanQuet: 0.2
 --- !u!114 &1412564137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37382,6 +37434,7 @@ MonoBehaviour:
   phamViHutNamChamGoc: 1.3
   bonusPhamViHut: 0
   vangHienTai: 0
+  vangKhiBatDauWave: 0
   tongMauToiDa: 0
   tongGiap: 0
   tongTocDoDiChuyen: 0
@@ -39121,7 +39174,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 289553143
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_TargetDisplay: 0
 --- !u!114 &1678995946
 MonoBehaviour:
@@ -40580,6 +40633,10 @@ PrefabInstance:
     - target: {fileID: 6660319780640308304, guid: 2313ed44c848aa54ba05301d6901a02a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7383514052945754485, guid: 2313ed44c848aa54ba05301d6901a02a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7448697919019534002, guid: 2313ed44c848aa54ba05301d6901a02a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size

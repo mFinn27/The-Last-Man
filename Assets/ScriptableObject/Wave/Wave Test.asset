@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1c26cdb229c1ee42b2426a3c163db8b, type: 3}
+  m_Name: Wave Test
+  m_EditorClassIdentifier: 
+  tenWave: Wave 20
+  thoiGianWave: 10
+  batBuocGietBoss: 1
+  danhSachSuKien:
+  - tenKichBan: Quai Co Ban
+    giayBatDau: 0
+    giayKetThuc: 5
+    quaiPrefab: {fileID: 6494928833850633497, guid: 0a5eeeaa1e579904b8b8e15f33ba0406, type: 3}
+    thoiGianGiuaCacLan: 20
+    soLuongMoiLan: 1
+    deTheoCum: 0

@@ -13,17 +13,17 @@ MonoBehaviour:
   m_Name: Spear3
   m_EditorClassIdentifier: 
   tenMatHang: "Gi\xE1o"
-  moTa: "Dame c\u01A1 b\u1EA3n: 57\nT\u1ED1c \u0111\u1ED9 \u0111\xE1nh: 0.8\nT\u1EA7m
+  moTa: "Dame c\u01A1 b\u1EA3n: 60\nT\u1ED1c \u0111\u1ED9 \u0111\xE1nh: 0.8\nT\u1EA7m
     \u0111\xE1nh: 4\n\u0110\u1EA9y l\xF9i: 3"
   iconMatHang: {fileID: -7323941808403785378, guid: 86dfe46c1e807454c9bd77a80e783105, type: 3}
-  giaMua: 73
+  giaMua: 91
   capDo: 3
   mauCapDo: {r: 0.49411765, g: 0.18431373, b: 0.47843137, a: 1}
   loaiVuKhi: 0
   weaponPrefab: {fileID: 6287261391817972532, guid: 67c231a4e550e714088468c44dc9d3be, type: 3}
   vuKhiCapTiepTheo: {fileID: 11400000, guid: 497fdaea2fafa534186c446801f7d86d, type: 2}
   giaBan: 51
-  dame: 57
+  dame: 60
   tocDoDanh: 0.8
   tamDanh: 4
   dayLui: 3

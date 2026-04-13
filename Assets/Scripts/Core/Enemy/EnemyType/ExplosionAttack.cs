@@ -45,15 +45,26 @@ public class ExplosionAttack : MonoBehaviour
 
         if (explosionEffectPrefab != null)
         {
-            GameObject hieuUng = Instantiate(explosionEffectPrefab, transform.position, Quaternion.identity);
+            GameObject hieuUng;
+            if (VFXPool.Instance != null)
+            {
+                hieuUng = VFXPool.Instance.SpawnVFX(explosionEffectPrefab, transform.position, Quaternion.identity);
+            }
+            else
+            {
+                hieuUng = Instantiate(explosionEffectPrefab, transform.position, Quaternion.identity);
+            }
             float kichThuocThucTe = data.banKinhNo * heSoDieuChinh;
             hieuUng.transform.localScale = new Vector3(kichThuocThucTe, kichThuocThucTe, 1f);
         }
 
         if (PlayerHealth.Instance != null)
         {
-            float khoangCach = Vector2.Distance(transform.position, PlayerHealth.Instance.transform.position);
-            if (khoangCach <= data.banKinhNo) PlayerHealth.Instance.TakeDamage(data.damePhatNo);
+            float khoangCachBinhPhuong = (transform.position - PlayerHealth.Instance.transform.position).sqrMagnitude;
+            if (khoangCachBinhPhuong <= data.banKinhNo * data.banKinhNo)
+            {
+                PlayerHealth.Instance.TakeDamage(data.damePhatNo);
+            }
         }
 
         if (mau != null) mau.HoanThanhChet(true);

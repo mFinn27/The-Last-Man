@@ -250,13 +250,26 @@ public class WaveManager : MonoBehaviour
         {
             AudioManager.Instance.PlayGameplayBGM();
         }
-
         OnWaveEnded?.Invoke();
 
-        if (GameManager.Instance != null)
+        if (waveHienTaiIndex >= danhSachWave.Count - 1)
+        {
+            Debug.Log("Đã vượt qua Wave cuối cùng! Đang chuyển đến đoạn kết...");
+            if (StoryDirector.Instance != null)
+            {
+                StartCoroutine(DelayChayEnding(2.5f));
+            }
+        }
+        else if (GameManager.Instance != null)
         {
             GameManager.Instance.LuuTienDoWave(waveHienTaiIndex + 1);
         }
+    }
+
+    private IEnumerator DelayChayEnding(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        StoryDirector.Instance.KiemTraVaChayCutscene(waveHienTaiIndex + 2);
     }
 
     public void ChuyenSangWaveTiepTheo()

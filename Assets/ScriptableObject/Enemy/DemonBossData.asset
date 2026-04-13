@@ -14,20 +14,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tenQuaiVat: Demon
   loaiQuai: 4
-  mauToiDa: 200000
+  mauToiDa: 300000
   tocDoDiChuyen: 3.5
   dame: 100
   tgThucHienDonDanhTiepTheo: 1
   thoiGianGongDon: 0.5
   tiLeRotThuong: 1
-  phanThuongRotRa: 1
-  minSoLuongVang: 0
-  maxSoLuongVang: 0
-  minGiaTriMoiVien: 0
-  maxGiaTriMoiVien: 0
+  phanThuongRotRa: 0
+  minSoLuongVang: 10
+  maxSoLuongVang: 20
+  minGiaTriMoiVien: 10
+  maxGiaTriMoiVien: 20
   vatPhamDacBietPrefab: {fileID: 0}
   thoiGianDuoiBat: 2.5
   danPrefab: {fileID: 5167635117232818042, guid: 425cee362bc970d4f88588ac7d22e285, type: 3}
-  tocDoDan: 9
+  tocDoDan: 10
   soLuongDanToaTron: 18
   soLanLuot: 4
+  quaiNhoPrefab: {fileID: 5189326022444628608, guid: d46b9b491393fda428e1a38bb0bb1602, type: 3}
+  soLuongQuaiSpawn: 4
+  soLuongDanBurst: 6
+  thoiGianGiuaCacVien: 0.15

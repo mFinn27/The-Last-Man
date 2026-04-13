@@ -15,6 +15,8 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 moveInput;
     public Vector2 HuongDiChuyenCuoi { get; private set; } = Vector2.right;
 
+    [HideInInspector] public bool isCutsceneControlled = false;
+
     private readonly int moveXPara = Animator.StringToHash("MoveX");
     private readonly int moveYPara = Animator.StringToHash("MoveY");
     private readonly int isMovingPara = Animator.StringToHash("IsMoving");
@@ -28,14 +30,30 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Time.timeScale == 0f) return;
 
-        moveInput.x = Input.GetAxisRaw("Horizontal");
-        moveInput.y = Input.GetAxisRaw("Vertical");
-
+        if (!isCutsceneControlled && (PlayerHealth.Instance == null || PlayerHealth.Instance.GetCurrentHP() > 0))
+        {
+            moveInput.x = Input.GetAxisRaw("Horizontal");
+            moveInput.y = Input.GetAxisRaw("Vertical");
+        }
+        else if (isCutsceneControlled)
+        {
+            if (rb.linearVelocity.sqrMagnitude > 0.01f)
+            {
+                moveInput = rb.linearVelocity.normalized;
+            }
+            else
+            {
+                moveInput = Vector2.zero;
+            }
+        }
+        else
+        {
+            moveInput = Vector2.zero;
+        }
         if (moveInput != Vector2.zero)
         {
             HuongDiChuyenCuoi = moveInput.normalized;
         }
-
         HandleAnimations();
     }
 
@@ -81,7 +99,23 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (isCutsceneControlled) return;
+
         float tocDoHienTai = PlayerStats.Instance != null ? PlayerStats.Instance.GetMoveSpeed() : 5f;
         rb.linearVelocity = moveInput.normalized * tocDoHienTai;
+    }
+
+    public void ForceMoveTo(Vector2 huong)
+    {
+        isCutsceneControlled = true;
+        rb.linearVelocity = huong;
+    }
+
+    public void StopForceMove()
+    {
+        isCutsceneControlled = false;
+        rb.linearVelocity = Vector2.zero;
+        moveInput = Vector2.zero;
+        HandleAnimations();
     }
 }

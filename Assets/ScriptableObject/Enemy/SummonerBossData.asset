@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tenQuaiVat: Summoner
   loaiQuai: 4
-  mauToiDa: 15000
+  mauToiDa: 50000
   tocDoDiChuyen: 2.2
   dame: 50
   tgThucHienDonDanhTiepTheo: 1
@@ -32,4 +32,4 @@ MonoBehaviour:
   danPrefab: {fileID: 5167635117232818042, guid: 7fac778d57f06e14493bb08551522d91, type: 3}
   tocDoDan: 9
   soLuongDanBurst: 8
-  thoiGianGiuaCacVien: 0.2
+  thoiGianGiuaCacVien: 0.15

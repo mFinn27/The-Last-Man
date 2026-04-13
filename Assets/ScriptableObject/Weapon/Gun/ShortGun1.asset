@@ -13,17 +13,17 @@ MonoBehaviour:
   m_Name: ShortGun1
   m_EditorClassIdentifier: 
   tenMatHang: "S\xFAng Ng\u1EAFn C\u1EA5p 1"
-  moTa: "Dame c\u01A1 b\u1EA3n: 8\nT\u1ED1c \u0111\u1ED9 \u0111\xE1nh: 1\nT\u1EA7m
+  moTa: "Dame c\u01A1 b\u1EA3n: 10\nT\u1ED1c \u0111\u1ED9 \u0111\xE1nh: 1\nT\u1EA7m
     \u0111\xE1nh: 8\n\u0110\u1EA9y l\xF9i: 3"
   iconMatHang: {fileID: 2708639840820545950, guid: b5c2a97d1d66aba459af3899e9544096, type: 3}
-  giaMua: 24
+  giaMua: 20
   capDo: 1
   mauCapDo: {r: 1, g: 1, b: 1, a: 1}
   loaiVuKhi: 2
   weaponPrefab: {fileID: 7504538950462528467, guid: 99572787ed108ee4abaf618de15315e5, type: 3}
   vuKhiCapTiepTheo: {fileID: 11400000, guid: 57d466588c9c768439893ca85d997dcc, type: 2}
   giaBan: 17
-  dame: 8
+  dame: 10
   tocDoDanh: 1
   tamDanh: 8
   dayLui: 3

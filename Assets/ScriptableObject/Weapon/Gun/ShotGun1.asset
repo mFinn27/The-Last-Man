@@ -16,7 +16,7 @@ MonoBehaviour:
   moTa: "Dame c\u01A1 b\u1EA3n: 10\nT\u1ED1c \u0111\u1ED9 \u0111\xE1nh c\u1ED1 \u0111\u1ECBnh:
     0.65\nT\u1EA7m \u0111\xE1nh: 5\n\u0110\u1EA9y l\xF9i: 4"
   iconMatHang: {fileID: -7579322072880458250, guid: b5c2a97d1d66aba459af3899e9544096, type: 3}
-  giaMua: 27
+  giaMua: 23
   capDo: 1
   mauCapDo: {r: 1, g: 1, b: 1, a: 1}
   loaiVuKhi: 2

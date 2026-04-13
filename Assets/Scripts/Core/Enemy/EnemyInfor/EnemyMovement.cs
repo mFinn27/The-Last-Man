@@ -37,33 +37,22 @@ public class EnemyMovement : MonoBehaviour
 
     void Update()
     {
-        if (player == null || data == null) return;
-
-        if (data.loaiQuai == EnemyType.Melee) return;
+        if (player == null || data == null || data.loaiQuai == EnemyType.Melee) return;
 
         if (Time.time >= thoiGianGayDameTiepTheo)
         {
             bool dangChamVaoPlayer = false;
+            float khoangCachSqr = (transform.position - player.position).sqrMagnitude;
+            float tamVaCham = data.loaiQuai == EnemyType.Boss ? 2f : 1.2f;
 
-            if (myCollider != null && playerCollider != null)
+            if (khoangCachSqr <= tamVaCham * tamVaCham)
             {
-                ColliderDistance2D khoangCachVatLy = Physics2D.Distance(myCollider, playerCollider);
+                dangChamVaoPlayer = true;
+            }
 
-                if (khoangCachVatLy.isOverlapped || khoangCachVatLy.distance <= 0.1f)
-                {
-                    dangChamVaoPlayer = true;
-                }
-            }
-            else
-            {
-                float khoangCach = Vector2.Distance(transform.position, player.position);
-                float tamVaCham = data.loaiQuai == EnemyType.Boss ? 2f : 1.2f;
-                if (khoangCach <= tamVaCham) dangChamVaoPlayer = true;
-            }
             if (dangChamVaoPlayer)
             {
                 PlayerHealth.Instance.TakeDamage(data.dame);
-
                 float thoiGianHoi = data.tgThucHienDonDanhTiepTheo > 0 ? data.tgThucHienDonDanhTiepTheo : 1f;
                 thoiGianGayDameTiepTheo = Time.time + thoiGianHoi;
             }

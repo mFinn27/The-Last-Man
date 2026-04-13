@@ -6,6 +6,7 @@ public class Coin : MonoBehaviour
     private int giaTri;
     private bool dangBiHut = false;
     private bool biGiamGiaTri = false;
+    private Transform playerTransform;
 
     [SerializeField] private float tocDoHut = 5f;
 
@@ -21,6 +22,12 @@ public class Coin : MonoBehaviour
         WaveManager.OnWaveEnded -= XuLyHutCuoiWave;
     }
 
+    private void Start()
+    {
+        if (PlayerHealth.Instance != null)
+            playerTransform = PlayerHealth.Instance.transform;
+    }
+
     public void Setup(int giaTriNapVao)
     {
         giaTri = giaTriNapVao;
@@ -32,10 +39,12 @@ public class Coin : MonoBehaviour
 
     void Update()
     {
-        if (!dangBiHut && PlayerHealth.Instance != null && PlayerStats.Instance != null)
+        if (!dangBiHut && playerTransform != null && PlayerStats.Instance != null)
         {
-            float khoangCach = Vector2.Distance(transform.position, PlayerHealth.Instance.transform.position);
-            if (khoangCach <= PlayerStats.Instance.GetMagnetRange())
+            float khoangCachBinhPhuong = (transform.position - playerTransform.position).sqrMagnitude;
+            float phamViHut = PlayerStats.Instance.GetMagnetRange();
+
+            if (khoangCachBinhPhuong <= phamViHut * phamViHut)
             {
                 KichHoatHutVaoNguoi();
             }

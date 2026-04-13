@@ -13,4 +13,12 @@ public class DemonBossData : EnemyData
 
     [Header("- Pha Lướt Chém -")]
     public int soLanLuot = 3;
+
+    [Header("- Pha Triệu Hồi (Mới) -")]
+    public GameObject quaiNhoPrefab;
+    public int soLuongQuaiSpawn = 4;
+
+    [Header("- Pha Bắn Liên Tục (Mới) -")]
+    public int soLuongDanBurst = 5;
+    public float thoiGianGiuaCacVien = 0.15f;
 }

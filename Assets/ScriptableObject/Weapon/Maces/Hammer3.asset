@@ -13,17 +13,17 @@ MonoBehaviour:
   m_Name: Hammer3
   m_EditorClassIdentifier: 
   tenMatHang: "B\xFAa Chi\u1EBFn"
-  moTa: "Dame c\u01A1 b\u1EA3n: 46\nT\u1ED1c \u0111\u1ED9 \u0111\xE1nh: 0.75\nT\u1EA7m
+  moTa: "Dame c\u01A1 b\u1EA3n: 59\nT\u1ED1c \u0111\u1ED9 \u0111\xE1nh: 0.75\nT\u1EA7m
     \u0111\xE1nh: 3\n\u0110\u1EA9y l\xF9i: 3"
   iconMatHang: {fileID: 4059512458712482826, guid: 548ee95871222ac40bb72bb11ed92ca9, type: 3}
-  giaMua: 92
+  giaMua: 97
   capDo: 3
   mauCapDo: {r: 0.49411765, g: 0.18431373, b: 0.47843137, a: 1}
   loaiVuKhi: 1
   weaponPrefab: {fileID: 3918598598552935104, guid: 1ecaa3cdf4679d848b4cd4075a94034d, type: 3}
   vuKhiCapTiepTheo: {fileID: 11400000, guid: ea31f97d4c62da64aab9da79f905086f, type: 2}
   giaBan: 49
-  dame: 46
+  dame: 59
   tocDoDanh: 0.75
   tamDanh: 3
   dayLui: 3

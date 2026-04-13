@@ -22,7 +22,7 @@ public class ShopUI : MonoBehaviour
 
     [Header("--- THIẾT LẬP REROLL ---")]
     public int giaRerollBanDau = 2;
-    public int buocNhayGiaReroll = 2;
+    [HideInInspector] public int buocNhayGiaReroll = 1;
 
     [Header("--- KHO HÀNG HÓA ---")]
     public List<ItemData> khoHangHoa;
@@ -48,15 +48,21 @@ public class ShopUI : MonoBehaviour
         CapNhatVangUITong();
         panelHanhDong.SetActive(false);
         CapNhatGiaoDienKhoVuKhi();
+        int waveHienTai = WaveManager.Instance != null ? WaveManager.Instance.waveHienTaiIndex + 1 : 1;
+        buocNhayGiaReroll = Mathf.Max(1, Mathf.FloorToInt(waveHienTai * 0.4f));
+        int giaRerollCuaWaveNay = Mathf.FloorToInt(waveHienTai * 0.75f) + buocNhayGiaReroll;
 
         foreach (var the in cacTheTrenKe)
         {
             if (!the.dangBiKhoa)
             {
                 ItemData itemRandom = LayItemNgauNhienTheoWave();
-                the.Setup(itemRandom, this, giaRerollBanDau);
+                the.Setup(itemRandom, this, giaRerollCuaWaveNay);
             }
-            else the.ResetChoWaveMoi(giaRerollBanDau);
+            else
+            {
+                the.ResetChoWaveMoi(giaRerollCuaWaveNay);
+            }
         }
     }
 

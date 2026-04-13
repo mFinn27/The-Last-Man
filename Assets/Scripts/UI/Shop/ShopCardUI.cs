@@ -23,6 +23,7 @@ public class ShopCardUI : MonoBehaviour
     private ShopUI shopManager;
     private int giaRerollHienTai;
     private bool daBiMua = false;
+    private int giaMuaThucTe;
 
     public void Setup(ItemData data, ShopUI manager, int giaRerollBanDau)
     {
@@ -42,12 +43,14 @@ public class ShopCardUI : MonoBehaviour
             txtTen.color = data.mauCapDo;
         }
 
-        if (imgVienCapDo != null)
-        {
-            imgVienCapDo.color = data.mauCapDo;
-        }
+        if (imgVienCapDo != null) imgVienCapDo.color = data.mauCapDo;
 
-        if (txtMoTaGomGiaTien != null) txtMoTaGomGiaTien.text = $"{data.moTa}\n\n<color=yellow>Giá: {data.giaMua} Vàng</color>";
+        int waveHienTai = WaveManager.Instance != null ? WaveManager.Instance.waveHienTaiIndex + 1 : 1;
+        float giaTinhToan = data.giaMua + waveHienTai + (data.giaMua * 0.1f * waveHienTai);
+        float heSoCuaHang = 1f;
+        giaMuaThucTe = Mathf.FloorToInt(giaTinhToan * heSoCuaHang);
+        if (txtMoTaGomGiaTien != null) txtMoTaGomGiaTien.text = $"{data.moTa}\n\n<color=yellow>Giá: {giaMuaThucTe} Vàng</color>";
+
         if (imgIcon != null && data.iconMatHang != null) imgIcon.sprite = data.iconMatHang;
         CapNhatGiaRerollUI();
     }
@@ -69,12 +72,12 @@ public class ShopCardUI : MonoBehaviour
     {
         if (daBiMua || dataHienTai == null) return;
 
-        if (PlayerStats.Instance.vangHienTai >= dataHienTai.giaMua)
+        if (PlayerStats.Instance.vangHienTai >= giaMuaThucTe)
         {
             if (AudioManager.Instance != null) AudioManager.Instance.PlayEquipSFX();
             if (dataHienTai is UpgradeData dataChiSo)
             {
-                PlayerStats.Instance.vangHienTai -= dataHienTai.giaMua;
+                PlayerStats.Instance.vangHienTai -= giaMuaThucTe;
                 PlayerStats.Instance.ThemChiSoTuThe(dataChiSo);
                 shopManager.RerollJustThisCard(this, giaRerollHienTai);
             }
@@ -82,16 +85,15 @@ public class ShopCardUI : MonoBehaviour
             {
                 if (WeaponManager.Instance.ThuMuaVuKhi(dataVuKhi))
                 {
-                    PlayerStats.Instance.vangHienTai -= dataHienTai.giaMua;
+                    PlayerStats.Instance.vangHienTai -= giaMuaThucTe;
                     shopManager.RerollJustThisCard(this, giaRerollHienTai);
                 }
                 else
                 {
-                    Debug.Log("Túi đồ đã đầy 5 slot! Vui lòng bán bớt hoặc ghép vũ khí.");
+                    Debug.Log("Túi đồ đã đầy 6 slot! Vui lòng bán bớt hoặc ghép vũ khí.");
                     return;
                 }
             }
-
             shopManager.CapNhatVangUITong();
         }
         else
@@ -104,6 +106,7 @@ public class ShopCardUI : MonoBehaviour
     {
         if (daBiMua || shopManager == null || dataHienTai == null) return;
         if (AudioManager.Instance != null) AudioManager.Instance.PlayClickSFX();
+
         if (PlayerStats.Instance.vangHienTai >= giaRerollHienTai)
         {
             PlayerStats.Instance.vangHienTai -= giaRerollHienTai;
@@ -115,7 +118,10 @@ public class ShopCardUI : MonoBehaviour
 
     private void CapNhatGiaRerollUI()
     {
-        if (txtGiaReroll != null) txtGiaReroll.text = (giaRerollHienTai == 0) ? "Đổi lại (Miễn phí)" : $"Đổi lại\n({giaRerollHienTai} Vàng)";
+        if (txtGiaReroll != null)
+        {
+            txtGiaReroll.text = $"<color=#0080FF>{giaRerollHienTai}</color>";
+        }
     }
 
     public void ResetChoWaveMoi(int giaMoi)

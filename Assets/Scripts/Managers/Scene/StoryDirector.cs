@@ -7,6 +7,7 @@ using System;
 public class StoryEvent
 {
     public string idSuKien = "Cutscene_WaveX";
+    public string idNhanVatBoQua;
     public int truocWaveSo = 1;
     public GameObject npcPrefab;
     public DialogLine[] kichBan;
@@ -71,9 +72,18 @@ public class StoryDirector : MonoBehaviour
 
         if (suKien != null)
         {
-            bool daXem = PlayerPrefs.GetInt(suKien.idSuKien, 0) == 1;
+            bool dangChoiChinhNPCNay = false;
+            if (GameManager.Instance != null && GameManager.Instance.characterDangChon != null)
+            {
+                if (!string.IsNullOrEmpty(suKien.idNhanVatBoQua) &&
+                    GameManager.Instance.characterDangChon.idNhanVat == suKien.idNhanVatBoQua)
+                {
+                    dangChoiChinhNPCNay = true;
+                }
+            }
 
-            if (testMode || !daXem)
+            bool daXem = PlayerPrefs.GetInt(suKien.idSuKien, 0) == 1;
+            if (testMode || (!daXem && !dangChoiChinhNPCNay))
             {
                 StartCoroutine(ChayKichBanRoutine(suKien, waveChuanBiChay == 1));
                 return true;
@@ -96,8 +106,6 @@ public class StoryDirector : MonoBehaviour
 
             Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
             if (rb != null) rb.linearVelocity = Vector2.zero;
-
-            if (scriptDiChuyen != null) scriptDiChuyen.enabled = false;
         }
 
         if (WeaponManager.Instance != null && WeaponManager.Instance.weaponPivot != null)
@@ -113,22 +121,33 @@ public class StoryDirector : MonoBehaviour
         {
             if (laDauGame) player.transform.position = new Vector2(0f, -10f);
 
+            float speed = 4f;
+
+            if (scriptDiChuyen != null)
+            {
+                while (Vector2.Distance(player.transform.position, viTriPlayerDichDen) > 0.1f)
+                {
+                    Vector2 huong = (viTriPlayerDichDen - (Vector2)player.transform.position).normalized;
+                    scriptDiChuyen.ForceMoveTo(huong * speed);
+                    yield return null;
+                }
+                scriptDiChuyen.StopForceMove();
+            }
+            else
+            {
+                while (Vector2.Distance(player.transform.position, viTriPlayerDichDen) > 0.1f)
+                {
+                    player.transform.position = Vector2.MoveTowards(player.transform.position, viTriPlayerDichDen, speed * Time.deltaTime);
+                    yield return null;
+                }
+            }
             if (anim != null)
             {
-                anim.SetBool("IsMoving", true);
-                Vector2 huongNhin = (viTriPlayerDichDen - (Vector2)player.transform.position).normalized;
-                anim.SetFloat("MoveX", huongNhin.x);
-                anim.SetFloat("MoveY", huongNhin.y);
+                anim.SetBool("IsMoving", false);
+                Vector2 huongNhinNPC = (viTriNPC - (Vector2)player.transform.position).normalized;
+                anim.SetFloat("MoveX", huongNhinNPC.x);
+                anim.SetFloat("MoveY", huongNhinNPC.y);
             }
-
-            float speed = 4f;
-            while (Vector2.Distance(player.transform.position, viTriPlayerDichDen) > 0.1f)
-            {
-                player.transform.position = Vector2.MoveTowards(player.transform.position, viTriPlayerDichDen, speed * Time.deltaTime);
-                yield return null;
-            }
-
-            if (anim != null) anim.SetBool("IsMoving", false);
         }
 
         yield return new WaitForSeconds(0.5f);
@@ -149,22 +168,35 @@ public class StoryDirector : MonoBehaviour
 
             if (player != null)
             {
-                if (anim != null)
-                {
-                    anim.SetBool("IsMoving", true);
-                    Vector2 huongNhin = (viTriGiaDinh - (Vector2)player.transform.position).normalized;
-                    anim.SetFloat("MoveX", huongNhin.x);
-                    anim.SetFloat("MoveY", huongNhin.y);
-                }
-
                 Vector2 diemDungChan = viTriGiaDinh + new Vector2(-1.5f, 0);
                 float speed = 5f;
-                while (Vector2.Distance(player.transform.position, diemDungChan) > 0.1f)
+
+                if (scriptDiChuyen != null)
                 {
-                    player.transform.position = Vector2.MoveTowards(player.transform.position, diemDungChan, speed * Time.deltaTime);
-                    yield return null;
+                    while (Vector2.Distance(player.transform.position, diemDungChan) > 0.1f)
+                    {
+                        Vector2 huong = (diemDungChan - (Vector2)player.transform.position).normalized;
+                        scriptDiChuyen.ForceMoveTo(huong * speed);
+                        yield return null;
+                    }
+                    scriptDiChuyen.StopForceMove();
                 }
-                if (anim != null) anim.SetBool("IsMoving", false);
+                else
+                {
+                    while (Vector2.Distance(player.transform.position, diemDungChan) > 0.1f)
+                    {
+                        player.transform.position = Vector2.MoveTowards(player.transform.position, diemDungChan, speed * Time.deltaTime);
+                        yield return null;
+                    }
+                }
+
+                if (anim != null)
+                {
+                    anim.SetBool("IsMoving", false);
+                    Vector2 huongNhinGiaDinh = (viTriGiaDinh - (Vector2)player.transform.position).normalized;
+                    anim.SetFloat("MoveX", huongNhinGiaDinh.x);
+                    anim.SetFloat("MoveY", huongNhinGiaDinh.y);
+                }
             }
 
             bool dialog2Xong = false;
@@ -180,7 +212,7 @@ public class StoryDirector : MonoBehaviour
         else
         {
             if (npcHienTai != null) Destroy(npcHienTai);
-            KhoiPhucDieuKhienPlayer(scriptDiChuyen);
+            KhoiPhucDieuKhienPlayer();
             PlayerPrefs.SetInt(suKien.idSuKien, 1);
             PlayerPrefs.Save();
 
@@ -188,9 +220,8 @@ public class StoryDirector : MonoBehaviour
         }
     }
 
-    private void KhoiPhucDieuKhienPlayer(PlayerMovement scriptDiChuyen)
+    private void KhoiPhucDieuKhienPlayer()
     {
-        if (scriptDiChuyen != null) scriptDiChuyen.enabled = true;
         if (WeaponManager.Instance != null && WeaponManager.Instance.weaponPivot != null)
             WeaponManager.Instance.weaponPivot.gameObject.SetActive(true);
     }

@@ -15,7 +15,7 @@ MonoBehaviour:
   tenMatHang: "Thu\u1ED1c S\xFAng"
   moTa: "+2 Dame c\u01A1 b\u1EA3n\n+0.3 \u0110\u1EA9y l\xF9i"
   iconMatHang: {fileID: -7811281384907904539, guid: b5c2a97d1d66aba459af3899e9544096, type: 3}
-  giaMua: 19
+  giaMua: 16
   capDo: 1
   mauCapDo: {r: 1, g: 1, b: 1, a: 1}
   danhSachChiSo:

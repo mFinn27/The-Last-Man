@@ -13,17 +13,17 @@ MonoBehaviour:
   m_Name: Bow1
   m_EditorClassIdentifier: 
   tenMatHang: "Cung C\u1EA5p 1"
-  moTa: "Dame c\u01A1 b\u1EA3n: 9\nT\u1ED1c \u0111\u1ED9 \u0111\xE1nh: 0.8\nT\u1EA7m
+  moTa: "Dame c\u01A1 b\u1EA3n: 12\nT\u1ED1c \u0111\u1ED9 \u0111\xE1nh: 0.8\nT\u1EA7m
     \u0111\xE1nh: 8\n\u0110\u1EA9y l\xF9i: 3\nXuy\xEAn th\u1EA5u: 1"
   iconMatHang: {fileID: 5342339644809915694, guid: 227d5a5626b69db4b9fbc59e7821387c, type: 3}
-  giaMua: 29
+  giaMua: 23
   capDo: 1
   mauCapDo: {r: 1, g: 1, b: 1, a: 1}
   loaiVuKhi: 2
   weaponPrefab: {fileID: 7504538950462528467, guid: 9c748030fc3f04f4d9e05b853868d67e, type: 3}
   vuKhiCapTiepTheo: {fileID: 11400000, guid: 8cc87d6766a617c44acfa0a98ba89dbe, type: 2}
-  giaBan: 20
-  dame: 10
+  giaBan: 19
+  dame: 12
   tocDoDanh: 0.75
   tamDanh: 8
   dayLui: 3
