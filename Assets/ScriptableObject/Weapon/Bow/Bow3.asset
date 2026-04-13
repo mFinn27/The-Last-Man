@@ -16,13 +16,13 @@ MonoBehaviour:
   moTa: "Dame c\u01A1 b\u1EA3n: 25\nT\u1ED1c \u0111\u1ED9 \u0111\xE1nh: 1\nT\u1EA7m
     \u0111\xE1nh: 9\n\u0110\u1EA9y l\xF9i: 4\nXuy\xEAn th\u1EA5u: 2"
   iconMatHang: {fileID: 5342339644809915694, guid: 227d5a5626b69db4b9fbc59e7821387c, type: 3}
-  giaMua: 67
+  giaMua: 89
   capDo: 3
   mauCapDo: {r: 0.4943396, g: 0.18561047, b: 0.47747216, a: 1}
   loaiVuKhi: 2
   weaponPrefab: {fileID: 7504538950462528467, guid: 9c748030fc3f04f4d9e05b853868d67e, type: 3}
   vuKhiCapTiepTheo: {fileID: 11400000, guid: 94c55d2dc6685ed42b5bff6291d83ffa, type: 2}
-  giaBan: 42
+  giaBan: 73
   dame: 25
   tocDoDanh: 1
   tamDanh: 9

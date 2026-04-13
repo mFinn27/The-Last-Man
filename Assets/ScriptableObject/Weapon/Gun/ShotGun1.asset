@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: ShotGun1
   m_EditorClassIdentifier: 
   tenMatHang: "ShotGun C\u1EA5p 1"
-  moTa: "Dame c\u01A1 b\u1EA3n: 20\nT\u1ED1c \u0111\u1ED9 \u0111\xE1nh c\u1ED1 \u0111\u1ECBnh:
-    0.6\nT\u1EA7m \u0111\xE1nh: 5\n\u0110\u1EA9y l\xF9i: 4"
+  moTa: "Dame c\u01A1 b\u1EA3n: 10\nT\u1ED1c \u0111\u1ED9 \u0111\xE1nh c\u1ED1 \u0111\u1ECBnh:
+    0.65\nT\u1EA7m \u0111\xE1nh: 5\n\u0110\u1EA9y l\xF9i: 4"
   iconMatHang: {fileID: -7579322072880458250, guid: b5c2a97d1d66aba459af3899e9544096, type: 3}
   giaMua: 27
   capDo: 1
@@ -23,8 +23,8 @@ MonoBehaviour:
   weaponPrefab: {fileID: 7504538950462528467, guid: fe314f47ca8bceb4e82dfc7444759b48, type: 3}
   vuKhiCapTiepTheo: {fileID: 11400000, guid: 947f4e959ce923441adb9f46ca595d5d, type: 2}
   giaBan: 19
-  dame: 20
-  tocDoDanh: 0.6
+  dame: 10
+  tocDoDanh: 0.65
   tamDanh: 5
   dayLui: 4
   tiLeChiMang: 0

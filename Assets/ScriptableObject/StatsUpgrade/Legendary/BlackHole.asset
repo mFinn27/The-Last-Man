@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: BlackHole
   m_EditorClassIdentifier: 
   tenMatHang: "H\u1ED1 \u0110en"
-  moTa: "+12 Dame c\u01A1 b\u1EA3n\n+4% H\xFAt m\xE1u\n+1 T\u1EA7m \u0111\xE1nh\n-0.4
-    T\u1ED1c \u0111\u1ED9 di chuy\u1EC3n\n-10% T\u1ED1c \u0111\u1ED9 \u0111\xE1nh"
+  moTa: "+20 Dame c\u01A1 b\u1EA3n\n+4% H\xFAt m\xE1u\n+1 T\u1EA7m \u0111\xE1nh"
   iconMatHang: {fileID: 1055105165, guid: fb4f6f07f0540a64a8a81ceb356a229d, type: 3}
   giaMua: 117
   capDo: 4
@@ -25,8 +24,4 @@ MonoBehaviour:
   - loaiChiSo: 9
     giaTriCongThem: 1
   - loaiChiSo: 3
-    giaTriCongThem: 12
-  - loaiChiSo: 7
-    giaTriCongThem: 0.04
-  - loaiChiSo: 2
-    giaTriCongThem: -0.4
+    giaTriCongThem: 20

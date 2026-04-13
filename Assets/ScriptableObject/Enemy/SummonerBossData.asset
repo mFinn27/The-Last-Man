@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tenQuaiVat: Summoner
   loaiQuai: 4
-  mauToiDa: 3500
+  mauToiDa: 15000
   tocDoDiChuyen: 2.2
-  dame: 25
+  dame: 50
   tgThucHienDonDanhTiepTheo: 1
   thoiGianGongDon: 0.5
   tiLeRotThuong: 1
@@ -28,8 +28,8 @@ MonoBehaviour:
   vatPhamDacBietPrefab: {fileID: 0}
   thoiGianDuoiBat: 2.5
   quaiNhoPrefab: {fileID: 912454679618174041, guid: 61e8b02011ce3b84e9eab65fb1a0bbf7, type: 3}
-  soLuongQuaiSpawn: 5
+  soLuongQuaiSpawn: 6
   danPrefab: {fileID: 5167635117232818042, guid: 7fac778d57f06e14493bb08551522d91, type: 3}
   tocDoDan: 9
-  soLuongDanBurst: 6
+  soLuongDanBurst: 8
   thoiGianGiuaCacVien: 0.2

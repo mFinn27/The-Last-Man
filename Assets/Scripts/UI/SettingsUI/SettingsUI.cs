@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class SettingsUI : MonoBehaviour
 {
@@ -15,6 +16,9 @@ public class SettingsUI : MonoBehaviour
     public Sprite iconOn;
     public Sprite iconOff;
 
+    [Header("--- KẾT NỐI MÀN HÌNH ---")]
+    public TMP_Dropdown dropdownScreenMode;
+
     public float buocNhay = 0.1f;
 
     private void OnEnable()
@@ -27,6 +31,17 @@ public class SettingsUI : MonoBehaviour
             CapNhatIcon(iconBGM, sliderBGM.value);
             CapNhatIcon(iconSFX, sliderSFX.value);
         }
+        if (dropdownScreenMode != null)
+        {
+            dropdownScreenMode.value = PlayerPrefs.GetInt("Saved_ScreenMode", 0);
+            dropdownScreenMode.RefreshShownValue();
+        }
+    }
+
+    public void OnScreenModeChanged(int index)
+    {
+        if (AudioManager.Instance != null) AudioManager.Instance.PlayClickSFX();
+        if (GameManager.Instance != null) GameManager.Instance.ApDungCheDoManHinh(index);
     }
 
     public void OnBGMSliderChanged(float value)

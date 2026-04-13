@@ -20,19 +20,26 @@ public class WeaponManager : MonoBehaviour
 
     void Start()
     {
-        if (GameManager.Instance != null && GameManager.Instance.vuKhiKhoiDauDangChon != null)
+        if (GameManager.Instance != null && GameManager.Instance.isLoadingSave)
         {
-            ThuMuaVuKhi(GameManager.Instance.vuKhiKhoiDauDangChon);
-        }
-
-        if (PlayerStats.Instance != null && PlayerStats.Instance.dataNhanVat != null)
-        {
-            var dsMacDinh = PlayerStats.Instance.dataNhanVat.danhSachVuKhiChoPhepChon;
-            if (dsMacDinh != null && dsMacDinh.Count > 0)
+            RunSaveData data = GameManager.Instance.currentSave;
+            foreach (string tenVK in data.tenCacVuKhi)
             {
-                foreach (var vk in dsMacDinh)
+                WeaponData vk = GameManager.Instance.tatCaVuKhi.Find(x => x.tenMatHang == tenVK);
+                if (vk != null) danhSachVuKhi.Add(vk);
+            }
+        }
+        else
+        {
+            if (GameManager.Instance != null && GameManager.Instance.vuKhiKhoiDauDangChon != null)
+                ThuMuaVuKhi(GameManager.Instance.vuKhiKhoiDauDangChon);
+
+            if (PlayerStats.Instance != null && PlayerStats.Instance.dataNhanVat != null)
+            {
+                var dsMacDinh = PlayerStats.Instance.dataNhanVat.danhSachVuKhiChoPhepChon;
+                if (dsMacDinh != null && dsMacDinh.Count > 0)
                 {
-                    ThuMuaVuKhi(vk);
+                    foreach (var vk in dsMacDinh) ThuMuaVuKhi(vk);
                 }
             }
         }

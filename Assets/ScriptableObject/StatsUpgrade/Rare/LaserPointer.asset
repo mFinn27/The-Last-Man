@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8979bb38ae08b6d4fa19cec52aef8c7e, type: 3}
   m_Name: LaserPointer
   m_EditorClassIdentifier: 
-  tenMatHang: "K\xEDnh Ng\u1EAFm Laser"
+  tenMatHang: Laser
   moTa: "+2 T\u1EA7m \u0111\xE1nh\n+5% T\u1EC9 l\u1EC7 ch\xED m\u1EA1ng\n-5% T\u1ED1c
     \u0111\u1ED9 \u0111\xE1nh"
   iconMatHang: {fileID: 3005121338723067259, guid: b5c2a97d1d66aba459af3899e9544096, type: 3}

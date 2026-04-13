@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Axe3
   m_EditorClassIdentifier: 
   tenMatHang: "R\xECu C\u1EA5p 3"
-  moTa: "Dame c\u01A1 b\u1EA3n: 24\t\nT\u1ED1c \u0111\u1ED9 \u0111\xE1nh: 0.75\nT\u1EA7m
+  moTa: "Dame c\u01A1 b\u1EA3n: 43\nT\u1ED1c \u0111\u1ED9 \u0111\xE1nh: 0.75\nT\u1EA7m
     \u0111\xE1nh: 3\n\u0110\u1EA9y l\xF9i: 3\nH\xFAt M\xE1u: 2%"
   iconMatHang: {fileID: 4059512458712482826, guid: 548ee95871222ac40bb72bb11ed92ca9, type: 3}
   giaMua: 56
@@ -23,7 +23,7 @@ MonoBehaviour:
   weaponPrefab: {fileID: 3918598598552935104, guid: 12e3a34a77e72cf4b89f3608753ff9fa, type: 3}
   vuKhiCapTiepTheo: {fileID: 11400000, guid: c8ebdf902e671894c92c1fd5fcb5db28, type: 2}
   giaBan: 37
-  dame: 20
+  dame: 43
   tocDoDanh: 0.75
   tamDanh: 3
   dayLui: 3

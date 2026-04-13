@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: Uranium
   m_EditorClassIdentifier: 
   tenMatHang: "Ph\xF3ng X\u1EA1"
-  moTa: "+2 Xuy\xEAn Th\u1EA5u\n+8 Dame c\u01A1 b\u1EA3n\n-15 HP"
+  moTa: "+3 Xuy\xEAn Th\u1EA5u\n+8 Dame c\u01A1 b\u1EA3n\n-5 HP"
   iconMatHang: {fileID: 969976412, guid: fb4f6f07f0540a64a8a81ceb356a229d, type: 3}
   giaMua: 76
   capDo: 3
   mauCapDo: {r: 0.49411765, g: 0.18431373, b: 0.47843137, a: 1}
   danhSachChiSo:
   - loaiChiSo: 0
-    giaTriCongThem: -15
+    giaTriCongThem: -5
   - loaiChiSo: 10
     giaTriCongThem: 2
   - loaiChiSo: 3

@@ -19,5 +19,5 @@ MonoBehaviour:
   capDo: 1
   mauCapDo: {r: 1, g: 1, b: 1, a: 1}
   danhSachChiSo:
-  - loaiChiSo: 8
+  - loaiChiSo: 11
     giaTriCongThem: 1

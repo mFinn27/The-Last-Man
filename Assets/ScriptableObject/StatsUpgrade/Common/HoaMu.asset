@@ -20,6 +20,6 @@ MonoBehaviour:
   mauCapDo: {r: 1, g: 1, b: 1, a: 1}
   danhSachChiSo:
   - loaiChiSo: 8
-    giaTriCongThem: 1.5
+    giaTriCongThem: 1
   - loaiChiSo: 4
     giaTriCongThem: -0.05

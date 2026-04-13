@@ -3,6 +3,9 @@ using TMPro;
 
 public class MenuNavigator : MonoBehaviour
 {
+    [Header("--- SAVE GAME UI ---")]
+    public GameObject panelContinuePrompt;
+
     [Header("--- MÀN HÌNH CHÍNH ---")]
     public GameObject panelTitleScreen;
     public GameObject panelChonTuongVaVuKhi;
@@ -23,6 +26,7 @@ public class MenuNavigator : MonoBehaviour
     [Header("--- ĐIỀU HƯỚNG ---")]
     public TextMeshProUGUI txtTittle;
     public WeaponSelector weaponSelector;
+    public SettingsUI settingsUI;
 
     void Start()
     {
@@ -37,6 +41,58 @@ public class MenuNavigator : MonoBehaviour
         {
             MoManHinhTitle();
         }
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (panelSettings != null && panelSettings.activeSelf)
+            {
+                settingsUI.BamDongSettingsUI();
+            }
+            else if (panelContinuePrompt != null && panelContinuePrompt.activeSelf)
+            {
+                DongBangChoiTiep();
+            }
+            else
+            {
+                BamMoSettings();
+            }
+        }
+    }
+
+    public void DongBangChoiTiep()
+    {
+        if (AudioManager.Instance != null) AudioManager.Instance.PlayClickSFX();
+        if (panelContinuePrompt != null) panelContinuePrompt.SetActive(false);
+    }
+
+    public void BamNutPlayGame()
+    {
+        if (AudioManager.Instance != null) AudioManager.Instance.PlayClickSFX();
+
+        if (GameManager.Instance != null && GameManager.Instance.HasSave())
+        {
+            panelContinuePrompt.SetActive(true);
+        }
+        else
+        {
+            MoManHinhChonTuong();
+        }
+    }
+
+    public void BamChoiTiep()
+    {
+        if (AudioManager.Instance != null) AudioManager.Instance.PlayClickSFX();
+        if (GameManager.Instance != null) GameManager.Instance.TiepTucGame();
+    }
+
+    public void BamChoiMoiTuBangHoi()
+    {
+        if (AudioManager.Instance != null) AudioManager.Instance.PlayClickSFX();
+        panelContinuePrompt.SetActive(false);
+        MoManHinhChonTuong();
     }
 
     public void MoManHinhTitle()
@@ -81,12 +137,6 @@ public class MenuNavigator : MonoBehaviour
     {
         if (AudioManager.Instance != null) AudioManager.Instance.PlayClickSFX();
         panelSettings.SetActive(true);
-    }
-
-    public void BamDongSettings()
-    {
-        if (AudioManager.Instance != null) AudioManager.Instance.PlayClickSFX();
-        panelSettings.SetActive(false);
     }
 
     public void ThoatGame()

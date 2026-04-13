@@ -16,18 +16,18 @@ MonoBehaviour:
   loaiQuai: 1
   mauToiDa: 25
   tocDoDiChuyen: 1.8
-  dame: 10
+  dame: 12
   tgThucHienDonDanhTiepTheo: 2.5
   thoiGianGongDon: 0.5
   tiLeRotThuong: 1
   phanThuongRotRa: 0
   minSoLuongVang: 1
   maxSoLuongVang: 2
-  minGiaTriMoiVien: 3
-  maxGiaTriMoiVien: 4
+  minGiaTriMoiVien: 1
+  maxGiaTriMoiVien: 2
   vatPhamDacBietPrefab: {fileID: 0}
   tamDanhXa: 7
   danPrefab: {fileID: 5167635117232818042, guid: 42713581f3570814f9bc6ff5e7db2958, type: 3}
-  tocDoDan: 4
-  soLuongDan: 3
+  tocDoDan: 5
+  soLuongDan: 2
   gocToaDan: 35

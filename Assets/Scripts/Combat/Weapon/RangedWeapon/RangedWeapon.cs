@@ -42,12 +42,7 @@ public class RangedWeapon : MonoBehaviour
             if (khoangCach <= tamDanhThuc * tamDanhThuc)
             {
                 Shoot();
-                float tocDoDanhHienTai = DamageCalculator.CalculateAttackSpeed(data.tocDoDanh);
-                if (data.coGioiHanTocDoDanh && tocDoDanhHienTai > data.tocDoDanhToiDa)
-                {
-                    tocDoDanhHienTai = data.tocDoDanhToiDa;
-                }
-
+                float tocDoDanhHienTai = DamageCalculator.CalculateAttackSpeed(data.tocDoDanh, data);
                 donDanhTiepTheo = Time.time + (1f / tocDoDanhHienTai);
             }
         }

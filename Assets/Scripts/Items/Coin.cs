@@ -5,22 +5,26 @@ public class Coin : MonoBehaviour
 {
     private int giaTri;
     private bool dangBiHut = false;
+    private bool biGiamGiaTri = false;
+
     [SerializeField] private float tocDoHut = 5f;
 
     private void OnEnable()
     {
-        WaveManager.OnWaveEnded += KichHoatHutVaoNguoi;
+        WaveManager.OnWaveEnded += XuLyHutCuoiWave;
         dangBiHut = false;
+        biGiamGiaTri = false;
     }
 
     private void OnDisable()
     {
-        WaveManager.OnWaveEnded -= KichHoatHutVaoNguoi;
+        WaveManager.OnWaveEnded -= XuLyHutCuoiWave;
     }
 
     public void Setup(int giaTriNapVao)
     {
         giaTri = giaTriNapVao;
+        biGiamGiaTri = false;
         Collider2D col = GetComponent<Collider2D>();
         if (col != null) col.enabled = true;
         dangBiHut = false;
@@ -48,12 +52,27 @@ public class Coin : MonoBehaviour
 
     private void NhatCoin()
     {
-        if (PlayerStats.Instance != null) PlayerStats.Instance.AddCoin(giaTri);
+        int giaTriThucTe = biGiamGiaTri ? Mathf.Max(1, giaTri / 2) : giaTri;
+
+        if (PlayerStats.Instance != null)
+        {
+            PlayerStats.Instance.AddCoin(giaTriThucTe);
+        }
+
         if (AudioManager.Instance != null) AudioManager.Instance.PlayCoinSFX();
         gameObject.SetActive(false);
     }
 
-    private void KichHoatHutVaoNguoi()
+    private void XuLyHutCuoiWave()
+    {
+        if (gameObject.activeInHierarchy && !dangBiHut)
+        {
+            biGiamGiaTri = true;
+            KichHoatHutVaoNguoi();
+        }
+    }
+
+    public void KichHoatHutVaoNguoi()
     {
         if (gameObject.activeInHierarchy && !dangBiHut)
         {

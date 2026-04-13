@@ -29,9 +29,16 @@ public class ShopUI : MonoBehaviour
 
     private int slotDangDuocChon = -1;
 
-    void Awake()
+    private void Awake()
     {
-        if (Instance == null) Instance = this;
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void MoCuaHang()

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tenMatHang: "M\u1EDF R\u1ED9ng"
   moTa: "+1 Xuy\xEAn th\u1EA5u\n+1 T\u1EA7m \u0111\xE1nh\n+5% T\u1ED1c \u0111\u1ED9
-    \u0111\xE1nh\n-5 Gi\xE1p"
+    \u0111\xE1nh\n-2 Gi\xE1p"
   iconMatHang: {fileID: -1883803802, guid: fb4f6f07f0540a64a8a81ceb356a229d, type: 3}
   giaMua: 48
   capDo: 2
@@ -27,4 +27,4 @@ MonoBehaviour:
   - loaiChiSo: 4
     giaTriCongThem: 0.05
   - loaiChiSo: 1
-    giaTriCongThem: -5
+    giaTriCongThem: -2

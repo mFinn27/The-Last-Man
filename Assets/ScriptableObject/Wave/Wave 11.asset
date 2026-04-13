@@ -16,10 +16,38 @@ MonoBehaviour:
   thoiGianWave: 66
   batBuocGietBoss: 0
   danhSachSuKien:
-  - tenKichBan: Wave 1
+  - tenKichBan: Quai Co Ban
     giayBatDau: 0
-    giayKetThuc: 20
+    giayKetThuc: 65
     quaiPrefab: {fileID: 5189326022444628608, guid: 3425c84ebe7eb7a48bbc77c0551119b4, type: 3}
     thoiGianGiuaCacLan: 2
+    soLuongMoiLan: 8
+    deTheoCum: 1
+  - tenKichBan: Quai Dash
+    giayBatDau: 0
+    giayKetThuc: 65
+    quaiPrefab: {fileID: 5189326022444628608, guid: d46b9b491393fda428e1a38bb0bb1602, type: 3}
+    thoiGianGiuaCacLan: 3
     soLuongMoiLan: 3
     deTheoCum: 1
+  - tenKichBan: Quai Tam Xa
+    giayBatDau: 0
+    giayKetThuc: 65
+    quaiPrefab: {fileID: 912454679618174041, guid: 61e8b02011ce3b84e9eab65fb1a0bbf7, type: 3}
+    thoiGianGiuaCacLan: 3
+    soLuongMoiLan: 5
+    deTheoCum: 1
+  - tenKichBan: Quai Tam Xa
+    giayBatDau: 0
+    giayKetThuc: 65
+    quaiPrefab: {fileID: 4025717162429082858, guid: 9ccaae6adfda9e443badd576a50b9f04, type: 3}
+    thoiGianGiuaCacLan: 4
+    soLuongMoiLan: 3
+    deTheoCum: 0
+  - tenKichBan: Quai No
+    giayBatDau: 0
+    giayKetThuc: 65
+    quaiPrefab: {fileID: 5020803387245476450, guid: f01e880f33d9e0443addc043a8751d67, type: 3}
+    thoiGianGiuaCacLan: 5
+    soLuongMoiLan: 3
+    deTheoCum: 0

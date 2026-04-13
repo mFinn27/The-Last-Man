@@ -4,12 +4,23 @@ using System.Collections.Generic;
 
 public class RewardPopupUI : MonoBehaviour
 {
+    public static RewardPopupUI Instance;
+
     [Header("--- THIẾT LẬP UI ---")]
     public GameObject panelPhanThuong;
     public RewardCardUI[] cacTheUI;
 
     [Header("--- KHO DỮ LIỆU CHỈ SỐ ---")]
     public List<UpgradeData> khoDuLieu;
+
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else Destroy(gameObject);
+    }
 
     private void OnEnable()
     {
@@ -114,5 +125,10 @@ public class RewardPopupUI : MonoBehaviour
     private void ApDungChiSo(UpgradeData data)
     {
         if (PlayerStats.Instance != null) PlayerStats.Instance.ThemChiSoTuThe(data);
+    }
+
+    public void KichHoatHienThiNgayLapTuc()
+    {
+        StartCoroutine(HienThiSauDelay(0.1f));
     }
 }

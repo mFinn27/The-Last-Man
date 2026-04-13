@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Coffee
   m_EditorClassIdentifier: 
   tenMatHang: "C\xE0 Ph\xEA"
-  moTa: "+10% T\u1ED1c \u0111\u1ED9 \u0111\xE1nh\n-1 Dame c\u01A1 b\u1EA3n"
+  moTa: "+10% T\u1ED1c \u0111\u1ED9 \u0111\xE1nh"
   iconMatHang: {fileID: -1127503218, guid: 00ec56c26bb99604ea6180aae69492bf, type: 3}
   giaMua: 17
   capDo: 1
@@ -21,5 +21,3 @@ MonoBehaviour:
   danhSachChiSo:
   - loaiChiSo: 4
     giaTriCongThem: 0.1
-  - loaiChiSo: 3
-    giaTriCongThem: -1

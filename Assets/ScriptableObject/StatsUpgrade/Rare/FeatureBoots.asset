@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FeatureBoots
   m_EditorClassIdentifier: 
   tenMatHang: "Gi\xE0y L\xF4ng V\u0169"
-  moTa: "+1 T\u1ED1c \u0111\u1ED9 di chuy\u1EC3n\n-10 HP\n-1 Gi\xE1p"
+  moTa: "+1 T\u1ED1c \u0111\u1ED9 di chuy\u1EC3n\n-5 HP\n-1 Gi\xE1p"
   iconMatHang: {fileID: -1812431404, guid: fb4f6f07f0540a64a8a81ceb356a229d, type: 3}
   giaMua: 52
   capDo: 2
@@ -22,6 +22,6 @@ MonoBehaviour:
   - loaiChiSo: 2
     giaTriCongThem: 1
   - loaiChiSo: 0
-    giaTriCongThem: -10
+    giaTriCongThem: -5
   - loaiChiSo: 1
     giaTriCongThem: -1

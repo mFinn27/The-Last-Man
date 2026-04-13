@@ -11,12 +11,27 @@ public class GameplayUIManager : MonoBehaviour
     [Header("--- TẠM DỪNG (PAUSE) ---")]
     [SerializeField] private GameObject panelPause;
     public GameObject panelSettings;
+    private float previousTimeScale = 1f;
 
     [Header("--- GAME OVER ---")]
     [SerializeField] private GameObject panelGameOver;
     [SerializeField] private TextMeshProUGUI txtGameOverMessage;
 
+    [Header("--- AFTER CREDITS ---")]
+    public AfterCreditsManager creditsManager;
+
     private bool isPaused = false;
+
+    private void OnEnable()
+    {
+        GameManager.OnGameOverEvent += HienThiGameOver;
+        StoryDirector.OnAfterCreditsTriggered += BatDauAfterCredits;
+    }
+    private void OnDisable()
+    {
+        GameManager.OnGameOverEvent -= HienThiGameOver;
+        StoryDirector.OnAfterCreditsTriggered -= BatDauAfterCredits;
+    }
 
     void Start()
     {
@@ -41,16 +56,39 @@ public class GameplayUIManager : MonoBehaviour
 
     private void XuLyInput()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)) TogglePause();
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (panelSettings != null && panelSettings.activeInHierarchy)
+            {
+                if (AudioManager.Instance != null) AudioManager.Instance.PlayClickSFX();
+                panelSettings.SetActive(false);
+            }
+            else
+            {
+                TogglePause();
+            }
+        }
     }
 
     public void TogglePause()
     {
-        if (Time.timeScale == 0f && !isPaused) return;
+        if (panelGameOver != null && panelGameOver.activeSelf) return;
 
-        isPaused = !isPaused;
-        if (panelPause != null) panelPause.SetActive(isPaused);
-        Time.timeScale = isPaused ? 0f : 1f;
+        if (!isPaused)
+        {
+            previousTimeScale = Time.timeScale;
+            isPaused = true;
+            if (panelPause != null) panelPause.SetActive(true);
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            isPaused = false;
+            if (panelPause != null) panelPause.SetActive(false);
+
+            if (panelSettings != null) panelSettings.SetActive(false);
+            Time.timeScale = previousTimeScale;
+        }
     }
 
     public void BamMoSettings()
@@ -58,8 +96,7 @@ public class GameplayUIManager : MonoBehaviour
         if (AudioManager.Instance != null) AudioManager.Instance.PlayClickSFX();
         panelSettings.SetActive(true);
     }
-
-    public void HienThiGameOver(bool chienThang)
+    private void HienThiGameOver(bool chienThang)
     {
         if (panelGameOver != null)
         {
@@ -87,11 +124,25 @@ public class GameplayUIManager : MonoBehaviour
         if (GameManager.Instance != null) GameManager.Instance.quayLaiChonTuong = true;
         UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
     }
+
     public void BamNutVeMenu()
     {
         if (AudioManager.Instance != null) AudioManager.Instance.PlayClickSFX();
         Time.timeScale = 1f;
+
+        if (PlayerHealth.Instance != null && PlayerHealth.Instance.GetCurrentHP() > 0)
+        {
+            if (GameManager.Instance != null) GameManager.Instance.LuuTienDoRun();
+        }
+
         if (GameManager.Instance != null) GameManager.Instance.quayLaiChonTuong = false;
         UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
+    }
+    private void BatDauAfterCredits()
+    {
+        Transform hud = transform.Find("HUD");
+        if (hud != null) hud.gameObject.SetActive(false);
+
+        if (creditsManager != null) creditsManager.BatDauChayCredits();
     }
 }

@@ -12,6 +12,7 @@ public class PlayerStats : MonoBehaviour
     public int bonusGiap = 0;
     public float bonusTocDoDiChuyen = 0f;
 
+
     public float bonusSatThuong = 0f;
     public float bonusTocDoDanh = 0f;
     public float bonusTiLeChiMang = 0f;
@@ -28,9 +29,9 @@ public class PlayerStats : MonoBehaviour
 
     [Header("--- THÔNG TIN TRẬN ĐẤU ---")]
     public int vangHienTai = 0;
+    public int vangKhiBatDauWave = 0;
 
     [Header("--- XEM CHỈ SỐ TỔNG HIỆN TẠI (DEBUG) ---")]
-    [Tooltip("Chỉ để quan sát kết quả, đừng sửa bằng tay ô này nhé")]
     public int tongMauToiDa;
     public int tongGiap;
     public float tongTocDoDiChuyen;
@@ -58,6 +59,30 @@ public class PlayerStats : MonoBehaviour
                 visuals.CapNhatHinhAnhVaAnimation();
             }
         }
+
+        if (GameManager.Instance != null && GameManager.Instance.isLoadingSave)
+        {
+            RunSaveData data = GameManager.Instance.currentSave;
+            vangHienTai = data.vangHienTai;
+            bonusMauToiDa = data.bMau;
+            bonusGiap = data.bGiap;
+            bonusTocDoDiChuyen = data.bTocDoChay;
+            bonusSatThuong = data.bSatThuong;
+            bonusTocDoDanh = data.bTocDoDanh;
+            bonusTiLeChiMang = data.bTiLeChiMang;
+            bonusSatThuongChiMang = data.bSatThuongChiMang;
+            bonusHutMau = data.bHutMau;
+            bonusDayLui = data.bDayLui;
+            bonusTamDanh = data.bTamDanh;
+            bonusXuyenThau = data.bXuyenThau;
+            bonusPhamViHut = data.bPhamViHut;
+        }
+    }
+
+    void Start()
+    {
+
+        if (PlayerHealth.Instance != null) PlayerHealth.Instance.UpdateMaxHealth();
     }
 
     void Update()

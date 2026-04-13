@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Heal
   m_EditorClassIdentifier: 
   tenMatHang: "Dinh D\u01B0\u1EE1ng"
-  moTa: "+5 HP\n-0.1 T\u1ED1c \u0111\u1ED9 di chuy\u1EC3n"
+  moTa: +5 HP
   iconMatHang: {fileID: -2094145050, guid: 00ec56c26bb99604ea6180aae69492bf, type: 3}
   giaMua: 15
   capDo: 1
@@ -21,5 +21,3 @@ MonoBehaviour:
   danhSachChiSo:
   - loaiChiSo: 0
     giaTriCongThem: 5
-  - loaiChiSo: 2
-    giaTriCongThem: -0.1

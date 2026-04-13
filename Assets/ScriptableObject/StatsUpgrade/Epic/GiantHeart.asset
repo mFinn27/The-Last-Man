@@ -24,4 +24,4 @@ MonoBehaviour:
   - loaiChiSo: 1
     giaTriCongThem: 5
   - loaiChiSo: 3
-    giaTriCongThem: 3
+    giaTriCongThem: -3

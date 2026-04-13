@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb76e2faae5aec94e967869600ff27df, type: 3}
   m_Name: AxeUP2
   m_EditorClassIdentifier: 
-  tenMatHang: "R\xECu Chi\u1EBFn"
-  moTa: "Dame c\u01A1 b\u1EA3n: 22\nT\u1ED1c \u0111\u1ED9 \u0111\xE1nh: 0.75\nT\u1EA7m
+  tenMatHang: "R\xECu Chi\u1EBFn C\u1EA5p 2"
+  moTa: "Dame c\u01A1 b\u1EA3n: 32\nT\u1ED1c \u0111\u1ED9 \u0111\xE1nh: 0.75\nT\u1EA7m
     \u0111\xE1nh: 3\n\u0110\u1EA9y l\xF9i: 3\nS\xE1t th\u01B0\u01A1ng ch\xED m\u1EA1ng:
     5%"
   iconMatHang: {fileID: 3194533516690909813, guid: 86dfe46c1e807454c9bd77a80e783105, type: 3}
@@ -24,7 +24,7 @@ MonoBehaviour:
   weaponPrefab: {fileID: 3918598598552935104, guid: cfa5a0f4a17382146b627081908e6e5c, type: 3}
   vuKhiCapTiepTheo: {fileID: 0}
   giaBan: 37
-  dame: 22
+  dame: 32
   tocDoDanh: 0.75
   tamDanh: 3
   dayLui: 3

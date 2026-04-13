@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tenMatHang: "M\u0169i Khoan \u0110\u1ECBa Ng\u1EE5c"
   moTa: "+4 Xuy\xEAn th\u1EA5u\n+10 Dame c\u01A1 b\u1EA3n\n+1 T\u1EA7m \u0111\xE1nh\n+10%
-    T\u1ED1c \u0111\u1ED9 \u0111\xE1nh\n-5 Gi\xE1p\n-1.5 \u0110\u1EA9y l\xF9i"
+    T\u1ED1c \u0111\u1ED9 \u0111\xE1nh"
   iconMatHang: {fileID: 2078097755, guid: fb4f6f07f0540a64a8a81ceb356a229d, type: 3}
   giaMua: 129
   capDo: 4

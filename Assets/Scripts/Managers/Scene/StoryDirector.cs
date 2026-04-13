@@ -1,30 +1,31 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
 [System.Serializable]
 public class StoryEvent
 {
-    [Tooltip("Mã ID để lưu lịch sử (Ví dụ: Wave1_MaVuong, Wave6_CuuThoRen)")]
     public string idSuKien = "Cutscene_WaveX";
-
-    [Tooltip("Cutscene này xuất hiện TRƯỚC Wave mấy? (VD: 1 = Đầu game, 6 = Trước khi bắt đầu Wave 6)")]
     public int truocWaveSo = 1;
-
-    [Tooltip("NPC sẽ xuất hiện để nói chuyện")]
     public GameObject npcPrefab;
-
-    [Header("Lời Thoại")]
     public DialogLine[] kichBan;
+
+    [Header("--- KẾT THÚC GAME (ENDING) ---")]
+    public bool laCutscenePhaDao = false;
+
+    [Tooltip("Prefab của gia đình bị nhốt")]
+    public GameObject giaDinhPrefab;
+    public DialogLine[] kichBanGiaDinh;
 }
 
 public class StoryDirector : MonoBehaviour
 {
     public static StoryDirector Instance;
+    public static event Action OnAfterCreditsTriggered;
 
     [Header("--- DEBUG (DÀNH CHO DEV TEST) ---")]
-    [Tooltip("Bật cái này lên để luôn luôn chiếu Cutscene, bất chấp đã xem hay chưa")]
-    public bool testMode = true;
+    public bool testMode = false;
 
     [Header("--- DANH SÁCH CÁC CÂU CHUYỆN ---")]
     public List<StoryEvent> danhSachCotTruyen;
@@ -38,7 +39,27 @@ public class StoryDirector : MonoBehaviour
 
     void Start()
     {
-        if (!KiemTraVaChayCutscene(1))
+        int waveChuanBiChay = 1;
+        int trangThaiDangDo = 0;
+
+        if (GameManager.Instance != null && GameManager.Instance.isLoadingSave)
+        {
+            waveChuanBiChay = GameManager.Instance.currentSave.waveHienTai + 1;
+            trangThaiDangDo = GameManager.Instance.currentSave.trangThaiGiaiDoan;
+            if (WaveManager.Instance != null) WaveManager.Instance.SetWaveIndex(GameManager.Instance.currentSave.waveHienTai);
+        }
+        if (trangThaiDangDo == 1)
+        {
+            if (RewardPopupUI.Instance != null) RewardPopupUI.Instance.KichHoatHienThiNgayLapTuc();
+            return;
+        }
+        else if (trangThaiDangDo == 2)
+        {
+            if (ShopUI.Instance != null) ShopUI.Instance.MoCuaHang();
+            return;
+        }
+
+        if (!KiemTraVaChayCutscene(waveChuanBiChay))
         {
             if (WaveManager.Instance != null) WaveManager.Instance.BatDauWave();
         }
@@ -54,8 +75,6 @@ public class StoryDirector : MonoBehaviour
 
             if (testMode || !daXem)
             {
-                PlayerPrefs.SetInt(suKien.idSuKien, 1);
-                PlayerPrefs.Save();
                 StartCoroutine(ChayKichBanRoutine(suKien, waveChuanBiChay == 1));
                 return true;
             }
@@ -74,6 +93,10 @@ public class StoryDirector : MonoBehaviour
             player = PlayerHealth.Instance.gameObject;
             scriptDiChuyen = player.GetComponent<PlayerMovement>();
             anim = player.GetComponentInChildren<Animator>();
+
+            Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
+            if (rb != null) rb.linearVelocity = Vector2.zero;
+
             if (scriptDiChuyen != null) scriptDiChuyen.enabled = false;
         }
 
@@ -107,27 +130,69 @@ public class StoryDirector : MonoBehaviour
 
             if (anim != null) anim.SetBool("IsMoving", false);
         }
+
         yield return new WaitForSeconds(0.5f);
-        DialogManager.Instance.OnDialogEnded += KichBanXong;
+        bool dialog1Xong = false;
+        Action onDone1 = () => dialog1Xong = true;
+        DialogManager.Instance.OnDialogEnded += onDone1;
         DialogManager.Instance.BatDauHoiThoai(suKien.kichBan);
+        yield return new WaitUntil(() => dialog1Xong);
+        DialogManager.Instance.OnDialogEnded -= onDone1;
+
+        if (suKien.laCutscenePhaDao)
+        {
+            if (npcHienTai != null) Destroy(npcHienTai);
+
+            Vector2 viTriGiaDinh = new Vector2(5f, 0f);
+            GameObject giaDinhHienTai = null;
+            if (suKien.giaDinhPrefab != null) giaDinhHienTai = Instantiate(suKien.giaDinhPrefab, viTriGiaDinh, Quaternion.identity);
+
+            if (player != null)
+            {
+                if (anim != null)
+                {
+                    anim.SetBool("IsMoving", true);
+                    Vector2 huongNhin = (viTriGiaDinh - (Vector2)player.transform.position).normalized;
+                    anim.SetFloat("MoveX", huongNhin.x);
+                    anim.SetFloat("MoveY", huongNhin.y);
+                }
+
+                Vector2 diemDungChan = viTriGiaDinh + new Vector2(-1.5f, 0);
+                float speed = 5f;
+                while (Vector2.Distance(player.transform.position, diemDungChan) > 0.1f)
+                {
+                    player.transform.position = Vector2.MoveTowards(player.transform.position, diemDungChan, speed * Time.deltaTime);
+                    yield return null;
+                }
+                if (anim != null) anim.SetBool("IsMoving", false);
+            }
+
+            bool dialog2Xong = false;
+            Action onDone2 = () => dialog2Xong = true;
+            DialogManager.Instance.OnDialogEnded += onDone2;
+            DialogManager.Instance.BatDauHoiThoai(suKien.kichBanGiaDinh);
+            yield return new WaitUntil(() => dialog2Xong);
+            DialogManager.Instance.OnDialogEnded -= onDone2;
+            PlayerPrefs.SetInt(suKien.idSuKien, 1);
+            PlayerPrefs.Save();
+            OnAfterCreditsTriggered?.Invoke();
+        }
+        else
+        {
+            if (npcHienTai != null) Destroy(npcHienTai);
+            KhoiPhucDieuKhienPlayer(scriptDiChuyen);
+            PlayerPrefs.SetInt(suKien.idSuKien, 1);
+            PlayerPrefs.Save();
+
+            if (WaveManager.Instance != null) WaveManager.Instance.BatDauWave();
+        }
     }
 
-    private void KichBanXong()
+    private void KhoiPhucDieuKhienPlayer(PlayerMovement scriptDiChuyen)
     {
-        DialogManager.Instance.OnDialogEnded -= KichBanXong;
-
-        if (PlayerHealth.Instance != null)
-        {
-            PlayerMovement scriptDiChuyen = PlayerHealth.Instance.GetComponent<PlayerMovement>();
-            if (scriptDiChuyen != null) scriptDiChuyen.enabled = true;
-        }
-
-        if (npcHienTai != null) Destroy(npcHienTai);
-
+        if (scriptDiChuyen != null) scriptDiChuyen.enabled = true;
         if (WeaponManager.Instance != null && WeaponManager.Instance.weaponPivot != null)
             WeaponManager.Instance.weaponPivot.gameObject.SetActive(true);
-
-        if (WaveManager.Instance != null) WaveManager.Instance.BatDauWave();
     }
 
     [ContextMenu("Xóa Lịch Sử Cutscene (Reset)")]

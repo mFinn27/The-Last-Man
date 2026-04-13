@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tenQuaiVat: Demon
   loaiQuai: 4
-  mauToiDa: 15000
-  tocDoDiChuyen: 2.8
-  dame: 50
+  mauToiDa: 200000
+  tocDoDiChuyen: 3.5
+  dame: 100
   tgThucHienDonDanhTiepTheo: 1
   thoiGianGongDon: 0.5
   tiLeRotThuong: 1
@@ -29,5 +29,5 @@ MonoBehaviour:
   thoiGianDuoiBat: 2.5
   danPrefab: {fileID: 5167635117232818042, guid: 425cee362bc970d4f88588ac7d22e285, type: 3}
   tocDoDan: 9
-  soLuongDanToaTron: 16
+  soLuongDanToaTron: 18
   soLanLuot: 4

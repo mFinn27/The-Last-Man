@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Knife1
   m_EditorClassIdentifier: 
   tenMatHang: "Dao G\u0103m C\u1EA5p 1"
-  moTa: "Dame c\u01A1 b\u1EA3n: 12\nT\u1ED1c \u0111\u1ED9 \u0111\xE1nh: 0.85\nT\u1EA7m
+  moTa: "Dame c\u01A1 b\u1EA3n: 19\nT\u1ED1c \u0111\u1ED9 \u0111\xE1nh: 0.85\nT\u1EA7m
     \u0111\xE1nh: 3\n\u0110\u1EA9y l\xF9i: 2"
   iconMatHang: {fileID: 2565170235856673553, guid: 86dfe46c1e807454c9bd77a80e783105, type: 3}
   giaMua: 26
@@ -23,7 +23,7 @@ MonoBehaviour:
   weaponPrefab: {fileID: 6287261391817972532, guid: a05bf4c2dc89b76419d8234b7dd6e6db, type: 3}
   vuKhiCapTiepTheo: {fileID: 11400000, guid: 6a882ffbd34a8f744bc5bcd5c9ab52ac, type: 2}
   giaBan: 18
-  dame: 12
+  dame: 19
   tocDoDanh: 0.85
   tamDanh: 3
   dayLui: 2

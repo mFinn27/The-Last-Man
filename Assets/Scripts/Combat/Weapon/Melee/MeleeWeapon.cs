@@ -50,7 +50,7 @@ public class ThrustWeapon : MonoBehaviour
             if (khoangCachSqr <= tamDanhThuc * tamDanhThuc && Time.time >= donDanhTiepTheo)
             {
                 StartCoroutine(ThrustAttack(tamDanhThuc));
-                float tocDoDanhHienTai = DamageCalculator.CalculateAttackSpeed(data.tocDoDanh);
+                float tocDoDanhHienTai = DamageCalculator.CalculateAttackSpeed(data.tocDoDanh, data);
                 donDanhTiepTheo = Time.time + (1f / tocDoDanhHienTai);
             }
         }
@@ -71,7 +71,7 @@ public class ThrustWeapon : MonoBehaviour
 
         if (hitBox) hitBox.SetActive(true);
 
-        float tocDoDanhHienTai = DamageCalculator.CalculateAttackSpeed(data.tocDoDanh);
+        float tocDoDanhHienTai = DamageCalculator.CalculateAttackSpeed(data.tocDoDanh, data);
         float tocDoDamThucTe = data.tocDoDam * tocDoDanhHienTai;
 
         float t = 0;

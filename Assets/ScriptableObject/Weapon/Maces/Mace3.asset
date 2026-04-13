@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Mace3
   m_EditorClassIdentifier: 
   tenMatHang: "Ch\xF9y"
-  moTa: "Dame c\u01A1 b\u1EA3n: 33\nT\u1ED1c \u0111\u1ED9 \u0111\xE1nh: 0.7\nT\u1EA7m
+  moTa: "Dame c\u01A1 b\u1EA3n: 46\nT\u1ED1c \u0111\u1ED9 \u0111\xE1nh: 0.7\nT\u1EA7m
     \u0111\xE1nh: 3\n\u0110\u1EA9y l\xF9i: 4\nH\xFAt m\xE1u: 2%"
   iconMatHang: {fileID: -7724861347746867733, guid: 86dfe46c1e807454c9bd77a80e783105, type: 3}
   giaMua: 76
@@ -23,7 +23,7 @@ MonoBehaviour:
   weaponPrefab: {fileID: 3918598598552935104, guid: 92839b38fbec8f54bbb9c4103988d153, type: 3}
   vuKhiCapTiepTheo: {fileID: 11400000, guid: 2b295dc4dba4b2e45a2ba44079f111a3, type: 2}
   giaBan: 49
-  dame: 33
+  dame: 46
   tocDoDanh: 0.7
   tamDanh: 3
   dayLui: 4

@@ -51,7 +51,7 @@ public class ArcMeleeWeapon : MonoBehaviour
             if (khoangCach <= tamDanhThuc * tamDanhThuc && Time.time >= donDanhTiepTheo)
             {
                 StartCoroutine(SwingAttack(tamDanhThuc));
-                float tocDoDanhHienTai = DamageCalculator.CalculateAttackSpeed(data.tocDoDanh);
+                float tocDoDanhHienTai = DamageCalculator.CalculateAttackSpeed(data.tocDoDanh, data);
                 donDanhTiepTheo = Time.time + (1f / tocDoDanhHienTai);
             }
         }
@@ -76,7 +76,7 @@ public class ArcMeleeWeapon : MonoBehaviour
         Vector3 huongTanCong = boXoay != null ? boXoay.GetHuongTanCongLocal() : Vector3.right;
         Vector3 mucTieu = viTriGoc + huongTanCong * (khoangCachToiDich + data.overshoot);
 
-        float tocDoDanhHienTai = DamageCalculator.CalculateAttackSpeed(data.tocDoDanh);
+        float tocDoDanhHienTai = DamageCalculator.CalculateAttackSpeed(data.tocDoDanh, data);
         float tocDoXoayThucTe = data.tocDoXoay * tocDoDanhHienTai;
 
         float t = 0;

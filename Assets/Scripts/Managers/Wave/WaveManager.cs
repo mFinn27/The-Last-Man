@@ -16,6 +16,7 @@ public class WaveManager : MonoBehaviour
     public float thoiGianWaveHienTai { get; private set; }
     public float thoiGianDaQua { get; private set; }
     public bool dangTrongWave { get; private set; }
+    public void SetWaveIndex(int index) { waveHienTaiIndex = index; }
 
     [Header("--- CƠ CHẾ BÁO HIỆU & GIỚI HẠN ---")]
     public GameObject warningPrefab;
@@ -36,6 +37,8 @@ public class WaveManager : MonoBehaviour
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
     }
+
+
 
     void Update()
     {
@@ -71,6 +74,15 @@ public class WaveManager : MonoBehaviour
         {
             Debug.Log("CHÚC MỪNG! BẠN ĐÃ HOÀN THÀNH TẤT CẢ CÁC WAVE!");
             return;
+        }
+
+        if (PlayerStats.Instance != null)
+        {
+            PlayerStats.Instance.vangKhiBatDauWave = PlayerStats.Instance.vangHienTai;
+        }
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.soQuaiDaGietKhiBatDauWave = GameManager.Instance.soQuaiDaGiet;
         }
 
         waveDataHienTai = danhSachWave[waveHienTaiIndex];

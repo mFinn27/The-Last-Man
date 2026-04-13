@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Sword1
   m_EditorClassIdentifier: 
   tenMatHang: "Ki\u1EBFm C\u1EA5p 1"
-  moTa: "Dame c\u01A1 b\u1EA3n: 14\nT\u1ED1c \u0111\u1ED9 \u0111\xE1nh: 0.75\nT\u1EA7m
+  moTa: "Dame c\u01A1 b\u1EA3n: 21\nT\u1ED1c \u0111\u1ED9 \u0111\xE1nh: 0.75\nT\u1EA7m
     \u0111\xE1nh: 3\n\u0110\u1EA9y l\xF9i: 3"
   iconMatHang: {fileID: -2582888597079945630, guid: fb2369a4bf18ebd4a8a9a0680cfb3078, type: 3}
   giaMua: 28
@@ -23,7 +23,7 @@ MonoBehaviour:
   weaponPrefab: {fileID: 6287261391817972532, guid: ef1533b9a9b7cd544865447b447cb52e, type: 3}
   vuKhiCapTiepTheo: {fileID: 11400000, guid: 9c5690530ca51e44585ef3d59f2b6f36, type: 2}
   giaBan: 18
-  dame: 14
+  dame: 21
   tocDoDanh: 0.75
   tamDanh: 3
   dayLui: 3

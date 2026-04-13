@@ -13,20 +13,20 @@ MonoBehaviour:
   m_Name: Snipper
   m_EditorClassIdentifier: 
   tenMatHang: "S\xFAng Ng\u1EAFm C\u1EE1 L\u1EDBn"
-  moTa: "Dame c\u01A1 b\u1EA3n: 85\nT\u1ED1c \u0111\u1ED9 \u0111\xE1nh: 0.5\nT\u1EA7m
-    \u0111\xE1nh: 9\n\u0110\u1EA9y l\xF9i: 3\nT\u1EC9 l\u1EC7 ch\xED m\u1EA1ng: 10%\nXuy\xEAn
-    th\u1EA5u: 5"
+  moTa: "Dame c\u01A1 b\u1EA3n: 100\nT\u1ED1c \u0111\u1ED9 \u0111\xE1nh: 0.5\nT\u1EA7m
+    \u0111\xE1nh: 10\n\u0110\u1EA9y l\xF9i: 3\nT\u1EC9 l\u1EC7 ch\xED m\u1EA1ng:
+    10%\nXuy\xEAn th\u1EA5u: 5"
   iconMatHang: {fileID: -1198099712212326842, guid: b5c2a97d1d66aba459af3899e9544096, type: 3}
-  giaMua: 136
+  giaMua: 257
   capDo: 4
   mauCapDo: {r: 0.6156863, g: 0.13333334, b: 0.1882353, a: 1}
   loaiVuKhi: 2
   weaponPrefab: {fileID: 7504538950462528467, guid: b7d60c9b425dd124e8ec3dba7413a17f, type: 3}
   vuKhiCapTiepTheo: {fileID: 0}
   giaBan: 95
-  dame: 85
+  dame: 100
   tocDoDanh: 0.5
-  tamDanh: 9
+  tamDanh: 10
   dayLui: 3
   tiLeChiMang: 0.1
   satThuongChiMang: 0

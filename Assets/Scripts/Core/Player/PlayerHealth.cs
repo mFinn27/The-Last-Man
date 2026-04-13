@@ -21,7 +21,24 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         mauToiDa = PlayerStats.Instance != null ? PlayerStats.Instance.GetMaxHP() : 100;
-        mauHientai = mauToiDa;
+
+        if (GameManager.Instance != null && GameManager.Instance.isLoadingSave)
+        {
+            RunSaveData data = GameManager.Instance.currentSave;
+            if (data.waveHienTai == 0 && data.trangThaiGiaiDoan == 0)
+            {
+                mauHientai = mauToiDa;
+            }
+            else
+            {
+                mauHientai = data.mauHienTai;
+                if (mauHientai > mauToiDa) mauHientai = mauToiDa;
+            }
+        }
+        else
+        {
+            mauHientai = mauToiDa;
+        }
         hinhAnh = GetComponent<PlayerVisuals>();
         OnHealthChanged?.Invoke(mauHientai, mauToiDa);
     }

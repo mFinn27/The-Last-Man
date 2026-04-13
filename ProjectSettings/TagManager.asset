@@ -70,5 +70,11 @@ TagManager:
   - name: Decor
     uniqueID: 289553143
     locked: 0
+  - name: PanelGameplay
+    uniqueID: 1921780347
+    locked: 0
+  - name: AfterCredit
+    uniqueID: 52537197
+    locked: 0
   m_RenderingLayers:
   - Default
