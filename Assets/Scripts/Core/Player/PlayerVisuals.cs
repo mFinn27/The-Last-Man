@@ -18,11 +18,6 @@ public class PlayerVisuals : MonoBehaviour
         if (sr != null) materialGoc = sr.material;
     }
 
-    void Start()
-    {
-        CapNhatHinhAnhVaAnimation();
-    }
-
     public void CapNhatHinhAnhVaAnimation()
     {
         if (sr == null) sr = GetComponentInChildren<SpriteRenderer>();
@@ -54,5 +49,20 @@ public class PlayerVisuals : MonoBehaviour
         sr.material = flashMaterial;
         yield return new WaitForSeconds(0.1f);
         sr.material = materialGoc;
+    }
+
+    public void SetVisualsTemporary(CharacterData tempNhanVat)
+    {
+        if (sr == null) sr = GetComponentInChildren<SpriteRenderer>();
+        if (anim == null) anim = GetComponentInChildren<Animator>();
+
+        if (tempNhanVat != null)
+        {
+            if (tempNhanVat.hinhAnhNhanVat != null)
+                sr.sprite = tempNhanVat.hinhAnhNhanVat;
+
+            if (tempNhanVat.animatorNhanVat != null && anim != null)
+                anim.runtimeAnimatorController = tempNhanVat.animatorNhanVat;
+        }
     }
 }

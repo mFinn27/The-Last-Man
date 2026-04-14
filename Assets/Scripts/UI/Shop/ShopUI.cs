@@ -48,21 +48,46 @@ public class ShopUI : MonoBehaviour
         CapNhatVangUITong();
         panelHanhDong.SetActive(false);
         CapNhatGiaoDienKhoVuKhi();
+
         int waveHienTai = WaveManager.Instance != null ? WaveManager.Instance.waveHienTaiIndex + 1 : 1;
         buocNhayGiaReroll = Mathf.Max(1, Mathf.FloorToInt(waveHienTai * 0.4f));
         int giaRerollCuaWaveNay = Mathf.FloorToInt(waveHienTai * 0.75f) + buocNhayGiaReroll;
 
-        foreach (var the in cacTheTrenKe)
+        bool isRestoringShop = GameManager.Instance != null &&
+                               GameManager.Instance.isLoadingSave &&
+                               GameManager.Instance.currentSave.trangThaiGiaiDoan == 2 &&
+                               GameManager.Instance.currentSave.shopItemNames.Count == cacTheTrenKe.Length;
+
+        for (int i = 0; i < cacTheTrenKe.Length; i++)
         {
-            if (!the.dangBiKhoa)
+            var the = cacTheTrenKe[i];
+
+            if (isRestoringShop)
             {
-                ItemData itemRandom = LayItemNgauNhienTheoWave();
-                the.Setup(itemRandom, this, giaRerollCuaWaveNay);
+                string savedItemName = GameManager.Instance.currentSave.shopItemNames[i];
+                bool isLocked = GameManager.Instance.currentSave.shopItemLocked[i];
+                int savedRerollPrice = GameManager.Instance.currentSave.shopItemRerollPrices[i];
+
+                ItemData savedItem = TimItemTheoTen(savedItemName);
+                the.Setup(savedItem, this, savedRerollPrice);
+                the.SetKhoaState(isLocked);
             }
             else
             {
-                the.ResetChoWaveMoi(giaRerollCuaWaveNay);
+                if (!the.dangBiKhoa)
+                {
+                    ItemData itemRandom = LayItemNgauNhienTheoWave();
+                    the.Setup(itemRandom, this, giaRerollCuaWaveNay);
+                }
+                else
+                {
+                    the.ResetChoWaveMoi(giaRerollCuaWaveNay);
+                }
             }
+        }
+        if (isRestoringShop)
+        {
+            GameManager.Instance.currentSave.shopItemNames.Clear();
         }
     }
 
@@ -195,5 +220,10 @@ public class ShopUI : MonoBehaviour
         panelShop.SetActive(false);
         Time.timeScale = 1f;
         if (WaveManager.Instance != null) WaveManager.Instance.ChuyenSangWaveTiepTheo();
+    }
+
+    public ItemData TimItemTheoTen(string tenItem)
+    {
+        return khoHangHoa.Find(x => x.tenMatHang == tenItem);
     }
 }

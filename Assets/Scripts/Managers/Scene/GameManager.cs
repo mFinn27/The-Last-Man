@@ -10,6 +10,10 @@ public class RunSaveData
     public string tenNhanVat;
     public List<string> tenCacVuKhi = new List<string>();
     public float bTocDoChay, bPhamViHut, bSatThuong, bTocDoDanh, bTiLeChiMang, bSatThuongChiMang, bHutMau, bDayLui, bTamDanh;
+
+    public List<string> shopItemNames = new List<string>();
+    public List<bool> shopItemLocked = new List<bool>();
+    public List<int> shopItemRerollPrices = new List<int>();
 }
 
 public class GameManager : MonoBehaviour
@@ -125,6 +129,16 @@ public class GameManager : MonoBehaviour
         else if (RewardPopupUI.Instance != null && RewardPopupUI.Instance.panelPhanThuong.activeInHierarchy) trangThai = 1;
 
         data.trangThaiGiaiDoan = trangThai;
+
+        if (trangThai == 2 && ShopUI.Instance != null)
+        {
+            foreach (var the in ShopUI.Instance.cacTheTrenKe)
+            {
+                data.shopItemNames.Add(the.GetDataHienTai() != null ? the.GetDataHienTai().tenMatHang : "");
+                data.shopItemLocked.Add(the.dangBiKhoa);
+                data.shopItemRerollPrices.Add(the.GetGiaRerollHienTai());
+            }
+        }
 
         if (trangThai == 0)
         {

@@ -9,8 +9,6 @@ public class ShopCardUI : MonoBehaviour
     public TextMeshProUGUI txtMoTaGomGiaTien;
     public Image imgIcon;
     public TextMeshProUGUI txtGiaReroll;
-
-    [Tooltip("Kéo ảnh viền của thẻ vào đây để đổi màu theo độ hiếm")]
     public Image imgVienCapDo;
 
     [Header("--- TÍNH NĂNG KHÓA ---")]
@@ -128,5 +126,15 @@ public class ShopCardUI : MonoBehaviour
     {
         giaRerollHienTai = giaMoi;
         CapNhatGiaRerollUI();
+    }
+
+    public ItemData GetDataHienTai() => dataHienTai;
+
+    public int GetGiaRerollHienTai() => giaRerollHienTai;
+
+    public void SetKhoaState(bool isLocked)
+    {
+        dangBiKhoa = isLocked;
+        CapNhatGiaoDienKhoa();
     }
 }

@@ -28,6 +28,9 @@ public class StoryDirector : MonoBehaviour
     [Header("--- DEBUG (DÀNH CHO DEV TEST) ---")]
     public bool testMode = false;
 
+    [Header("--- NHÂN VẬT MẶC ĐỊNH CHO CỐT TRUYỆN ---")]
+    public CharacterData nhanVatMacDinhTrongCutscene;
+
     [Header("--- DANH SÁCH CÁC CÂU CHUYỆN ---")]
     public List<StoryEvent> danhSachCotTruyen;
 
@@ -97,12 +100,19 @@ public class StoryDirector : MonoBehaviour
         PlayerMovement scriptDiChuyen = null;
         GameObject player = null;
         Animator anim = null;
+        PlayerVisuals playerVisuals = null;
 
         if (PlayerHealth.Instance != null)
         {
             player = PlayerHealth.Instance.gameObject;
             scriptDiChuyen = player.GetComponent<PlayerMovement>();
             anim = player.GetComponentInChildren<Animator>();
+            playerVisuals = player.GetComponent<PlayerVisuals>();
+
+            if (playerVisuals != null && nhanVatMacDinhTrongCutscene != null)
+            {
+                playerVisuals.SetVisualsTemporary(nhanVatMacDinhTrongCutscene);
+            }
 
             Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
             if (rb != null) rb.linearVelocity = Vector2.zero;
@@ -207,6 +217,9 @@ public class StoryDirector : MonoBehaviour
             DialogManager.Instance.OnDialogEnded -= onDone2;
             PlayerPrefs.SetInt(suKien.idSuKien, 1);
             PlayerPrefs.Save();
+
+            if (playerVisuals != null) playerVisuals.CapNhatHinhAnhVaAnimation();
+
             OnAfterCreditsTriggered?.Invoke();
         }
         else
@@ -224,6 +237,12 @@ public class StoryDirector : MonoBehaviour
     {
         if (WeaponManager.Instance != null && WeaponManager.Instance.weaponPivot != null)
             WeaponManager.Instance.weaponPivot.gameObject.SetActive(true);
+
+        if (PlayerHealth.Instance != null)
+        {
+            PlayerVisuals pv = PlayerHealth.Instance.GetComponent<PlayerVisuals>();
+            if (pv != null) pv.CapNhatHinhAnhVaAnimation();
+        }
     }
 
     [ContextMenu("Xóa Lịch Sử Cutscene (Reset)")]

@@ -21712,6 +21712,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   testMode: 0
+  nhanVatMacDinhTrongCutscene: {fileID: 11400000, guid: 094ff73c500d3d04ebc11e47347ccca4, type: 2}
   danhSachCotTruyen:
   - idSuKien: Wave1_GapLuHanh
     idNhanVatBoQua: 
