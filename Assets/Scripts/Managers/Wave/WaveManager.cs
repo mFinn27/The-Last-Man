@@ -269,7 +269,20 @@ public class WaveManager : MonoBehaviour
     private IEnumerator DelayChayEnding(float delay)
     {
         yield return new WaitForSeconds(delay);
-        StoryDirector.Instance.KiemTraVaChayCutscene(waveHienTaiIndex + 2);
+
+        bool coChayCutscene = false;
+
+        if (StoryDirector.Instance != null)
+        {
+            coChayCutscene = StoryDirector.Instance.KiemTraVaChayCutscene(waveHienTaiIndex + 2);
+        }
+        if (!coChayCutscene)
+        {
+            if (GameManager.Instance != null)
+            {
+                GameManager.Instance.KetThucGame(true);
+            }
+        }
     }
 
     public void ChuyenSangWaveTiepTheo()

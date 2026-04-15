@@ -4,7 +4,7 @@
 public class RangedWeapon : MonoBehaviour
 {
     [SerializeField] private Transform diemBan;
-    [SerializeField] private SpriteRenderer hinhAnh;
+    [SerializeField] private SpriteRenderer hinhAnhVuKhi;
 
     private WeaponData data;
     private AutoAim mayQuet;
@@ -25,7 +25,17 @@ public class RangedWeapon : MonoBehaviour
 
         if (boXoay != null) boXoay.Setup(aim, movement);
 
-        if (hinhAnh != null && data.iconMatHang != null) hinhAnh.sprite = data.iconMatHang;
+        if (hinhAnhVuKhi != null)
+        {
+            if (data.hinhAnhVuKhiTrongGame != null)
+            {
+                hinhAnhVuKhi.sprite = data.hinhAnhVuKhiTrongGame;
+            }
+            else if (data.iconMatHang != null)
+            {
+                hinhAnhVuKhi.sprite = data.iconMatHang;
+            }
+        }
     }
 
     void Update()
@@ -54,6 +64,10 @@ public class RangedWeapon : MonoBehaviour
         {
             Debug.LogWarning($"[RangedWeapon] Vũ khí {data.tenMatHang} chưa được gắn Bullet Prefab trong WeaponData!");
             return;
+        }
+        if (AudioManager.Instance != null && data.amThanhTanCong != null)
+        {
+            AudioManager.Instance.PlayWeaponSFX(data.amThanhTanCong, data.amLuongTanCong);
         }
 
         Vector2 huong;

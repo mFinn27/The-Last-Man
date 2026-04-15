@@ -19,8 +19,11 @@ MonoBehaviour:
   giaMua: 22
   capDo: 1
   mauCapDo: {r: 1, g: 1, b: 1, a: 1}
+  amThanhTanCong: {fileID: 8300000, guid: 8512a9d0dbb8b534ba1f9814299febcc, type: 3}
+  amLuongTanCong: 0.5
   loaiVuKhi: 1
   weaponPrefab: {fileID: 3918598598552935104, guid: 12e3a34a77e72cf4b89f3608753ff9fa, type: 3}
+  hinhAnhVuKhiTrongGame: {fileID: 0}
   vuKhiCapTiepTheo: {fileID: 11400000, guid: 91a7bfe3994982d41a81343699741f6c, type: 2}
   giaBan: 17
   dame: 22

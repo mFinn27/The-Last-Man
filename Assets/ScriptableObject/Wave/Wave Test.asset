@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tenWave: Wave 20
   thoiGianWave: 10
-  batBuocGietBoss: 1
+  batBuocGietBoss: 0
   danhSachSuKien:
   - tenKichBan: Quai Co Ban
     giayBatDau: 0

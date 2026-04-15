@@ -19,7 +19,7 @@ MonoBehaviour:
     +50%\nB\u1EA1n kh\u1EDFi \u0111\u1EA7u v\u1EDBi Dao G\u0103m c\u1EA5p 2"
   animatorNhanVat: {fileID: 22100000, guid: 4aa0f17db0660a44ca1d12c27840ec44, type: 2}
   idNhanVat: Assassin
-  moKhoaSan: 1
+  moKhoaSan: 0
   dieuKienWave: 5
   textDieuKienMoKhoa: "Ti\u1EBFp t\u1EE5c c\u1ED1t truy\u1EC7n \u0111\u1EC3 m\u1EDF
     kh\xF3a"

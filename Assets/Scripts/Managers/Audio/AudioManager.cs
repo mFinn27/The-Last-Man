@@ -136,6 +136,14 @@ public class AudioManager : MonoBehaviour
         return (hieuUngCanhBaoBoss != null && hieuUngCanhBaoBoss.clip != null) ? hieuUngCanhBaoBoss.clip.length : 2f;
     }
 
+    public void PlayWeaponSFX(AudioClip clip, float volume = 1f)
+    {
+        if (clip == null || sourceHieuUngAmThanh == null) return;
+
+        float finalVolume = globalSfxVolume * volume;
+        sourceHieuUngAmThanh.PlayOneShot(clip, finalVolume);
+    }
+
     public void StopAllGameplaySounds()
     {
         StopAllCoroutines();

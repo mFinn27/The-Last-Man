@@ -3,9 +3,14 @@
 [CreateAssetMenu(fileName = "WeaponData", menuName = "Weapons/Weapon Data")]
 public class WeaponData : ItemData
 {
+    [Header("--- ÂM THANH (AUDIO) ---")]
+    public AudioClip amThanhTanCong;
+    [Range(0f, 2f)] public float amLuongTanCong = 1f;
+
     [Header("--- THÔNG TIN VŨ KHÍ ---")]
     public WeaponType loaiVuKhi;
     public GameObject weaponPrefab;
+    public Sprite hinhAnhVuKhiTrongGame;
 
     [Header("--- HỆ THỐNG GHÉP ĐỒ & MUA BÁN ---")]
     public WeaponData vuKhiCapTiepTheo;

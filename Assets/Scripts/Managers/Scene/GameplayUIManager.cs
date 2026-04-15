@@ -16,6 +16,7 @@ public class GameplayUIManager : MonoBehaviour
     [Header("--- GAME OVER ---")]
     [SerializeField] private GameObject panelGameOver;
     [SerializeField] private TextMeshProUGUI txtGameOverMessage;
+    [SerializeField] private GameObject btnThuLai;
 
     [Header("--- AFTER CREDITS ---")]
     public AfterCreditsManager creditsManager;
@@ -107,6 +108,10 @@ public class GameplayUIManager : MonoBehaviour
                 txtGameOverMessage.text = chienThang ? "CHIẾN THẮNG!" : "BẠN ĐÃ CHẾT!";
                 txtGameOverMessage.color = chienThang ? Color.yellow : Color.red;
             }
+        }
+        if (btnThuLai != null)
+        {
+            btnThuLai.SetActive(!chienThang);
         }
     }
 

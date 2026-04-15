@@ -6,7 +6,7 @@ public class ThrustWeapon : MonoBehaviour
 {
     [SerializeField] private Transform visualContainer;
     [SerializeField] private GameObject hitBox;
-    [SerializeField] private SpriteRenderer hinhAnh;
+    [SerializeField] private SpriteRenderer hinhAnhVuKhi;
 
     private WeaponData data;
     private AutoAim mayQuet;
@@ -28,7 +28,17 @@ public class ThrustWeapon : MonoBehaviour
         mayQuet = aim;
         if (boXoay != null) boXoay.Setup(aim, movement);
 
-        if (hinhAnh != null && data.iconMatHang != null) hinhAnh.sprite = data.iconMatHang;
+        if (hinhAnhVuKhi != null)
+        {
+            if (data.hinhAnhVuKhiTrongGame != null)
+            {
+                hinhAnhVuKhi.sprite = data.hinhAnhVuKhiTrongGame;
+            }
+            else if (data.iconMatHang != null)
+            {
+                hinhAnhVuKhi.sprite = data.iconMatHang;
+            }
+        }
 
         if (hitBox != null)
         {
@@ -60,6 +70,11 @@ public class ThrustWeapon : MonoBehaviour
     {
         dangTanCong = true;
         boXoay.khoaXoay = true;
+
+        if (AudioManager.Instance != null && data.amThanhTanCong != null)
+        {
+            AudioManager.Instance.PlayWeaponSFX(data.amThanhTanCong, data.amLuongTanCong);
+        }
 
         float khoangCach = tamDanhThuc;
         if (mayQuet != null && mayQuet.mucTieuHienTai != null)

@@ -31,7 +31,17 @@ public class ArcMeleeWeapon : MonoBehaviour
         mayQuet = aim;
         if (boXoay != null) boXoay.Setup(aim, movement);
 
-        if (hinhAnhVuKhi != null && data.iconMatHang != null) hinhAnhVuKhi.sprite = data.iconMatHang;
+        if (hinhAnhVuKhi != null)
+        {
+            if (data.hinhAnhVuKhiTrongGame != null)
+            {
+                hinhAnhVuKhi.sprite = data.hinhAnhVuKhiTrongGame;
+            }
+            else if (data.iconMatHang != null)
+            {
+                hinhAnhVuKhi.sprite = data.iconMatHang;
+            }
+        }
     }
 
     void Update()
@@ -58,6 +68,11 @@ public class ArcMeleeWeapon : MonoBehaviour
     {
         dangTanCong = true;
         boXoay.khoaXoay = true;
+
+        if (AudioManager.Instance != null && data.amThanhTanCong != null)
+        {
+            AudioManager.Instance.PlayWeaponSFX(data.amThanhTanCong, data.amLuongTanCong);
+        }
 
         if (trail) trail.emitting = true;
 
