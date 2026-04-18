@@ -9,6 +9,7 @@ public class StoryEvent
     public string idSuKien = "Cutscene_WaveX";
     public string idNhanVatBoQua;
     public int truocWaveSo = 1;
+    public string tenMapChuyenToi;
     public GameObject npcPrefab;
     public DialogLine[] kichBan;
 
@@ -141,7 +142,7 @@ public class StoryDirector : MonoBehaviour
                     scriptDiChuyen.ForceMoveTo(huong * speed);
                     yield return null;
                 }
-                scriptDiChuyen.StopForceMove();
+                scriptDiChuyen.ForceMoveTo(Vector2.zero);
             }
             else
             {
@@ -159,7 +160,6 @@ public class StoryDirector : MonoBehaviour
                 anim.SetFloat("MoveY", huongNhinNPC.y);
             }
         }
-
         yield return new WaitForSeconds(0.5f);
         bool dialog1Xong = false;
         Action onDone1 = () => dialog1Xong = true;
@@ -167,6 +167,20 @@ public class StoryDirector : MonoBehaviour
         DialogManager.Instance.BatDauHoiThoai(suKien.kichBan);
         yield return new WaitUntil(() => dialog1Xong);
         DialogManager.Instance.OnDialogEnded -= onDone1;
+
+        if (!string.IsNullOrEmpty(suKien.tenMapChuyenToi))
+        {
+            Time.timeScale = 0f;
+            yield return StartCoroutine(MapManager.Instance.BatDauChuyenMap(suKien.tenMapChuyenToi, () =>
+            {
+                if (npcHienTai != null)
+                {
+                    Destroy(npcHienTai);
+                    npcHienTai = null;
+                }
+            }));
+            Time.timeScale = 1f;
+        }
 
         if (suKien.laCutscenePhaDao)
         {
@@ -189,7 +203,7 @@ public class StoryDirector : MonoBehaviour
                         scriptDiChuyen.ForceMoveTo(huong * speed);
                         yield return null;
                     }
-                    scriptDiChuyen.StopForceMove();
+                    scriptDiChuyen.ForceMoveTo(Vector2.zero);
                 }
                 else
                 {
@@ -242,6 +256,9 @@ public class StoryDirector : MonoBehaviour
         {
             PlayerVisuals pv = PlayerHealth.Instance.GetComponent<PlayerVisuals>();
             if (pv != null) pv.CapNhatHinhAnhVaAnimation();
+
+            PlayerMovement pm = PlayerHealth.Instance.GetComponent<PlayerMovement>();
+            if (pm != null) pm.StopForceMove();
         }
     }
 

@@ -1,7 +1,8 @@
-﻿using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
-using System;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public class RunSaveData
@@ -73,7 +74,7 @@ public class GameManager : MonoBehaviour
         soQuaiDaGiet = 0;
         Time.timeScale = 1f;
         if (AudioManager.Instance != null) AudioManager.Instance.PlayGameplayBGM();
-        SceneManager.LoadScene("Gameplay");
+        StartCoroutine(LoadGameplayMuotMa());
     }
 
     public void TiepTucGame()
@@ -101,7 +102,19 @@ public class GameManager : MonoBehaviour
         }
         Time.timeScale = 1f;
         if (AudioManager.Instance != null) AudioManager.Instance.PlayGameplayBGM();
-        SceneManager.LoadScene("Gameplay");
+        StartCoroutine(LoadGameplayMuotMa());
+    }
+
+    private IEnumerator LoadGameplayMuotMa()
+    {
+        Time.timeScale = 1f;
+        if (AudioManager.Instance != null) AudioManager.Instance.PlayGameplayBGM();
+
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Gameplay");
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
     }
 
     public bool HasSave() => PlayerPrefs.HasKey("RunSave");

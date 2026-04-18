@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Bullet
+  - CameraBounds
   layers:
   - Default
   - TransparentFX
@@ -52,6 +53,9 @@ TagManager:
   - name: WalkInfront
     uniqueID: 3983562619
     locked: 0
+  - name: Decor
+    uniqueID: 289553143
+    locked: 0
   - name: Collision
     uniqueID: 1228993673
     locked: 0
@@ -67,8 +71,8 @@ TagManager:
   - name: WalkBehind
     uniqueID: 3231625171
     locked: 0
-  - name: Decor
-    uniqueID: 289553143
+  - name: HUD
+    uniqueID: 4045238901
     locked: 0
   - name: PanelGameplay
     uniqueID: 1921780347

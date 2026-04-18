@@ -1,0 +1,1482 @@
+fileFormatVersion: 2
+guid: 35a0a4d043cbed64bbf4db54867de0e8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7766870774560646432
+    second: NES_Dungeon_Tileset_0
+  - first:
+      213: 762702710717519387
+    second: NES_Dungeon_Tileset_1
+  - first:
+      213: -5321251515047175578
+    second: NES_Dungeon_Tileset_2
+  - first:
+      213: -2718097746173439734
+    second: NES_Dungeon_Tileset_3
+  - first:
+      213: 770405896693456676
+    second: NES_Dungeon_Tileset_4
+  - first:
+      213: 4014149228291453943
+    second: NES_Dungeon_Tileset_5
+  - first:
+      213: 2855337733217328727
+    second: NES_Dungeon_Tileset_6
+  - first:
+      213: 8165276032259139269
+    second: NES_Dungeon_Tileset_7
+  - first:
+      213: -6408822663760063216
+    second: NES_Dungeon_Tileset_8
+  - first:
+      213: 3414675329197544799
+    second: NES_Dungeon_Tileset_9
+  - first:
+      213: 6313567018194383784
+    second: NES_Dungeon_Tileset_10
+  - first:
+      213: 2693682102743989875
+    second: NES_Dungeon_Tileset_11
+  - first:
+      213: -3602842092907975288
+    second: NES_Dungeon_Tileset_12
+  - first:
+      213: -1635658954175096155
+    second: NES_Dungeon_Tileset_13
+  - first:
+      213: -8683966176553612400
+    second: NES_Dungeon_Tileset_14
+  - first:
+      213: -5394552625415574575
+    second: NES_Dungeon_Tileset_15
+  - first:
+      213: -3349491406818510461
+    second: NES_Dungeon_Tileset_16
+  - first:
+      213: -4343283369207931520
+    second: NES_Dungeon_Tileset_17
+  - first:
+      213: -8114694394100230188
+    second: NES_Dungeon_Tileset_18
+  - first:
+      213: 776261723337381694
+    second: NES_Dungeon_Tileset_19
+  - first:
+      213: 8530867135559196934
+    second: NES_Dungeon_Tileset_20
+  - first:
+      213: 3885034717131467475
+    second: NES_Dungeon_Tileset_21
+  - first:
+      213: -858432697728999112
+    second: NES_Dungeon_Tileset_22
+  - first:
+      213: -1787134597591337420
+    second: NES_Dungeon_Tileset_23
+  - first:
+      213: 6491491225069584764
+    second: NES_Dungeon_Tileset_24
+  - first:
+      213: -2312801343941509658
+    second: NES_Dungeon_Tileset_25
+  - first:
+      213: 7159889570145876447
+    second: NES_Dungeon_Tileset_26
+  - first:
+      213: 3989455516064619802
+    second: NES_Dungeon_Tileset_27
+  - first:
+      213: 8156112056521052466
+    second: NES_Dungeon_Tileset_28
+  - first:
+      213: -7824180382303312925
+    second: NES_Dungeon_Tileset_29
+  - first:
+      213: -6826392826815708272
+    second: NES_Dungeon_Tileset_30
+  - first:
+      213: -4555495677606994048
+    second: NES_Dungeon_Tileset_31
+  - first:
+      213: -4804591247323071376
+    second: NES_Dungeon_Tileset_32
+  - first:
+      213: 5978342344504301732
+    second: NES_Dungeon_Tileset_33
+  - first:
+      213: -4728214674428820202
+    second: NES_Dungeon_Tileset_34
+  - first:
+      213: -7065604282104776800
+    second: NES_Dungeon_Tileset_35
+  - first:
+      213: -8687468371603913752
+    second: NES_Dungeon_Tileset_36
+  - first:
+      213: 2704841825714657950
+    second: NES_Dungeon_Tileset_37
+  - first:
+      213: 4784773483491886844
+    second: NES_Dungeon_Tileset_38
+  - first:
+      213: -2762951242635686039
+    second: NES_Dungeon_Tileset_39
+  - first:
+      213: 9098255082161977344
+    second: NES_Dungeon_Tileset_40
+  - first:
+      213: -434124574280711521
+    second: NES_Dungeon_Tileset_41
+  - first:
+      213: -4539832341284667602
+    second: NES_Dungeon_Tileset_42
+  - first:
+      213: -9172744273726447514
+    second: NES_Dungeon_Tileset_43
+  - first:
+      213: 762107405682757754
+    second: NES_Dungeon_Tileset_44
+  - first:
+      213: -3054401739293068723
+    second: NES_Dungeon_Tileset_45
+  - first:
+      213: -9038752506612158674
+    second: NES_Dungeon_Tileset_46
+  - first:
+      213: -2513305369265033654
+    second: NES_Dungeon_Tileset_47
+  - first:
+      213: -1260135294975356427
+    second: NES_Dungeon_Tileset_48
+  - first:
+      213: -6436401657343069021
+    second: NES_Dungeon_Tileset_49
+  - first:
+      213: -9197573239903099596
+    second: NES_Dungeon_Tileset_50
+  - first:
+      213: 4528691342731752222
+    second: NES_Dungeon_Tileset_51
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: NES_Dungeon_Tileset_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 319
+        width: 257
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ea13f16e28863490800000000000000
+      internalID: -7766870774560646432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES_Dungeon_Tileset_1
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 452
+        width: 33
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b169b8d031aa59a00800000000000000
+      internalID: 762702710717519387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES_Dungeon_Tileset_2
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 452
+        width: 34
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66a9a15b0fd1726b0800000000000000
+      internalID: -5321251515047175578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES_Dungeon_Tileset_3
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 452
+        width: 34
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a01da8e3080674ad0800000000000000
+      internalID: -2718097746173439734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES_Dungeon_Tileset_4
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 452
+        width: 34
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42f974dc41801ba00800000000000000
+      internalID: 770405896693456676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES_Dungeon_Tileset_5
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 452
+        width: 34
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f378bb847f15b730800000000000000
+      internalID: 4014149228291453943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES_Dungeon_Tileset_6
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 452
+        width: 33
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75e10364a8230a720800000000000000
+      internalID: 2855337733217328727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES_Dungeon_Tileset_7
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 428
+        width: 25
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c621d33a43e05170800000000000000
+      internalID: 8165276032259139269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES_Dungeon_Tileset_8
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 428
+        width: 26
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 015db122eb94f07a0800000000000000
+      internalID: -6408822663760063216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES_Dungeon_Tileset_9
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 428
+        width: 26
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f551c14ce1d536f20800000000000000
+      internalID: 3414675329197544799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES_Dungeon_Tileset_10
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 372
+        width: 25
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a3391990cb4e9750800000000000000
+      internalID: 6313567018194383784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES_Dungeon_Tileset_11
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 372
+        width: 26
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37ef1e7c991e16520800000000000000
+      internalID: 2693682102743989875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES_Dungeon_Tileset_12
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 372
+        width: 26
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88d25668432200ec0800000000000000
+      internalID: -3602842092907975288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES_Dungeon_Tileset_13
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 372
+        width: 26
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5aad4b6e8d8fc49e0800000000000000
+      internalID: -1635658954175096155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES_Dungeon_Tileset_14
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 372
+        width: 26
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09bc305a5ca5c7780800000000000000
+      internalID: -8683966176553612400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES_Dungeon_Tileset_15
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 372
+        width: 26
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1db24fff7f2b225b0800000000000000
+      internalID: -5394552625415574575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES_Dungeon_Tileset_16
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 404
+        width: 26
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 389fb56df473481d0800000000000000
+      internalID: -3349491406818510461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES_Dungeon_Tileset_17
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 380
+        width: 26
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08ddf7399ce89b3c0800000000000000
+      internalID: -4343283369207931520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES_Dungeon_Tileset_18
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 316
+        width: 25
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d75dca2170d26f80800000000000000
+      internalID: -8114694394100230188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES_Dungeon_Tileset_19
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 316
+        width: 26
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e37d140bce5d5ca00800000000000000
+      internalID: 776261723337381694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES_Dungeon_Tileset_20
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 316
+        width: 26
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6016f09167ab36670800000000000000
+      internalID: 8530867135559196934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES_Dungeon_Tileset_21
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 316
+        width: 26
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3da6eaecd7a6ae530800000000000000
+      internalID: 3885034717131467475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES_Dungeon_Tileset_22
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 316
+        width: 26
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8316844720c3614f0800000000000000
+      internalID: -858432697728999112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES_Dungeon_Tileset_23
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 316
+        width: 26
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 436f1c85d82d237e0800000000000000
+      internalID: -1787134597591337420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES_Dungeon_Tileset_24
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 356
+        width: 26
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7186d430e8661a50800000000000000
+      internalID: 6491491225069584764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES_Dungeon_Tileset_25
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 332
+        width: 26
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6edf1527e6747efd0800000000000000
+      internalID: -2312801343941509658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES_Dungeon_Tileset_26
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 308
+        width: 34
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd9b19b11a90d5360800000000000000
+      internalID: 7159889570145876447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES_Dungeon_Tileset_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 111
+        width: 257
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1d1142a7a46d5730800000000000000
+      internalID: 3989455516064619802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES_Dungeon_Tileset_28
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 268
+        width: 25
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 231d735d3b4503170800000000000000
+      internalID: 8156112056521052466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES_Dungeon_Tileset_29
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 268
+        width: 26
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e32b36856dea6390800000000000000
+      internalID: -7824180382303312925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES_Dungeon_Tileset_30
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 268
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 093006c44e7c341a0800000000000000
+      internalID: -6826392826815708272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES_Dungeon_Tileset_31
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 268
+        width: 34
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08f586831d0a7c0c0800000000000000
+      internalID: -4555495677606994048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES_Dungeon_Tileset_32
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 268
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07c7b5467b9a25db0800000000000000
+      internalID: -4804591247323071376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES_Dungeon_Tileset_33
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 268
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a8dadd00b657f250800000000000000
+      internalID: 5978342344504301732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES_Dungeon_Tileset_34
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 284
+        width: 9
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61581e40ec1026eb0800000000000000
+      internalID: -4728214674428820202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES_Dungeon_Tileset_35
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 269
+        width: 9
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a77aa1375ee1fd90800000000000000
+      internalID: -7065604282104776800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES_Dungeon_Tileset_36
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 228
+        width: 33
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e38b115b89ef6780800000000000000
+      internalID: -8687468371603913752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES_Dungeon_Tileset_37
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 228
+        width: 34
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9a57534f47898520800000000000000
+      internalID: 2704841825714657950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES_Dungeon_Tileset_38
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 228
+        width: 34
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf60e36e12ee66240800000000000000
+      internalID: 4784773483491886844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES_Dungeon_Tileset_39
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 228
+        width: 34
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96fc9facb7608a9d0800000000000000
+      internalID: -2762951242635686039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES_Dungeon_Tileset_40
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 240
+        width: 6
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0083828eace734e70800000000000000
+      internalID: 9098255082161977344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES_Dungeon_Tileset_41
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 240
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f920bb1fffda9f9f0800000000000000
+      internalID: -434124574280711521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES_Dungeon_Tileset_42
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 240
+        width: 8
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2fb5e5e9864ff0c0800000000000000
+      internalID: -4539832341284667602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES_Dungeon_Tileset_43
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 239
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 660690daeadd3b080800000000000000
+      internalID: -9172744273726447514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES_Dungeon_Tileset_44
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 183
+        width: 18
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a705a6cc5ac839a00800000000000000
+      internalID: 762107405682757754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES_Dungeon_Tileset_45
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 183
+        width: 18
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d42f9101dc59c95d0800000000000000
+      internalID: -3054401739293068723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES_Dungeon_Tileset_46
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 189
+        width: 18
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2fe5be0c76ef8280800000000000000
+      internalID: -9038752506612158674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES_Dungeon_Tileset_47
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 189
+        width: 18
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4e20ec2512fe1dd0800000000000000
+      internalID: -2513305369265033654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES_Dungeon_Tileset_48
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 189
+        width: 18
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f1df0e20a9138ee0800000000000000
+      internalID: -1260135294975356427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES_Dungeon_Tileset_49
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 188
+        width: 18
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a4b45e4bce4da6a0800000000000000
+      internalID: -6436401657343069021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES_Dungeon_Tileset_50
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 188
+        width: 18
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 435efef7ed7ab5080800000000000000
+      internalID: -9197573239903099596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NES_Dungeon_Tileset_51
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 188
+        width: 17
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e13b9ec38c429de30800000000000000
+      internalID: 4528691342731752222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      NES_Dungeon_Tileset_0: -7766870774560646432
+      NES_Dungeon_Tileset_1: 762702710717519387
+      NES_Dungeon_Tileset_10: 6313567018194383784
+      NES_Dungeon_Tileset_11: 2693682102743989875
+      NES_Dungeon_Tileset_12: -3602842092907975288
+      NES_Dungeon_Tileset_13: -1635658954175096155
+      NES_Dungeon_Tileset_14: -8683966176553612400
+      NES_Dungeon_Tileset_15: -5394552625415574575
+      NES_Dungeon_Tileset_16: -3349491406818510461
+      NES_Dungeon_Tileset_17: -4343283369207931520
+      NES_Dungeon_Tileset_18: -8114694394100230188
+      NES_Dungeon_Tileset_19: 776261723337381694
+      NES_Dungeon_Tileset_2: -5321251515047175578
+      NES_Dungeon_Tileset_20: 8530867135559196934
+      NES_Dungeon_Tileset_21: 3885034717131467475
+      NES_Dungeon_Tileset_22: -858432697728999112
+      NES_Dungeon_Tileset_23: -1787134597591337420
+      NES_Dungeon_Tileset_24: 6491491225069584764
+      NES_Dungeon_Tileset_25: -2312801343941509658
+      NES_Dungeon_Tileset_26: 7159889570145876447
+      NES_Dungeon_Tileset_27: 3989455516064619802
+      NES_Dungeon_Tileset_28: 8156112056521052466
+      NES_Dungeon_Tileset_29: -7824180382303312925
+      NES_Dungeon_Tileset_3: -2718097746173439734
+      NES_Dungeon_Tileset_30: -6826392826815708272
+      NES_Dungeon_Tileset_31: -4555495677606994048
+      NES_Dungeon_Tileset_32: -4804591247323071376
+      NES_Dungeon_Tileset_33: 5978342344504301732
+      NES_Dungeon_Tileset_34: -4728214674428820202
+      NES_Dungeon_Tileset_35: -7065604282104776800
+      NES_Dungeon_Tileset_36: -8687468371603913752
+      NES_Dungeon_Tileset_37: 2704841825714657950
+      NES_Dungeon_Tileset_38: 4784773483491886844
+      NES_Dungeon_Tileset_39: -2762951242635686039
+      NES_Dungeon_Tileset_4: 770405896693456676
+      NES_Dungeon_Tileset_40: 9098255082161977344
+      NES_Dungeon_Tileset_41: -434124574280711521
+      NES_Dungeon_Tileset_42: -4539832341284667602
+      NES_Dungeon_Tileset_43: -9172744273726447514
+      NES_Dungeon_Tileset_44: 762107405682757754
+      NES_Dungeon_Tileset_45: -3054401739293068723
+      NES_Dungeon_Tileset_46: -9038752506612158674
+      NES_Dungeon_Tileset_47: -2513305369265033654
+      NES_Dungeon_Tileset_48: -1260135294975356427
+      NES_Dungeon_Tileset_49: -6436401657343069021
+      NES_Dungeon_Tileset_5: 4014149228291453943
+      NES_Dungeon_Tileset_50: -9197573239903099596
+      NES_Dungeon_Tileset_51: 4528691342731752222
+      NES_Dungeon_Tileset_6: 2855337733217328727
+      NES_Dungeon_Tileset_7: 8165276032259139269
+      NES_Dungeon_Tileset_8: -6408822663760063216
+      NES_Dungeon_Tileset_9: 3414675329197544799
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

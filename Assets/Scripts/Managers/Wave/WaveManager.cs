@@ -228,7 +228,7 @@ public class WaveManager : MonoBehaviour
 
         Vector2 viTriPlayer = PlayerHealth.Instance.transform.position;
 
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 20; i++)
         {
             float randomX = UnityEngine.Random.Range(mapMin.x, mapMax.x);
             float randomY = UnityEngine.Random.Range(mapMin.y, mapMax.y);
@@ -236,8 +236,12 @@ public class WaveManager : MonoBehaviour
 
             if ((viTriDuKien - viTriPlayer).sqrMagnitude >= (khoangCachAnToanVoiPlayer * khoangCachAnToanVoiPlayer))
             {
-                viTriAnToan = viTriDuKien;
-                return true;
+                Collider2D hit = Physics2D.OverlapCircle(viTriDuKien, 0.5f);
+                if (hit == null || hit.isTrigger)
+                {
+                    viTriAnToan = viTriDuKien;
+                    return true;
+                }
             }
         }
         return false;
@@ -252,6 +256,11 @@ public class WaveManager : MonoBehaviour
         }
         OnWaveEnded?.Invoke();
 
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.LuuTienDoWave(waveHienTaiIndex + 1);
+        }
+
         if (waveHienTaiIndex >= danhSachWave.Count - 1)
         {
             Debug.Log("Đã vượt qua Wave cuối cùng! Đang chuyển đến đoạn kết...");
@@ -259,10 +268,6 @@ public class WaveManager : MonoBehaviour
             {
                 StartCoroutine(DelayChayEnding(2.5f));
             }
-        }
-        else if (GameManager.Instance != null)
-        {
-            GameManager.Instance.LuuTienDoWave(waveHienTaiIndex + 1);
         }
     }
 
@@ -295,6 +300,19 @@ public class WaveManager : MonoBehaviour
                 BatDauWave();
             }
         }
+    }
+
+    public void CapNhatGioiHanSpawn(Bounds gioiHanKhungCamera)
+    {
+        float paddingX = 5.5f;
+        float paddingY = 6.0f;
+        float chieuRongMap = gioiHanKhungCamera.max.x - gioiHanKhungCamera.min.x;
+        float chieuCaoMap = gioiHanKhungCamera.max.y - gioiHanKhungCamera.min.y;
+        paddingX = Mathf.Min(paddingX, chieuRongMap * 0.35f);
+        paddingY = Mathf.Min(paddingY, chieuCaoMap * 0.35f);
+        mapMin = new Vector2(gioiHanKhungCamera.min.x + paddingX, gioiHanKhungCamera.min.y + paddingY);
+        mapMax = new Vector2(gioiHanKhungCamera.max.x - paddingX, gioiHanKhungCamera.max.y - paddingY);
+        Debug.Log($"[WaveManager] Giới hạn Spawn MỚI: Min({mapMin}), Max({mapMax})");
     }
 
     private void OnDrawGizmosSelected()

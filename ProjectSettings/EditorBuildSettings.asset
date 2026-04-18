@@ -11,6 +11,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GamePlay.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/Map_01_Garden.unity
+    guid: 0bcc1fb605c2a85468d7193be080e6fd
+  - enabled: 1
+    path: Assets/Scenes/Map_02_Dungeon.unity
+    guid: 4baf4dcbd69f9a64bb2b8250eac2d939
+  - enabled: 1
+    path: Assets/Scenes/Map_03_Lava.unity
+    guid: 9b93abe7422a6464cb10cdc06fba46b5
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

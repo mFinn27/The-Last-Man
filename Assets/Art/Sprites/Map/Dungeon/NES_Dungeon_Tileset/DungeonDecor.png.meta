@@ -1,0 +1,1430 @@
+fileFormatVersion: 2
+guid: 432647621158b54498ebca2749056a11
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1055421852108705733
+    second: DungeonDecor_0
+  - first:
+      213: -8303756232421665238
+    second: DungeonDecor_1
+  - first:
+      213: 3824379835868725177
+    second: DungeonDecor_2
+  - first:
+      213: 4340607251174797623
+    second: DungeonDecor_3
+  - first:
+      213: 4220348403999707118
+    second: DungeonDecor_4
+  - first:
+      213: 1773896648247154703
+    second: DungeonDecor_5
+  - first:
+      213: -6701360222019316
+    second: DungeonDecor_6
+  - first:
+      213: -3869829368910079369
+    second: DungeonDecor_7
+  - first:
+      213: -5189745683633974637
+    second: DungeonDecor_8
+  - first:
+      213: 8972064080031125625
+    second: DungeonDecor_9
+  - first:
+      213: -6076479159832068699
+    second: DungeonDecor_10
+  - first:
+      213: -2463790810921897734
+    second: DungeonDecor_11
+  - first:
+      213: -7306737331459036186
+    second: DungeonDecor_12
+  - first:
+      213: 918046031772953037
+    second: DungeonDecor_13
+  - first:
+      213: 76229711850336861
+    second: DungeonDecor_14
+  - first:
+      213: 131977414802441185
+    second: DungeonDecor_15
+  - first:
+      213: -3134843365566700818
+    second: DungeonDecor_16
+  - first:
+      213: 5684442582157871776
+    second: DungeonDecor_17
+  - first:
+      213: -2355985560563179402
+    second: DungeonDecor_18
+  - first:
+      213: -5983197189191199444
+    second: DungeonDecor_19
+  - first:
+      213: -2353816894430683588
+    second: DungeonDecor_20
+  - first:
+      213: 7326954202961385925
+    second: DungeonDecor_21
+  - first:
+      213: 2115962688810865136
+    second: DungeonDecor_22
+  - first:
+      213: 4187390312734765760
+    second: DungeonDecor_23
+  - first:
+      213: -1721246943426796877
+    second: DungeonDecor_24
+  - first:
+      213: 1829782941811862870
+    second: DungeonDecor_25
+  - first:
+      213: 4541022682992712666
+    second: DungeonDecor_26
+  - first:
+      213: -8318135885960402092
+    second: DungeonDecor_27
+  - first:
+      213: -6120537557728332705
+    second: DungeonDecor_28
+  - first:
+      213: -3144435123835115020
+    second: DungeonDecor_29
+  - first:
+      213: -3130248460128195511
+    second: DungeonDecor_30
+  - first:
+      213: 1005998432472888475
+    second: DungeonDecor_31
+  - first:
+      213: 7526960276712451549
+    second: DungeonDecor_32
+  - first:
+      213: 8516511571765604314
+    second: DungeonDecor_33
+  - first:
+      213: -5912667302444780598
+    second: DungeonDecor_34
+  - first:
+      213: 8107822123936442406
+    second: DungeonDecor_35
+  - first:
+      213: 7501229977505523470
+    second: DungeonDecor_36
+  - first:
+      213: -8299732442979263495
+    second: DungeonDecor_37
+  - first:
+      213: 1087960754071905626
+    second: DungeonDecor_38
+  - first:
+      213: 5356589607735580507
+    second: DungeonDecor_39
+  - first:
+      213: -2093989631687279281
+    second: DungeonDecor_40
+  - first:
+      213: -3572615437050335599
+    second: DungeonDecor_41
+  - first:
+      213: 6097004118569970695
+    second: DungeonDecor_42
+  - first:
+      213: -7095725974653729934
+    second: DungeonDecor_43
+  - first:
+      213: 5663834008257717503
+    second: DungeonDecor_44
+  - first:
+      213: -1448983663975680390
+    second: DungeonDecor_45
+  - first:
+      213: 2042180760375445313
+    second: DungeonDecor_46
+  - first:
+      213: 4010215237011195013
+    second: DungeonDecor_47
+  - first:
+      213: -1636423636090409294
+    second: DungeonDecor_48
+  - first:
+      213: 3277769960467772386
+    second: DungeonDecor_49
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: DungeonDecor_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 452
+        width: 32
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3030e8da636a51f0800000000000000
+      internalID: -1055421852108705733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonDecor_1
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 452
+        width: 34
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a261219a3b123cc80800000000000000
+      internalID: -8303756232421665238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonDecor_2
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 452
+        width: 34
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bf3f13c23de21530800000000000000
+      internalID: 3824379835868725177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonDecor_3
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 452
+        width: 34
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73132c32c4fec3c30800000000000000
+      internalID: 4340607251174797623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonDecor_4
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 452
+        width: 34
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eef0ac85380b19a30800000000000000
+      internalID: 4220348403999707118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonDecor_5
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 452
+        width: 34
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0817036a952e9810800000000000000
+      internalID: 1773896648247154703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonDecor_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 428
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c01647cf52138eff0800000000000000
+      internalID: -6701360222019316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonDecor_7
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 428
+        width: 26
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77a9db431ba9b4ac0800000000000000
+      internalID: -3869829368910079369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonDecor_8
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 428
+        width: 26
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39251641cc15af7b0800000000000000
+      internalID: -5189745683633974637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonDecor_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 372
+        width: 24
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9701c48aebc238c70800000000000000
+      internalID: 8972064080031125625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonDecor_10
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 372
+        width: 26
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ad352116620caba0800000000000000
+      internalID: -6076479159832068699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonDecor_11
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 372
+        width: 26
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af0f02aaf4bdecdd0800000000000000
+      internalID: -2463790810921897734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonDecor_12
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 372
+        width: 26
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6eb6c4b1c11499a90800000000000000
+      internalID: -7306737331459036186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonDecor_13
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 372
+        width: 26
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc9a84b700e8dbc00800000000000000
+      internalID: 918046031772953037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonDecor_14
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 372
+        width: 26
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d527b20e482de0100800000000000000
+      internalID: 76229711850336861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonDecor_15
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 404
+        width: 26
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e38caf62c0e4d100800000000000000
+      internalID: 131977414802441185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonDecor_16
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 380
+        width: 26
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee228e0719cce74d0800000000000000
+      internalID: -3134843365566700818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonDecor_17
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 316
+        width: 24
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0aacf97396233ee40800000000000000
+      internalID: 5684442582157871776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonDecor_18
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 316
+        width: 26
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 670aeae7d9bdd4fd0800000000000000
+      internalID: -2355985560563179402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonDecor_19
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 316
+        width: 26
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2594255bd967fca0800000000000000
+      internalID: -5983197189191199444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonDecor_20
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 316
+        width: 26
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3e552d6100955fd0800000000000000
+      internalID: -2353816894430683588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonDecor_21
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 316
+        width: 26
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c9911917029ea560800000000000000
+      internalID: 7326954202961385925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonDecor_22
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 316
+        width: 26
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f15d88cad86d5d10800000000000000
+      internalID: 2115962688810865136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonDecor_23
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 356
+        width: 26
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c2b77ebd499c1a30800000000000000
+      internalID: 4187390312734765760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonDecor_24
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 332
+        width: 26
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b2a1564607ec18e0800000000000000
+      internalID: -1721246943426796877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonDecor_25
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 308
+        width: 34
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65de3c614e1b46910800000000000000
+      internalID: 1829782941811862870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonDecor_26
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 268
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adb95c02214f40f30800000000000000
+      internalID: 4541022682992712666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonDecor_27
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 268
+        width: 26
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45ba6ebab7b009c80800000000000000
+      internalID: -8318135885960402092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonDecor_28
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 268
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f547a2de48b7f0ba0800000000000000
+      internalID: -6120537557728332705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonDecor_29
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 268
+        width: 34
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f9eb803ae8bc54d0800000000000000
+      internalID: -3144435123835115020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonDecor_30
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 268
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94c685b3c9f1f84d0800000000000000
+      internalID: -3130248460128195511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonDecor_31
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 268
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b94752c8e3606fd00800000000000000
+      internalID: 1005998432472888475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonDecor_32
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 284
+        width: 10
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dddebebfd72257860800000000000000
+      internalID: 7526960276712451549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonDecor_33
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 269
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adfa790f62ab03670800000000000000
+      internalID: 8516511571765604314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonDecor_34
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 228
+        width: 32
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac336b24a6cf1fda0800000000000000
+      internalID: -5912667302444780598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonDecor_35
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 228
+        width: 34
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 628e84fb345c48070800000000000000
+      internalID: 8107822123936442406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonDecor_36
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 228
+        width: 34
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e076abbdbe8b91860800000000000000
+      internalID: 7501229977505523470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonDecor_37
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 228
+        width: 34
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fb9f65215d61dc80800000000000000
+      internalID: -8299732442979263495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonDecor_38
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 240
+        width: 6
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a55a504aa86391f00800000000000000
+      internalID: 1087960754071905626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonDecor_39
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 240
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b57d0a82edd665a40800000000000000
+      internalID: 5356589607735580507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonDecor_40
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 240
+        width: 8
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4dbdef3687a0f2e0800000000000000
+      internalID: -2093989631687279281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonDecor_41
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 239
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19ea98340358b6ec0800000000000000
+      internalID: -3572615437050335599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonDecor_42
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 183
+        width: 18
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70ce47941f8ec9450800000000000000
+      internalID: 6097004118569970695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonDecor_43
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 183
+        width: 18
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 273804122dae68d90800000000000000
+      internalID: -7095725974653729934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonDecor_44
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 189
+        width: 18
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff46af0b50bf99e40800000000000000
+      internalID: 5663834008257717503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonDecor_45
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 189
+        width: 18
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a76b26fd80d24ebe0800000000000000
+      internalID: -1448983663975680390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonDecor_46
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 189
+        width: 18
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 147c055e498475c10800000000000000
+      internalID: 2042180760375445313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonDecor_47
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 188
+        width: 18
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58449e2d28527a730800000000000000
+      internalID: 4010215237011195013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonDecor_48
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 188
+        width: 18
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2be27c48f514a49e0800000000000000
+      internalID: -1636423636090409294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonDecor_49
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 188
+        width: 18
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e3b025a96afc7d20800000000000000
+      internalID: 3277769960467772386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      DungeonDecor_0: -1055421852108705733
+      DungeonDecor_1: -8303756232421665238
+      DungeonDecor_10: -6076479159832068699
+      DungeonDecor_11: -2463790810921897734
+      DungeonDecor_12: -7306737331459036186
+      DungeonDecor_13: 918046031772953037
+      DungeonDecor_14: 76229711850336861
+      DungeonDecor_15: 131977414802441185
+      DungeonDecor_16: -3134843365566700818
+      DungeonDecor_17: 5684442582157871776
+      DungeonDecor_18: -2355985560563179402
+      DungeonDecor_19: -5983197189191199444
+      DungeonDecor_2: 3824379835868725177
+      DungeonDecor_20: -2353816894430683588
+      DungeonDecor_21: 7326954202961385925
+      DungeonDecor_22: 2115962688810865136
+      DungeonDecor_23: 4187390312734765760
+      DungeonDecor_24: -1721246943426796877
+      DungeonDecor_25: 1829782941811862870
+      DungeonDecor_26: 4541022682992712666
+      DungeonDecor_27: -8318135885960402092
+      DungeonDecor_28: -6120537557728332705
+      DungeonDecor_29: -3144435123835115020
+      DungeonDecor_3: 4340607251174797623
+      DungeonDecor_30: -3130248460128195511
+      DungeonDecor_31: 1005998432472888475
+      DungeonDecor_32: 7526960276712451549
+      DungeonDecor_33: 8516511571765604314
+      DungeonDecor_34: -5912667302444780598
+      DungeonDecor_35: 8107822123936442406
+      DungeonDecor_36: 7501229977505523470
+      DungeonDecor_37: -8299732442979263495
+      DungeonDecor_38: 1087960754071905626
+      DungeonDecor_39: 5356589607735580507
+      DungeonDecor_4: 4220348403999707118
+      DungeonDecor_40: -2093989631687279281
+      DungeonDecor_41: -3572615437050335599
+      DungeonDecor_42: 6097004118569970695
+      DungeonDecor_43: -7095725974653729934
+      DungeonDecor_44: 5663834008257717503
+      DungeonDecor_45: -1448983663975680390
+      DungeonDecor_46: 2042180760375445313
+      DungeonDecor_47: 4010215237011195013
+      DungeonDecor_48: -1636423636090409294
+      DungeonDecor_49: 3277769960467772386
+      DungeonDecor_5: 1773896648247154703
+      DungeonDecor_6: -6701360222019316
+      DungeonDecor_7: -3869829368910079369
+      DungeonDecor_8: -5189745683633974637
+      DungeonDecor_9: 8972064080031125625
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
