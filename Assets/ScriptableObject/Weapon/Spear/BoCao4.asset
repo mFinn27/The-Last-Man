@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb76e2faae5aec94e967869600ff27df, type: 3}
   m_Name: BoCao4
   m_EditorClassIdentifier: 
-  tenMatHang: "B\u1ED3 C\xE0o"
+  tenMatHang: "B\u1ED3 C\xE0o C\u1EA5p 4"
   moTa: "Dame c\u01A1 b\u1EA3n: 85\nT\u1ED1c \u0111\u1ED9 \u0111\xE1nh: 0.75\nT\u1EA7m
     \u0111\xE1nh: 5\n\u0110\u1EA9y l\xF9i: 3\nT\u1EC9 l\u1EC7 ch\xED m\u1EA1ng: 10%"
   iconMatHang: {fileID: -6715163047098364636, guid: 86dfe46c1e807454c9bd77a80e783105, type: 3}
@@ -25,7 +25,7 @@ MonoBehaviour:
   weaponPrefab: {fileID: 6287261391817972532, guid: 8026fac49a3dbb945b344d3f6087ad34, type: 3}
   hinhAnhVuKhiTrongGame: {fileID: 0}
   vuKhiCapTiepTheo: {fileID: 0}
-  giaBan: 72
+  giaBan: 101
   dame: 85
   tocDoDanh: 0.75
   tamDanh: 5

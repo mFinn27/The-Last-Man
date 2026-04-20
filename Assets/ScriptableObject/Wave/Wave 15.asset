@@ -44,10 +44,10 @@ MonoBehaviour:
     thoiGianGiuaCacLan: 4
     soLuongMoiLan: 3
     deTheoCum: 1
-  - tenKichBan: Quai Dash
+  - tenKichBan: Boss
     giayBatDau: 30
     giayKetThuc: 35
     quaiPrefab: {fileID: 6494928833850633497, guid: 6c90f9ed4cc50d04e9256d9aa505a6dc, type: 3}
-    thoiGianGiuaCacLan: 30
+    thoiGianGiuaCacLan: 10
     soLuongMoiLan: 1
     deTheoCum: 0

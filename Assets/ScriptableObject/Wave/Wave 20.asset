@@ -48,7 +48,7 @@ MonoBehaviour:
     giayBatDau: 30
     giayKetThuc: 35
     quaiPrefab: {fileID: 6494928833850633497, guid: 0a5eeeaa1e579904b8b8e15f33ba0406, type: 3}
-    thoiGianGiuaCacLan: 30
+    thoiGianGiuaCacLan: 10
     soLuongMoiLan: 1
     deTheoCum: 0
   - tenKichBan: Quai No

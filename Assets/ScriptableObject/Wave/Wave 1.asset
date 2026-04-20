@@ -21,5 +21,5 @@ MonoBehaviour:
     giayKetThuc: 20
     quaiPrefab: {fileID: 5189326022444628608, guid: 3425c84ebe7eb7a48bbc77c0551119b4, type: 3}
     thoiGianGiuaCacLan: 3
-    soLuongMoiLan: 5
+    soLuongMoiLan: 6
     deTheoCum: 1

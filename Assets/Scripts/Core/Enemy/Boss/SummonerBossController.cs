@@ -9,6 +9,7 @@ public class SummonerBossController : MonoBehaviour
     private Rigidbody2D rb;
     private EnemyMovement diChuyen;
     private EnemyVisuals hinhAnh;
+    private Coroutine bossRoutine;
 
     void Start()
     {
@@ -20,8 +21,17 @@ public class SummonerBossController : MonoBehaviour
         if (GetComponent<MeleeAttack>()) GetComponent<MeleeAttack>().enabled = false;
         if (GetComponent<RangedAttack>()) GetComponent<RangedAttack>().enabled = false;
         if (GetComponent<DashAttack>()) GetComponent<DashAttack>().enabled = false;
+    }
 
-        StartCoroutine(BossCycleRoutine());
+    private void OnEnable()
+    {
+        if (bossRoutine != null) StopCoroutine(bossRoutine);
+        bossRoutine = StartCoroutine(BossCycleRoutine());
+    }
+
+    private void OnDisable()
+    {
+        if (bossRoutine != null) StopCoroutine(bossRoutine);
     }
 
     private IEnumerator BossCycleRoutine()
@@ -59,9 +69,7 @@ public class SummonerBossController : MonoBehaviour
                 Instantiate(data.quaiNhoPrefab, viTriSpawn, Quaternion.identity);
             }
         }
-
         if (hinhAnh != null) yield return StartCoroutine(hinhAnh.NayLenSauKhiBanRoutine());
-
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         yield return new WaitForSeconds(1f);
     }
@@ -77,8 +85,11 @@ public class SummonerBossController : MonoBehaviour
 
         for (int i = 0; i < data.soLuongDanBurst; i++)
         {
-            if (player == null) break;
-
+            if (player == null)
+            {
+                if (PlayerHealth.Instance != null) player = PlayerHealth.Instance.transform;
+                else break;
+            }
             Vector2 huongDenPlayer = (player.position - transform.position).normalized;
             float goc = Mathf.Atan2(huongDenPlayer.y, huongDenPlayer.x) * Mathf.Rad2Deg;
 
@@ -91,10 +102,8 @@ public class SummonerBossController : MonoBehaviour
                 EnemyBullet bullet = danObj.GetComponent<EnemyBullet>();
                 if (bullet != null) bullet.Setup(data.dame, data.tocDoDan);
             }
-
             yield return new WaitForSeconds(data.thoiGianGiuaCacVien);
         }
-
         if (hinhAnh != null) yield return StartCoroutine(hinhAnh.NayLenSauKhiBanRoutine());
 
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;

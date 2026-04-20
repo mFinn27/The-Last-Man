@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+
 [System.Serializable]
 public class SoundClip
 {
@@ -38,8 +40,13 @@ public class AudioManager : MonoBehaviour
     public SoundClip hieuUngTrungDonPlayer;
     public SoundClip hieuUngMuaDo;
     public SoundClip hieuUngVuNo;
+
+    [Header("--- TỐI ƯU ÂM THANH ---")]
+    public float thoiGianNganSpam = 0.05f;
+
     private float currentBaseBgmVolume = 1f;
     private Coroutine bossRoutine;
+    private Dictionary<AudioClip, float> soundTimerDictionary = new Dictionary<AudioClip, float>();
 
     void Awake()
     {
@@ -101,9 +108,27 @@ public class AudioManager : MonoBehaviour
     public void PlayMenuBGM() => PlayBGM(nhacNenMenu, menuVolume);
     public void PlayGameplayBGM() => PlayBGM(nhacNenGameplay, gameplayVolume);
 
+    private bool KiemTraChoPhepPhat(AudioClip clip)
+    {
+        if (clip == null) return false;
+
+        if (soundTimerDictionary.ContainsKey(clip))
+        {
+            float lastTimePlayed = soundTimerDictionary[clip];
+            if (Time.unscaledTime - lastTimePlayed < thoiGianNganSpam)
+            {
+                return false;
+            }
+        }
+        soundTimerDictionary[clip] = Time.unscaledTime;
+        return true;
+    }
+
     public void PlaySFX(SoundClip sound)
     {
         if (sound == null || sound.clip == null) return;
+
+        if (!KiemTraChoPhepPhat(sound.clip)) return;
 
         float finalVolume = globalSfxVolume * sound.volume;
         sourceHieuUngAmThanh.PlayOneShot(sound.clip, finalVolume);
@@ -148,6 +173,8 @@ public class AudioManager : MonoBehaviour
     public void PlayWeaponSFX(AudioClip clip, float volume = 1f)
     {
         if (clip == null || sourceHieuUngAmThanh == null) return;
+
+        if (!KiemTraChoPhepPhat(clip)) return;
 
         float finalVolume = globalSfxVolume * volume;
         sourceHieuUngAmThanh.PlayOneShot(clip, finalVolume);

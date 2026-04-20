@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb76e2faae5aec94e967869600ff27df, type: 3}
   m_Name: Spear3
   m_EditorClassIdentifier: 
-  tenMatHang: "Gi\xE1o"
+  tenMatHang: "Gi\xE1o C\u1EA5p 3"
   moTa: "Dame c\u01A1 b\u1EA3n: 60\nT\u1ED1c \u0111\u1ED9 \u0111\xE1nh: 0.8\nT\u1EA7m
     \u0111\xE1nh: 4\n\u0110\u1EA9y l\xF9i: 3"
   iconMatHang: {fileID: -7323941808403785378, guid: 86dfe46c1e807454c9bd77a80e783105, type: 3}

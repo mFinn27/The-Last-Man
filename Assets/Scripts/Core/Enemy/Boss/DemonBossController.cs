@@ -9,6 +9,7 @@ public class DemonBossController : MonoBehaviour
     private Rigidbody2D rb;
     private EnemyMovement diChuyen;
     private EnemyVisuals hinhAnh;
+    private Coroutine bossRoutine;
 
     void Start()
     {
@@ -20,8 +21,17 @@ public class DemonBossController : MonoBehaviour
         if (GetComponent<MeleeAttack>()) GetComponent<MeleeAttack>().enabled = false;
         if (GetComponent<RangedAttack>()) GetComponent<RangedAttack>().enabled = false;
         if (GetComponent<DashAttack>()) GetComponent<DashAttack>().enabled = false;
+    }
 
-        StartCoroutine(BossCycleRoutine());
+    private void OnEnable()
+    {
+        if (bossRoutine != null) StopCoroutine(bossRoutine);
+        bossRoutine = StartCoroutine(BossCycleRoutine());
+    }
+
+    private void OnDisable()
+    {
+        if (bossRoutine != null) StopCoroutine(bossRoutine);
     }
 
     private IEnumerator BossCycleRoutine()
@@ -31,13 +41,10 @@ public class DemonBossController : MonoBehaviour
         {
             yield return StartCoroutine(PhaseDuoiBat());
             yield return StartCoroutine(PhaseBanToaTron());
-
             yield return StartCoroutine(PhaseDuoiBat());
             yield return StartCoroutine(PhaseBanLienTuc());
-
             yield return StartCoroutine(PhaseDuoiBat());
             yield return StartCoroutine(PhaseTrieuHoi());
-
             yield return StartCoroutine(PhaseLuot());
         }
     }
@@ -71,9 +78,7 @@ public class DemonBossController : MonoBehaviour
                 if (bullet != null) bullet.Setup(data.dame, data.tocDoDan);
             }
         }
-
         if (hinhAnh != null) yield return StartCoroutine(hinhAnh.NayLenSauKhiBanRoutine());
-
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         yield return new WaitForSeconds(1.5f);
     }
@@ -84,13 +89,15 @@ public class DemonBossController : MonoBehaviour
 
         rb.linearVelocity = Vector2.zero;
         rb.constraints = RigidbodyConstraints2D.FreezeAll;
-
         if (hinhAnh != null) yield return StartCoroutine(hinhAnh.GongDonRoutine(0.5f));
 
         for (int i = 0; i < data.soLuongDanBurst; i++)
         {
-            if (player == null) break;
-
+            if (player == null)
+            {
+                if (PlayerHealth.Instance != null) player = PlayerHealth.Instance.transform;
+                else break;
+            }
             Vector2 huongDenPlayer = (player.position - transform.position).normalized;
             float goc = Mathf.Atan2(huongDenPlayer.y, huongDenPlayer.x) * Mathf.Rad2Deg;
 
@@ -103,10 +110,8 @@ public class DemonBossController : MonoBehaviour
                 EnemyBullet bullet = danObj.GetComponent<EnemyBullet>();
                 if (bullet != null) bullet.Setup(data.dame, data.tocDoDan);
             }
-
             yield return new WaitForSeconds(data.thoiGianGiuaCacVien);
         }
-
         if (hinhAnh != null) yield return StartCoroutine(hinhAnh.NayLenSauKhiBanRoutine());
 
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
@@ -119,7 +124,6 @@ public class DemonBossController : MonoBehaviour
 
         rb.linearVelocity = Vector2.zero;
         rb.constraints = RigidbodyConstraints2D.FreezeAll;
-
         if (hinhAnh != null) yield return StartCoroutine(hinhAnh.GongDonRoutine(1.2f));
 
         if (data.quaiNhoPrefab != null)
@@ -130,7 +134,6 @@ public class DemonBossController : MonoBehaviour
                 Instantiate(data.quaiNhoPrefab, viTriSpawn, Quaternion.identity);
             }
         }
-
         if (hinhAnh != null) yield return StartCoroutine(hinhAnh.NayLenSauKhiBanRoutine());
 
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
@@ -146,11 +149,15 @@ public class DemonBossController : MonoBehaviour
             rb.linearVelocity = Vector2.zero;
             rb.constraints = RigidbodyConstraints2D.FreezeAll;
 
+            if (player == null)
+            {
+                if (PlayerHealth.Instance != null) player = PlayerHealth.Instance.transform;
+                else break;
+            }
             Vector2 huongLuot = (player.position - transform.position).normalized;
             if (hinhAnh != null) yield return StartCoroutine(hinhAnh.GongDonRoutine(0.5f));
 
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-
             float thoiGianDaLuot = 0f;
             bool daGayDame = false;
             float tocDoLuotThuc = data.tocDoDiChuyen * 6f;
@@ -162,12 +169,11 @@ public class DemonBossController : MonoBehaviour
 
                 if (!daGayDame && Vector2.Distance(transform.position, player.position) <= 1.5f)
                 {
-                    PlayerHealth.Instance.TakeDamage(data.dame);
+                    if (PlayerHealth.Instance != null) PlayerHealth.Instance.TakeDamage(data.dame);
                     daGayDame = true;
                 }
                 yield return null;
             }
-
             rb.linearVelocity = Vector2.zero;
             if (hinhAnh != null) StartCoroutine(hinhAnh.NayLenSauKhiBanRoutine());
             yield return new WaitForSeconds(0.6f);
