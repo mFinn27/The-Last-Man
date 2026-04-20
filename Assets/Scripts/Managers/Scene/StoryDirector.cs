@@ -15,8 +15,6 @@ public class StoryEvent
 
     [Header("--- KẾT THÚC GAME (ENDING) ---")]
     public bool laCutscenePhaDao = false;
-
-    [Tooltip("Prefab của gia đình bị nhốt")]
     public GameObject giaDinhPrefab;
     public DialogLine[] kichBanGiaDinh;
 }
@@ -92,8 +90,49 @@ public class StoryDirector : MonoBehaviour
                 StartCoroutine(ChayKichBanRoutine(suKien, waveChuanBiChay == 1));
                 return true;
             }
+            else
+            {
+                if (!string.IsNullOrEmpty(suKien.tenMapChuyenToi))
+                {
+                    StartCoroutine(ChuyenMapKhongHoiThoai(suKien));
+                    return true;
+                }
+            }
         }
         return false;
+    }
+
+    public void KichHoatEndingTuRuong()
+    {
+        StoryEvent suKienEnding = danhSachCotTruyen.Find(x => x.laCutscenePhaDao);
+
+        if (suKienEnding != null)
+        {
+            bool daXem = PlayerPrefs.GetInt(suKienEnding.idSuKien, 0) == 1;
+
+            if (testMode || !daXem)
+            {
+                StartCoroutine(ChayKichBanRoutine(suKienEnding, false));
+            }
+            else
+            {
+                Debug.Log("đã xem Ending trước đó. Hiển thị bảng Chiến Thắng!");
+                if (GameManager.Instance != null) GameManager.Instance.KetThucGame(true);
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Không tìm thấy Cutscene Phá Đảo nào được đánh dấu. End Game.");
+            if (GameManager.Instance != null) GameManager.Instance.KetThucGame(true);
+        }
+    }
+
+    private IEnumerator ChuyenMapKhongHoiThoai(StoryEvent suKien)
+    {
+        Time.timeScale = 0f;
+        yield return StartCoroutine(MapManager.Instance.BatDauChuyenMap(suKien.tenMapChuyenToi, null));
+        Time.timeScale = 1f;
+        if (WaveManager.Instance != null) WaveManager.Instance.BatDauWave();
     }
 
     private IEnumerator ChayKichBanRoutine(StoryEvent suKien, bool laDauGame)
@@ -161,12 +200,16 @@ public class StoryDirector : MonoBehaviour
             }
         }
         yield return new WaitForSeconds(0.5f);
-        bool dialog1Xong = false;
-        Action onDone1 = () => dialog1Xong = true;
-        DialogManager.Instance.OnDialogEnded += onDone1;
-        DialogManager.Instance.BatDauHoiThoai(suKien.kichBan);
-        yield return new WaitUntil(() => dialog1Xong);
-        DialogManager.Instance.OnDialogEnded -= onDone1;
+
+        if (suKien.kichBan != null && suKien.kichBan.Length > 0)
+        {
+            bool dialog1Xong = false;
+            Action onDone1 = () => dialog1Xong = true;
+            DialogManager.Instance.OnDialogEnded += onDone1;
+            DialogManager.Instance.BatDauHoiThoai(suKien.kichBan);
+            yield return new WaitUntil(() => dialog1Xong);
+            DialogManager.Instance.OnDialogEnded -= onDone1;
+        }
 
         if (!string.IsNullOrEmpty(suKien.tenMapChuyenToi))
         {
@@ -233,7 +276,6 @@ public class StoryDirector : MonoBehaviour
             PlayerPrefs.Save();
 
             if (playerVisuals != null) playerVisuals.CapNhatHinhAnhVaAnimation();
-
             OnAfterCreditsTriggered?.Invoke();
         }
         else
@@ -260,16 +302,5 @@ public class StoryDirector : MonoBehaviour
             PlayerMovement pm = PlayerHealth.Instance.GetComponent<PlayerMovement>();
             if (pm != null) pm.StopForceMove();
         }
-    }
-
-    [ContextMenu("Xóa Lịch Sử Cutscene (Reset)")]
-    public void ResetToanBoLichSuCutscene()
-    {
-        foreach (var suKien in danhSachCotTruyen)
-        {
-            PlayerPrefs.DeleteKey(suKien.idSuKien);
-        }
-        PlayerPrefs.Save();
-        Debug.Log("<color=green>Đã xóa toàn bộ lịch sử Cutscene! Lần tới chơi sẽ chiếu lại từ đầu.</color>");
     }
 }

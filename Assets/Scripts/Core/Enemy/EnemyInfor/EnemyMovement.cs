@@ -13,16 +13,15 @@ public class EnemyMovement : MonoBehaviour
     private Collider2D playerCollider;
     private float thoiGianGayDameTiepTheo = 0f;
 
-    void Start()
+    void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         myCollider = GetComponent<Collider2D>();
+    }
 
-        if (PlayerHealth.Instance != null)
-        {
-            player = PlayerHealth.Instance.transform;
-            playerCollider = PlayerHealth.Instance.GetComponent<Collider2D>();
-        }
+    void Start()
+    {
+        ResetMovement();
     }
 
     void FixedUpdate()
@@ -57,5 +56,19 @@ public class EnemyMovement : MonoBehaviour
                 thoiGianGayDameTiepTheo = Time.time + thoiGianHoi;
             }
         }
+    }
+
+    public void ResetMovement()
+    {
+        dangBiDayLui = false;
+        isCharging = false;
+        thoiGianGayDameTiepTheo = 0f;
+
+        if (PlayerHealth.Instance != null)
+        {
+            player = PlayerHealth.Instance.transform;
+            playerCollider = PlayerHealth.Instance.GetComponent<Collider2D>();
+        }
+        if (rb != null) rb.WakeUp();
     }
 }

@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Wave Test
   m_EditorClassIdentifier: 
   tenWave: Wave 20
-  thoiGianWave: 10
-  batBuocGietBoss: 0
+  thoiGianWave: 20
+  batBuocGietBoss: 1
   danhSachSuKien:
-  - tenKichBan: Quai Co Ban
+  - tenKichBan: Boss
     giayBatDau: 0
     giayKetThuc: 5
     quaiPrefab: {fileID: 6494928833850633497, guid: 0a5eeeaa1e579904b8b8e15f33ba0406, type: 3}

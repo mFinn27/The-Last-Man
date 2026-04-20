@@ -39,6 +39,7 @@ public class AudioManager : MonoBehaviour
     public SoundClip hieuUngMuaDo;
     public SoundClip hieuUngVuNo;
     private float currentBaseBgmVolume = 1f;
+    private Coroutine bossRoutine;
 
     void Awake()
     {
@@ -72,6 +73,13 @@ public class AudioManager : MonoBehaviour
     public void PlayBGM(AudioClip clip, float targetVolume)
     {
         if (clip == null) return;
+
+        if (bossRoutine != null)
+        {
+            StopCoroutine(bossRoutine);
+            bossRoutine = null;
+        }
+        if (sourceNhacNenBoss != null) sourceNhacNenBoss.Stop();
 
         currentBaseBgmVolume = targetVolume;
         float finalVolume = targetVolume * globalBgmVolume;
@@ -110,7 +118,8 @@ public class AudioManager : MonoBehaviour
 
     public void TriggerBossWave()
     {
-        StartCoroutine(BossAppearanceRoutine());
+        if (bossRoutine != null) StopCoroutine(bossRoutine);
+        bossRoutine = StartCoroutine(BossAppearanceRoutine());
     }
 
     private IEnumerator BossAppearanceRoutine()

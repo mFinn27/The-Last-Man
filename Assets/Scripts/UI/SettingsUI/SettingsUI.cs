@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class SettingsUI : MonoBehaviour
 {
@@ -18,15 +20,14 @@ public class SettingsUI : MonoBehaviour
 
     [Header("--- KẾT NỐI MÀN HÌNH ---")]
     public TMP_Dropdown dropdownScreenMode;
-
     public float buocNhay = 0.1f;
 
     private void OnEnable()
     {
         if (AudioManager.Instance != null)
         {
-            sliderBGM.value = AudioManager.Instance.globalBgmVolume;
-            sliderSFX.value = AudioManager.Instance.globalSfxVolume;
+            if (sliderBGM != null) sliderBGM.value = AudioManager.Instance.globalBgmVolume;
+            if (sliderSFX != null) sliderSFX.value = AudioManager.Instance.globalSfxVolume;
 
             CapNhatIcon(iconBGM, sliderBGM.value);
             CapNhatIcon(iconSFX, sliderSFX.value);
@@ -53,13 +54,13 @@ public class SettingsUI : MonoBehaviour
     public void BamGiamBGM()
     {
         if (AudioManager.Instance != null) AudioManager.Instance.PlayClickSFX();
-        sliderBGM.value -= buocNhay;
+        if (sliderBGM != null) sliderBGM.value -= buocNhay;
     }
 
     public void BamTangBGM()
     {
         if (AudioManager.Instance != null) AudioManager.Instance.PlayClickSFX();
-        sliderBGM.value += buocNhay;
+        if (sliderBGM != null) sliderBGM.value += buocNhay;
     }
 
     public void OnSFXSliderChanged(float value)
@@ -71,13 +72,13 @@ public class SettingsUI : MonoBehaviour
     public void BamGiamSFX()
     {
         if (AudioManager.Instance != null) AudioManager.Instance.PlayClickSFX();
-        sliderSFX.value -= buocNhay;
+        if (sliderSFX != null) sliderSFX.value -= buocNhay;
     }
 
     public void BamTangSFX()
     {
         if (AudioManager.Instance != null) AudioManager.Instance.PlayClickSFX();
-        sliderSFX.value += buocNhay;
+        if (sliderSFX != null) sliderSFX.value += buocNhay;
     }
 
     private void CapNhatIcon(Image imgIcon, float volume)
@@ -94,5 +95,34 @@ public class SettingsUI : MonoBehaviour
     {
         if (AudioManager.Instance != null) AudioManager.Instance.PlayClickSFX();
         gameObject.SetActive(false);
+    }
+
+    public void BamNutResetStory()
+    {
+        if (AudioManager.Instance != null) AudioManager.Instance.PlayClickSFX();
+
+        if (SceneManager.GetActiveScene().name == "Gameplay")
+        {
+            Debug.LogWarning("Không thể xóa dữ liệu khi đang chơi!");
+            return;
+        }
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.Save();
+
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.waveCaoNhatDaDatDuoc = 0;
+            GameManager.Instance.ApDungCheDoManHinh(0);
+            GameManager.Instance.currentSave = null;
+            GameManager.Instance.isLoadingSave = false;
+        }
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.SetGlobalBGMVolume(1f);
+            AudioManager.Instance.SetGlobalSFXVolume(1f);
+        }
+
+        Debug.Log("<color=red>RESET:</color> Đã xóa sạch toàn bộ dữ liệu game.");
+        SceneManager.LoadScene(0);
     }
 }

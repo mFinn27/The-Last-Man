@@ -46,6 +46,7 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            Application.targetFrameRate = 144;
             LoadTienDo();
             LoadCaiDatManHinh();
         }

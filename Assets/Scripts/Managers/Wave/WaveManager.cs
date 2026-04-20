@@ -38,8 +38,6 @@ public class WaveManager : MonoBehaviour
         else Destroy(gameObject);
     }
 
-
-
     void Update()
     {
         if (!dangTrongWave) return;
@@ -112,6 +110,10 @@ public class WaveManager : MonoBehaviour
     public void BossDaChet()
     {
         soLuongBossTrenMap--;
+        if (soLuongBossTrenMap <= 0 && AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlayGameplayBGM();
+        }
 
         if (thoiGianDaQua >= thoiGianWaveHienTai && waveDataHienTai != null && waveDataHienTai.batBuocGietBoss)
         {
@@ -217,8 +219,19 @@ public class WaveManager : MonoBehaviour
             if (WarningPool.Instance != null) WarningPool.Instance.ReturnWarning(warning);
             else Destroy(warning);
         }
-
-        if (dangTrongWave) Instantiate(quaiPrefab, viTri, Quaternion.identity);
+        if (dangTrongWave)
+        {
+            if (EnemyPool.Instance != null)
+            {
+                GameObject quaiMoi = EnemyPool.Instance.GetEnemy(quaiPrefab);
+                quaiMoi.transform.position = viTri;
+                quaiMoi.transform.rotation = Quaternion.identity;
+            }
+            else
+            {
+                Instantiate(quaiPrefab, viTri, Quaternion.identity);
+            }
+        }
     }
 
     private bool TryLayViTriTrongArena(out Vector2 viTriAnToan)
@@ -250,10 +263,23 @@ public class WaveManager : MonoBehaviour
     private void KetThucWave()
     {
         dangTrongWave = false;
-        if (AudioManager.Instance != null)
+        bool coRuongPhaDao = false;
+        if (waveDataHienTai != null && waveHienTaiIndex >= danhSachWave.Count - 1)
         {
-            AudioManager.Instance.PlayGameplayBGM();
+            foreach (var sukien in waveDataHienTai.danhSachSuKien)
+            {
+                if (sukien.quaiPrefab != null)
+                {
+                    EnemyHealth mau = sukien.quaiPrefab.GetComponent<EnemyHealth>();
+                    if (mau != null && mau.data != null && mau.data.loaiQuai == EnemyType.Boss && mau.data.vatPhamDacBietPrefab != null)
+                    {
+                        coRuongPhaDao = true;
+                        break;
+                    }
+                }
+            }
         }
+
         OnWaveEnded?.Invoke();
 
         if (GameManager.Instance != null)
@@ -263,10 +289,18 @@ public class WaveManager : MonoBehaviour
 
         if (waveHienTaiIndex >= danhSachWave.Count - 1)
         {
-            Debug.Log("Đã vượt qua Wave cuối cùng! Đang chuyển đến đoạn kết...");
-            if (StoryDirector.Instance != null)
+            Debug.Log("Đã vượt qua Wave cuối cùng!");
+
+            if (!coRuongPhaDao)
             {
-                StartCoroutine(DelayChayEnding(2.5f));
+                if (StoryDirector.Instance != null)
+                {
+                    StartCoroutine(DelayChayEnding(2.5f));
+                }
+            }
+            else
+            {
+                Debug.Log("Đang chờ người chơi nhặt Rương Thành Tựu để End Game...");
             }
         }
     }

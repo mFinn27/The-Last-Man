@@ -16,13 +16,23 @@ public class EnemyVisuals : MonoBehaviour
 
     void Awake()
     {
+        KiemTraKhoiTao();
+    }
+
+    private void KiemTraKhoiTao()
+    {
+        if (sr != null) return;
+
         sr = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         movement = GetComponent<EnemyMovement>();
 
-        mauSacGoc = sr.color;
-        kichThuocGoc = sr.transform.localScale;
-        materialGoc = sr.material;
+        if (sr != null)
+        {
+            mauSacGoc = sr.color;
+            kichThuocGoc = sr.transform.localScale;
+            materialGoc = sr.material;
+        }
     }
 
     void Update()
@@ -50,6 +60,7 @@ public class EnemyVisuals : MonoBehaviour
 
     private IEnumerator FlashWhiteRoutine()
     {
+        if (sr == null) yield break;
         sr.material = flashMaterial;
         yield return new WaitForSeconds(0.05f);
 
@@ -66,17 +77,22 @@ public class EnemyVisuals : MonoBehaviour
         {
             thoiGianDaQua += Time.deltaTime;
             float phanTram = thoiGianDaQua / thoiGianGong;
-            sr.color = Color.Lerp(mauSacGoc, Color.red, phanTram);
-            sr.transform.localScale = Vector3.Lerp(scaleBanDau, scaleEpXuong, phanTram);
+            if (sr != null)
+            {
+                sr.color = Color.Lerp(mauSacGoc, Color.red, phanTram);
+                sr.transform.localScale = Vector3.Lerp(scaleBanDau, scaleEpXuong, phanTram);
+            }
             yield return null;
         }
     }
 
     public IEnumerator NayLenSauKhiBanRoutine()
     {
+        KiemTraKhoiTao();
+        if (sr == null) yield break;
         sr.color = mauSacGoc;
         sr.transform.localScale = new Vector3(kichThuocGoc.x * 0.8f, kichThuocGoc.y * 1.2f, kichThuocGoc.z);
         yield return new WaitForSeconds(0.1f);
-        sr.transform.localScale = kichThuocGoc;
+        if (sr != null) sr.transform.localScale = kichThuocGoc;
     }
 }

@@ -11,26 +11,55 @@ public class EnemyHealth : MonoBehaviour
     private EnemyVisuals hinhAnh;
     private bool daChet = false;
 
-    private void OnEnable()
-    {
-        WaveManager.OnWaveEnded += TuSatKhiHetWave;
-    }
-    private void OnDisable()
-    {
-        WaveManager.OnWaveEnded -= TuSatKhiHetWave;
-    }
+    private GameObject prefabGoc;
 
-    void Start()
+    void Awake()
     {
-        if (data != null) mauHienTai = data.mauToiDa;
         rb = GetComponent<Rigidbody2D>();
         diChuyen = GetComponent<EnemyMovement>();
         hinhAnh = GetComponent<EnemyVisuals>();
+    }
 
+    public void SetPrefabGoc(GameObject prefab)
+    {
+        prefabGoc = prefab;
+    }
+
+    private void OnEnable()
+    {
+        WaveManager.OnWaveEnded += TuSatKhiHetWave;
+        daChet = false;
+
+        if (data != null) mauHienTai = data.mauToiDa;
+
+        transform.localScale = Vector3.one;
+        Collider2D col = GetComponent<Collider2D>();
+        if (col != null) col.enabled = true;
+
+        if (diChuyen != null)
+        {
+            diChuyen.enabled = true;
+            diChuyen.ResetMovement();
+        }
+        var melee = GetComponent<MeleeAttack>(); if (melee != null) melee.enabled = true;
+        var ranged = GetComponent<RangedAttack>(); if (ranged != null) ranged.enabled = true;
+        var dash = GetComponent<DashAttack>(); if (dash != null) dash.enabled = true;
+        var explosion = GetComponent<ExplosionAttack>(); if (explosion != null) explosion.enabled = true;
+
+        if (hinhAnh != null)
+        {
+            hinhAnh.enabled = true;
+            StartCoroutine(hinhAnh.NayLenSauKhiBanRoutine());
+        }
         if (data != null && data.loaiQuai == EnemyType.Boss && WaveManager.Instance != null)
         {
             WaveManager.Instance.DangKyBoss();
         }
+    }
+
+    private void OnDisable()
+    {
+        WaveManager.OnWaveEnded -= TuSatKhiHetWave;
     }
 
     public void TakeDamage(float dame, Vector2 huongDayLui, float lucDayLui)
@@ -40,7 +69,6 @@ public class EnemyHealth : MonoBehaviour
         mauHienTai -= dame;
 
         if (AudioManager.Instance != null) AudioManager.Instance.PlayEnemyHitSFX();
-
         if (hinhAnh != null) hinhAnh.PlayFlashWhite();
 
         if (rb != null && lucDayLui > 0 && (data == null || data.loaiQuai != EnemyType.Boss))
@@ -100,30 +128,61 @@ public class EnemyHealth : MonoBehaviour
             transform.Rotate(0, 0, tocDoXoay * Time.deltaTime);
             yield return null;
         }
-
-        Destroy(gameObject);
+        if (EnemyPool.Instance != null && prefabGoc != null)
+        {
+            EnemyPool.Instance.ReturnEnemy(gameObject, prefabGoc);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void HoanThanhChet(bool xoaNgayLapTuc = true)
     {
         if (GameManager.Instance != null) GameManager.Instance.CongKill();
         RotDo();
-        if (xoaNgayLapTuc) Destroy(gameObject);
+        if (data != null && data.loaiQuai == EnemyType.Boss)
+        {
+            if (WaveManager.Instance != null)
+            {
+                WaveManager.Instance.BossDaChet();
+            }
+        }
+
+        if (xoaNgayLapTuc)
+        {
+            if (EnemyPool.Instance != null && prefabGoc != null)
+            {
+                EnemyPool.Instance.ReturnEnemy(gameObject, prefabGoc);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 
     private void RotDo()
     {
-        if (data != null && Random.value <= data.tiLeRotThuong)
+        if (data != null)
         {
-            if (data.phanThuongRotRa == LoaiPhanThuong.vang && CoinPool.Instance != null)
+            if (data.vatPhamDacBietPrefab != null)
             {
-                int soLuongVien = Random.Range(data.minSoLuongVang, data.maxSoLuongVang + 1);
-                for (int i = 0; i < soLuongVien; i++)
+                Instantiate(data.vatPhamDacBietPrefab, transform.position, Quaternion.identity);
+            }
+            if (Random.value <= data.tiLeRotThuong)
+            {
+                if (data.phanThuongRotRa == LoaiPhanThuong.vang && CoinPool.Instance != null)
                 {
-                    GameObject ngoc = CoinPool.Instance.GetCoin();
-                    ngoc.transform.position = transform.position + new Vector3(Random.Range(-0.5f, 0.5f), Random.Range(-0.5f, 0.5f), 0);
-                    Coin scriptCoin = ngoc.GetComponent<Coin>();
-                    if (scriptCoin != null) scriptCoin.Setup(Random.Range(data.minGiaTriMoiVien, data.maxGiaTriMoiVien + 1));
+                    int soLuongVien = Random.Range(data.minSoLuongVang, data.maxSoLuongVang + 1);
+                    for (int i = 0; i < soLuongVien; i++)
+                    {
+                        GameObject ngoc = CoinPool.Instance.GetCoin();
+                        ngoc.transform.position = transform.position + new Vector3(Random.Range(-0.5f, 0.5f), Random.Range(-0.5f, 0.5f), 0);
+                        Coin scriptCoin = ngoc.GetComponent<Coin>();
+                        if (scriptCoin != null) scriptCoin.Setup(Random.Range(data.minGiaTriMoiVien, data.maxGiaTriMoiVien + 1));
+                    }
                 }
             }
         }
@@ -133,17 +192,22 @@ public class EnemyHealth : MonoBehaviour
     {
         if (daChet) return;
         daChet = true;
-        Destroy(gameObject);
-    }
 
-    void OnDestroy()
-    {
-        if (data != null && data.loaiQuai == EnemyType.Boss && mauHienTai <= 0)
+        if (data != null && data.loaiQuai == EnemyType.Boss)
         {
             if (WaveManager.Instance != null)
             {
                 WaveManager.Instance.BossDaChet();
             }
+        }
+
+        if (EnemyPool.Instance != null && prefabGoc != null)
+        {
+            EnemyPool.Instance.ReturnEnemy(gameObject, prefabGoc);
+        }
+        else
+        {
+            Destroy(gameObject);
         }
     }
 }

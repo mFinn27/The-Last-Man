@@ -6316,6 +6316,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1470121259}
+    - target: {fileID: 2076631372746398723, guid: 2313ed44c848aa54ba05301d6901a02a, type: 3}
+      propertyPath: btnQuitGame
+      value: 
+      objectReference: {fileID: 1099214960}
+    - target: {fileID: 2076631372746398723, guid: 2313ed44c848aa54ba05301d6901a02a, type: 3}
+      propertyPath: btnOpenSettings
+      value: 
+      objectReference: {fileID: 926833225}
     - target: {fileID: 2417227076216143782, guid: 2313ed44c848aa54ba05301d6901a02a, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1

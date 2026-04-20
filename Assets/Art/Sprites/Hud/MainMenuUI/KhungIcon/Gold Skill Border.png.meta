@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 8cda7bbad8ae8084cb4a04420866c920
+guid: e134698d760fd8b4e8730a2c7be16726
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8937081434633632933
-    second: KhungIconKnife_0
+      213: -5772357580314395177
+    second: Gold Skill Border_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 20
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: KhungIconKnife_0
+      name: Gold Skill Border_0
       rect:
         serializedVersion: 2
-        x: 23
-        y: 9
-        width: 17
-        height: 47
+        x: 0
+        y: 0
+        width: 22
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5ac7310d634e60c70800000000000000
-      internalID: 8937081434633632933
+      spriteID: 7ddb3dc2d5774efa0800000000000000
+      internalID: -5772357580314395177
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      KhungIconKnife_0: 8937081434633632933
+      Gold Skill Border_0: -5772357580314395177
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
