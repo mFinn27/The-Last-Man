@@ -69,6 +69,10 @@ public class EnemyMovement : MonoBehaviour
             player = PlayerHealth.Instance.transform;
             playerCollider = PlayerHealth.Instance.GetComponent<Collider2D>();
         }
-        if (rb != null) rb.WakeUp();
+        if (rb != null)
+        {
+            rb.WakeUp();
+            rb.linearVelocity = Vector2.zero;
+        }
     }
 }

@@ -10,12 +10,17 @@ public class RangedAttack : MonoBehaviour
     private EnemyVisuals hinhAnh;
     private Rigidbody2D rb;
 
-    void Start()
+    void Awake()
     {
-        if (PlayerHealth.Instance != null) player = PlayerHealth.Instance.transform;
         diChuyen = GetComponent<EnemyMovement>();
         hinhAnh = GetComponent<EnemyVisuals>();
         rb = GetComponent<Rigidbody2D>();
+    }
+
+    private void OnEnable()
+    {
+        thoiGianBanTiepTheo = 0f;
+        if (PlayerHealth.Instance != null) player = PlayerHealth.Instance.transform;
     }
 
     void Update()

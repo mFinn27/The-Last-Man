@@ -25,6 +25,11 @@ public class DemonBossController : MonoBehaviour
 
     private void OnEnable()
     {
+        if (rb != null)
+        {
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+            rb.linearVelocity = Vector2.zero;
+        }
         if (bossRoutine != null) StopCoroutine(bossRoutine);
         bossRoutine = StartCoroutine(BossCycleRoutine());
     }

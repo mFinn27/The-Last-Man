@@ -6,8 +6,9 @@ public class MeleeAttack : MonoBehaviour
     private Transform player;
     private float thoiGianCanTiepTheo;
 
-    void Start()
+    private void OnEnable()
     {
+        thoiGianCanTiepTheo = 0f;
         if (PlayerHealth.Instance != null) player = PlayerHealth.Instance.transform;
     }
 

@@ -10,14 +10,15 @@ public class EnemyHealth : MonoBehaviour
     private EnemyMovement diChuyen;
     private EnemyVisuals hinhAnh;
     private bool daChet = false;
-
     private GameObject prefabGoc;
+    private Vector3 scaleGocBanDau;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         diChuyen = GetComponent<EnemyMovement>();
         hinhAnh = GetComponent<EnemyVisuals>();
+        scaleGocBanDau = transform.localScale;
     }
 
     public void SetPrefabGoc(GameObject prefab)
@@ -32,7 +33,8 @@ public class EnemyHealth : MonoBehaviour
 
         if (data != null) mauHienTai = data.mauToiDa;
 
-        transform.localScale = Vector3.one;
+        transform.localScale = scaleGocBanDau;
+        transform.rotation = Quaternion.identity;
         Collider2D col = GetComponent<Collider2D>();
         if (col != null) col.enabled = true;
 

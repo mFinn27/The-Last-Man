@@ -14,15 +14,13 @@ public class DashAttack : MonoBehaviour
     private LineRenderer canhBaoDuongLuot;
     private bool dangLuot = false;
 
-    void Start()
+    void Awake()
     {
-        if (PlayerHealth.Instance != null) player = PlayerHealth.Instance.transform;
-
         diChuyen = GetComponent<EnemyMovement>();
         hinhAnh = GetComponent<EnemyVisuals>();
         rb = GetComponent<Rigidbody2D>();
-
         canhBaoDuongLuot = GetComponent<LineRenderer>();
+
         canhBaoDuongLuot.enabled = false;
         canhBaoDuongLuot.positionCount = 2;
         canhBaoDuongLuot.startWidth = 0.8f;
@@ -31,6 +29,14 @@ public class DashAttack : MonoBehaviour
         canhBaoDuongLuot.startColor = new Color(1f, 0f, 0f, 0.4f);
         canhBaoDuongLuot.endColor = new Color(1f, 0f, 0f, 0.1f);
         canhBaoDuongLuot.sortingOrder = -1;
+    }
+    private void OnEnable()
+    {
+        dangLuot = false;
+        thoiGianLuotTiepTheo = 0f;
+        if (canhBaoDuongLuot != null) canhBaoDuongLuot.enabled = false;
+
+        if (PlayerHealth.Instance != null) player = PlayerHealth.Instance.transform;
     }
 
     void Update()
@@ -75,7 +81,7 @@ public class DashAttack : MonoBehaviour
 
             if (!daGayDame && Vector2.Distance(transform.position, player.position) <= 1.2f)
             {
-                PlayerHealth.Instance.TakeDamage(data.dame);
+                if (PlayerHealth.Instance != null) PlayerHealth.Instance.TakeDamage(data.dame);
                 daGayDame = true;
             }
             yield return null;

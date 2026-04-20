@@ -19,6 +19,17 @@ public class EnemyVisuals : MonoBehaviour
         KiemTraKhoiTao();
     }
 
+    private void OnEnable()
+    {
+        KiemTraKhoiTao();
+        if (sr != null)
+        {
+            sr.material = materialGoc;
+            sr.color = mauSacGoc;
+            sr.transform.localScale = kichThuocGoc;
+        }
+    }
+
     private void KiemTraKhoiTao()
     {
         if (sr != null) return;
