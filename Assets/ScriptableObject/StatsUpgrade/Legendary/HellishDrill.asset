@@ -20,14 +20,10 @@ MonoBehaviour:
   capDo: 4
   mauCapDo: {r: 0.6156863, g: 0.13333334, b: 0.1882353, a: 1}
   danhSachChiSo:
-  - loaiChiSo: 8
-    giaTriCongThem: -1.5
-  - loaiChiSo: 1
-    giaTriCongThem: -5
-  - loaiChiSo: 3
-    giaTriCongThem: 10
   - loaiChiSo: 10
     giaTriCongThem: 4
+  - loaiChiSo: 3
+    giaTriCongThem: 10
   - loaiChiSo: 9
     giaTriCongThem: 1
   - loaiChiSo: 4

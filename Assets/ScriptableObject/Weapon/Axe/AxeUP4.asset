@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: AxeUP4
   m_EditorClassIdentifier: 
   tenMatHang: "R\xECu Chi\u1EBFn C\u1EA5p 4"
-  moTa: "Dame c\u01A1 b\u1EA3n: 81\nT\u1ED1c \u0111\u1ED9 \u0111\xE1nh: 0.8\nT\u1EA7m
+  moTa: "Dame c\u01A1 b\u1EA3n: 81\nT\u1ED1c \u0111\u1ED9 \u0111\xE1nh: 0.85\nT\u1EA7m
     \u0111\xE1nh: 3\n\u0110\u1EA9y l\xF9i: 4\nS\xE1t th\u01B0\u01A1ng ch\xED m\u1EA1ng:
     10%"
   iconMatHang: {fileID: 3194533516690909813, guid: 86dfe46c1e807454c9bd77a80e783105, type: 3}
@@ -28,7 +28,7 @@ MonoBehaviour:
   vuKhiCapTiepTheo: {fileID: 0}
   giaBan: 99
   dame: 81
-  tocDoDanh: 0.8
+  tocDoDanh: 0.85
   tamDanh: 3
   dayLui: 4
   tiLeChiMang: 0

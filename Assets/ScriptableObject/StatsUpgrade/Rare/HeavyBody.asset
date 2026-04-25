@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8979bb38ae08b6d4fa19cec52aef8c7e, type: 3}
   m_Name: HeavyBody
   m_EditorClassIdentifier: 
-  tenMatHang: "N\u1EB7ng Tr\u0129u"
+  tenMatHang: "\u0110\u1EA7u G\u1EA5u"
   moTa: "+5 Dame c\u01A1 b\u1EA3n\n+2% H\xFAt m\xE1u\n-2 \u0110\u1EA9y l\xF9i"
   iconMatHang: {fileID: 206539488, guid: fb4f6f07f0540a64a8a81ceb356a229d, type: 3}
   giaMua: 55

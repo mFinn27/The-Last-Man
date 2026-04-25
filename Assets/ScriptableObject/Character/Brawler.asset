@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tenNhanVat: "\u0110\u1EA5u S\u0129"
   hinhAnhNhanVat: {fileID: -4584331887463120605, guid: cd4adeaa5a481054dad8c5f12f94154a, type: 3}
-  moTaNhanVat: "M\xE1u t\u1ED1i \u0111a: 150\nGi\xE1p: +2\nT\u1ED1c \u0111\u1ED9
+  moTaNhanVat: "M\xE1u t\u1ED1i \u0111a: 150\nGi\xE1p: +2\nDame: +2\nT\u1ED1c \u0111\u1ED9
     di chuy\u1EC3n: -1\nT\u1ED1c \u0111\u1ED9 \u0111\xE1nh: -10%\nB\u1EA1n kh\u1EDFi
     \u0111\u1EA7u v\u1EDBi Ch\xF9y c\u1EA5p 2"
   animatorNhanVat: {fileID: 22100000, guid: 76781e4c84abc1046a975bad295f3ee2, type: 2}
@@ -28,7 +28,7 @@ MonoBehaviour:
   mauToiDaGoc: 150
   giapGoc: 2
   tocDoDiChuyenGoc: 4
-  satThuongGoc: 0
+  satThuongGoc: 2
   tocDoDanhGoc: -0.1
   tiLeChiMangGoc: 0
   satThuongChiMangGoc: 1.5

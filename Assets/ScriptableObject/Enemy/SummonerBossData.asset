@@ -16,7 +16,7 @@ MonoBehaviour:
   loaiQuai: 4
   mauToiDa: 40000
   tocDoDiChuyen: 2.2
-  dame: 50
+  dame: 60
   tgThucHienDonDanhTiepTheo: 1
   thoiGianGongDon: 0.5
   tiLeRotThuong: 1

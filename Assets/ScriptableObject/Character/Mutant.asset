@@ -15,7 +15,7 @@ MonoBehaviour:
   tenNhanVat: "K\u1EBB \u0110\u1ED9t Bi\u1EBFn"
   hinhAnhNhanVat: {fileID: -1903240744945611512, guid: bbee91f8d8f489048b3a4de4b07c7485, type: 3}
   moTaNhanVat: "M\xE1u t\u1ED1i \u0111a: 120\nT\u1ED1c \u0111\u1ED9 di chuy\u1EC3n:
-    -0.5\nS\xE1t th\u01B0\u01A1ng: +10\nT\u1ED1c \u0111\u1ED9 \u0111\xE1nh: -20%\n-
+    -0.5\nS\xE1t th\u01B0\u01A1ng: +20\nT\u1ED1c \u0111\u1ED9 \u0111\xE1nh: -20%\n-
     K\u1EBB \u0111\u1ED9t bi\u1EBFn kh\xF4ng th\u1EC3 g\xE2y ra \u0111\xF2n ch\xED
     m\u1EA1ng\nB\u1EA1n kh\u1EDFi \u0111\u1EA7u v\u1EDBi R\xECu c\u1EA5p 1 v\xE0
     Ki\u1EBFm c\u1EA5p 1"
@@ -30,9 +30,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9c46da1b3e6218c43a26aaf8f1ee3ffa, type: 2}
   mauToiDaGoc: 120
   giapGoc: 0
-  tocDoDiChuyenGoc: 4
-  satThuongGoc: 10
+  tocDoDiChuyenGoc: 4.5
+  satThuongGoc: 20
   tocDoDanhGoc: -0.2
   tiLeChiMangGoc: -1
-  satThuongChiMangGoc: 1.5
+  satThuongChiMangGoc: 0
   hutMauGoc: 0

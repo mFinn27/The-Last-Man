@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8979bb38ae08b6d4fa19cec52aef8c7e, type: 3}
   m_Name: DemonClaw
   m_EditorClassIdentifier: 
-  tenMatHang: "M\xF3ng Vu\u1ED1t C\u1EE7a Qu\u1EF7"
+  tenMatHang: "Vu\u1ED1t Qu\u1EF7"
   moTa: "+7 Dame c\u01A1 b\u1EA3n\n+2% H\xFAt m\xE1u\n+10% T\u1ED1c \u0111\u1ED9
     \u0111\xE1nh\n-10 HP"
   iconMatHang: {fileID: -979382682, guid: fb4f6f07f0540a64a8a81ceb356a229d, type: 3}
